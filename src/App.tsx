@@ -15,6 +15,7 @@ import {
   Keyboard,
   Layers2,
   Maximize2,
+  Minimize2,
   Pause,
   Play,
   RotateCcw,
@@ -292,6 +293,9 @@ function Player({
   const [rate, setRate] = useState(1);
   const [muted, setMuted] = useState(true);
   const [error, setError] = useState("");
+  const [notice, setNotice] = useState("");
+  const [buffering, setBuffering] = useState(true);
+  const [fullscreen, setFullscreen] = useState(false);
   const [ready, setReady] = useState(false);
   const [layers, setLayers] = useState<Layers>({
     player: true,
@@ -299,6 +303,13 @@ function Player({
     caption: false,
   });
   const [activeMoment, setActiveMoment] = useState(1);
+  useEffect(() => {
+    const updateFullscreen = () =>
+      setFullscreen(document.fullscreenElement === stage.current);
+    document.addEventListener("fullscreenchange", updateFullscreen);
+    return () =>
+      document.removeEventListener("fullscreenchange", updateFullscreen);
+  }, []);
 
   function seek(value: number) {
     if (!video.current || !Number.isFinite(value)) return;
@@ -310,6 +321,7 @@ function Player({
     if (jumpSignal > 0 && video.current?.readyState) {
       video.current.pause();
       video.current.currentTime = clip.release;
+      stage.current?.scrollIntoView({ block: "nearest", behavior: "instant" });
     }
   }, [jumpSignal, clip.release]);
   async function togglePlayback() {
@@ -347,6 +359,7 @@ function Player({
     <section className="media-column" aria-label="比赛回放">
       <div className="player" ref={stage}>
         <div
+          id="review-player"
           className="video-stage"
           tabIndex={0}
           role="group"
@@ -360,6 +373,11 @@ function Player({
             playsInline
             muted={muted}
             preload="metadata"
+            onLoadStart={() => setBuffering(true)}
+            onWaiting={() => setBuffering(true)}
+            onCanPlay={() => setBuffering(false)}
+            onPlaying={() => setBuffering(false)}
+            onSeeked={() => setBuffering(false)}
             onLoadedMetadata={() => {
               if (video.current) {
                 setDuration(video.current.duration);
@@ -384,6 +402,7 @@ function Player({
             onEnded={() => setPlaying(false)}
             onError={() => {
               setReady(false);
+              setBuffering(false);
               setError("视频加载失败。请检查本地素材后重试。");
             }}
           />
@@ -424,7 +443,13 @@ function Player({
           {layers.caption && (
             <div className="video-caption">{clip.observation}</div>
           )}
-          {!playing && ready && (
+          {buffering && !error && (
+            <div className="media-loading" role="status">
+              <span className="loading-ring" aria-hidden="true" />
+              正在准备画面
+            </div>
+          )}
+          {!playing && ready && !buffering && (
             <button
               className="stage-play"
               onClick={() => void togglePlayback()}
@@ -467,6 +492,7 @@ function Player({
           <div className="seek-wrap">
             <input
               aria-label="视频进度"
+              aria-valuetext={`${timecode(time)}，共 ${timecode(duration)}`}
               type="range"
               min="0"
               max={duration}
@@ -509,20 +535,26 @@ function Player({
           </button>
           <button
             className="icon-button fullscreen-button"
-            aria-label="全屏观看"
+            aria-label={fullscreen ? "退出全屏" : "全屏观看"}
             onClick={async () => {
               try {
+                setNotice("");
                 if (document.fullscreenElement) await document.exitFullscreen();
                 else await stage.current?.requestFullscreen();
               } catch {
-                setError("当前浏览器不支持全屏，请使用浏览器窗口观看。");
+                setNotice("当前浏览器不支持全屏，可以继续在此窗口观看。");
               }
             }}
           >
-            <Maximize2 size={17} />
+            {fullscreen ? <Minimize2 size={17} /> : <Maximize2 size={17} />}
           </button>
         </div>
       </div>
+      {notice && (
+        <p className="player-notice" role="status">
+          {notice}
+        </p>
+      )}
       <div className="layer-bar">
         <span className="layer-heading">
           <SlidersHorizontal size={15} />
@@ -802,6 +834,7 @@ function Archive({
   const [query, setQuery] = useState("");
   const [result, setResult] = useState("all");
   const [player, setPlayer] = useState("all");
+  const searchInput = useRef<HTMLInputElement>(null);
   const filtered = shots.filter(
     (s) =>
       (player === "all" || player === s.player_id) &&
@@ -825,15 +858,32 @@ function Archive({
         </div>
       </div>
       <div className="archive-filters">
-        <label className="search-field">
+        <div className="search-field">
           <Search size={17} />
-          <span className="sr-only">搜索球员、事件或时钟</span>
+          <label className="sr-only" htmlFor="shot-search">
+            搜索球员、事件或时钟
+          </label>
           <input
+            id="shot-search"
+            ref={searchInput}
             placeholder="搜索球员、事件或时钟"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-        </label>
+          {query && (
+            <button
+              type="button"
+              className="clear-search"
+              aria-label="清除搜索"
+              onClick={() => {
+                setQuery("");
+                searchInput.current?.focus();
+              }}
+            >
+              <X size={16} />
+            </button>
+          )}
+        </div>
         <label>
           <span className="sr-only">球员筛选</span>
           <select value={player} onChange={(e) => setPlayer(e.target.value)}>
@@ -899,6 +949,7 @@ function Archive({
                   {s.clip_id ? (
                     <button
                       className="table-action"
+                      aria-label={`回看${s.player_name}事件 ${s.official_event_id}`}
                       onClick={() => onOpenClip(s.clip_id!)}
                     >
                       回看 <Play size={12} />
@@ -906,6 +957,7 @@ function Archive({
                   ) : (
                     <button
                       className="table-action subtle"
+                      aria-label={`查看${s.player_name}事件 ${s.official_event_id}来源`}
                       onClick={() => onSource(s)}
                     >
                       来源 <ArrowUpRight size={14} />
@@ -916,24 +968,79 @@ function Archive({
             ))}
           </tbody>
         </table>
-        {!filtered.length && (
-          <div className="empty-state">
-            <Search size={30} />
-            <h3>没有找到这次出手</h3>
-            <p>试试球员姓名、事件编号，或清除筛选。</p>
-            <button
-              className="primary-button"
-              onClick={() => {
-                setQuery("");
-                setResult("all");
-                setPlayer("all");
-              }}
-            >
-              清除筛选
-            </button>
-          </div>
-        )}
       </div>
+      <div className="shot-cards" aria-label="投篮记录">
+        {filtered.map((s) => (
+          <article
+            className={`shot-card ${s.clip_id ? "has-video" : ""}`}
+            key={s.record_id}
+          >
+            <div className="shot-card-top">
+              <div>
+                <h3>{s.player_name}</h3>
+                <span className="mono">
+                  事件 #{s.official_event_id} · Q{s.period}{" "}
+                  {s.official_game_clock_text}
+                </span>
+              </div>
+              <span className={s.made ? "result made" : "result"}>
+                {s.made ? "命中" : "未中"}
+              </span>
+            </div>
+            <div className="shot-card-detail">
+              <div>
+                <span className="shot-card-label">出手方式</span>
+                <p>{s.inside_shot_description}</p>
+              </div>
+              <div className="shot-card-xfg">
+                <span className="shot-card-label">预期命中率 · xFG</span>
+                <b>
+                  {s.official_xfg_percent}
+                  <small>%</small>
+                </b>
+              </div>
+            </div>
+            <div className="shot-card-bottom">
+              <span className="mono">比赛 {s.game_id}</span>
+              <button
+                className={`table-action ${s.clip_id ? "" : "subtle"}`}
+                aria-label={`${s.clip_id ? "回看" : "查看"}${s.player_name}事件 ${s.official_event_id}${s.clip_id ? "" : "来源"}`}
+                onClick={() =>
+                  s.clip_id ? onOpenClip(s.clip_id) : onSource(s)
+                }
+              >
+                {s.clip_id ? (
+                  <>
+                    回看这一球 <Play size={14} />
+                  </>
+                ) : (
+                  <>
+                    查看来源 <ArrowUpRight size={14} />
+                  </>
+                )}
+              </button>
+            </div>
+          </article>
+        ))}
+      </div>
+      {!filtered.length && (
+        <div className="empty-state">
+          <Search size={30} />
+          <h3>没有找到这次出手</h3>
+          <p>试试球员姓名、事件编号，或清除筛选。</p>
+          <button
+            className="primary-button"
+            onClick={() => {
+              setQuery("");
+              setResult("all");
+              setPlayer("all");
+              searchInput.current?.focus();
+            }}
+          >
+            清除筛选
+          </button>
+        </div>
+      )}
       <p className="archive-note">
         <Info size={14} />2 条记录已关联本地视频。其余 39
         条仅用于比赛检索，不代表视频识别结果。
@@ -948,6 +1055,14 @@ export default function App() {
   const [dialog, setDialog] = useState<DialogState>(null);
   const [jumpSignal, setJumpSignal] = useState(0);
   const [toast, setToast] = useState("");
+  const focusReview = useRef(false);
+  useEffect(() => {
+    if (view !== "review" || !focusReview.current) return;
+    focusReview.current = false;
+    const target = document.getElementById("review-player");
+    target?.focus({ preventScroll: true });
+    target?.scrollIntoView({ block: "center", behavior: "instant" });
+  }, [view, clip.id]);
   useEffect(() => {
     if (!toast) return;
     const id = window.setTimeout(() => setToast(""), 3600);
@@ -1083,7 +1198,13 @@ export default function App() {
             </div>
           ) : (
             <Archive
-              onOpenClip={(id) => chooseClip(clips.find((c) => c.id === id)!)}
+              onOpenClip={(id) => {
+                const next = clips.find((c) => c.id === id);
+                if (next) {
+                  focusReview.current = true;
+                  chooseClip(next);
+                }
+              }}
               onSource={(shot) => setDialog({ kind: "source", shot })}
             />
           )}

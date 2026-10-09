@@ -528,6 +528,23 @@
     overflow: hidden;
     box-shadow: 0 8px 30px #1f26110a;
   }
+  .player:fullscreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0;
+  }
+  .player:fullscreen .video-stage {
+    flex: 1;
+    min-height: 0;
+    aspect-ratio: auto;
+  }
+  .player:fullscreen .transport {
+    flex-shrink: 0;
+  }
+  .video-stage:focus-visible {
+    outline-offset: -3px;
+  }
   .video-stage {
     position: relative;
     aspect-ratio: 16/9;
@@ -822,6 +839,73 @@
     border: 1px solid #ffffff60;
     border-radius: 4px;
     padding: 10px;
+  }
+  .media-loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 13px;
+    background: #172018a8;
+    pointer-events: none;
+  }
+  .loading-ring {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff50;
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: loading-turn 0.8s linear infinite;
+  }
+  .player-notice {
+    font-size: 12px;
+    padding: 10px 0;
+    color: #697360;
+  }
+  .shot-cards {
+    display: none;
+  }
+  .clear-search {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 3px;
+  }
+  .clear-search:hover {
+    background: #eef0e7;
+    color: var(--ink);
+  }
+  .search-field:focus-within {
+    border-color: #a84d2c;
+    outline: 2px solid #b9411e;
+    outline-offset: 3px;
+  }
+  .search-field input:focus-visible {
+    outline: none;
+  }
+  .table-action,
+  .export-button,
+  .layer-toggle,
+  .jump-button {
+    transition:
+      background 180ms ease,
+      border-color 180ms ease,
+      transform 180ms ease;
+  }
+  .table-action:active,
+  .export-button:active,
+  .jump-button:active {
+    transform: translateY(1px);
+  }
+  @keyframes loading-turn {
+    to {
+      transform: rotate(360deg);
+    }
   }
   .player:fullscreen {
     border-radius: 0;
@@ -2042,9 +2126,9 @@
       margin-left: auto;
     }
     .export-button {
-      height: 34px;
+      height: 44px;
       padding: 0 12px;
-      font-size: 10px;
+      font-size: 12px;
     }
     .app-header nav {
       width: 100%;
@@ -2053,7 +2137,7 @@
       gap: 25px;
     }
     .app-header nav button {
-      font-size: 11px;
+      font-size: 13px;
     }
     .app-body {
       display: flex;
@@ -2067,7 +2151,7 @@
     }
     .rail-title {
       margin: 0 0 11px;
-      font-size: 10px;
+      font-size: 12px;
     }
     .count {
       font-size: 10px;
@@ -2079,12 +2163,12 @@
     .clip-card {
       padding: 6px;
       display: grid;
-      grid-template-columns: 50px minmax(0, 1fr);
+      grid-template-columns: 38px minmax(0, 1fr);
       gap: 7px;
       align-items: center;
     }
     .clip-image {
-      width: 50px;
+      width: 38px;
       aspect-ratio: 1;
     }
     .clip-image img {
@@ -2103,10 +2187,11 @@
       display: none;
     }
     .clip-title-row strong {
-      font-size: 10px;
+      font-size: 12px;
+      white-space: nowrap;
     }
     .clip-title-row small {
-      font-size: 8px;
+      font-size: 10px;
       margin-top: 4px;
     }
     .workspace {
@@ -2119,7 +2204,7 @@
       flex-wrap: wrap;
     }
     .breadcrumb {
-      font-size: 9px;
+      font-size: 11px;
       margin-bottom: 7px;
     }
     h1 {
@@ -2132,11 +2217,11 @@
       gap: 8px;
     }
     .match-context strong {
-      font-size: 10px;
+      font-size: 12px;
       display: inline;
     }
     .match-context small {
-      font-size: 9px;
+      font-size: 11px;
       margin-left: 9px;
       display: inline;
     }
@@ -2158,7 +2243,7 @@
       right: 10px;
     }
     .video-context {
-      font-size: 8px;
+      font-size: 10px;
       padding: 6px 7px;
       gap: 5px;
     }
@@ -2166,8 +2251,8 @@
       display: none;
     }
     .stage-play {
-      width: 43px;
-      height: 43px;
+      width: 48px;
+      height: 48px;
     }
     .stage-play svg {
       width: 19px;
@@ -2180,7 +2265,7 @@
       bottom: 24%;
     }
     .player-nameplate strong {
-      font-size: 9px;
+      font-size: 11px;
     }
     .player-nameplate small {
       display: none;
@@ -2194,6 +2279,7 @@
       padding: 6px 7px;
       gap: 4px;
       bottom: 24%;
+      min-height: 44px;
     }
     .video-metric b {
       font-size: 18px;
@@ -2211,28 +2297,42 @@
       display: none;
     }
     .transport {
-      padding: 0 4px;
-      height: 47px;
-      gap: 1px;
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr) 48px 44px 44px;
+      grid-template-rows: 30px 44px;
+      padding: 0 8px 6px;
+      height: 80px;
+      gap: 0;
     }
     .transport .icon-button {
-      width: 29px;
-      height: 38px;
+      width: 44px;
+      height: 44px;
     }
     .transport .icon-button svg {
-      width: 15px;
+      width: 18px;
     }
     .player-time {
-      font-size: 9px;
+      font-size: 11px;
       gap: 3px;
     }
     .seek-wrap {
-      margin: 0 7px;
+      grid-column: 1 / -1;
+      grid-row: 1;
+      margin: 0 10px;
+      height: 30px;
+    }
+    .release-tick {
+      top: 23px;
+    }
+    .seek-wrap input::-webkit-slider-thumb {
+      width: 14px;
+      height: 14px;
     }
     .speed-select select {
-      font-size: 10px;
-      width: 37px;
-      padding-left: 5px;
+      font-size: 13px;
+      width: 48px;
+      height: 44px;
+      padding-left: 8px;
     }
     .speed-select svg {
       width: 9px;
@@ -2253,8 +2353,9 @@
       gap: 8px;
     }
     .layer-toggle {
-      font-size: 10px;
+      font-size: 12px;
       padding: 9px 0;
+      min-height: 44px;
     }
     .moments {
       gap: 8px;
@@ -2263,34 +2364,34 @@
       aspect-ratio: 1.55;
     }
     .moment-time {
-      font-size: 8px;
+      font-size: 11px;
       padding: 2px 3px;
       left: 3px;
       bottom: 4px;
     }
     .moment-caption {
-      font-size: 9px;
+      font-size: 11px;
       padding-top: 8px;
     }
     .moment-caption small {
-      margin-right: 5px;
-      font-size: 8px;
+      margin-right: 4px;
+      font-size: 10px;
     }
     .moment-status {
       display: none;
     }
     .moments-heading h2 {
-      font-size: 11px;
+      font-size: 13px;
     }
     .moments-heading h2 span {
-      font-size: 7px;
+      font-size: 10px;
     }
     .inspector-tabs {
       gap: 29px;
       height: 47px;
     }
     .inspector-tabs button {
-      font-size: 12px;
+      font-size: 14px;
     }
     .insight-lead h2 {
       font-size: 29px;
@@ -2299,33 +2400,33 @@
       display: block;
     }
     .insight-lead p {
-      font-size: 12px;
+      font-size: 14px;
     }
     .insight-number {
       font-size: 13px;
     }
     .insight-number > span {
-      font-size: 8px;
+      font-size: 10px;
     }
     .observed-label {
-      font-size: 10px;
+      font-size: 12px;
     }
     .xfg-value {
       font-size: 68px;
     }
     .metric-heading,
     .shot-fact strong {
-      font-size: 12px;
+      font-size: 14px;
     }
     .xfg-block p {
-      font-size: 11px;
+      font-size: 12px;
     }
     .jump-button {
       min-height: 48px;
       font-size: 12px;
     }
     .inspector-source {
-      font-size: 10px;
+      font-size: 12px;
       min-height: 44px;
       padding-top: 10px;
     }
@@ -2333,15 +2434,15 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 12px;
-      font-size: 9px;
+      font-size: 11px;
       padding: 19px 0 25px;
     }
     .workspace-footer > div {
       gap: 25px;
     }
     .workspace-footer button {
-      min-height: 30px;
-      font-size: 10px;
+      min-height: 44px;
+      font-size: 12px;
     }
     .modal-inner {
       padding: 20px;
@@ -2364,7 +2465,7 @@
       font-size: 19px;
     }
     .archive-intro p {
-      font-size: 9px;
+      font-size: 12px;
     }
     .archive-count {
       display: block;
@@ -2375,7 +2476,7 @@
       line-height: 1.1;
     }
     .archive-count span {
-      font-size: 8px;
+      font-size: 11px;
     }
     .archive-filters {
       gap: 9px;
@@ -2387,13 +2488,13 @@
     }
     .search-field input {
       height: 44px;
-      font-size: 12px;
+      font-size: 16px;
     }
     .archive-filters select {
       height: 44px;
     }
     .result-count {
-      font-size: 10px;
+      font-size: 12px;
     }
     .archive-note {
       align-items: flex-start;
@@ -2403,10 +2504,152 @@
       margin-top: 2px;
     }
     .video-caption {
-      font-size: 8px;
+      font-size: 11px;
       max-width: 98%;
       padding: 3px 6px;
       bottom: 2px;
+    }
+    .table-scroll {
+      display: none;
+    }
+    .shot-cards {
+      display: grid;
+      gap: 14px;
+    }
+    .shot-card {
+      padding: 18px 16px 8px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fdfcf9;
+    }
+    .shot-card.has-video {
+      border-top: 2px solid var(--orange);
+    }
+    .shot-card-top,
+    .shot-card-detail,
+    .shot-card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .shot-card-top h3 {
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .shot-card-top .mono {
+      color: #697360;
+      font-size: 12px;
+      display: block;
+      margin-top: 5px;
+    }
+    .shot-card-top .result {
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .shot-card-detail {
+      padding: 22px 0 16px;
+      align-items: flex-start;
+    }
+    .shot-card-detail > div:first-child {
+      flex: 1;
+      min-width: 0;
+    }
+    .shot-card-label {
+      display: block;
+      color: #697360;
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+    .shot-card-detail p {
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+    .shot-card-xfg {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .shot-card-xfg b {
+      font: 30px var(--display);
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+    .shot-card-xfg small {
+      font-size: 13px;
+      margin-left: 3px;
+    }
+    .shot-card-bottom {
+      border-top: 1px solid var(--line);
+      padding-top: 7px;
+    }
+    .shot-card-bottom > span {
+      color: #697360;
+      font-size: 11px;
+    }
+    .table-action {
+      min-height: 44px;
+      font-size: 12px;
+    }
+    .clear-search {
+      width: 44px;
+      height: 44px;
+    }
+    .archive-note,
+    .fine-print {
+      font-size: 11px;
+    }
+    .modal-heading .icon-button {
+      width: 44px;
+      height: 44px;
+    }
+    .source-content section p,
+    .help-content p,
+    .facts-tab dl > div,
+    .facts-tab p {
+      font-size: 13px;
+    }
+    .source-link {
+      min-height: 44px;
+    }
+    .toast {
+      width: max-content;
+      max-width: calc(100vw - 32px);
+      white-space: normal;
+    }
+  }
+  @media (max-width: 360px) {
+    .app-header,
+    .clip-rail {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .workspace {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .clip-card {
+      grid-template-columns: minmax(0, 1fr);
+      padding: 10px 8px;
+    }
+    .clip-image {
+      display: none;
+    }
+    .clip-title-row strong {
+      font-size: 13px;
+    }
+    .match-context small {
+      display: block;
+      margin-left: 0;
+    }
+    .moment-caption small {
+      display: none;
+    }
+    .layer-toggle {
+      gap: 5px;
+      font-size: 11px;
+    }
+    .brand b {
+      font-size: 16px;
     }
   }
   @media (prefers-reduced-motion: reduce) {

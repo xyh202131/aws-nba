@@ -31,6 +31,8 @@ npm run preview
 - 球员信息、逐次出手数据、AI 观察字幕三个独立图层。
 - 回合解读 / 数据依据切换；来源弹窗保留官方记录链接与核对边界。
 - 41 条投篮记录，支持球员、结果、关键字组合筛选与空结果状态。
+- 手机端纵向投篮卡片、44px 视频控制、独立进度条；从档案回看时定位并聚焦视频。
+- 视频加载状态、失败提示与重试恢复；全屏按钮和退出状态同步。
 - 下载当前回合 JSON，或数据档案中的全部 41 条记录。导出的是数据，不是已渲染 MP4。
 - 键盘操作、原生模态对话框、焦点返回、可见焦点、减弱动态效果和响应式布局。
 
@@ -39,7 +41,9 @@ npm run preview
 | 产物 | 文件 |
 | --- | --- |
 | 桌面整体设计图 | [desktop-review.jpg](docs/design/desktop-review.jpg) |
-| 手机完整设计图 | [mobile-review.jpg](docs/design/mobile-review.jpg) |
+| 手机回看首屏 | [mobile-review.jpg](docs/design/mobile-review.jpg) |
+| 手机解读与指标 | [mobile-inspector.jpg](docs/design/mobile-inspector.jpg) |
+| 手机数据档案 | [mobile-archive.jpg](docs/design/mobile-archive.jpg) |
 | 数据档案设计图 | [desktop-archive.jpg](docs/design/desktop-archive.jpg) |
 | 来源弹窗设计图 | [source-dialog.jpg](docs/design/source-dialog.jpg) |
 | 设计思路、视觉规则、信息架构 | [DESIGN.md](docs/DESIGN.md) |

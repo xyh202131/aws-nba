@@ -1,0 +1,140 @@
+[
+  {
+    "client": 305,
+    "height": 740,
+    "overflow": false,
+    "playerWidth": 273,
+    "scroll": 305,
+    "view": "review",
+    "width": 320
+  },
+  {
+    "client": 375,
+    "height": 844,
+    "overflow": false,
+    "playerWidth": 335,
+    "scroll": 375,
+    "view": "review",
+    "width": 390
+  },
+  {
+    "client": 705,
+    "height": 900,
+    "overflow": false,
+    "playerWidth": 665,
+    "scroll": 705,
+    "view": "review",
+    "width": 720
+  },
+  {
+    "client": 753,
+    "height": 1000,
+    "overflow": false,
+    "playerWidth": 525,
+    "scroll": 753,
+    "view": "review",
+    "width": 768
+  },
+  {
+    "client": 1009,
+    "height": 1000,
+    "overflow": false,
+    "playerWidth": 781,
+    "scroll": 1009,
+    "view": "review",
+    "width": 1024
+  },
+  {
+    "client": 1265,
+    "height": 900,
+    "overflow": false,
+    "playerWidth": 745,
+    "scroll": 1265,
+    "view": "review",
+    "width": 1280
+  },
+  {
+    "client": 1425,
+    "height": 1000,
+    "overflow": false,
+    "playerWidth": 805,
+    "scroll": 1425,
+    "view": "review",
+    "width": 1440
+  },
+  {
+    "client": 1905,
+    "height": 1080,
+    "overflow": false,
+    "playerWidth": 1218,
+    "scroll": 1905,
+    "view": "review",
+    "width": 1920
+  },
+  {
+    "cards": 8,
+    "cardsVisible": true,
+    "client": 305,
+    "overflow": false,
+    "rows": 8,
+    "scroll": 305,
+    "tableVisible": false,
+    "view": "archive",
+    "width": 320
+  },
+  {
+    "cards": 8,
+    "cardsVisible": true,
+    "client": 375,
+    "overflow": false,
+    "rows": 8,
+    "scroll": 375,
+    "tableVisible": false,
+    "view": "archive",
+    "width": 390
+  },
+  {
+    "cards": 8,
+    "cardsVisible": true,
+    "client": 705,
+    "overflow": false,
+    "rows": 8,
+    "scroll": 705,
+    "tableVisible": false,
+    "view": "archive",
+    "width": 720
+  },
+  {
+    "cards": 8,
+    "cardsVisible": false,
+    "client": 753,
+    "overflow": false,
+    "rows": 8,
+    "scroll": 753,
+    "tableVisible": true,
+    "view": "archive",
+    "width": 768
+  },
+  {
+    "cards": 8,
+    "cardsVisible": false,
+    "client": 1009,
+    "overflow": false,
+    "rows": 8,
+    "scroll": 1009,
+    "tableVisible": true,
+    "view": "archive",
+    "width": 1024
+  },
+  {
+    "cards": 8,
+    "cardsVisible": false,
+    "client": 1425,
+    "overflow": false,
+    "rows": 8,
+    "scroll": 1425,
+    "tableVisible": true,
+    "view": "archive",
+    "width": 1440
+  }
+]
