@@ -1,0 +1,51 @@
+[
+  {
+    "client": 1585,
+    "hasOverflow": false,
+    "scroll": 1585,
+    "videoWidth": 965,
+    "width": 1600
+  },
+  {
+    "client": 1425,
+    "hasOverflow": false,
+    "scroll": 1425,
+    "videoWidth": 805,
+    "width": 1440
+  },
+  {
+    "client": 1265,
+    "hasOverflow": false,
+    "scroll": 1265,
+    "videoWidth": 745,
+    "width": 1280
+  },
+  {
+    "client": 1009,
+    "hasOverflow": false,
+    "scroll": 1009,
+    "videoWidth": 781,
+    "width": 1024
+  },
+  {
+    "client": 753,
+    "hasOverflow": false,
+    "scroll": 753,
+    "videoWidth": 525,
+    "width": 768
+  },
+  {
+    "client": 375,
+    "hasOverflow": false,
+    "scroll": 375,
+    "videoWidth": 335,
+    "width": 390
+  },
+  {
+    "client": 305,
+    "hasOverflow": false,
+    "scroll": 305,
+    "videoWidth": 265,
+    "width": 320
+  }
+]
