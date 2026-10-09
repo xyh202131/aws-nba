@@ -1,6 +1,6 @@
 # 前端验收与迭代记录
 
-> 当前版本已根据用户反馈更换为蓝薄荷主题并扩展四个工作区，最新证据见 [BLUE_MINT_ACCEPTANCE.md](BLUE_MINT_ACCEPTANCE.md)。以下第 1–5 轮为前一版历史过程；旧配色及媒体故障截图仅用于保留当时的测试证据。
+> 最新功能采用与取舍见 [REFERENCE_RECONCILIATION.md](REFERENCE_RECONCILIATION.md)。蓝薄荷首版验收见 [BLUE_MINT_ACCEPTANCE.md](BLUE_MINT_ACCEPTANCE.md)。下方第 1–5 轮是更早版本的历史验证，旧界面与媒体故障截图只用于保留当时证据。
 
 检查日期：2026-10-09。范围：回合工作台、数据档案、来源弹窗、JSON 导出及桌面/移动布局。
 

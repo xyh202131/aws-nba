@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import type { CSSProperties, KeyboardEvent, ReactNode } from "react";
 import {
   ArrowDownToLine,
-  ArrowRight,
   ArrowUpRight,
   Check,
   ChevronDown,
@@ -18,7 +17,6 @@ import {
   Minimize2,
   Pause,
   Play,
-  RotateCcw,
   Search,
   ShieldCheck,
   SlidersHorizontal,
@@ -36,18 +34,26 @@ import type { Clip, Shot } from "./data";
 import {
   Analytics,
   MatchStrip,
-  ReviewModules,
   NotesLibrary,
   NoteComposer,
   readNotes,
   NOTE_KEY,
 } from "./Studio";
 import type { NoteDraft, ReviewNote } from "./Studio";
+import {
+  EventTimeline,
+  Interpretation,
+  EvidenceInspector,
+  MaterialReadiness,
+  ReviewIntake,
+} from "./EvidenceStudio";
+import { momentAt, reviewPayload } from "./review";
 
 type View = "review" | "analytics" | "archive" | "notes";
 type DialogState =
   | { kind: "source"; shot?: Shot }
   | { kind: "help" }
+  | { kind: "intake" }
   | { kind: "note"; draft: NoteDraft; note?: ReviewNote }
   | null;
 type Layers = { player: boolean; metric: boolean; caption: boolean };
@@ -301,12 +307,16 @@ function Player({
   jumpTime,
   onSource,
   onMark,
+  activeMoment,
+  onMomentChange,
 }: {
   clip: Clip;
   jumpSignal: number;
   jumpTime: number | null;
   onSource: () => void;
   onMark: (time: number) => void;
+  activeMoment: number;
+  onMomentChange: (index: number) => void;
 }) {
   const video = useRef<HTMLVideoElement>(null);
   const stage = useRef<HTMLDivElement>(null);
@@ -328,7 +338,6 @@ function Player({
     metric: true,
     caption: false,
   });
-  const [activeMoment, setActiveMoment] = useState(1);
   useEffect(() => {
     const updateFullscreen = () =>
       setFullscreen(document.fullscreenElement === stage.current);
@@ -424,13 +433,7 @@ function Player({
                 return;
               }
               setTime(value);
-              setActiveMoment(
-                clip.moments.reduce(
-                  (active, moment, index) =>
-                    value + 1 / 30 >= moment.time ? index : active,
-                  0,
-                ),
-              );
+              onMomentChange(momentAt(clip, value));
             }}
             onPlay={() => setPlaying(true)}
             onPause={() => setPlaying(false)}
@@ -666,257 +669,28 @@ function Player({
         </div>
         <span className="layer-note">随你的视角</span>
       </div>
-      <div className="moments-heading">
-        <h2>
-          关键时刻<span>THE MOMENTS</span>
-        </h2>
-        <span>
-          点选画面，回到这一秒 <ArrowDownToLine size={13} />
-        </span>
-      </div>
-      <div className="moments">
-        {clip.moments.map((moment, index) => (
-          <button
-            className={`moment ${activeMoment === index ? "active" : ""}`}
-            key={moment.label}
-            onClick={() => {
-              seek(moment.time);
-              video.current?.pause();
-              setActiveMoment(index);
-            }}
-            aria-pressed={activeMoment === index}
-          >
-            <div className="moment-image">
-              <img
-                src={asset(moment.image)}
-                alt={`${clip.player} · ${moment.label}`}
-                width="1280"
-                height="720"
-              />
-              <span className="moment-time">{timecode(moment.time)}</span>
-              <span className="moment-arrow">
-                <ArrowUpRight size={17} />
-              </span>
-            </div>
-            <span className="moment-caption">
-              <span>
-                <small>0{index + 1}</small>
-                {moment.label}
-              </span>
-              {activeMoment === index && (
-                <span className="moment-status">当前</span>
-              )}
-            </span>
-          </button>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function Inspector({
-  clip,
-  onJump,
-  onSource,
-}: {
-  clip: Clip;
-  onJump: () => void;
-  onSource: () => void;
-}) {
-  const [tab, setTab] = useState<"read" | "facts">("read");
-  return (
-    <aside className="inspector" aria-label="回合解读">
-      <div
-        className="inspector-tabs"
-        role="tablist"
-        aria-label="解读与数据"
-        onKeyDown={(e) => {
-          if (["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)) {
-            e.preventDefault();
-            const next =
-              e.key === "Home"
-                ? "read"
-                : e.key === "End"
-                  ? "facts"
-                  : tab === "read"
-                    ? "facts"
-                    : "read";
-            setTab(next);
-            document.getElementById(`${next}-tab`)?.focus();
-          }
+      <EventTimeline
+        clip={clip}
+        time={time}
+        active={activeMoment}
+        onSeek={(value) => {
+          seek(value);
+          video.current?.pause();
+          onMomentChange(momentAt(clip, value));
         }}
-      >
-        <button
-          id="read-tab"
-          role="tab"
-          tabIndex={tab === "read" ? 0 : -1}
-          aria-selected={tab === "read"}
-          aria-controls="inspector-content"
-          onClick={() => setTab("read")}
-        >
-          回合解读
-        </button>
-        <button
-          id="facts-tab"
-          role="tab"
-          tabIndex={tab === "facts" ? 0 : -1}
-          aria-selected={tab === "facts"}
-          aria-controls="inspector-content"
-          onClick={() => setTab("facts")}
-        >
-          数据依据 <ArrowUpRight size={12} />
-        </button>
-      </div>
-      <div
-        id="inspector-content"
-        role="tabpanel"
-        aria-labelledby={tab === "read" ? "read-tab" : "facts-tab"}
-      >
-        {tab === "read" ? (
-          <>
-            <div className="insight-lead">
-              <span className="insight-number">
-                0{clip.id === "train_002" ? 1 : 2}
-                <span> / PLAY BREAKDOWN</span>
-              </span>
-              <h2>
-                {clip.title.split("，")[0]}，<br />
-                <em>{clip.title.split("，")[1]}</em>
-              </h2>
-              <p>{clip.observation}</p>
-              <span className="observed-label">
-                <Check size={12} />
-                画面观察 · AI 辅助核对
-              </span>
-            </div>
-            <div className="shot-fact">
-              <span className="fact-icon">
-                <Crosshair size={18} />
-              </span>
-              <div>
-                <span>这一球的结果</span>
-                <strong>
-                  {clip.shotDescription}
-                  <i />
-                  两分命中
-                </strong>
-              </div>
-              <span className="made-stamp">+2</span>
-            </div>
-            <div className="xfg-block">
-              <div className="metric-heading">
-                <span>
-                  预期命中率 <small>xFG</small>
-                </span>
-                <button
-                  className="info-button"
-                  aria-label="了解预期命中率"
-                  onClick={onSource}
-                >
-                  <Info size={15} />
-                </button>
-              </div>
-              <div className="xfg-value">
-                {clip.xfg}
-                <span>%</span>
-                <span className="metric-origin">
-                  NBA 官方
-                  <br />
-                  逐次投篮数据
-                </span>
-              </div>
-              <div
-                className="xfg-meter"
-                role="img"
-                aria-label={`预期命中率 ${clip.xfg}%`}
-              >
-                <span style={{ width: `${clip.xfg}%` }} />
-                <i style={{ left: `${clip.xfg}%` }} />
-              </div>
-              <div className="meter-labels">
-                <span>0%</span>
-                <span>100%</span>
-              </div>
-              <p>
-                理解出手机会的另一种视角。
-                <br />
-                命中是结果，xFG 描述这次机会。
-              </p>
-            </div>
-            <div className="unavailable-metric">
-              <span>球员引力</span>
-              <span>
-                本回合暂无数据 <span className="empty-dash">—</span>
-              </span>
-            </div>
-            <button className="jump-button" onClick={onJump}>
-              <RotateCcw size={16} />
-              再看出手瞬间
-              <span>
-                {timecode(clip.release)} <ArrowRight size={15} />
-              </span>
-            </button>
-            <button className="inspector-source" onClick={onSource}>
-              <ShieldCheck size={13} />
-              已关联官方事件 #{clip.eventId}
-              <ArrowUpRight size={14} />
-            </button>
-          </>
-        ) : (
-          <div className="facts-tab">
-            <span className="insight-number">THE EVIDENCE</span>
-            <h2>
-              看见事实，
-              <br />
-              也看清边界。
-            </h2>
-            <dl>
-              <div>
-                <dt>官方事件</dt>
-                <dd>#{clip.eventId}</dd>
-              </div>
-              <div>
-                <dt>比赛时钟</dt>
-                <dd>
-                  Q{clip.period} · {clip.officialClock}
-                </dd>
-              </div>
-              <div>
-                <dt>画面时钟</dt>
-                <dd>{clip.observedClock}</dd>
-              </div>
-              <div>
-                <dt>视频出手约值</dt>
-                <dd>{clip.release.toFixed(3)} s</dd>
-              </div>
-              <div>
-                <dt>出手前</dt>
-                <dd>{clip.scoreBefore}</dd>
-              </div>
-              <div>
-                <dt>出手后</dt>
-                <dd>{clip.scoreAfter}</dd>
-              </div>
-            </dl>
-            <p>
-              官方时钟与画面时钟分别保存。出手时间为视觉核对约值，尚未完成独立人工复核。
-            </p>
-            <button className="jump-button" onClick={onSource}>
-              展开完整来源 <ArrowUpRight size={16} />
-            </button>
-          </div>
-        )}
-      </div>
-    </aside>
+      />
+    </section>
   );
 }
 
 function Archive({
   onOpenClip,
   onSource,
+  onImport,
 }: {
   onOpenClip: (id: string) => void;
   onSource: (shot: Shot) => void;
+  onImport: () => void;
 }) {
   const [query, setQuery] = useState("");
   const [result, setResult] = useState("all");
@@ -932,6 +706,7 @@ function Archive({
   );
   return (
     <section className="archive" aria-label="投篮数据档案">
+      <MaterialReadiness onImport={onImport} />
       <div className="archive-intro">
         <div>
           <h2>
@@ -1142,6 +917,7 @@ export default function App() {
   const [dialog, setDialog] = useState<DialogState>(null);
   const [jumpSignal, setJumpSignal] = useState(0);
   const [jumpTime, setJumpTime] = useState<number | null>(null);
+  const [activeMoment, setActiveMoment] = useState(1);
   const [toast, setToast] = useState("");
   const [noteState, setNoteState] = useState(readNotes);
   const [removedNote, setRemovedNote] = useState<ReviewNote | null>(null);
@@ -1177,6 +953,7 @@ export default function App() {
     setClip(next);
     setView("review");
     setJumpTime(time ?? null);
+    setActiveMoment(momentAt(next, time ?? next.release));
     setJumpSignal((n) => n + 1);
   }
   const focusReview = useRef(false);
@@ -1195,8 +972,9 @@ export default function App() {
   function chooseClip(next: Clip) {
     setClip(next);
     setView("review");
-    setJumpSignal(0);
+    setJumpSignal((n) => n + 1);
     setJumpTime(null);
+    setActiveMoment(1);
   }
   function exportData() {
     if (view === "notes") {
@@ -1214,12 +992,7 @@ export default function App() {
             snapshot: "2026-10-09",
             shots,
           }
-        : {
-            schema_status: "internal_review_not_contest_schema",
-            review:
-              "AI visual crosscheck; independent human review not performed",
-            clip,
-          };
+        : reviewPayload(clip);
     downloadJson(
       content,
       view === "archive" || view === "analytics"
@@ -1354,6 +1127,8 @@ export default function App() {
                   clip={clip}
                   jumpSignal={jumpSignal}
                   jumpTime={jumpTime}
+                  activeMoment={activeMoment}
+                  onMomentChange={setActiveMoment}
                   onSource={() => setDialog({ kind: "source" })}
                   onMark={(time) =>
                     setDialog({
@@ -1362,22 +1137,27 @@ export default function App() {
                     })
                   }
                 />
-                <Inspector
+                <EvidenceInspector
                   key={clip.id + "-inspector"}
                   clip={clip}
-                  onJump={() => {
-                    setJumpTime(null);
+                  active={activeMoment}
+                  onSeek={(time) => {
+                    setJumpTime(time);
+                    setActiveMoment(momentAt(clip, time));
                     setJumpSignal((n) => n + 1);
                   }}
                   onSource={() => setDialog({ kind: "source" })}
                 />
               </div>
-              <ReviewModules
+              <Interpretation
+                key={clip.id + "-interpretation"}
                 clip={clip}
-                notes={noteState.notes}
-                onAnalyze={() => setView("analytics")}
+                onSeek={(time) => {
+                  setJumpTime(time);
+                  setActiveMoment(momentAt(clip, time));
+                  setJumpSignal((n) => n + 1);
+                }}
                 onNote={() => setDialog({ kind: "note", draft: noteDraft })}
-                onNotes={() => setView("notes")}
               />
             </>
           ) : view === "analytics" ? (
@@ -1409,6 +1189,7 @@ export default function App() {
             <Archive
               onOpenClip={openClip}
               onSource={(shot) => setDialog({ kind: "source", shot })}
+              onImport={() => setDialog({ kind: "intake" })}
             />
           )}
           <footer className="workspace-footer">
@@ -1436,15 +1217,24 @@ export default function App() {
           title={
             dialog.kind === "help"
               ? "让回看更顺手"
-              : dialog.kind === "note"
-                ? dialog.note
-                  ? "编辑复盘笔记"
-                  : "记录这个瞬间"
-                : "数据与观察依据"
+              : dialog.kind === "intake"
+                ? "核验回合资料"
+                : dialog.kind === "note"
+                  ? dialog.note
+                    ? "编辑复盘笔记"
+                    : "记录这个瞬间"
+                  : "数据与观察依据"
           }
           onClose={() => setDialog(null)}
         >
-          {dialog.kind === "note" ? (
+          {dialog.kind === "intake" ? (
+            <ReviewIntake
+              onOpen={(id) => {
+                setDialog(null);
+                openClip(id);
+              }}
+            />
+          ) : dialog.kind === "note" ? (
             <NoteComposer
               draft={dialog.draft}
               initial={dialog.note}

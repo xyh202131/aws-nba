@@ -3,7 +3,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   BookmarkPlus,
-  ChartNoAxesCombined,
   Crosshair,
   NotebookPen,
   Play,
@@ -13,6 +12,7 @@ import {
 import { clips, shots, timecode, downloadJson } from "./data";
 import type { Clip, Shot } from "./data";
 import { byPeriod, percent, summarizeShots } from "./analytics";
+import { ClipComparison } from "./EvidenceStudio";
 
 export interface ReviewNote {
   id: string;
@@ -115,107 +115,6 @@ export function MatchStrip({
   );
 }
 
-export function ReviewModules({
-  clip,
-  notes,
-  onAnalyze,
-  onNote,
-  onNotes,
-}: {
-  clip: Clip;
-  notes: ReviewNote[];
-  onAnalyze: () => void;
-  onNote: () => void;
-  onNotes: () => void;
-}) {
-  const records = shots.filter(
-    (s) => s.game_id === clip.gameId && s.player_name === clip.player,
-  );
-  const summary = summarizeShots(records);
-  const periods = byPeriod(records);
-  const count = notes.filter((n) => n.clipId === clip.id).length;
-  return (
-    <div className="review-modules">
-      <section className="studio-panel sample-panel">
-        <div className="panel-heading">
-          <span className="section-kicker">SHOT CONTEXT</span>
-          <ChartNoAxesCombined size={19} />
-        </div>
-        <h2>把这一球，放回整场。</h2>
-        <p>
-          {clip.player} · 本场收录 {summary.attempts} 次出手
-        </p>
-        <div className="sample-stats">
-          <div>
-            <strong>{percent(summary.fieldGoalPercent)}</strong>
-            <span>样本命中率</span>
-          </div>
-          <div>
-            <strong>{percent(summary.meanXfg)}</strong>
-            <span>平均 xFG</span>
-          </div>
-        </div>
-        <div className="mini-periods">
-          {periods.map((p) => (
-            <div key={p.period}>
-              <span>Q{p.period}</span>
-              <i>
-                <b style={{ width: `${p.fieldGoalPercent ?? 0}%` }} />
-              </i>
-              <small>
-                {p.made}/{p.attempts}
-              </small>
-            </div>
-          ))}
-        </div>
-        <button className="panel-link" onClick={onAnalyze}>
-          展开投篮分析 <ArrowRight size={16} />
-        </button>
-      </section>
-      <section className="studio-panel review-note-panel">
-        <div className="panel-heading">
-          <span className="section-kicker">YOUR OBSERVATION</span>
-          <NotebookPen size={19} />
-        </div>
-        <h2>留住你的判断。</h2>
-        <p>为出手选择、跑位和防守细节添加一条复盘笔记。</p>
-        <div className="note-preview">
-          {count ? (
-            <>
-              <b>{count.toString().padStart(2, "0")}</b>
-              <span>
-                条笔记已关联此片段
-                <br />
-                在复盘笔记中继续编辑
-              </span>
-            </>
-          ) : (
-            <>
-              <span className="note-empty-icon">
-                <BookmarkPlus size={26} />
-              </span>
-              <span>
-                从一个值得回看的瞬间开始。
-                <br />
-                笔记只保存在本机浏览器。
-              </span>
-            </>
-          )}
-        </div>
-        <div className="panel-actions">
-          <button className="mint-button" onClick={onNote}>
-            <BookmarkPlus size={16} />
-            记录出手瞬间
-          </button>
-          <button className="panel-link" onClick={onNotes}>
-            笔记库 <ArrowUpRight size={15} />
-          </button>
-        </div>
-      </section>
-    </div>
-  );
-}
-
 export function Analytics({
   initialClip,
   onSource,
@@ -228,6 +127,9 @@ export function Analytics({
   const [clipId, setClipId] = useState(initialClip.id);
   const [period, setPeriod] = useState(0);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [analysisMode, setAnalysisMode] = useState<"sample" | "compare">(
+    "sample",
+  );
   const clip = clips.find((c) => c.id === clipId) ?? clips[0];
   const records = shots
     .filter((s) => s.game_id === clip.gameId && s.player_name === clip.player)
@@ -249,208 +151,228 @@ export function Analytics({
     .sort((a, b) => b.attempts - a.attempts);
   return (
     <section className="analytics-view" aria-label="投篮分析">
-      <div className="analysis-toolbar">
-        <div className="player-segments" aria-label="分析球员">
-          {clips.map((c) => (
-            <button
-              key={c.id}
-              aria-pressed={c.id === clipId}
-              onClick={() => {
-                setClipId(c.id);
-                setPeriod(0);
-                setSelectedId(null);
-              }}
-            >
-              <span>{c.team}</span>
-              {c.player}
-            </button>
-          ))}
-        </div>
-        <label className="period-filter">
-          比赛节次
-          <select
-            value={period}
-            onChange={(e) => {
-              setPeriod(Number(e.target.value));
-              setSelectedId(null);
-            }}
-          >
-            <option value={0}>全场样本</option>
-            {periods.map((p) => (
-              <option key={p.period} value={p.period}>
-                第 {p.period} 节
-              </option>
-            ))}
-          </select>
-        </label>
+      <div className="analysis-mode" aria-label="分析方式">
+        <button
+          aria-pressed={analysisMode === "sample"}
+          onClick={() => setAnalysisMode("sample")}
+        >
+          样本分析
+        </button>
+        <button
+          aria-pressed={analysisMode === "compare"}
+          onClick={() => setAnalysisMode("compare")}
+        >
+          两回合对照
+        </button>
       </div>
-      <p className="analysis-context">
-        {clip.matchup} · {clip.date} · {period ? `第 ${period} 节` : "全场"}
-        公开出手样本
-      </p>
-      <div className="analysis-kpis">
-        <div>
-          <span>收录出手</span>
-          <strong>
-            {summary.attempts}
-            <small>次</small>
-          </strong>
-        </div>
-        <div>
-          <span>实际命中</span>
-          <strong>
-            {summary.made}
-            <small>球</small>
-          </strong>
-        </div>
-        <div>
-          <span>样本命中率</span>
-          <strong>{percent(summary.fieldGoalPercent)}</strong>
-        </div>
-        <div>
-          <span>平均预期命中率</span>
-          <strong>{percent(summary.meanXfg)}</strong>
-        </div>
-      </div>
-      <div className="analysis-grid">
-        <section className="studio-panel shot-distribution">
-          <div className="panel-heading">
-            <div>
-              <span className="section-kicker">EVERY ATTEMPT</span>
-              <h2>逐次出手，一眼看清。</h2>
-            </div>
-            <span className="chart-legend">
-              <i />
-              命中 <i />
-              未中
-            </span>
-          </div>
-          <p>横轴按官方事件排序，柱高表示本次 xFG。点选查看记录。</p>
-          <div className="shot-plot">
-            <span className="plot-top">100% xFG</span>
-            <div
-              className="shot-bars"
-              style={{ minWidth: Math.max(280, visible.length * 28) }}
-            >
-              {visible.map((s) => (
+      {analysisMode === "compare" ? (
+        <ClipComparison onOpenClip={onOpenClip} />
+      ) : (
+        <>
+          <div className="analysis-toolbar">
+            <div className="player-segments" aria-label="分析球员">
+              {clips.map((c) => (
                 <button
-                  className={`shot-bar ${s.made ? "made" : "missed"} ${selected?.record_id === s.record_id ? "selected" : ""}`}
-                  key={s.record_id}
-                  aria-label={`事件 ${s.official_event_id}，${s.made ? "命中" : "未中"}，xFG ${s.official_xfg_percent}%`}
-                  aria-pressed={selected?.record_id === s.record_id}
-                  onClick={() => setSelectedId(s.record_id)}
+                  key={c.id}
+                  aria-pressed={c.id === clipId}
+                  onClick={() => {
+                    setClipId(c.id);
+                    setPeriod(0);
+                    setSelectedId(null);
+                  }}
                 >
-                  <i style={{ height: `${s.official_xfg_percent}%` }}>
-                    <span>{s.made ? "●" : "○"}</span>
-                  </i>
+                  <span>{c.team}</span>
+                  {c.player}
                 </button>
               ))}
             </div>
-            <span className="plot-bottom">0%</span>
-          </div>
-          <div className="plot-axis">
-            <span>较早出手</span>
-            <span>{visible.length} 次记录</span>
-            <span>较晚出手</span>
-          </div>
-          {selected && (
-            <div className="selected-shot" aria-live="polite">
-              <Crosshair size={21} />
-              <div>
-                <strong>
-                  #{selected.official_event_id} · Q{selected.period}{" "}
-                  {selected.official_game_clock_text}
-                </strong>
-                <span>
-                  {selected.inside_shot_description} ·{" "}
-                  {selected.made ? "命中" : "未中"}
-                </span>
-              </div>
-              <b>
-                {selected.official_xfg_percent}
-                <small>% xFG</small>
-              </b>
-              <button
-                className="mint-button"
-                onClick={() =>
-                  selected.clip_id
-                    ? onOpenClip(selected.clip_id)
-                    : onSource(selected)
-                }
-              >
-                {selected.clip_id ? "回看片段" : "查看来源"}
-                <ArrowUpRight size={15} />
-              </button>
-            </div>
-          )}
-        </section>
-        <section className="studio-panel quarter-panel">
-          <div className="panel-heading">
-            <div>
-              <span className="section-kicker">QUARTER BY QUARTER</span>
-              <h2>分节表现</h2>
-            </div>
-          </div>
-          <p>当前球员全场样本 · 命中 / 出手</p>
-          <div className="quarter-list">
-            {periods.map((p) => (
-              <button
-                key={p.period}
-                className={period === p.period ? "active" : ""}
-                aria-pressed={period === p.period}
-                onClick={() => {
-                  setPeriod(period === p.period ? 0 : p.period);
+            <label className="period-filter">
+              比赛节次
+              <select
+                value={period}
+                onChange={(e) => {
+                  setPeriod(Number(e.target.value));
                   setSelectedId(null);
                 }}
               >
-                <b>Q{p.period}</b>
-                <span>
-                  <i style={{ width: `${p.fieldGoalPercent ?? 0}%` }} />
-                </span>
-                <strong>
-                  {p.made}
-                  <small>/{p.attempts}</small>
-                </strong>
-                <ArrowRight size={14} />
-              </button>
-            ))}
+                <option value={0}>全场样本</option>
+                {periods.map((p) => (
+                  <option key={p.period} value={p.period}>
+                    第 {p.period} 节
+                  </option>
+                ))}
+              </select>
+            </label>
           </div>
-          <div className="analysis-footnote">
-            点击节次可筛选左侧记录。命中率与平均 xFG
-            是不同统计，样本差异不用于判定模型效果。
-          </div>
-        </section>
-        <section className="studio-panel type-panel">
-          <div className="panel-heading">
+          <p className="analysis-context">
+            {clip.matchup} · {clip.date} · {period ? `第 ${period} 节` : "全场"}
+            公开出手样本
+          </p>
+          <div className="analysis-kpis">
             <div>
-              <span className="section-kicker">SHOT SELECTION</span>
-              <h2>出手方式分布</h2>
+              <span>收录出手</span>
+              <strong>
+                {summary.attempts}
+                <small>次</small>
+              </strong>
             </div>
-            <span>{types.length} 种方式</span>
+            <div>
+              <span>实际命中</span>
+              <strong>
+                {summary.made}
+                <small>球</small>
+              </strong>
+            </div>
+            <div>
+              <span>样本命中率</span>
+              <strong>{percent(summary.fieldGoalPercent)}</strong>
+            </div>
+            <div>
+              <span>平均预期命中率</span>
+              <strong>{percent(summary.meanXfg)}</strong>
+            </div>
           </div>
-          <div className="shot-types">
-            {types.map((t) => (
-              <div key={t.name}>
-                <span>{t.name}</span>
-                <i>
-                  <b
-                    style={{
-                      width: `${(t.attempts / Math.max(1, summary.attempts)) * 100}%`,
-                    }}
-                  />
-                </i>
-                <strong>
-                  {t.made}/{t.attempts}
-                </strong>
-                <small>平均 xFG {percent(t.meanXfg)}</small>
+          <div className="analysis-grid">
+            <section className="studio-panel shot-distribution">
+              <div className="panel-heading">
+                <div>
+                  <span className="section-kicker">EVERY ATTEMPT</span>
+                  <h2>逐次出手，一眼看清。</h2>
+                </div>
+                <span className="chart-legend">
+                  <i />
+                  命中 <i />
+                  未中
+                </span>
               </div>
-            ))}
+              <p>横轴按官方事件排序，柱高表示本次 xFG。点选查看记录。</p>
+              <div className="shot-plot">
+                <span className="plot-top">100% xFG</span>
+                <div
+                  className="shot-bars"
+                  style={{ minWidth: Math.max(280, visible.length * 28) }}
+                >
+                  {visible.map((s) => (
+                    <button
+                      className={`shot-bar ${s.made ? "made" : "missed"} ${selected?.record_id === s.record_id ? "selected" : ""}`}
+                      key={s.record_id}
+                      aria-label={`事件 ${s.official_event_id}，${s.made ? "命中" : "未中"}，xFG ${s.official_xfg_percent}%`}
+                      aria-pressed={selected?.record_id === s.record_id}
+                      onClick={() => setSelectedId(s.record_id)}
+                    >
+                      <i style={{ height: `${s.official_xfg_percent}%` }}>
+                        <span>{s.made ? "●" : "○"}</span>
+                      </i>
+                    </button>
+                  ))}
+                </div>
+                <span className="plot-bottom">0%</span>
+              </div>
+              <div className="plot-axis">
+                <span>较早出手</span>
+                <span>{visible.length} 次记录</span>
+                <span>较晚出手</span>
+              </div>
+              {selected && (
+                <div className="selected-shot" aria-live="polite">
+                  <Crosshair size={21} />
+                  <div>
+                    <strong>
+                      #{selected.official_event_id} · Q{selected.period}{" "}
+                      {selected.official_game_clock_text}
+                    </strong>
+                    <span>
+                      {selected.inside_shot_description} ·{" "}
+                      {selected.made ? "命中" : "未中"}
+                    </span>
+                  </div>
+                  <b>
+                    {selected.official_xfg_percent}
+                    <small>% xFG</small>
+                  </b>
+                  <button
+                    className="mint-button"
+                    onClick={() =>
+                      selected.clip_id
+                        ? onOpenClip(selected.clip_id)
+                        : onSource(selected)
+                    }
+                  >
+                    {selected.clip_id ? "回看片段" : "查看来源"}
+                    <ArrowUpRight size={15} />
+                  </button>
+                </div>
+              )}
+            </section>
+            <section className="studio-panel quarter-panel">
+              <div className="panel-heading">
+                <div>
+                  <span className="section-kicker">QUARTER BY QUARTER</span>
+                  <h2>分节表现</h2>
+                </div>
+              </div>
+              <p>当前球员全场样本 · 命中 / 出手</p>
+              <div className="quarter-list">
+                {periods.map((p) => (
+                  <button
+                    key={p.period}
+                    className={period === p.period ? "active" : ""}
+                    aria-pressed={period === p.period}
+                    onClick={() => {
+                      setPeriod(period === p.period ? 0 : p.period);
+                      setSelectedId(null);
+                    }}
+                  >
+                    <b>Q{p.period}</b>
+                    <span>
+                      <i style={{ width: `${p.fieldGoalPercent ?? 0}%` }} />
+                    </span>
+                    <strong>
+                      {p.made}
+                      <small>/{p.attempts}</small>
+                    </strong>
+                    <ArrowRight size={14} />
+                  </button>
+                ))}
+              </div>
+              <div className="analysis-footnote">
+                点击节次可筛选左侧记录。命中率与平均 xFG
+                是不同统计，样本差异不用于判定模型效果。
+              </div>
+            </section>
+            <section className="studio-panel type-panel">
+              <div className="panel-heading">
+                <div>
+                  <span className="section-kicker">SHOT SELECTION</span>
+                  <h2>出手方式分布</h2>
+                </div>
+                <span>{types.length} 种方式</span>
+              </div>
+              <div className="shot-types">
+                {types.map((t) => (
+                  <div key={t.name}>
+                    <span>{t.name}</span>
+                    <i>
+                      <b
+                        style={{
+                          width: `${(t.attempts / Math.max(1, summary.attempts)) * 100}%`,
+                        }}
+                      />
+                    </i>
+                    <strong>
+                      {t.made}/{t.attempts}
+                    </strong>
+                    <small>平均 xFG {percent(t.meanXfg)}</small>
+                  </div>
+                ))}
+              </div>
+            </section>
           </div>
-        </section>
-      </div>
-      <p className="studio-footnote">
-        数据来自已收录的官方逐次记录，仅代表该球员该场样本；未生成球场坐标、引力或轨迹数据。
-      </p>
+          <p className="studio-footnote">
+            数据来自已收录的官方逐次记录，仅代表该球员该场样本；未生成球场坐标、引力或轨迹数据。
+          </p>
+        </>
+      )}
     </section>
   );
 }

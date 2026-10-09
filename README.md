@@ -2,7 +2,7 @@
 
 一个让真实比赛画面与有来源的数据相互连接的回合工作台。当前交付是**可交互的前端设计原型**：两段本地视频、两条已核对的出手事件，以及 41 条官方逐次投篮记录。采用深蓝与薄荷绿配色，提供回合工作台、投篮分析、数据档案和复盘笔记四个工作区。
 
-![桌面回合工作台](docs/design/desktop-review.jpg)
+![桌面回合工作台](docs/design/evidence-review.jpg)
 
 ## 本地运行
 
@@ -28,29 +28,33 @@ npm run preview
 
 - 两段真实比赛片段切换，视频、解读、指标及来源同步更新。
 - 原生视频播放/暂停、拖动进度、0.5/1/1.5/2 倍速、原声开关、全屏。
-- 三个真实关键帧入口、比分变化、已核对出手时刻定位、出手前后循环及 ±1 秒控制。
+- 视频时间轴与三个关键帧、证据节点同步；比分变化、出手定位、出手前后循环及 ±1 秒控制。
 - 球员/节次筛选、逐次 xFG 柱形图、分节表现、出手方式分布；统计计算有独立测试。
 - 时间点复盘笔记，支持浏览器本地保存、编辑、分类、视频回看、JSON 导出和撤销删除。
 - 球员信息、逐次出手数据、AI 观察字幕三个独立图层。
-- 回合解读 / 数据依据切换；来源弹窗保留官方记录链接与核对边界。
+- 通俗解读 / 技术视角 / 复盘提问，共享证据引用；右侧证据链区分画面观察、视觉核对和官方记录。
 - 41 条投篮记录，支持球员、结果、关键字组合筛选与空结果状态。
 - 手机端纵向投篮卡片、44px 视频控制、独立进度条；从档案回看时定位并聚焦视频。
 - 视频加载状态、失败提示与重试恢复；全屏按钮和退出状态同步。
 - 下载当前回合 JSON，或数据档案中的全部 41 条记录。导出的是数据，不是已渲染 MP4。
 - 键盘操作、原生模态对话框、焦点返回、可见焦点、减弱动态效果和响应式布局。
+- 两回合按相同阶段对照关键帧与官方指标；保留不同比赛的解释边界。
+- 数据档案内支持文件或文本核验回合 JSON，识别不兼容输入、字段冲突，并导出报告或打开已收录回合。
 
 ## 设计交付
 
+最新功能取舍与验收见 [REFERENCE_RECONCILIATION.md](docs/REFERENCE_RECONCILIATION.md)。下表部分截图保留蓝薄荷首版的历史设计；当前工作台、对照与接入流程截图见该文档。
+
 | 产物                         | 文件                                                       |
 | ---------------------------- | ---------------------------------------------------------- |
-| 桌面整体设计图               | [desktop-review.jpg](docs/design/desktop-review.jpg)       |
+| 当前工作台设计图             | [evidence-review.jpg](docs/design/evidence-review.jpg)     |
 | 手机回看首屏                 | [mobile-review.jpg](docs/design/mobile-review.jpg)         |
 | 手机解读与指标               | [mobile-inspector.jpg](docs/design/mobile-inspector.jpg)   |
 | 手机数据档案                 | [mobile-archive.jpg](docs/design/mobile-archive.jpg)       |
 | 投篮分析设计图               | [desktop-analytics.jpg](docs/design/desktop-analytics.jpg) |
 | 复盘笔记设计图               | [desktop-notes.jpg](docs/design/desktop-notes.jpg)         |
 | 手机投篮分析                 | [mobile-analytics.jpg](docs/design/mobile-analytics.jpg)   |
-| 当前蓝薄荷版验收             | [BLUE_MINT_ACCEPTANCE.md](docs/BLUE_MINT_ACCEPTANCE.md)    |
+| 蓝薄荷首版验收               | [BLUE_MINT_ACCEPTANCE.md](docs/BLUE_MINT_ACCEPTANCE.md)    |
 | 数据档案设计图               | [desktop-archive.jpg](docs/design/desktop-archive.jpg)     |
 | 来源弹窗设计图               | [source-dialog.jpg](docs/design/source-dialog.jpg)         |
 | 设计思路、视觉规则、信息架构 | [DESIGN.md](docs/DESIGN.md)                                |
@@ -78,12 +82,15 @@ React + TypeScript + Vite，原生 CSS 与 HTML Video；Lucide 图标。没有 U
 
 ```text
 src/App.tsx          工作台、播放器、来源对话框、检索视图
-src/Studio.tsx        比分概览、投篮分析、复盘笔记
+src/Studio.tsx       比分概览、投篮分析、复盘笔记
+src/EvidenceStudio.tsx 时间轴、证据链、分层解读、回合对照、资料核验
+src/review.ts        证据契约、时间节点与输入校验
 src/analytics.ts     样本聚合与分节计算
 src/data.ts          展示类型、时间格式、JSON 导出
 src/data/            2 个视频条目与 41 条投篮记录
 src/styles.css       基础布局、播放器、数据档案
-src/studio.css       蓝薄荷主题及新增工作区
+src/studio.css       蓝薄荷主题及工作区
+src/evidence.css     证据工作流与响应式布局
 tests/               样本统计测试
 public/media/        本地视频预览和关键帧
 docs/design/         实际页面设计图

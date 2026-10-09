@@ -1,0 +1,308 @@
+[
+  {
+    "client": 305,
+    "overflow": false,
+    "scroll": 305,
+    "trackTargets": [
+      {
+        "left": 175.125,
+        "right": 207.125
+      },
+      {
+        "left": 207.30209350585935,
+        "right": 239.30209350585935
+      },
+      {
+        "left": 239.2916717529297,
+        "right": 271.2916717529297
+      }
+    ],
+    "view": "review",
+    "width": 320
+  },
+  {
+    "client": 375,
+    "overflow": false,
+    "scroll": 375,
+    "trackTargets": [
+      {
+        "left": 219.875,
+        "right": 251.875
+      },
+      {
+        "left": 260.13543701171875,
+        "right": 292.13543701171875
+      },
+      {
+        "left": 300.16668701171875,
+        "right": 332.16668701171875
+      }
+    ],
+    "view": "review",
+    "width": 390
+  },
+  {
+    "client": 753,
+    "overflow": false,
+    "scroll": 753,
+    "trackTargets": [
+      {
+        "left": 525.7604370117188,
+        "right": 563.7604370117188
+      },
+      {
+        "left": 590.8021240234375,
+        "right": 628.8021240234375
+      },
+      {
+        "left": 655.4791870117188,
+        "right": 693.4791870117188
+      }
+    ],
+    "view": "review",
+    "width": 768
+  },
+  {
+    "client": 1009,
+    "overflow": false,
+    "scroll": 1009,
+    "trackTargets": [
+      {
+        "left": 694.0208740234375,
+        "right": 732.0208740234375
+      },
+      {
+        "left": 792.4583740234375,
+        "right": 830.4583740234375
+      },
+      {
+        "left": 890.34375,
+        "right": 928.34375
+      }
+    ],
+    "view": "review",
+    "width": 1024
+  },
+  {
+    "client": 1265,
+    "overflow": false,
+    "scroll": 1265,
+    "trackTargets": [
+      {
+        "left": 680.3541870117188,
+        "right": 718.3541870117188
+      },
+      {
+        "left": 774.09375,
+        "right": 812.09375
+      },
+      {
+        "left": 867.3125,
+        "right": 905.3125
+      }
+    ],
+    "view": "review",
+    "width": 1280
+  },
+  {
+    "client": 1425,
+    "overflow": false,
+    "scroll": 1425,
+    "trackTargets": [
+      {
+        "left": 761.7916870117188,
+        "right": 799.7916870117188
+      },
+      {
+        "left": 863.3646240234375,
+        "right": 901.3646240234376
+      },
+      {
+        "left": 964.3541870117188,
+        "right": 1002.3541870117188
+      }
+    ],
+    "view": "review",
+    "width": 1440
+  },
+  {
+    "client": 305,
+    "overflow": false,
+    "scroll": 305,
+    "view": "comparison",
+    "width": 320
+  },
+  {
+    "client": 375,
+    "overflow": false,
+    "scroll": 375,
+    "view": "comparison",
+    "width": 390
+  },
+  {
+    "client": 753,
+    "overflow": false,
+    "scroll": 753,
+    "view": "comparison",
+    "width": 768
+  },
+  {
+    "client": 1009,
+    "overflow": false,
+    "scroll": 1009,
+    "view": "comparison",
+    "width": 1024
+  },
+  {
+    "client": 1265,
+    "overflow": false,
+    "scroll": 1265,
+    "view": "comparison",
+    "width": 1280
+  },
+  {
+    "client": 1425,
+    "overflow": false,
+    "scroll": 1425,
+    "view": "comparison",
+    "width": 1440
+  },
+  {
+    "client": 305,
+    "dialogOverflow": false,
+    "overflow": false,
+    "scroll": 305,
+    "view": "intake-ready",
+    "width": 320
+  },
+  {
+    "client": 375,
+    "dialogOverflow": false,
+    "overflow": false,
+    "scroll": 375,
+    "view": "intake-ready",
+    "width": 390
+  },
+  {
+    "client": 753,
+    "dialogOverflow": false,
+    "overflow": false,
+    "scroll": 753,
+    "view": "intake-ready",
+    "width": 768
+  },
+  {
+    "client": 1009,
+    "dialogOverflow": false,
+    "overflow": false,
+    "scroll": 1009,
+    "view": "intake-ready",
+    "width": 1024
+  },
+  {
+    "client": 1265,
+    "dialogOverflow": false,
+    "overflow": false,
+    "scroll": 1265,
+    "view": "intake-ready",
+    "width": 1280
+  },
+  {
+    "client": 1425,
+    "dialogOverflow": false,
+    "overflow": false,
+    "scroll": 1425,
+    "view": "intake-ready",
+    "width": 1440
+  },
+  {
+    "client": 305,
+    "overflow": false,
+    "scroll": 305,
+    "view": "archive",
+    "width": 320
+  },
+  {
+    "client": 375,
+    "overflow": false,
+    "scroll": 375,
+    "view": "archive",
+    "width": 390
+  },
+  {
+    "client": 753,
+    "overflow": false,
+    "scroll": 753,
+    "view": "archive",
+    "width": 768
+  },
+  {
+    "client": 1009,
+    "overflow": false,
+    "scroll": 1009,
+    "view": "archive",
+    "width": 1024
+  },
+  {
+    "client": 1265,
+    "overflow": false,
+    "scroll": 1265,
+    "view": "archive",
+    "width": 1280
+  },
+  {
+    "client": 1425,
+    "overflow": false,
+    "scroll": 1425,
+    "view": "archive",
+    "width": 1440
+  },
+  {
+    "client": 305,
+    "dialogOverflow": false,
+    "overflow": false,
+    "scroll": 305,
+    "view": "intake-input",
+    "width": 320
+  },
+  {
+    "client": 375,
+    "dialogOverflow": false,
+    "overflow": false,
+    "scroll": 375,
+    "view": "intake-input",
+    "width": 390
+  },
+  {
+    "client": 753,
+    "dialogOverflow": false,
+    "overflow": false,
+    "scroll": 753,
+    "view": "intake-input",
+    "width": 768
+  },
+  {
+    "client": 1009,
+    "dialogOverflow": false,
+    "overflow": false,
+    "scroll": 1009,
+    "view": "intake-input",
+    "width": 1024
+  },
+  {
+    "client": 1265,
+    "dialogOverflow": false,
+    "overflow": false,
+    "scroll": 1265,
+    "view": "intake-input",
+    "width": 1280
+  },
+  {
+    "client": 1425,
+    "dialogOverflow": false,
+    "overflow": false,
+    "scroll": 1425,
+    "view": "intake-input",
+    "width": 1440
+  }
+]
