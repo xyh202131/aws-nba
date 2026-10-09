@@ -1,0 +1,39 @@
+{
+  "verified_at": "2026-10-08",
+  "currency": "USD",
+  "per_million_tokens": true,
+  "anthropic_source": "https://www-cdn.anthropic.com/files/4zrzovbb/website/3684c2faafb97418665782cea0001f439f74b1d2.pdf",
+  "anthropic_price_effective_date": "2026-05-27",
+  "anthropic_page_1_based": 5,
+  "qwen_source": "https://aws.amazon.com/bedrock/pricing/",
+  "models": [
+    {
+      "model": "qwen.qwen3-vl-235b-a22b",
+      "tier": "Standard on-demand",
+      "regions": [
+        "us-east-1",
+        "us-east-2",
+        "us-west-2"
+      ],
+      "input": "0.53",
+      "output": "2.66"
+    },
+    {
+      "model": "global.anthropic.claude-sonnet-4-6",
+      "tier": "Standard Global Cross Region",
+      "input": "3.00",
+      "output": "15.00"
+    },
+    {
+      "model": "global.anthropic.claude-opus-4-8",
+      "tier": "Standard Global Cross Region",
+      "input": "5.00",
+      "output": "25.00",
+      "status": "optional candidate; target project entitlement and quota not verified"
+    }
+  ],
+  "notes": [
+    "Public price information is not evidence of current personal or contest project invocation access.",
+    "No free tier, credits, tax, cache or batch discounts applied."
+  ]
+}

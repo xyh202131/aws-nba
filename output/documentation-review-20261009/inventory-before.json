@@ -1,0 +1,257 @@
+{
+  "date": "2026-10-09",
+  "scope": "Markdown excluding dependencies, builds, git, local jobs and this audit backup",
+  "baseline_count": 47,
+  "files": [
+    {
+      "path": ".firecrawl/aws.amazon.com-bedrock-agentcore-pricing.md",
+      "sha256": "18456a5ef9e999c9a93b4a7993dcc35ecb76230e31adf5bff10fb86315881f9e",
+      "bytes": 66174
+    },
+    {
+      "path": ".firecrawl/aws.amazon.com-bedrock-pricing.md",
+      "sha256": "4d99559da2428c004679e78778f401eb3e9707545131b2538df3091eefebc411",
+      "bytes": 112723
+    },
+    {
+      "path": ".firecrawl/aws.amazon.com-cloudfront-pricing-pay-as-you-go.md",
+      "sha256": "8be679828dc83812a8dc566ec163dcae17b2916b456bc52030310c38aa7caa3e",
+      "bytes": 45052
+    },
+    {
+      "path": ".firecrawl/aws.amazon.com-s3-pricing.md",
+      "sha256": "9c649aa745ee355174d4c42a24e80c732fdf68233e61ef895c094ea0366a03ba",
+      "bytes": 86489
+    },
+    {
+      "path": ".firecrawl/bedrock-supported-models.md",
+      "sha256": "8f9c676659e09e7d4e78c5f330507edf10a031c00275e942a644a6771ddaa00b",
+      "bytes": 12060
+    },
+    {
+      "path": ".firecrawl/competition-portal-public.md",
+      "sha256": "7e4d440e807cd9a131e2af8d253122616bbffbac6a45f17f42a15666fbc04843",
+      "bytes": 22
+    },
+    {
+      "path": ".firecrawl/docs.aws.amazon.com-accounts-latest-reference-supported-services-sign-up-new.html.md",
+      "sha256": "8a52ec8cd9e2376cbc10300874a2bfd5f5ba21fb7aa462022b018d35d16e76ec",
+      "bytes": 35288
+    },
+    {
+      "path": ".firecrawl/docs.aws.amazon.com-bedrock-latest-userguide-model-card-amazon-nova-lite.html.md",
+      "sha256": "48f2722fe203a602e837bda861e3da77cc4069bcf46d9c03b77d1283be41bb32",
+      "bytes": 185524
+    },
+    {
+      "path": ".firecrawl/docs.aws.amazon.com-bedrock-latest-userguide-model-card-amazon-nova-pro.html.md",
+      "sha256": "bb2710ce7da6c0d13fc69693f2edf65ca0ed4e3fd4b13014cd23bc15491dfcdc",
+      "bytes": 192074
+    },
+    {
+      "path": ".firecrawl/docs.ultralytics.com-modes-track.md",
+      "sha256": "39ee71ce5d798c25a46d265ff66a31c67a1f3e759f233f993e6bb7391b970ea8",
+      "bytes": 48402
+    },
+    {
+      "path": ".firecrawl/github.com-PaddlePaddle-PaddleOCR.md",
+      "sha256": "6a817a32a32d6ec11d6a4555abec2c09d9c5b1829d70d610be75411ca099d4f9",
+      "bytes": 54100
+    },
+    {
+      "path": ".firecrawl/github.com-QwenLM-Qwen3-VL.md",
+      "sha256": "28ba613bd031991f72b371dd1856d37767efaf4044953f89e005b1187eb736ba",
+      "bytes": 71822
+    },
+    {
+      "path": ".kiro/specs/nba-deep-court-visualization/design.md",
+      "sha256": "3ac7e8630bd05c378dd4ac075c24c768fdd0c21488f2d55242bc0b41dd8ca852",
+      "bytes": 31037
+    },
+    {
+      "path": ".kiro/specs/nba-deep-court-visualization/requirements.md",
+      "sha256": "acb6de2d723258ee9e3696755918c59683964f156cdf32ca0b931c50eaec10d8",
+      "bytes": 20753
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "392c4a54d8355cbddf549776f0814e87353efc646da4a371503befcf84db4e70",
+      "bytes": 7678
+    },
+    {
+      "path": "AWS_Agent_Toolkit_安装记录.md",
+      "sha256": "2f5d438dbac54bacce07e50901dc9ec4d630d41d94e3364af5835d1b290cbe83",
+      "bytes": 4387
+    },
+    {
+      "path": "BroadcastCode「深度赛场」赛事 · 赛前培训直播 会议纪要.md",
+      "sha256": "1c1ffdd2e6322cdd01bc89d3e44af4e4f1d58c07e08615defd8be4109540ec0b",
+      "bytes": 74969
+    },
+    {
+      "path": "NBA深度赛场_AWS只读核验_20261008.md",
+      "sha256": "6d092a5694d048fd8c49e7a3f55fcc452c983f021df9a2df0b70fb1661907bfd",
+      "bytes": 12347
+    },
+    {
+      "path": "NBA深度赛场_官方公开数据抓取报告_20261009.md",
+      "sha256": "22f09b63d4762ebc5cfb9de2b1646b6b8838af57c1cd0fbe9b48e1f679297a08",
+      "bytes": 7996
+    },
+    {
+      "path": "NBA深度赛场_总体预算与高质量模型选择_20261008.md",
+      "sha256": "b8d7065691a0e4fc9bb36dad668e21a64d95c75b89df23e68902678d8082802d",
+      "bytes": 9893
+    },
+    {
+      "path": "NBA深度赛场_技术栈与选型建议.md",
+      "sha256": "20b6833fba0237c77eadf68c1c96f14d7b54cad3742e7e8f1f6510eaa3f562bf",
+      "bytes": 13196
+    },
+    {
+      "path": "NBA深度赛场_数据处理结果_20261009.md",
+      "sha256": "18e798da0f1f4655caaad8b815406c898ff905cfbe54bd8214db210a102af3bc",
+      "bytes": 2735
+    },
+    {
+      "path": "NBA深度赛场_材料缺口与优先任务_20261008.md",
+      "sha256": "7dee5016184d3504606579ac2f98348d3c6667982b876f6a6515905e6adc9647",
+      "bytes": 14407
+    },
+    {
+      "path": "NBA深度赛场_视频与事件核对报告_20261009.md",
+      "sha256": "12b2876d785cb224a5542229df4b4b36824dab08910896f726d3d329dc58d6bd",
+      "bytes": 6831
+    },
+    {
+      "path": "NBA深度赛场_赛前准备方案_20261008.md",
+      "sha256": "f055525fdfad0e0e86032c263cd2cc9a3cfcbb0ef0d0261259d74b1f4110d5a2",
+      "bytes": 21576
+    },
+    {
+      "path": "aws-nba/README.md",
+      "sha256": "452c651c42b3f707e7e54a52b003a3aac7977e2fe4694a42626ae1ecaa43e201",
+      "bytes": 7966
+    },
+    {
+      "path": "aws-nba/docs/AGENT_ACCEPTANCE.md",
+      "sha256": "65b566efc32edbab4071c1dbfc1ecb35e9a4ded84b45ecb8e0755f44c9a595d0",
+      "bytes": 4649
+    },
+    {
+      "path": "aws-nba/docs/AGENT_SKELETON.md",
+      "sha256": "ec8e8021f04b6a39bf5f5e7670a99402c3c48fc4b03dc19cc150197e4f630f6b",
+      "bytes": 8629
+    },
+    {
+      "path": "aws-nba/docs/BLUE_MINT_ACCEPTANCE.md",
+      "sha256": "57777fc3400225354db1ad8fbf32bf63e60ce8a76d819dccf4facf47a5676904",
+      "bytes": 7366
+    },
+    {
+      "path": "aws-nba/docs/DESIGN.md",
+      "sha256": "58dc75965a7a7d6736994c58d42084fbc80be693f1f7b126240d3558b4cca573",
+      "bytes": 5176
+    },
+    {
+      "path": "aws-nba/docs/QA.md",
+      "sha256": "26a91a2841a78e07fa6c7228c9a52241fd71c297273ee21bf7fdcde9a212a721",
+      "bytes": 9979
+    },
+    {
+      "path": "aws-nba/docs/REFERENCE_RECONCILIATION.md",
+      "sha256": "a3ae0e3478def589f61d9254533a680e0c7cbe48382af5ff91d922d8a7bf7748",
+      "bytes": 8226
+    },
+    {
+      "path": "data/processed/20261009/README.md",
+      "sha256": "784ab60653c602daef7bf88983e4bef7b627ac77becf5563f6f26826f2a28c3a",
+      "bytes": 4714
+    },
+    {
+      "path": "data/processed/20261009/data-dictionary.md",
+      "sha256": "bc97d00e9fd0ee1fcd96f336660752c411a4539cbf470b6aed8c27cea33cbf15",
+      "bytes": 5877
+    },
+    {
+      "path": "data/processed/20261009/shot-index.md",
+      "sha256": "81f368cb22221350ec52755f1f861b05a9f28911af62821c7fdbea64539a18ca",
+      "bytes": 4306
+    },
+    {
+      "path": "data/public-nba/20261009/README.md",
+      "sha256": "8f532bdc58ec784f97bfb1c704235ba17a2d0896b24a0cc9aa313c71e182d27f",
+      "bytes": 4623
+    },
+    {
+      "path": "准备资料/01_赛规与交付检查表.md",
+      "sha256": "939870bb5342595f999f597a5ebc7e7ef8757b865185ba0f324c6ff7e9d979b5",
+      "bytes": 4234
+    },
+    {
+      "path": "准备资料/02_数据接入与标注规范.md",
+      "sha256": "fdf451082c8e403f74d725b4a4adfd239543108d989aa3632895bd0726f74dd5",
+      "bytes": 5957
+    },
+    {
+      "path": "准备资料/03_模型提示词与复核流程.md",
+      "sha256": "9437e6151a056d2c26f9dc1c5446c9406a841318f689224a4d2b752c77972acd",
+      "bytes": 4053
+    },
+    {
+      "path": "准备资料/04_质量验收与实验记录.md",
+      "sha256": "87440867165f17d039eca7afc5a53e129f84282984098f2ed2d6230923fa07c3",
+      "bytes": 4463
+    },
+    {
+      "path": "准备资料/05_作品说明与五分钟演示稿.md",
+      "sha256": "aba3bd0982b607721fecfc02172d6a21a3dd7e52ad0948e1ee72381ce36902f9",
+      "bytes": 5421
+    },
+    {
+      "path": "准备资料/06_比赛日执行手册.md",
+      "sha256": "3004cc7821b0db007a33753d5c2e5698fc1d0003b52160f2b7d269f9ff8adee3",
+      "bytes": 4632
+    },
+    {
+      "path": "准备资料/07_材料获取清单与待确认问题.md",
+      "sha256": "c509c08cd0e886f57acfce05ae5aff51e7d3e56796e08217025a069762496344",
+      "bytes": 4109
+    },
+    {
+      "path": "准备资料/08_来源与证据索引.md",
+      "sha256": "da361b4af92300a1f96bc4748ed9da995c985943e809323db2ace21c9f084720",
+      "bytes": 4573
+    },
+    {
+      "path": "准备资料/README.md",
+      "sha256": "fe45b016d349ec7f0efce8961494a50186a94234467f5458bb55ced33fbdb93c",
+      "bytes": 4953
+    },
+    {
+      "path": "资料/参赛终极指南.md",
+      "sha256": "8b97e8160c94835888636976cb481d8694e2dd94d0cf0bc7a7aef3a2479c0309",
+      "bytes": 15904
+    },
+    {
+      "path": "资料/赛制与选手快速上手.md",
+      "sha256": "3220b7eef4ef5c97ffb7bd22d694416b184eb82519452c7219290e3f45a8b1eb",
+      "bytes": 23091
+    }
+  ],
+  "source_copy_checks": [
+    {
+      "copy": "资料/参赛终极指南.md",
+      "original": "E:/下载/🏀 Broadcast Code 12h 深度赛场可视化 · 参赛终极指南.md",
+      "sha256": "8b97e8160c94835888636976cb481d8694e2dd94d0cf0bc7a7aef3a2479c0309",
+      "matches": true
+    },
+    {
+      "copy": "资料/赛制与选手快速上手.md",
+      "original": "E:/下载/NBA × AWS Hackathon｜赛制与选手快速上手 Rules & Quick Start.md",
+      "sha256": "3220b7eef4ef5c97ffb7bd22d694416b184eb82519452c7219290e3f45a8b1eb",
+      "matches": true
+    }
+  ],
+  "baseline_commit": "2d0a16ef3ace8f3d69476155c9cb7316552c80a0"
+}

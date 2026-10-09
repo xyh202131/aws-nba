@@ -1,0 +1,12 @@
+# Preserve imported source/evidence bytes, including original Windows newlines.
+/.firecrawl/** -text
+/.kiro/** -text
+/data/** -text
+/output/** -text
+/准备资料/** -text
+/资料/** -text
+/AGENTS.md -text
+/WORKSPACE.md -text
+/NBA*.md -text
+/AWS_Agent_Toolkit_安装记录.md -text
+/BroadcastCode*.md -text

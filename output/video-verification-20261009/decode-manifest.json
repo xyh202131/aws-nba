@@ -1,0 +1,114 @@
+[
+  {
+    "clip_id": "train_001",
+    "source_path": "E:\\Compressed\\train_video\\train_video\\训练_弗拉格2月1日.mp4",
+    "sha256": "9c3e4606d04e7f79e29a112952fcf069ebab202af207af500bfbc3338bc079ce",
+    "checked_at": "2026-10-09T17:38:05.754004+08:00",
+    "decoder": "PyAV 18.0.0",
+    "decoder_libraries": {
+      "libavutil": [
+        60,
+        26,
+        102
+      ],
+      "libavcodec": [
+        62,
+        28,
+        102
+      ],
+      "libavformat": [
+        62,
+        12,
+        102
+      ],
+      "libavdevice": [
+        62,
+        3,
+        102
+      ],
+      "libavfilter": [
+        11,
+        14,
+        102
+      ],
+      "libswscale": [
+        9,
+        5,
+        102
+      ],
+      "libswresample": [
+        6,
+        3,
+        102
+      ]
+    },
+    "video_frames_decoded": 1291,
+    "audio_frames_decoded": 928,
+    "audio_samples_decoded": 950272,
+    "full_decode_error": null,
+    "audio_listening_review": false,
+    "first_video_pts_seconds": 0.0,
+    "last_video_pts_seconds": 21.521522222222224,
+    "expected_container_video_samples": 1291,
+    "video_sample_count_matches": true,
+    "sampled_frame_count": 44,
+    "frame_index": "train_001/frame-index.json",
+    "overview": "train_001-overview.jpg"
+  },
+  {
+    "clip_id": "train_002",
+    "source_path": "E:\\Compressed\\train_video\\train_video\\训练_阿门1月4日 .mp4",
+    "sha256": "7ec745f5f1e75b0c6d6dd27d409875f67c2ac3ab76c73f7123794c96be5aee22",
+    "checked_at": "2026-10-09T17:38:16.112091+08:00",
+    "decoder": "PyAV 18.0.0",
+    "decoder_libraries": {
+      "libavutil": [
+        60,
+        26,
+        102
+      ],
+      "libavcodec": [
+        62,
+        28,
+        102
+      ],
+      "libavformat": [
+        62,
+        12,
+        102
+      ],
+      "libavdevice": [
+        62,
+        3,
+        102
+      ],
+      "libavfilter": [
+        11,
+        14,
+        102
+      ],
+      "libswscale": [
+        9,
+        5,
+        102
+      ],
+      "libswresample": [
+        6,
+        3,
+        102
+      ]
+    },
+    "video_frames_decoded": 1371,
+    "audio_frames_decoded": 986,
+    "audio_samples_decoded": 1009664,
+    "full_decode_error": null,
+    "audio_listening_review": false,
+    "first_video_pts_seconds": 0.0,
+    "last_video_pts_seconds": 22.856188888888887,
+    "expected_container_video_samples": 1371,
+    "video_sample_count_matches": true,
+    "sampled_frame_count": 46,
+    "frame_index": "train_002/frame-index.json",
+    "overview": "train_002-overview.jpg"
+  }
+]

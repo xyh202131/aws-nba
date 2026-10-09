@@ -1,0 +1,302 @@
+{
+  "date": "2026-10-09",
+  "scope": "local documentation audit only",
+  "passed": true,
+  "baseline_markdown_count": 47,
+  "current_markdown_count": 50,
+  "first_party_documents_link_checked": 34,
+  "local_links_checked": 352,
+  "broken_local_links": [],
+  "external_links_not_rechecked": 59,
+  "unindexed_documents": [],
+  "backup_checks": [
+    {
+      "path": ".kiro/specs/nba-deep-court-visualization/design.md",
+      "matches": true
+    },
+    {
+      "path": ".kiro/specs/nba-deep-court-visualization/requirements.md",
+      "matches": true
+    },
+    {
+      "path": "AGENTS.md",
+      "matches": true
+    },
+    {
+      "path": "AWS_Agent_Toolkit_安装记录.md",
+      "matches": true
+    },
+    {
+      "path": "BroadcastCode「深度赛场」赛事 · 赛前培训直播 会议纪要.md",
+      "matches": true
+    },
+    {
+      "path": "NBA深度赛场_AWS只读核验_20261008.md",
+      "matches": true
+    },
+    {
+      "path": "NBA深度赛场_官方公开数据抓取报告_20261009.md",
+      "matches": true
+    },
+    {
+      "path": "NBA深度赛场_总体预算与高质量模型选择_20261008.md",
+      "matches": true
+    },
+    {
+      "path": "NBA深度赛场_技术栈与选型建议.md",
+      "matches": true
+    },
+    {
+      "path": "NBA深度赛场_数据处理结果_20261009.md",
+      "matches": true
+    },
+    {
+      "path": "NBA深度赛场_材料缺口与优先任务_20261008.md",
+      "matches": true
+    },
+    {
+      "path": "NBA深度赛场_视频与事件核对报告_20261009.md",
+      "matches": true
+    },
+    {
+      "path": "NBA深度赛场_赛前准备方案_20261008.md",
+      "matches": true
+    },
+    {
+      "path": "aws-nba/README.md",
+      "matches": true
+    },
+    {
+      "path": "aws-nba/docs/AGENT_ACCEPTANCE.md",
+      "matches": true
+    },
+    {
+      "path": "aws-nba/docs/AGENT_SKELETON.md",
+      "matches": true
+    },
+    {
+      "path": "aws-nba/docs/BLUE_MINT_ACCEPTANCE.md",
+      "matches": true
+    },
+    {
+      "path": "aws-nba/docs/DESIGN.md",
+      "matches": true
+    },
+    {
+      "path": "aws-nba/docs/QA.md",
+      "matches": true
+    },
+    {
+      "path": "aws-nba/docs/REFERENCE_RECONCILIATION.md",
+      "matches": true
+    },
+    {
+      "path": "data/processed/20261009/README.md",
+      "matches": true
+    },
+    {
+      "path": "data/processed/20261009/data-dictionary.md",
+      "matches": true
+    },
+    {
+      "path": "data/processed/20261009/shot-index.md",
+      "matches": true
+    },
+    {
+      "path": "data/public-nba/20261009/README.md",
+      "matches": true
+    },
+    {
+      "path": "准备资料/01_赛规与交付检查表.md",
+      "matches": true
+    },
+    {
+      "path": "准备资料/02_数据接入与标注规范.md",
+      "matches": true
+    },
+    {
+      "path": "准备资料/03_模型提示词与复核流程.md",
+      "matches": true
+    },
+    {
+      "path": "准备资料/04_质量验收与实验记录.md",
+      "matches": true
+    },
+    {
+      "path": "准备资料/05_作品说明与五分钟演示稿.md",
+      "matches": true
+    },
+    {
+      "path": "准备资料/06_比赛日执行手册.md",
+      "matches": true
+    },
+    {
+      "path": "准备资料/07_材料获取清单与待确认问题.md",
+      "matches": true
+    },
+    {
+      "path": "准备资料/08_来源与证据索引.md",
+      "matches": true
+    },
+    {
+      "path": "准备资料/README.md",
+      "matches": true
+    },
+    {
+      "path": "资料/参赛终极指南.md",
+      "matches": true
+    },
+    {
+      "path": "资料/赛制与选手快速上手.md",
+      "matches": true
+    }
+  ],
+  "protected_document_checks": [
+    {
+      "path": ".firecrawl/aws.amazon.com-bedrock-agentcore-pricing.md",
+      "unchanged": true
+    },
+    {
+      "path": ".firecrawl/aws.amazon.com-bedrock-pricing.md",
+      "unchanged": true
+    },
+    {
+      "path": ".firecrawl/aws.amazon.com-cloudfront-pricing-pay-as-you-go.md",
+      "unchanged": true
+    },
+    {
+      "path": ".firecrawl/aws.amazon.com-s3-pricing.md",
+      "unchanged": true
+    },
+    {
+      "path": ".firecrawl/bedrock-supported-models.md",
+      "unchanged": true
+    },
+    {
+      "path": ".firecrawl/competition-portal-public.md",
+      "unchanged": true
+    },
+    {
+      "path": ".firecrawl/docs.aws.amazon.com-accounts-latest-reference-supported-services-sign-up-new.html.md",
+      "unchanged": true
+    },
+    {
+      "path": ".firecrawl/docs.aws.amazon.com-bedrock-latest-userguide-model-card-amazon-nova-lite.html.md",
+      "unchanged": true
+    },
+    {
+      "path": ".firecrawl/docs.aws.amazon.com-bedrock-latest-userguide-model-card-amazon-nova-pro.html.md",
+      "unchanged": true
+    },
+    {
+      "path": ".firecrawl/docs.ultralytics.com-modes-track.md",
+      "unchanged": true
+    },
+    {
+      "path": ".firecrawl/github.com-PaddlePaddle-PaddleOCR.md",
+      "unchanged": true
+    },
+    {
+      "path": ".firecrawl/github.com-QwenLM-Qwen3-VL.md",
+      "unchanged": true
+    },
+    {
+      "path": "AGENTS.md",
+      "unchanged": true
+    },
+    {
+      "path": "BroadcastCode「深度赛场」赛事 · 赛前培训直播 会议纪要.md",
+      "unchanged": true
+    },
+    {
+      "path": "资料/参赛终极指南.md",
+      "unchanged": true
+    },
+    {
+      "path": "资料/赛制与选手快速上手.md",
+      "unchanged": true
+    }
+  ],
+  "source_copy_checks": [
+    {
+      "path": "资料/参赛终极指南.md",
+      "matches_original": true
+    },
+    {
+      "path": "资料/赛制与选手快速上手.md",
+      "matches_original": true
+    }
+  ],
+  "historical_cost_arithmetic": [
+    {
+      "name": "small",
+      "recomputed_low": "23.704400",
+      "recomputed_high": "33.704400",
+      "matches": true
+    },
+    {
+      "name": "recommended",
+      "recomputed_low": "68.913200",
+      "recomputed_high": "78.913200",
+      "matches": true
+    },
+    {
+      "name": "heavy",
+      "recomputed_low": "228.044000",
+      "recomputed_high": "243.044000",
+      "matches": true
+    }
+  ],
+  "data_checks": {
+    "processed_shots": 41,
+    "frontend_shots": 41,
+    "official_clocks": 41,
+    "linked_shots": 2,
+    "frontend_clips": 2,
+    "frontend_projection_matches": true,
+    "clip_metrics_match": true,
+    "passes": true
+  },
+  "changed_existing_documents": [
+    ".kiro/specs/nba-deep-court-visualization/design.md",
+    ".kiro/specs/nba-deep-court-visualization/requirements.md",
+    "AWS_Agent_Toolkit_安装记录.md",
+    "NBA深度赛场_AWS只读核验_20261008.md",
+    "NBA深度赛场_官方公开数据抓取报告_20261009.md",
+    "NBA深度赛场_总体预算与高质量模型选择_20261008.md",
+    "NBA深度赛场_技术栈与选型建议.md",
+    "NBA深度赛场_材料缺口与优先任务_20261008.md",
+    "NBA深度赛场_赛前准备方案_20261008.md",
+    "aws-nba/README.md",
+    "aws-nba/docs/AGENT_ACCEPTANCE.md",
+    "aws-nba/docs/AGENT_SKELETON.md",
+    "aws-nba/docs/BLUE_MINT_ACCEPTANCE.md",
+    "aws-nba/docs/DESIGN.md",
+    "aws-nba/docs/QA.md",
+    "aws-nba/docs/REFERENCE_RECONCILIATION.md",
+    "data/public-nba/20261009/README.md",
+    "准备资料/01_赛规与交付检查表.md",
+    "准备资料/02_数据接入与标注规范.md",
+    "准备资料/03_模型提示词与复核流程.md",
+    "准备资料/04_质量验收与实验记录.md",
+    "准备资料/05_作品说明与五分钟演示稿.md",
+    "准备资料/06_比赛日执行手册.md",
+    "准备资料/07_材料获取清单与待确认问题.md",
+    "准备资料/08_来源与证据索引.md",
+    "准备资料/README.md"
+  ],
+  "added_documents": [
+    "README.md",
+    "aws-nba/docs/DOCUMENTATION_REVIEW.md",
+    "aws-nba/docs/PROJECT_PLAN.md"
+  ],
+  "not_performed": [
+    "application tests/build",
+    "live AWS/model/price checks",
+    "Portal login or binding verification",
+    "external URL availability",
+    "cloud deployment",
+    "paid inference",
+    "platform evaluation"
+  ]
+}

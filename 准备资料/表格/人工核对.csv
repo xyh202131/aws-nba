@@ -1,0 +1,17 @@
+﻿clip_id,event_id,check_id,criterion,status,video_time_ms,frame_or_record_ref,observed_issue,reviewer,reviewed_at,resolution
+train_001,666,decode,从头到尾可解码/播放，起止及声音正常,部分通过：完整解码通过，音频未听审,16800.133333,output/video-verification-20261009/verified-event-links.json,未做主观音质、音画同步听审,Codex（AI 视觉核对）,2026-10-09T17:54:07.169272+08:00,视频帧数与容器样本数一致；音频帧可解码，原片哈希不变
+train_001,666,cuts_replays,切镜和回放已分段，未重复计为事件,部分核对：未见重复得分回放,16800.133333,output/video-verification-20261009/verified-event-links.json,0.5 秒抽样及密集出手帧已查看；未帧级标出全部切镜,Codex（AI 视觉核对）,2026-10-09T17:54:07.169272+08:00,本次只记一条主要得分事件，首尾特写不重复计分
+train_001,666,identity,姓名/号码/球队有画面和官方记录支持,AI 核对通过,16800.133333,output/video-verification-20261009/verified-event-links.json,独立人工复核未执行,Codex（AI 视觉核对）,2026-10-09T17:54:07.169272+08:00,库珀·弗拉格；球衣号码 32、球队/场地、比分与官方记录相符
+train_001,666,action_timing,关键动作和毫秒时间有前后帧证据,主要出手已核对；非完整动作标注,16800.133333,output/video-verification-20261009/verified-event-links.json,出手是视觉判读区间，不宣称绝对精确单帧,Codex（AI 视觉核对）,2026-10-09T17:54:07.169272+08:00,"[16783.444444, 16833.5] ms；官方比赛时钟 01:34 单独保留"
+train_001,666,data_link,官方事件唯一关联；歧义不硬匹配,AI 画面与官方事件核对通过,16800.133333,output/video-verification-20261009/verified-event-links.json,仅此主要得分事件已绑定,Codex（AI 视觉核对）,2026-10-09T17:54:07.169272+08:00,game 0022500701 / player 1642843 / event 666
+train_001,666,metric_source,所有展示数字的原始值、单位和记录可追溯,逐次 xFG 来源已核对,16800.133333,output/video-verification-20261009/verified-event-links.json,场次汇总字段冲突仍未解决，其他指标未接入,Codex（AI 视觉核对）,2026-10-09T17:54:07.169272+08:00,xFG 51.0%；来自 gpShot 逐次 value，原值及响应路径已保存
+train_001,,overlay,标注不遮挡关键动作，页面与 MP4 一致,待检查,,,,,,
+train_001,,ai_rights,AI 声明及素材来源/授权说明齐备,待检查,,,,,,
+train_002,396,decode,从头到尾可解码/播放，起止及声音正常,部分通过：完整解码通过，音频未听审,18034.7,output/video-verification-20261009/verified-event-links.json,未做主观音质、音画同步听审,Codex（AI 视觉核对）,2026-10-09T17:54:07.169272+08:00,视频帧数与容器样本数一致；音频帧可解码，原片哈希不变
+train_002,396,cuts_replays,切镜和回放已分段，未重复计为事件,部分核对：未见重复得分回放,18034.7,output/video-verification-20261009/verified-event-links.json,0.5 秒抽样及密集出手帧已查看；未帧级标出全部切镜,Codex（AI 视觉核对）,2026-10-09T17:54:07.169272+08:00,本次只记一条主要得分事件，首尾特写不重复计分
+train_002,396,identity,姓名/号码/球队有画面和官方记录支持,AI 核对通过,18034.7,output/video-verification-20261009/verified-event-links.json,独立人工复核未执行,Codex（AI 视觉核对）,2026-10-09T17:54:07.169272+08:00,阿门·汤普森；球衣号码 1、球队/场地、比分与官方记录相符
+train_002,396,action_timing,关键动作和毫秒时间有前后帧证据,主要出手已核对；非完整动作标注,18034.7,output/video-verification-20261009/verified-event-links.json,出手是视觉判读区间，不宣称绝对精确单帧,Codex（AI 视觉核对）,2026-10-09T17:54:07.169272+08:00,"[18018.011111, 18051.377778] ms；官方比赛时钟 07:25 单独保留"
+train_002,396,data_link,官方事件唯一关联；歧义不硬匹配,AI 画面与官方事件核对通过,18034.7,output/video-verification-20261009/verified-event-links.json,仅此主要得分事件已绑定,Codex（AI 视觉核对）,2026-10-09T17:54:07.169272+08:00,game 0022500491 / player 1641708 / event 396
+train_002,396,metric_source,所有展示数字的原始值、单位和记录可追溯,逐次 xFG 来源已核对,18034.7,output/video-verification-20261009/verified-event-links.json,场次汇总字段冲突仍未解决，其他指标未接入,Codex（AI 视觉核对）,2026-10-09T17:54:07.169272+08:00,xFG 44.5%；来自 gpShot 逐次 value，原值及响应路径已保存
+train_002,,overlay,标注不遮挡关键动作，页面与 MP4 一致,待检查,,,,,,
+train_002,,ai_rights,AI 声明及素材来源/授权说明齐备,待检查,,,,,,

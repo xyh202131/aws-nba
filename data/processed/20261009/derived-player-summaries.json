@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-10-09T18:18:08.384648+08:00",
+  "summaries": [
+    {
+      "game_id": "0022500701",
+      "player_id": "1642843",
+      "player_name": "库珀·弗拉格",
+      "field_goal_attempts": 23,
+      "field_goals_made": 13,
+      "field_goal_points_scored": 27,
+      "derived_fg_rate": 0.5652173913043478,
+      "derived_mean_attempt_xfg": 0.47604347826086957,
+      "derived_fg_minus_mean_xfg_percentage_points": 8.917391304347822,
+      "derived_mean_made_shot_xfg": 0.5138461538461538,
+      "derived_mean_missed_shot_xfg": 0.4269,
+      "aggregation_scope": "all attempts in this player game shotList; excludes free throws; not player total points",
+      "source_file": "data/public-nba/20261009/raw/game-0022500701-player-1642843-shots.json",
+      "source_pointer": "/data/shotList",
+      "metric_status": "independently_computed_not_corrected_official_summary"
+    },
+    {
+      "game_id": "0022500491",
+      "player_id": "1641708",
+      "player_name": "阿门·汤普森",
+      "field_goal_attempts": 18,
+      "field_goals_made": 8,
+      "field_goal_points_scored": 16,
+      "derived_fg_rate": 0.4444444444444444,
+      "derived_mean_attempt_xfg": 0.42844444444444446,
+      "derived_fg_minus_mean_xfg_percentage_points": 1.5999999999999959,
+      "derived_mean_made_shot_xfg": 0.513125,
+      "derived_mean_missed_shot_xfg": 0.3607,
+      "aggregation_scope": "all attempts in this player game shotList; excludes free throws; not player total points",
+      "source_file": "data/public-nba/20261009/raw/game-0022500491-player-1641708-shots.json",
+      "source_pointer": "/data/shotList",
+      "metric_status": "independently_computed_not_corrected_official_summary"
+    }
+  ],
+  "formulas": {
+    "derived_fg_rate": "sum(success)/count(attempts)",
+    "derived_mean_attempt_xfg": "mean(shotList.value)",
+    "derived_fg_minus_mean_xfg_percentage_points": "100*(derived_fg_rate-derived_mean_attempt_xfg)"
+  },
+  "limits": [
+    "Not official corrected summary fields.",
+    "Not an estimate of player causal impact.",
+    "Do not include free throws in this denominator or call field-goal points total points."
+  ]
+}

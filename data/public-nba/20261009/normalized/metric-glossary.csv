@@ -1,0 +1,31 @@
+﻿entry_index,title,desc,source_url,source_bundle
+0,FG% 投篮命中率,定义：球员命中投篮数除以总投篮次数。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+1,FG%+ 高于预期投篮命中率,定义：球员的“投篮命中率”与“预期命中率”之间的差值。数值为正表示球员命中率高于预期。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+2,MADE xFG% 命中投篮预期命中率,定义：球员在命中投篮时的平均预期命中率。数值越低表示投篮难度越高。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+3,MISS xFG% 未中投篮预期命中率,定义：球员在投篮未中时的平均预期命中率。数值越低表示投篮难度越高。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+4,MIN xFG% MADE 命中投篮最低预期命中率,定义：球员命中投篮中预期命中率最低的数值，表示所有命中投篮中难度最高的投篮。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+5,2PT xFG% 两分球预期命中率,定义：球员在尝试两分球时的平均预期命中率。数值越低表示投篮难度越高。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+6,3PT xFG% 三分球预期命中率,定义：球员在尝试三分球时的平均预期命中率。数值越低表示投篮难度越高。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+7,3PT FG% 三分球命中率,定义：球员命中三分球数除以总三分球出手数。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+8,3PT FG%+ 高于预期三分命中率,定义：球员三分球出手的实际命中率与三分球预期命中率之间的差值。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+9,DEF DIST 防守者距离,定义：投篮球员出手瞬间，球与防守球员之间的距离。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+10,DEF PS 防守压力,定义：利用球员追踪数据衡量球员受防守紧逼的程度。该算法为 NBA 专有算法，考虑了防守原则。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+11,GV-MP 引力时长,定义：球员在场上产生引力值的总时长。当五名球员和球均在前场时开始计算引力值。篮板球情况下不计算。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+12,GRAV 平均引力值,定义：球员在所有情况中所造成的防守压力高于预期的平均值。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+13,ON-BALL PERIM GV-MP 外线持球引力时长,定义：球员在外线持球时产生引力值的总时长。当五名球员和球均在前场时开始计算引力值。篮板球情况下不计算。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+14,OFF-BALL PERIM GV-MP 外线无球引力时长,定义：球员在外线无球时产生引力值的总时长。当五名球员和球均在前场时开始计算引力值。篮板球情况下不计算。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+15,ON-BALL PERIM GRAV 外线持球引力,定义：球员在距篮筐 20 英尺（约6.1米）以上的外线持球情况下，造成的防守压力高于预期的平均值。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+16,OFF-BALL PERIM GRAV 外线无球引力,定义：球员在距篮筐 20 英尺（约6.1米）以上的外线无球情况下，造成的防守压力高于预期的平均值。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+17,ON-BALL INTERIOR GV-MP 内线持球引力时长,定义：球员在内线持球时产生引力值的总时长。当五名球员和球均在前场时开始计算引力值。篮板球情况下不计算。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+18,OFF-BALL INTERIOR GV-MP 内线无球引力时长,定义：球员在内线无球时产生引力值的总时长。当五名球员和球均在前场时开始计算引力值。篮板球情况下不计算。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+19,ON-BALL INTERIOR GRAV 内线持球引力,定义：球员在距篮筐 20 英尺（约6.1米）以内的内线持球情况下，造成的防守压力高于预期的平均值。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+20,OFF-BALL INTERIOR GRAV 内线无球引力,定义：球员在距篮筐 20 英尺（约6.1米）以内的内线无球情况下，造成的防守压力高于预期的平均值。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+21,TOT LVG 总影响力,定义：球员在所有比赛情境下的影响力值。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+22,OFF LVG 进攻影响力,定义：授予球员的、与其在进攻端发生事件相关的影响力值,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+23,DEF LVG 防守影响力,定义：授予球员的、与其在防守端发生事件相关的影响力值,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+24,ON BALL DEF LVG 有球防守影响力,定义：通过有球防守（盖帽、抢断或防守一次低于平均预期命中率的投篮不中）影响比赛的球员所获得的影响力值,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+25,SHOT LVG 投篮得分影响力,定义：直接与命中和投失的投篮（包括罚球）相关的影响力值,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+26,CREATION LVG 创造机会影响力,定义：授予创造了高于平均预期命中率的进球或打铁的进攻球员的影响力值,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+27,REB LVG 篮板影响力,定义：授予抢到篮板（或其球队抢到篮板）的球员的影响力值,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+28,TOV LVG 失误影响力,定义：授予发生失误的进攻球员的影响力值,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+29,xFG% 预期命中率,定义：基于球员追踪数据，每次投篮情况下，NBA 普通球员的预期投篮命中率。,https://china.nba.cn/inside-the-game/glossary,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js

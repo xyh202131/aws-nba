@@ -1,0 +1,49 @@
+{
+  "calculated_at": "2026-10-08T13:00:32.316632+08:00",
+  "currency": "USD",
+  "tax_credits_free_tier_excluded": true,
+  "calls_assumptions": {
+    "calls": 100,
+    "input_tokens_per_call": 10000,
+    "output_tokens_per_call": 1500
+  },
+  "models": {
+    "Qwen3 VL 235B A22B": {
+      "input_per_million": "0.5300000000",
+      "output_per_million": "2.6600000000",
+      "single_10000in_1500out": "0.00929000000000",
+      "100_calls": "0.92900000000000",
+      "1000_calls": "9.29000000000000"
+    },
+    "Nova Lite": {
+      "input_per_million": "0.0600000000",
+      "output_per_million": "0.2400000000",
+      "single_10000in_1500out": "0.00096000000000",
+      "100_calls": "0.09600000000000",
+      "1000_calls": "0.96000000000000"
+    }
+  },
+  "infrastructure": {
+    "s3_storage_2GiB_3days": "0.0046",
+    "s3_1000puts_10000gets": "0.0090000",
+    "cdn_200_views_50MiB_at_0_12_per_GiB": "1.17187500",
+    "agentcore_v1_500vCPU_seconds_3000GiB_seconds": "0.02030555555555555555555555556",
+    "agentcore_v2_500vCPU_seconds_3000GiB_seconds": "0.03180555555555555555555555555",
+    "other_service_allowance_NOT_A_PRICE_QUOTE": "2"
+  },
+  "totals_with_v2_and_allowance": {
+    "Qwen3 VL 235B A22B": "4.146280555555555555555555556",
+    "Nova Lite": "3.313280555555555555555555556"
+  },
+  "native_video_approximation": {
+    "actual_container_seconds": 44.444,
+    "assumed_sampled_frames": 45,
+    "sampling_assumption": "ceil(seconds) per clip at 1 fps for rough budgeting; actual model sampling may differ",
+    "estimated_video_tokens": 12960,
+    "assumed_text_input_tokens": 2000,
+    "assumed_output_tokens": 3000,
+    "estimated_total_input_tokens": 14960,
+    "Nova_Lite_USD": "0.0016176",
+    "actual_model_invocation": false
+  }
+}

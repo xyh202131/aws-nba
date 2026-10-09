@@ -1,0 +1,144 @@
+[
+  {
+    "file": "raw/game-0022500701-shots.json",
+    "url": "https://api.nba.cn/nba-web/api/web/inside/shot?gameId=0022500701",
+    "retrieved_at": "2026-10-09T17:20:35.551133+08:00",
+    "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+    "parameters": {
+      "gameId": "0022500701"
+    },
+    "http_status": 200,
+    "api_code": 0,
+    "bytes": 6987,
+    "sha256": "dc89d06bfae299087a1279eef7e4022eb51d475e20563ce177023ab5dcb65005",
+    "data_keys": [
+      "teams"
+    ],
+    "row_counts": {
+      "teams": 2
+    }
+  },
+  {
+    "file": "raw/game-0022500701-defense.json",
+    "url": "https://api.nba.cn/nba-web/api/web/inside/def?gameId=0022500701",
+    "retrieved_at": "2026-10-09T17:20:35.552132+08:00",
+    "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+    "parameters": {
+      "gameId": "0022500701"
+    },
+    "http_status": 200,
+    "api_code": 0,
+    "bytes": 33,
+    "sha256": "32de289b6b32ddafc0f7590cabcb3b7586b08e53feed14289f38db9761388ab1",
+    "data_keys": [],
+    "row_counts": {}
+  },
+  {
+    "file": "raw/game-0022500701-player-1642843-shots.json",
+    "url": "https://api.nba.cn/nba-web/api/web/inside/gpShot?gameId=0022500701&playerId=1642843",
+    "retrieved_at": "2026-10-09T17:20:37.390802+08:00",
+    "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+    "parameters": {
+      "gameId": "0022500701",
+      "playerId": "1642843"
+    },
+    "http_status": 200,
+    "api_code": 0,
+    "bytes": 5712,
+    "sha256": "95238bb31f32bd07c5588b0e26331fc0f1a12181567e339150058d23826d265d",
+    "data_keys": [
+      "playerFirstName",
+      "playerLastName",
+      "avatar",
+      "teamLightLogo",
+      "teamDarkLogo",
+      "gameId",
+      "gameDate",
+      "matchup",
+      "playerId",
+      "teamId",
+      "teamName",
+      "shotQuality",
+      "fgPct",
+      "avgShotQuality",
+      "fgPctAboveExpected",
+      "avgMissShotQuality",
+      "avgDefenderBallDistance",
+      "shotList"
+    ],
+    "row_counts": {
+      "shotList": 23
+    }
+  },
+  {
+    "file": "raw/game-0022500491-shots.json",
+    "url": "https://api.nba.cn/nba-web/api/web/inside/shot?gameId=0022500491",
+    "retrieved_at": "2026-10-09T17:20:37.406914+08:00",
+    "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+    "parameters": {
+      "gameId": "0022500491"
+    },
+    "http_status": 200,
+    "api_code": 0,
+    "bytes": 6683,
+    "sha256": "274dc8cb87cf82598f9198655bdd02a09ea9285022db2c33dd12ecdf1de605ef",
+    "data_keys": [
+      "teams"
+    ],
+    "row_counts": {
+      "teams": 2
+    }
+  },
+  {
+    "file": "raw/game-0022500491-defense.json",
+    "url": "https://api.nba.cn/nba-web/api/web/inside/def?gameId=0022500491",
+    "retrieved_at": "2026-10-09T17:20:37.671212+08:00",
+    "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+    "parameters": {
+      "gameId": "0022500491"
+    },
+    "http_status": 200,
+    "api_code": 0,
+    "bytes": 33,
+    "sha256": "32de289b6b32ddafc0f7590cabcb3b7586b08e53feed14289f38db9761388ab1",
+    "data_keys": [],
+    "row_counts": {}
+  },
+  {
+    "file": "raw/game-0022500491-player-1641708-shots.json",
+    "url": "https://api.nba.cn/nba-web/api/web/inside/gpShot?gameId=0022500491&playerId=1641708",
+    "retrieved_at": "2026-10-09T17:20:37.696831+08:00",
+    "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+    "parameters": {
+      "gameId": "0022500491",
+      "playerId": "1641708"
+    },
+    "http_status": 200,
+    "api_code": 0,
+    "bytes": 4429,
+    "sha256": "4b75a51aa4620ce879850dc30ade9246b25bf5c47d4957a3f769c527c7ceccf7",
+    "data_keys": [
+      "playerFirstName",
+      "playerLastName",
+      "avatar",
+      "teamLightLogo",
+      "teamDarkLogo",
+      "gameId",
+      "gameDate",
+      "matchup",
+      "playerId",
+      "teamId",
+      "teamName",
+      "shotQuality",
+      "fgPct",
+      "avgShotQuality",
+      "fgPctAboveExpected",
+      "avgMissShotQuality",
+      "avgDefenderBallDistance",
+      "shotList"
+    ],
+    "row_counts": {
+      "shotList": 18
+    }
+  }
+]

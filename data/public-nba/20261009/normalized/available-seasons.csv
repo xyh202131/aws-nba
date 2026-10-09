@@ -1,0 +1,7 @@
+﻿season,seasonType,seasonName,source_file,source_json_pointer,source_url,snapshot_date
+2026-27,Preseason,2026-27季前赛,raw/seasons.json,/data/0,https://api.nba.cn/nba-web/api/web/inside/season/year,2026-10-09
+2025-26,Playoffs,2025-26季后赛,raw/seasons.json,/data/1,https://api.nba.cn/nba-web/api/web/inside/season/year,2026-10-09
+2025-26,Regular Season,2025-26常规赛,raw/seasons.json,/data/2,https://api.nba.cn/nba-web/api/web/inside/season/year,2026-10-09
+2025-26,Preseason,2025-26季前赛,raw/seasons.json,/data/3,https://api.nba.cn/nba-web/api/web/inside/season/year,2026-10-09
+2025-26,All-Star,2025-26全明星,raw/seasons.json,/data/4,https://api.nba.cn/nba-web/api/web/inside/season/year,2026-10-09
+2025-26,PlayIn,2025-26,raw/seasons.json,/data/5,https://api.nba.cn/nba-web/api/web/inside/season/year,2026-10-09

@@ -1,0 +1,38 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"status\":\"success\",\"stdout\":\"\",\"stderr\":null,\"return_value\":{\"calculation_only\":true,\"models_invoked\":false,\"per_round_usd\":\"0.14388\",\"scenarios\":[{\"scenario\":\"small\",\"model_usd\":\"18.704400\",\"total_low_usd\":\"23.704400\",\"total_high_usd\":\"33.704400\"},{\"scenario\":\"recommended\",\"model_usd\":\"63.913200\",\"total_low_usd\":\"68.913200\",\"total_high_usd\":\"78.913200\"},{\"scenario\":\"heavy\",\"model_usd\":\"213.044000\",\"total_low_usd\":\"228.044000\",\"total_high_usd\":\"243.044000\"}]},\"warning\":null,\"api_calls\":null}"
+    }
+  ],
+  "structuredContent": {
+    "status": "success",
+    "stdout": "",
+    "return_value": {
+      "calculation_only": true,
+      "models_invoked": false,
+      "per_round_usd": "0.14388",
+      "scenarios": [
+        {
+          "scenario": "small",
+          "model_usd": "18.704400",
+          "total_low_usd": "23.704400",
+          "total_high_usd": "33.704400"
+        },
+        {
+          "scenario": "recommended",
+          "model_usd": "63.913200",
+          "total_low_usd": "68.913200",
+          "total_high_usd": "78.913200"
+        },
+        {
+          "scenario": "heavy",
+          "model_usd": "213.044000",
+          "total_low_usd": "228.044000",
+          "total_high_usd": "243.044000"
+        }
+      ]
+    }
+  },
+  "isError": false
+}

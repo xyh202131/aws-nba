@@ -1,0 +1,148 @@
+{
+  "checked_at": "2026-10-09T17:32:44.302371+08:00",
+  "record_counts": {
+    "normalized/shot-difficulty-2025-26-regular.csv": 125,
+    "normalized/gravity-2025-26-regular.csv": 234,
+    "normalized/leverage-2025-26-regular.csv": 261,
+    "normalized/shot-difficulty-2026-27-preseason.csv": 79,
+    "normalized/available-seasons.csv": 6,
+    "normalized/games.csv": 21,
+    "normalized/candidate-player-shots.csv": 41,
+    "normalized/candidate-player-game-summaries-quarantined.csv": 2,
+    "normalized/candidate-game-teams.csv": 4,
+    "normalized/candidate-team-shot-distributions.csv": 371,
+    "normalized/metric-glossary.csv": 30,
+    "normalized/field-mapping.csv": 18
+  },
+  "checks": {
+    "api_response_count": 14,
+    "raw_json_api_codes_zero": true,
+    "raw_sha256_match": true,
+    "player_shot_unique_keys": true,
+    "player_shot_probability_range_errors": [],
+    "team_list_totals": [
+      {
+        "game_id": "0022500701",
+        "team_id": "1610612742",
+        "list_count": 86,
+        "fga": 86,
+        "makes_in_list": 41,
+        "fgm": 41,
+        "counts_match": true,
+        "array_sorted_by_quality": true
+      },
+      {
+        "game_id": "0022500701",
+        "team_id": "1610612745",
+        "list_count": 104,
+        "fga": 104,
+        "makes_in_list": 45,
+        "fgm": 45,
+        "counts_match": true,
+        "array_sorted_by_quality": true
+      },
+      {
+        "game_id": "0022500491",
+        "team_id": "1610612742",
+        "list_count": 79,
+        "fga": 79,
+        "makes_in_list": 42,
+        "fgm": 42,
+        "counts_match": true,
+        "array_sorted_by_quality": true
+      },
+      {
+        "game_id": "0022500491",
+        "team_id": "1610612745",
+        "list_count": 102,
+        "fga": 102,
+        "makes_in_list": 42,
+        "fgm": 42,
+        "counts_match": true,
+        "array_sorted_by_quality": true
+      }
+    ],
+    "season_fg_difference_check": [
+      {
+        "file": "raw/shot-difficulty-2025-26-regular.json",
+        "tolerance": 0.002,
+        "violating_player_ids": []
+      },
+      {
+        "file": "raw/shot-difficulty-2026-27-preseason.json",
+        "tolerance": 0.002,
+        "violating_player_ids": []
+      }
+    ]
+  },
+  "issues": [
+    {
+      "code": "SUMMARY_FIELD_SEMANTICS_CONFLICT",
+      "file": "raw/game-0022500701-player-1642843-shots.json",
+      "severity": "block_summary_metric_display",
+      "evidence": {
+        "fgPct": 0.565,
+        "avgShotQuality": 0.089,
+        "fgPctAboveExpected": 0.514,
+        "fgPct_minus_avgShotQuality": 0.476,
+        "mean_of_shotList_values": 0.47604347826086957,
+        "frontend_label_binding": {
+          "avgShotQuality": "实际投篮命中率; hint 超过预期投篮命中率比例",
+          "fgPctAboveExpected": "预期投篮命中率"
+        }
+      },
+      "action": "Preserve raw fields; derived columns are separate diagnostics, not corrected official fields."
+    },
+    {
+      "code": "MATCHUP_ORDER_CONFLICT",
+      "file": "raw/game-0022500701-player-1642843-shots.json",
+      "raw_matchup": "火箭@独行侠",
+      "canonical_matchup_away_at_home": "独行侠@火箭",
+      "action": "Use games API homeTeamId/awayTeamId for context; preserve conflicting string."
+    },
+    {
+      "code": "SUMMARY_FIELD_SEMANTICS_CONFLICT",
+      "file": "raw/game-0022500491-player-1641708-shots.json",
+      "severity": "block_summary_metric_display",
+      "evidence": {
+        "fgPct": 0.444,
+        "avgShotQuality": 0.016,
+        "fgPctAboveExpected": 0.513,
+        "fgPct_minus_avgShotQuality": 0.428,
+        "mean_of_shotList_values": 0.42844444444444446,
+        "frontend_label_binding": {
+          "avgShotQuality": "实际投篮命中率; hint 超过预期投篮命中率比例",
+          "fgPctAboveExpected": "预期投篮命中率"
+        }
+      },
+      "action": "Preserve raw fields; derived columns are separate diagnostics, not corrected official fields."
+    },
+    {
+      "code": "MATCHUP_ORDER_CONFLICT",
+      "file": "raw/game-0022500491-player-1641708-shots.json",
+      "raw_matchup": "独行侠@火箭",
+      "canonical_matchup_away_at_home": "火箭@独行侠",
+      "action": "Use games API homeTeamId/awayTeamId for context; preserve conflicting string."
+    },
+    {
+      "code": "ALL_PLAYER_SHOT_CLOCKS_MISSING",
+      "count": 41,
+      "total": 41,
+      "action": "Keep blank; need official play-by-play or video evidence."
+    },
+    {
+      "code": "DEFENSE_DATA_NULL",
+      "files": [
+        "raw/game-0022500701-defense.json",
+        "raw/game-0022500491-defense.json"
+      ],
+      "action": "Not zero; per-game defense/gravity records unavailable."
+    },
+    {
+      "code": "VIDEO_MATCHES_UNVERIFIED",
+      "count": 2,
+      "action": "All video_time_ms and confirmed_event_id remain null."
+    }
+  ],
+  "conclusion": "Extraction and structure checked with source limitations; no video alignment, model evaluation or contest interface validation."
+}

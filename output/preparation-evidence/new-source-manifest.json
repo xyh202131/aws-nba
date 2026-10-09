@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-10-08T13:06:48.790276+08:00",
+  "files": [
+    {
+      "source": "E:\\下载\\🏀 Broadcast Code 12h 深度赛场可视化 · 参赛终极指南.md",
+      "copy": "资料\\参赛终极指南.md",
+      "sha256": "8b97e8160c94835888636976cb481d8694e2dd94d0cf0bc7a7aef3a2479c0309",
+      "bytes": 15904
+    },
+    {
+      "source": "E:\\下载\\NBA × AWS Hackathon｜赛制与选手快速上手 Rules & Quick Start.md",
+      "copy": "资料\\赛制与选手快速上手.md",
+      "sha256": "3220b7eef4ef5c97ffb7bd22d694416b184eb82519452c7219290e3f45a8b1eb",
+      "bytes": 23091
+    }
+  ],
+  "portal": {
+    "url": "https://du5imhgxabl0d.cloudfront.net/portal",
+    "observed_url": "https://du5imhgxabl0d.cloudfront.net/login",
+    "observed_text": "Team Portal sign-in; Sign in with AWS SSO",
+    "authenticated": false,
+    "login_attempted": false
+  }
+}

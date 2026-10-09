@@ -1,0 +1,426 @@
+{
+  "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudFront/current/index.json",
+  "publicationDate": "2026-10-03T00:04:26Z",
+  "rows": [
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "United States",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "US-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.085 per GB - first 10 TB / month data transfer out",
+      "beginRange": "0",
+      "endRange": "10240",
+      "unit": "GB",
+      "usd": "0.0850000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "United States",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "US-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.080 per GB - next 40 TB / month data transfer out",
+      "beginRange": "10240",
+      "endRange": "51200",
+      "unit": "GB",
+      "usd": "0.0800000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "United States",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "US-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.060 per GB - next 100 TB / month data transfer out",
+      "beginRange": "51200",
+      "endRange": "153600",
+      "unit": "GB",
+      "usd": "0.0600000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "United States",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "US-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.040 per GB - next 350 TB / month data transfer out",
+      "beginRange": "153600",
+      "endRange": "512000",
+      "unit": "GB",
+      "usd": "0.0400000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "United States",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "US-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.030 per GB - next 524 TB / month data transfer out",
+      "beginRange": "512000",
+      "endRange": "1048576",
+      "unit": "GB",
+      "usd": "0.0300000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "United States",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "US-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.025 per GB - next 4 PB / month data transfer out",
+      "beginRange": "1048576",
+      "endRange": "5242880",
+      "unit": "GB",
+      "usd": "0.0250000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "United States",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "US-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.020 per GB - data transfer out / month over 5 PB",
+      "beginRange": "5242880",
+      "endRange": "Inf",
+      "unit": "GB",
+      "usd": "0.0200000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "Japan",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "JP-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.114 per GB - first 10 TB / month data transfer out",
+      "beginRange": "0",
+      "endRange": "10240",
+      "unit": "GB",
+      "usd": "0.1140000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "Japan",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "JP-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.089 per GB - next 40 TB / month data transfer out",
+      "beginRange": "10240",
+      "endRange": "51200",
+      "unit": "GB",
+      "usd": "0.0890000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "Japan",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "JP-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.086 per GB - next 100 TB / month data transfer out",
+      "beginRange": "51200",
+      "endRange": "153600",
+      "unit": "GB",
+      "usd": "0.0860000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "Japan",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "JP-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.084 per GB - next 350 TB / month data transfer out",
+      "beginRange": "153600",
+      "endRange": "512000",
+      "unit": "GB",
+      "usd": "0.0840000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "Japan",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "JP-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.080 per GB - next 524 TB / month data transfer out",
+      "beginRange": "512000",
+      "endRange": "1048576",
+      "unit": "GB",
+      "usd": "0.0800000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "Japan",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "JP-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.070 per GB - next 4 PB / month data transfer out",
+      "beginRange": "1048576",
+      "endRange": "5242880",
+      "unit": "GB",
+      "usd": "0.0700000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "Japan",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "JP-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.060 per GB - data transfer out / month over 5 PB",
+      "beginRange": "5242880",
+      "endRange": "Inf",
+      "unit": "GB",
+      "usd": "0.0600000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "Asia Pacific",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "AP-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.120 per GB - first 10 TB / month data transfer out",
+      "beginRange": "0",
+      "endRange": "10240",
+      "unit": "GB",
+      "usd": "0.1200000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "Asia Pacific",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "AP-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.1 per GB - next 40 TB / month data transfer out",
+      "beginRange": "10240",
+      "endRange": "51200",
+      "unit": "GB",
+      "usd": "0.1000000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "Asia Pacific",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "AP-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.095 per GB - next 100 TB / month data transfer out",
+      "beginRange": "51200",
+      "endRange": "153600",
+      "unit": "GB",
+      "usd": "0.0950000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "Asia Pacific",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "AP-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.09 per GB - next 350 TB / month data transfer out",
+      "beginRange": "153600",
+      "endRange": "512000",
+      "unit": "GB",
+      "usd": "0.0900000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "Asia Pacific",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "AP-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.080 per GB - next 524 TB / month data transfer out",
+      "beginRange": "512000",
+      "endRange": "1048576",
+      "unit": "GB",
+      "usd": "0.0800000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "Asia Pacific",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "AP-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.070 per GB - next 4 PB / month data transfer out",
+      "beginRange": "1048576",
+      "endRange": "5242880",
+      "unit": "GB",
+      "usd": "0.0700000000"
+    },
+    {
+      "attributes": {
+        "servicecode": "AmazonCloudFront",
+        "transferType": "CloudFront Outbound",
+        "fromLocation": "Asia Pacific",
+        "fromLocationType": "AWS Edge Location",
+        "toLocation": "External",
+        "toLocationType": "Other",
+        "usagetype": "AP-DataTransfer-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "",
+        "servicename": "Amazon CloudFront",
+        "toRegionCode": ""
+      },
+      "description": "$0.060 per GB - data transfer out / month over 5 PB",
+      "beginRange": "5242880",
+      "endRange": "Inf",
+      "unit": "GB",
+      "usd": "0.0600000000"
+    }
+  ]
+}

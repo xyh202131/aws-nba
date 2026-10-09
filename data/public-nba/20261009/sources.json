@@ -1,0 +1,347 @@
+{
+  "snapshot_date": "2026-10-09",
+  "timezone": "Asia/Shanghai",
+  "requested_pages": [
+    "https://www.nba.com/games",
+    "https://china.nba.cn/inside-the-game"
+  ],
+  "scope": "2025-26 regular-season aggregates, current preseason shot table, three game dates, and two candidate games/players; not a complete historical crawl.",
+  "successful_api_responses": [
+    {
+      "file": "raw/shot-difficulty-2025-26-regular.json",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/season/shotDifficulty?season=2025-26&seasonType=Regular+Season",
+      "retrieved_at": "2026-10-09T17:19:01.711868+08:00",
+      "source_page": "https://china.nba.cn/inside-the-game",
+      "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+      "parameters": {
+        "season": "2025-26",
+        "seasonType": "Regular Season"
+      },
+      "http_status": 200,
+      "api_code": 0,
+      "bytes": 82752,
+      "sha256": "4da37636619135883f2b7e5e5ad331737d63256fefa7719d3dc0078a3bd3ae55",
+      "data_keys": [
+        "shots",
+        "insideGameUrl"
+      ],
+      "row_counts": {
+        "shots": 125
+      }
+    },
+    {
+      "file": "raw/gravity-2025-26-regular.json",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/season/playerGravity?season=2025-26&seasonType=Regular+Season",
+      "retrieved_at": "2026-10-09T17:19:01.712888+08:00",
+      "source_page": "https://china.nba.cn/inside-the-game",
+      "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+      "parameters": {
+        "season": "2025-26",
+        "seasonType": "Regular Season"
+      },
+      "http_status": 200,
+      "api_code": 0,
+      "bytes": 109378,
+      "sha256": "89f70e16fc870e29e9efaa4f1f81ca5f372ac02431aa194e5a2908dcea1195a1",
+      "data_keys": [
+        "players"
+      ],
+      "row_counts": {
+        "players": 234
+      }
+    },
+    {
+      "file": "raw/leverage-2025-26-regular.json",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/season/playerLeverage?season=2025-26&seasonType=Regular+Season",
+      "retrieved_at": "2026-10-09T17:19:02.257659+08:00",
+      "source_page": "https://china.nba.cn/inside-the-game",
+      "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+      "parameters": {
+        "season": "2025-26",
+        "seasonType": "Regular Season"
+      },
+      "http_status": 200,
+      "api_code": 0,
+      "bytes": 120815,
+      "sha256": "ebdde198bd0846897863a5dbf34371be626f591b5989aa2d3dc22372a5fd5a24",
+      "data_keys": [
+        "players"
+      ],
+      "row_counts": {
+        "players": 261
+      }
+    },
+    {
+      "file": "raw/games-2026-10-09.json",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/game?date=2026-10-09",
+      "retrieved_at": "2026-10-09T17:19:02.319795+08:00",
+      "source_page": "https://china.nba.cn/inside-the-game",
+      "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+      "parameters": {
+        "date": "2026-10-09"
+      },
+      "http_status": 200,
+      "api_code": 0,
+      "bytes": 1244,
+      "sha256": "420b245f7f985ea268019fffaad2c65ae8dfa393cc87cccbb6baf49a82a12f01",
+      "data_keys": [
+        "games"
+      ],
+      "row_counts": {
+        "games": 7
+      }
+    },
+    {
+      "file": "raw/games-2026-02-01-candidate.json",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/game?date=2026-02-01",
+      "retrieved_at": "2026-10-09T17:19:02.568390+08:00",
+      "source_page": "https://china.nba.cn/inside-the-game",
+      "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+      "parameters": {
+        "date": "2026-02-01"
+      },
+      "http_status": 200,
+      "api_code": 0,
+      "bytes": 1074,
+      "sha256": "fd50dbff6c13199ba9689b8222f2c748089e4a0c3d549d5db0afd895e4156c27",
+      "data_keys": [
+        "games"
+      ],
+      "row_counts": {
+        "games": 6
+      }
+    },
+    {
+      "file": "raw/games-2026-01-04-candidate.json",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/game?date=2026-01-04",
+      "retrieved_at": "2026-10-09T17:19:02.798307+08:00",
+      "source_page": "https://china.nba.cn/inside-the-game",
+      "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+      "parameters": {
+        "date": "2026-01-04"
+      },
+      "http_status": 200,
+      "api_code": 0,
+      "bytes": 1424,
+      "sha256": "5816910a32c5aae47688ced2af9e8a049b564b44ea4059c6d02ebc4a478d23b8",
+      "data_keys": [
+        "games"
+      ],
+      "row_counts": {
+        "games": 8
+      }
+    },
+    {
+      "file": "raw/game-0022500701-shots.json",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/shot?gameId=0022500701",
+      "retrieved_at": "2026-10-09T17:20:35.551133+08:00",
+      "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+      "parameters": {
+        "gameId": "0022500701"
+      },
+      "http_status": 200,
+      "api_code": 0,
+      "bytes": 6987,
+      "sha256": "dc89d06bfae299087a1279eef7e4022eb51d475e20563ce177023ab5dcb65005",
+      "data_keys": [
+        "teams"
+      ],
+      "row_counts": {
+        "teams": 2
+      }
+    },
+    {
+      "file": "raw/game-0022500701-defense.json",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/def?gameId=0022500701",
+      "retrieved_at": "2026-10-09T17:20:35.552132+08:00",
+      "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+      "parameters": {
+        "gameId": "0022500701"
+      },
+      "http_status": 200,
+      "api_code": 0,
+      "bytes": 33,
+      "sha256": "32de289b6b32ddafc0f7590cabcb3b7586b08e53feed14289f38db9761388ab1",
+      "data_keys": [],
+      "row_counts": {}
+    },
+    {
+      "file": "raw/game-0022500701-player-1642843-shots.json",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/gpShot?gameId=0022500701&playerId=1642843",
+      "retrieved_at": "2026-10-09T17:20:37.390802+08:00",
+      "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+      "parameters": {
+        "gameId": "0022500701",
+        "playerId": "1642843"
+      },
+      "http_status": 200,
+      "api_code": 0,
+      "bytes": 5712,
+      "sha256": "95238bb31f32bd07c5588b0e26331fc0f1a12181567e339150058d23826d265d",
+      "data_keys": [
+        "playerFirstName",
+        "playerLastName",
+        "avatar",
+        "teamLightLogo",
+        "teamDarkLogo",
+        "gameId",
+        "gameDate",
+        "matchup",
+        "playerId",
+        "teamId",
+        "teamName",
+        "shotQuality",
+        "fgPct",
+        "avgShotQuality",
+        "fgPctAboveExpected",
+        "avgMissShotQuality",
+        "avgDefenderBallDistance",
+        "shotList"
+      ],
+      "row_counts": {
+        "shotList": 23
+      }
+    },
+    {
+      "file": "raw/game-0022500491-shots.json",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/shot?gameId=0022500491",
+      "retrieved_at": "2026-10-09T17:20:37.406914+08:00",
+      "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+      "parameters": {
+        "gameId": "0022500491"
+      },
+      "http_status": 200,
+      "api_code": 0,
+      "bytes": 6683,
+      "sha256": "274dc8cb87cf82598f9198655bdd02a09ea9285022db2c33dd12ecdf1de605ef",
+      "data_keys": [
+        "teams"
+      ],
+      "row_counts": {
+        "teams": 2
+      }
+    },
+    {
+      "file": "raw/game-0022500491-defense.json",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/def?gameId=0022500491",
+      "retrieved_at": "2026-10-09T17:20:37.671212+08:00",
+      "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+      "parameters": {
+        "gameId": "0022500491"
+      },
+      "http_status": 200,
+      "api_code": 0,
+      "bytes": 33,
+      "sha256": "32de289b6b32ddafc0f7590cabcb3b7586b08e53feed14289f38db9761388ab1",
+      "data_keys": [],
+      "row_counts": {}
+    },
+    {
+      "file": "raw/game-0022500491-player-1641708-shots.json",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/gpShot?gameId=0022500491&playerId=1641708",
+      "retrieved_at": "2026-10-09T17:20:37.696831+08:00",
+      "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+      "parameters": {
+        "gameId": "0022500491",
+        "playerId": "1641708"
+      },
+      "http_status": 200,
+      "api_code": 0,
+      "bytes": 4429,
+      "sha256": "4b75a51aa4620ce879850dc30ade9246b25bf5c47d4957a3f769c527c7ceccf7",
+      "data_keys": [
+        "playerFirstName",
+        "playerLastName",
+        "avatar",
+        "teamLightLogo",
+        "teamDarkLogo",
+        "gameId",
+        "gameDate",
+        "matchup",
+        "playerId",
+        "teamId",
+        "teamName",
+        "shotQuality",
+        "fgPct",
+        "avgShotQuality",
+        "fgPctAboveExpected",
+        "avgMissShotQuality",
+        "avgDefenderBallDistance",
+        "shotList"
+      ],
+      "row_counts": {
+        "shotList": 18
+      }
+    },
+    {
+      "file": "raw/seasons.json",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/season/year",
+      "retrieved_at": null,
+      "file_written_at": "2026-10-09T17:17:37.985846+08:00",
+      "time_note": "Exact request time not recorded; file timestamp is a local write-time proxy.",
+      "source_page": "https://china.nba.cn/inside-the-game",
+      "method": "Public unauthenticated GET; route observed in official page network requests",
+      "http_status": null,
+      "api_code": 0,
+      "bytes": 489,
+      "sha256": "a9223f65c2ad3ab95769ee1bed6cdd6fd90b45fc15063c15932802cdc69e6f77",
+      "parameters": {}
+    },
+    {
+      "file": "raw/shot-difficulty-2026-27-preseason.json",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/season/shotDifficulty?season=2026-27&seasonType=Preseason",
+      "retrieved_at": null,
+      "file_written_at": "2026-10-09T17:17:38.366562+08:00",
+      "time_note": "Exact request time not recorded; file timestamp is a local write-time proxy.",
+      "source_page": "https://china.nba.cn/inside-the-game",
+      "method": "Public unauthenticated GET; route observed in official page network requests",
+      "http_status": null,
+      "api_code": 0,
+      "bytes": 52229,
+      "sha256": "8254bca5634f49bb43e89484aa5490b0a5b1518422e7035c50d6c40bdb738a6c",
+      "parameters": {
+        "season": "2026-27",
+        "seasonType": "Preseason"
+      }
+    }
+  ],
+  "failed_requests": [
+    {
+      "url": "https://api.nba.cn/sib/v2/pbp/periods?gameId=0022500701",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "url": "https://api.nba.cn/sib/v2/pbp/periods?gameId=0022500491",
+      "error": "HTTP Error 400: Bad Request"
+    }
+  ],
+  "fallbacks": [
+    {
+      "method": "Firecrawl CLI 1.23.3",
+      "result": "Authenticated; both website scrape requests failed with TLS connection error; no successful Firecrawl scrape artifact."
+    },
+    {
+      "method": "NBA.com local browser/HTTP",
+      "result": "Connection reset / TLS EOF; web-tool extraction used for selected page facts."
+    },
+    {
+      "method": "China site browser + public HTTP",
+      "result": "Rendered pages, public bundle, and unauthenticated API responses obtained."
+    }
+  ],
+  "page_cache": [
+    {
+      "file": "../../../.firecrawl/nba-cn-inside-the-game-20261009.html",
+      "source_url": "https://china.nba.cn/inside-the-game",
+      "bytes": 7364,
+      "sha256": "b840442bc9b2a83fb6ba5f0b54f4c3b24411a005e9969c2abeaec42c134e7276"
+    },
+    {
+      "file": "../../../.firecrawl/nba-cn-index-8848e9f0.js",
+      "source_url": "https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js",
+      "bytes": 450070,
+      "sha256": "d76a33b9b81c145bcc2eaea6a21d11abf4875815aadb381db01fffc8c82a7698"
+    }
+  ],
+  "interface_boundary": "Public routes used by frontend, not a documented stable SDK or contest Agent schema. No paid model calls, cloud changes, video downloads, or submissions."
+}

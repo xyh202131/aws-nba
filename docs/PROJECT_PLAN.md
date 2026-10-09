@@ -108,4 +108,4 @@
 - 当前状态和优先级集中更新本文件；操作细节放 Agent 说明、数据字典与准备资料包，避免多处维护完整计划。
 - 验收记录保留当时版本、环境和失败证据；5/11/20 项测试分别属于不同阶段，不互相覆盖。
 - 规则原件、抓取快照、价格证据保持原样。新通知另存版本并记录冲突取舍。
-- 本次发现及修正见 [DOCUMENTATION_REVIEW.md](DOCUMENTATION_REVIEW.md)。工作区根 `README.md` 是全部资料的目录；它与父目录资料不随此 Git 仓库自动上传。
+- 本次发现及修正见 [DOCUMENTATION_REVIEW.md](DOCUMENTATION_REVIEW.md)。全部资料目录已同步为仓库根 `WORKSPACE.md`；.kiro、.firecrawl、准备资料、data、output 也已纳入。父工作区仍保留原文件，后续按 docs/workspace-sync-manifest.json 的映射同步变更。

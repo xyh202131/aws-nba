@@ -1,0 +1,17 @@
+﻿internal_field,internal_type,meaning,official_source_file,official_source_field,official_unit,definition_reference,transform_rule,mapping_status,validation_note
+game_id,string,官方比赛主键,,,,,,待官方数据,不可仅用文件名或日期作为比赛唯一标识
+official_event_id,string,官方事件主键,,,,,,待官方数据,检查同一回合的多个投篮/回放是否复用事件
+player_id,string|null,官方球员 ID,,,,,,待官方数据,姓名/号码/球队交叉核对；未知为 null
+team_id,string|null,官方球队 ID,,,,,,待官方数据,不从文件名直接推断球队
+period,integer|null,节次,,,,,,待官方数据,确认加时编码与视频记分牌
+game_clock_text,string|null,比赛时钟原文,,,,,,待官方数据,保留精度；不是视频时间
+shot_time_ms,integer|null,原视频出手时刻,,,,,,待官方数据,由真实帧证据确定；不按比赛时钟线性外推
+shot_x,number|null,官方出手位置 x,,,,,,待官方数据,原点/单位/方向/半场约定待字典确认
+shot_y,number|null,官方出手位置 y,,,,,,待官方数据,转播叠加需要另行标定；不是图像坐标
+expected_shot_probability,number|null,预期命中率候选字段,,,,,,待官方数据,源字段/范围未知；不推定与投篮难度等价
+shot_difficulty,number|string|null,投篮难度候选字段,,,,,,待官方数据,保留原始定义，不自行换算百分比
+on_ball_gravity,number|null,持球引力候选字段,,,,,,待官方数据,定义/单位/聚合窗口待确认
+off_ball_gravity,number|null,无球引力候选字段,,,,,,待官方数据,不能用持球指标冒充
+criticality,number|string|null,关键度候选字段,,,,,,待官方数据,不推定与胜负影响率同义
+win_impact,number|null,胜负影响率候选字段,,,,,,待官方数据,基准、符号、单位待确认
+metric_source_record,string,指标溯源引用,,,,,,待官方数据,原文件哈希 + 记录 ID 或精确路径

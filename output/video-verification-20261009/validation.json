@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-10-09T17:55:39.768263+08:00",
+  "status": "passed",
+  "verified_event_count": 2,
+  "raw_shot_and_pbp_join_keys_checked": true,
+  "original_xfg_values_preserved": true,
+  "evidence_frame_hashes_checked": 185,
+  "video_frames_decoded": [
+    1291,
+    1371
+  ],
+  "video_frame_counts_match_container": true,
+  "source_video_hashes_match_prior_manifest": true,
+  "release_intervals_and_frame_refs_checked": true,
+  "csv_game_ids_preserve_leading_zeros": true,
+  "material_register_matches": true,
+  "local_report_links_checked": 12,
+  "independent_human_review_claimed": false,
+  "audio_listening_review": false,
+  "full_edit_segmentation": false,
+  "cloud_model_calls": false,
+  "contest_submission": false,
+  "issues": []
+}

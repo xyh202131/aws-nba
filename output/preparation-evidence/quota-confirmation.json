@@ -1,0 +1,83 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"success\", \"stdout\": \"\", \"stderr\": null, \"return_value\": {\"quotas\": {\"L-45E0AD92\": {\"ServiceCode\": \"bedrock\", \"ServiceName\": \"Amazon Bedrock\", \"QuotaArn\": \"arn:aws:servicequotas:us-east-2:REDACTED_ACCOUNT:bedrock/L-45E0AD92\", \"QuotaCode\": \"L-45E0AD92\", \"QuotaName\": \"Model invocation max tokens per day for Amazon Nova Lite (doubled for cross-region calls)\", \"Value\": 0.0, \"Unit\": \"None\", \"Adjustable\": false, \"GlobalQuota\": false, \"QuotaAppliedAtLevel\": \"ACCOUNT\", \"Description\": \"Daily maximum tokens for model inference for Amazon Nova Lite. Combines sum of input and output tokens across all requests to Converse, ConverseStream, InvokeModel and InvokeModelWithResponseStream. Doubled for cross-region calls; not applicable in case of approved TPM increase.\"}, \"L-11B56FB0\": {\"ServiceCode\": \"bedrock\", \"ServiceName\": \"Amazon Bedrock\", \"QuotaArn\": \"arn:aws:servicequotas:us-east-2:REDACTED_ACCOUNT:bedrock/L-11B56FB0\", \"QuotaCode\": \"L-11B56FB0\", \"QuotaName\": \"On-demand model inference requests per minute for Qwen3 VL 235B A22B\", \"Value\": 0.0, \"Unit\": \"None\", \"Adjustable\": false, \"GlobalQuota\": false, \"QuotaAppliedAtLevel\": \"ACCOUNT\", \"Description\": \"The maximum number of on-demand requests that you can submit for model inference in one minute for Qwen3 VL 235B A22B. This quota represents the total number of requests to the Converse, ConverseStream, InvokeModel and InvokeModelWithResponseStream actions.\"}, \"L-46063925\": {\"ServiceCode\": \"bedrock\", \"ServiceName\": \"Amazon Bedrock\", \"QuotaArn\": \"arn:aws:servicequotas:us-east-2:REDACTED_ACCOUNT:bedrock/L-46063925\", \"QuotaCode\": \"L-46063925\", \"QuotaName\": \"On-demand model inference tokens per minute for Qwen3 VL 235B A22B\", \"Value\": 0.0, \"Unit\": \"None\", \"Adjustable\": false, \"GlobalQuota\": false, \"QuotaAppliedAtLevel\": \"ACCOUNT\", \"Description\": \"The maximum number of on-demand tokens that you can submit for model inference in one minute for Qwen3 VL 235B A22B. The quota considers the combined sum of input and output tokens across all requests to Converse, ConverseStream, InvokeModel and InvokeModelWithResponseStream.\"}}, \"cloudfront\": {}}, \"warning\": null, \"api_calls\": [{\"service\": \"service-quotas\", \"operation\": \"GetServiceQuota\", \"status\": \"success\"}, {\"service\": \"service-quotas\", \"operation\": \"GetServiceQuota\", \"status\": \"success\"}, {\"service\": \"service-quotas\", \"operation\": \"GetServiceQuota\", \"status\": \"success\"}, {\"service\": \"cloudfront\", \"operation\": \"ListDistributions\", \"status\": \"success\"}]}"
+      }
+    ],
+    "structuredContent": {
+      "status": "success",
+      "stdout": "",
+      "return_value": {
+        "quotas": {
+          "L-45E0AD92": {
+            "ServiceCode": "bedrock",
+            "ServiceName": "Amazon Bedrock",
+            "QuotaArn": "arn:aws:servicequotas:us-east-2:REDACTED_ACCOUNT:bedrock/L-45E0AD92",
+            "QuotaCode": "L-45E0AD92",
+            "QuotaName": "Model invocation max tokens per day for Amazon Nova Lite (doubled for cross-region calls)",
+            "Value": 0.0,
+            "Unit": "None",
+            "Adjustable": false,
+            "GlobalQuota": false,
+            "QuotaAppliedAtLevel": "ACCOUNT",
+            "Description": "Daily maximum tokens for model inference for Amazon Nova Lite. Combines sum of input and output tokens across all requests to Converse, ConverseStream, InvokeModel and InvokeModelWithResponseStream. Doubled for cross-region calls; not applicable in case of approved TPM increase."
+          },
+          "L-11B56FB0": {
+            "ServiceCode": "bedrock",
+            "ServiceName": "Amazon Bedrock",
+            "QuotaArn": "arn:aws:servicequotas:us-east-2:REDACTED_ACCOUNT:bedrock/L-11B56FB0",
+            "QuotaCode": "L-11B56FB0",
+            "QuotaName": "On-demand model inference requests per minute for Qwen3 VL 235B A22B",
+            "Value": 0.0,
+            "Unit": "None",
+            "Adjustable": false,
+            "GlobalQuota": false,
+            "QuotaAppliedAtLevel": "ACCOUNT",
+            "Description": "The maximum number of on-demand requests that you can submit for model inference in one minute for Qwen3 VL 235B A22B. This quota represents the total number of requests to the Converse, ConverseStream, InvokeModel and InvokeModelWithResponseStream actions."
+          },
+          "L-46063925": {
+            "ServiceCode": "bedrock",
+            "ServiceName": "Amazon Bedrock",
+            "QuotaArn": "arn:aws:servicequotas:us-east-2:REDACTED_ACCOUNT:bedrock/L-46063925",
+            "QuotaCode": "L-46063925",
+            "QuotaName": "On-demand model inference tokens per minute for Qwen3 VL 235B A22B",
+            "Value": 0.0,
+            "Unit": "None",
+            "Adjustable": false,
+            "GlobalQuota": false,
+            "QuotaAppliedAtLevel": "ACCOUNT",
+            "Description": "The maximum number of on-demand tokens that you can submit for model inference in one minute for Qwen3 VL 235B A22B. The quota considers the combined sum of input and output tokens across all requests to Converse, ConverseStream, InvokeModel and InvokeModelWithResponseStream."
+          }
+        },
+        "cloudfront": {}
+      },
+      "api_calls": [
+        {
+          "service": "service-quotas",
+          "operation": "GetServiceQuota",
+          "status": "success"
+        },
+        {
+          "service": "service-quotas",
+          "operation": "GetServiceQuota",
+          "status": "success"
+        },
+        {
+          "service": "service-quotas",
+          "operation": "GetServiceQuota",
+          "status": "success"
+        },
+        {
+          "service": "cloudfront",
+          "operation": "ListDistributions",
+          "status": "success"
+        }
+      ]
+    },
+    "isError": false
+  }
+}

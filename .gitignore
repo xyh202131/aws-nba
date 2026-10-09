@@ -7,3 +7,8 @@ dist/
 .DS_Store
 .local/
 cdk.out/
+
+# Local client state; project research in .kiro/ and .firecrawl/ is tracked.
+.memorax-code/
+__pycache__/
+*.pyc

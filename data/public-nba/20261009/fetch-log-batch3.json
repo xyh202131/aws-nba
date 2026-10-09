@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://api.nba.cn/sib/v2/pbp/periods?gameId=0022500701",
+    "error": "HTTP Error 400: Bad Request"
+  },
+  {
+    "url": "https://api.nba.cn/sib/v2/pbp/periods?gameId=0022500491",
+    "error": "HTTP Error 400: Bad Request"
+  }
+]

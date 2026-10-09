@@ -1,0 +1,48 @@
+[
+  {
+    "clip_id": "train_001",
+    "source_video_path": "E:\\Compressed\\train_video\\train_video\\训练_弗拉格2月1日.mp4",
+    "source_video_sha256_from_manifest": "9c3e4606d04e7f79e29a112952fcf069ebab202af207af500bfbc3338bc079ce",
+    "video_hash_evidence": "../../../output/preparation-evidence/video-manifest.json",
+    "game_id": "0022500701",
+    "player_id": "1642843",
+    "player_name": "库珀 弗拉格",
+    "china_site_game_date": "2026-02-01",
+    "nba_com_game_date": "2026-01-31",
+    "canonical_away_at_home": "独行侠@火箭",
+    "nba_com_url": "https://www.nba.com/game/dal-vs-hou-0022500701",
+    "candidate_basis": "Local filename name/month/day; assumed year 2026; site player/game records and NBA.com date cross-check. Clip was not visually inspected.",
+    "verification_status": "candidate_not_verified",
+    "confirmed_event_id": null,
+    "video_time_ms": null,
+    "remaining_evidence": [
+      "visible player/team identity",
+      "period and scoreboard or unique shot sequence",
+      "original video presentation timestamp",
+      "replay and camera cut checks"
+    ]
+  },
+  {
+    "clip_id": "train_002",
+    "source_video_path": "E:\\Compressed\\train_video\\train_video\\训练_阿门1月4日 .mp4",
+    "source_video_sha256_from_manifest": "7ec745f5f1e75b0c6d6dd27d409875f67c2ac3ab76c73f7123794c96be5aee22",
+    "video_hash_evidence": "../../../output/preparation-evidence/video-manifest.json",
+    "game_id": "0022500491",
+    "player_id": "1641708",
+    "player_name": "阿门 汤普森",
+    "china_site_game_date": "2026-01-04",
+    "nba_com_game_date": "2026-01-03",
+    "canonical_away_at_home": "火箭@独行侠",
+    "nba_com_url": "https://www.nba.com/game/hou-vs-dal-0022500491",
+    "candidate_basis": "Local filename name/month/day; assumed year 2026; site player/game records and NBA.com date cross-check. Clip was not visually inspected.",
+    "verification_status": "candidate_not_verified",
+    "confirmed_event_id": null,
+    "video_time_ms": null,
+    "remaining_evidence": [
+      "visible player/team identity",
+      "period and scoreboard or unique shot sequence",
+      "original video presentation timestamp",
+      "replay and camera cut checks"
+    ]
+  }
+]

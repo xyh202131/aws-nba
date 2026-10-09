@@ -8,6 +8,12 @@
 
 先读[当前执行方案](docs/PROJECT_PLAN.md)，查看已完成能力、剩余任务、模型/预算边界和第一项本地成片任务。文档冲突及整理范围见[核对记录](docs/DOCUMENTATION_REVIEW.md)。历史验收保留各自版本，不能替代当前云端运行证明。
 
+## 完整工作区资料
+
+[WORKSPACE.md](WORKSPACE.md) 汇总规划、赛规、模型预算、数据和证据；本仓库已补入 [.kiro](.kiro/) 与 [.firecrawl](.firecrawl/)，以及准备资料、原始规则、data、output 和顶层报告。应用仍在仓库根目录运行。
+
+同步范围和路径转换见 [WORKSPACE_SYNC.md](docs/WORKSPACE_SYNC.md)，逐文件哈希见 [同步清单](docs/workspace-sync-manifest.json)。历史备份和抓取缓存按其原日期阅读，不替代当前执行方案。
+
 ## 本地运行
 
 环境：Node.js 24；已在 Windows、Node 24.19.0、npm 12.0.2 验证。

@@ -1,0 +1,169 @@
+{
+  "generated_at": "2026-10-09T18:18:08.384648+08:00",
+  "path_base": "C:/Users/24048/Desktop/NBA",
+  "inputs": [
+    {
+      "file": "data/processed/20261009/selected-pbp-fields.json",
+      "bytes": 16010,
+      "sha256": "addf4cbc5290b54271c0fa41c1b807e335b82de672fa386d53d97ab8f930bfe5"
+    },
+    {
+      "file": "data/public-nba/20261009/normalized/field-mapping.csv",
+      "bytes": 3271,
+      "sha256": "61048e791138eeea0c4a9483d11ec79878570b4f94a7016f8a6ce35748037d51"
+    },
+    {
+      "file": "data/public-nba/20261009/raw/game-0022500491-player-1641708-shots.json",
+      "bytes": 4429,
+      "sha256": "4b75a51aa4620ce879850dc30ade9246b25bf5c47d4957a3f769c527c7ceccf7"
+    },
+    {
+      "file": "data/public-nba/20261009/raw/game-0022500701-player-1642843-shots.json",
+      "bytes": 5712,
+      "sha256": "95238bb31f32bd07c5588b0e26331fc0f1a12181567e339150058d23826d265d"
+    },
+    {
+      "file": "data/public-nba/20261009/raw/games-2026-01-04-candidate.json",
+      "bytes": 1424,
+      "sha256": "5816910a32c5aae47688ced2af9e8a049b564b44ea4059c6d02ebc4a478d23b8"
+    },
+    {
+      "file": "data/public-nba/20261009/raw/games-2026-02-01-candidate.json",
+      "bytes": 1074,
+      "sha256": "fd50dbff6c13199ba9689b8222f2c748089e4a0c3d549d5db0afd895e4156c27"
+    },
+    {
+      "file": "output/video-verification-20261009/official/selected-play-by-play-records.json",
+      "bytes": 3083,
+      "sha256": "1dc3b9a9e39028fea3506016af86f775925ab1028516d334d8407c0f3380df6b"
+    },
+    {
+      "file": "output/video-verification-20261009/train_001/frame_01259_021004.333ms.jpg",
+      "bytes": 536936,
+      "sha256": "d2b224c56e0e9d3dcac2ad4b2f9f8459c99c24318c37aa642099452db46444ef"
+    },
+    {
+      "file": "output/video-verification-20261009/train_001/release-frames/frame_01006_016783.444ms.jpg",
+      "bytes": 721816,
+      "sha256": "da3342ca40f40b0f86ddc715ed2b38b7a6000760800fd21ea5f0afa218f64be8"
+    },
+    {
+      "file": "output/video-verification-20261009/train_001/release-frames/frame_01007_016800.133ms.jpg",
+      "bytes": 722475,
+      "sha256": "a4e23248cde17a9220c3a1f196efe017835539836c3b270c11beac3fe8d2fd54"
+    },
+    {
+      "file": "output/video-verification-20261009/train_001/release-frames/frame_01009_016833.500ms.jpg",
+      "bytes": 722698,
+      "sha256": "543febc15a64b4afa2c62c5ba3d412eed8c5650251da240737f00390e8b46950"
+    },
+    {
+      "file": "output/video-verification-20261009/train_002/frame_01259_021004.333ms.jpg",
+      "bytes": 666713,
+      "sha256": "77c2c2a3e4cb8bd401cda0babf8f2bcb9fe376cbccc5ddd7e2989d709a45bbfb"
+    },
+    {
+      "file": "output/video-verification-20261009/train_002/release-frames/frame_01080_018018.011ms.jpg",
+      "bytes": 805498,
+      "sha256": "9fb6ff9f77f6ab29875d56b8684e73df083e43e6cedb014e80d50a58c4b84913"
+    },
+    {
+      "file": "output/video-verification-20261009/train_002/release-frames/frame_01081_018034.700ms.jpg",
+      "bytes": 801562,
+      "sha256": "ee684ef81c1fb0151ebbd44f7bb015f71cd0f138142563238d0c45c2dd2fa964"
+    },
+    {
+      "file": "output/video-verification-20261009/train_002/release-frames/frame_01082_018051.378ms.jpg",
+      "bytes": 825459,
+      "sha256": "ba98951ab14330c50442cce841c4c53a21e7ba4aafd7cdaa8b39315e84698404"
+    },
+    {
+      "file": "output/video-verification-20261009/verified-event-links.json",
+      "bytes": 7628,
+      "sha256": "0f3c7e4601517c8bb49d960ef85a32b3f44438350446717576db04c252fa0089"
+    }
+  ],
+  "remote_sources": [
+    {
+      "game_id": "0022500701",
+      "period": 4,
+      "page": "https://china.nba.cn/game/0022500701",
+      "endpoint": "https://api.nba.cn/sib/v2/pbp/details",
+      "original_response_row_count": 131,
+      "selected_row_count": 9,
+      "retrieval_date": "2026-10-09",
+      "capture_kind": "selected_field_projection_not_full_response"
+    },
+    {
+      "game_id": "0022500491",
+      "period": 3,
+      "page": "https://china.nba.cn/game/0022500491",
+      "endpoint": "https://api.nba.cn/sib/v2/pbp/details",
+      "original_response_row_count": 115,
+      "selected_row_count": 4,
+      "retrieval_date": "2026-10-09",
+      "capture_kind": "selected_field_projection_not_full_response"
+    },
+    {
+      "game_id": "0022500701",
+      "period": 1,
+      "page": "https://china.nba.cn/game/0022500701",
+      "endpoint": "https://api.nba.cn/sib/v2/pbp/details",
+      "original_response_row_count": 144,
+      "selected_row_count": 4,
+      "retrieval_date": "2026-10-09",
+      "capture_kind": "selected_field_projection_not_full_response"
+    },
+    {
+      "game_id": "0022500701",
+      "period": 2,
+      "page": "https://china.nba.cn/game/0022500701",
+      "endpoint": "https://api.nba.cn/sib/v2/pbp/details",
+      "original_response_row_count": 136,
+      "selected_row_count": 6,
+      "retrieval_date": "2026-10-09",
+      "capture_kind": "selected_field_projection_not_full_response"
+    },
+    {
+      "game_id": "0022500701",
+      "period": 3,
+      "page": "https://china.nba.cn/game/0022500701",
+      "endpoint": "https://api.nba.cn/sib/v2/pbp/details",
+      "original_response_row_count": 132,
+      "selected_row_count": 4,
+      "retrieval_date": "2026-10-09",
+      "capture_kind": "selected_field_projection_not_full_response"
+    },
+    {
+      "game_id": "0022500491",
+      "period": 4,
+      "page": "https://china.nba.cn/game/0022500491",
+      "endpoint": "https://api.nba.cn/sib/v2/pbp/details",
+      "original_response_row_count": 123,
+      "selected_row_count": 5,
+      "retrieval_date": "2026-10-09",
+      "capture_kind": "selected_field_projection_not_full_response"
+    },
+    {
+      "game_id": "0022500491",
+      "period": 1,
+      "page": "https://china.nba.cn/game/0022500491",
+      "endpoint": "https://api.nba.cn/sib/v2/pbp/details",
+      "original_response_row_count": 118,
+      "selected_row_count": 6,
+      "retrieval_date": "2026-10-09",
+      "capture_kind": "selected_field_projection_not_full_response"
+    },
+    {
+      "game_id": "0022500491",
+      "period": 2,
+      "page": "https://china.nba.cn/game/0022500491",
+      "endpoint": "https://api.nba.cn/sib/v2/pbp/details",
+      "original_response_row_count": 139,
+      "selected_row_count": 3,
+      "retrieval_date": "2026-10-09",
+      "capture_kind": "selected_field_projection_not_full_response"
+    }
+  ],
+  "preservation": "Original public JSON and video verification outputs not modified. Original videos referenced only, not duplicated or uploaded."
+}

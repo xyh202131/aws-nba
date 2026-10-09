@@ -1,0 +1,48 @@
+{
+  "schema_status": "internal_editorial_draft_not_rendered_output",
+  "generated_at": "2026-10-09T18:18:08.384648+08:00",
+  "timing_rule": "Display starts 1.5 seconds before approximate release and ends 3 seconds after, clipped to source duration. Editorial choice, not observed action boundaries.",
+  "safety": "No full-game aggregate, shot difficulty conversion, inferred win probability or uncalibrated court coordinates used.",
+  "cues": [
+    {
+      "cue_id": "train_001_xfg_001",
+      "clip_id": "train_001",
+      "event_id": "train_001_shot_001",
+      "record_id": "0022500701:1642843:666",
+      "video_time_reference": "milliseconds from first decoded video presentation timestamp",
+      "anchor_ms": 16800.133333,
+      "display_start_ms": 15300.133,
+      "display_end_ms": 19800.133,
+      "timing_status": "editorial_draft_not_visually_reviewed",
+      "text_lines": [
+        "库珀·弗拉格",
+        "突破挑篮",
+        "官方 xFG（预期命中率）51%"
+      ],
+      "metric_source_record_id": "0022500701:1642843:666",
+      "placement": null,
+      "render_status": "not_rendered",
+      "disclosure": "AI 辅助画面核对；xFG 来自 NBA 官方公开记录。"
+    },
+    {
+      "cue_id": "train_002_xfg_001",
+      "clip_id": "train_002",
+      "event_id": "train_002_shot_001",
+      "record_id": "0022500491:1641708:396",
+      "video_time_reference": "milliseconds from first decoded video presentation timestamp",
+      "anchor_ms": 18034.7,
+      "display_start_ms": 16534.7,
+      "display_end_ms": 21034.7,
+      "timing_status": "editorial_draft_not_visually_reviewed",
+      "text_lines": [
+        "阿门·汤普森",
+        "急停跳投",
+        "官方 xFG（预期命中率）44.5%"
+      ],
+      "metric_source_record_id": "0022500491:1641708:396",
+      "placement": null,
+      "render_status": "not_rendered",
+      "disclosure": "AI 辅助画面核对；xFG 来自 NBA 官方公开记录。"
+    }
+  ]
+}

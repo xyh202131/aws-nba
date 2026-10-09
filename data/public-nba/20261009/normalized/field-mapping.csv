@@ -1,0 +1,19 @@
+﻿endpoint,source_field,display_metric,unit_or_type,usage_boundary,source_bundle
+season/shotDifficulty,AVGSHOTQUALITY,xFG%,probability_ratio,Season aggregate; multiply by 100 for percent display,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+season/shotDifficulty,FGPCT,FG%,probability_ratio,Actual season field-goal percentage,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+season/shotDifficulty,FGPCTABOVEEXPECTED,FG%+,ratio_difference,"Multiply by 100 for percentage points, not relative growth",https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+season/shotDifficulty,AVGDEFENDERBALLDISTANCE,DEF DIST,unconfirmed_for_season_endpoint,Do not inherit game detail unit without endpoint-specific confirmation,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+season/shotDifficulty,AVGDEFENDERPRESSURESCORE,DEF PS,official_proprietary_score,Not a distance or tracking coordinate,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+season/playerGravity,OVERALL_GRAV,GRAV,official_metric,Negative values are valid; season context only,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+season/playerLeverage,TOT_LVG,TOT LVG,official_metric,Not the probability of winning on one play,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+gpShot,shotList[].value,XFG%,probability_ratio,Official frontend maps value to XFG%; bind to clip only after event alignment,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+gpShot,shotList[].eventId,event_id,identifier,Join gameId + playerId + eventId; not video time,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+gpShot,shotList[].gameClock,game_clock,clock_text,All 41 records blank; do not infer from index,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+gpShot,shotList[].period,period,integer,"Game quarter, independent of video time",https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+gpShot,shotList[].success,made,binary,1 made and 0 missed,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+gpShot,shotList[].locX / locY / side,shot_chart_coordinate,source_coordinates,Frontend scales x by 94/100 and y by 50/100 and folds by side; not video pixels; preserve strings,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+gpShot,avgShotQuality / fgPctAboveExpected,quarantined,unresolved,"Names, frontend labels and per-shot aggregates conflict; not display-ready",https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+gpShot,avgDefenderBallDistance,DEF DIST,IN. shown by game-detail frontend,"Game-level average, not per-shot or clip-specific distance",https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+gpShot,matchup,quarantined_matchup,text,Both reverse the games API explicit away/home ordering,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+shot,teams[].shots[],team_shot_distribution,success + probability,No playerId/eventId/clock; array index is provenance only,https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js
+def,data,unavailable,null,"Both candidates return null, not zero pressure or no defense",https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js

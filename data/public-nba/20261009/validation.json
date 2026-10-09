@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-09T17:35:55.425751+08:00",
+  "json_files_read": 24,
+  "csv_tables": 12,
+  "csv_total_rows_including_overlapping_and_metadata_tables": 1192,
+  "raw_pointer_rows_checked": 1144,
+  "game_ids_preserve_leading_zeros": true,
+  "candidate_video_links_remain_unverified": true,
+  "local_markdown_links_checked": 75,
+  "issues": [],
+  "status": "passed",
+  "boundary": "File integrity/format/provenance only; source semantic issues remain in quality-report.json. Not video matching or model/contest validation."
+}

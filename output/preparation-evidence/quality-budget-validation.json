@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-10-08T13:25:37.888446+08:00",
+  "scope": "Updated budget and model selection documents; relative links; JSON syntax; local Decimal vs AWS MCP calculation match",
+  "errors": [],
+  "calculation_match": true,
+  "model_invocations": false,
+  "cloud_deployments": false,
+  "scope_notes": "Earlier delivery-validation.json records the earlier document versions. This receipt covers current updated documents. No original user documents or videos were modified in this update.",
+  "deliverables": [
+    {
+      "path": "NBA深度赛场_总体预算与高质量模型选择_20261008.md",
+      "sha256": "b8d7065691a0e4fc9bb36dad668e21a64d95c75b89df23e68902678d8082802d"
+    },
+    {
+      "path": "NBA深度赛场_赛前准备方案_20261008.md",
+      "sha256": "f055525fdfad0e0e86032c263cd2cc9a3cfcbb0ef0d0261259d74b1f4110d5a2"
+    },
+    {
+      "path": "NBA深度赛场_材料缺口与优先任务_20261008.md",
+      "sha256": "9985daf0a7da0162807872cf139cbccb61b1baa3bfea125e356324f82717622e"
+    },
+    {
+      "path": "NBA深度赛场_AWS只读核验_20261008.md",
+      "sha256": "6d092a5694d048fd8c49e7a3f55fcc452c983f021df9a2df0b70fb1661907bfd"
+    }
+  ]
+}

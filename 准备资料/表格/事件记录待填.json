@@ -1,0 +1,40 @@
+{
+  "schema_status": "internal_draft_not_official",
+  "schema_version": "0.1",
+  "prepared_at": "2026-10-08T13:35:14.073021+08:00",
+  "purpose": "Unprocessed containers for local preparation; empty events do not mean no events detected.",
+  "clips": [
+    {
+      "clip_id": "train_001",
+      "source_sha256": "9c3e4606d04e7f79e29a112952fcf069ebab202af207af500bfbc3338bc079ce",
+      "container_duration_seconds": 21.549,
+      "processing_status": "not_started",
+      "game_id": null,
+      "official_data_status": "not_received",
+      "frames": [],
+      "events": [],
+      "review_status": "pending",
+      "reviewer": null,
+      "ai_generated": null,
+      "warnings": [
+        "No video decoding, content analysis, model invocation, or human event review has been performed."
+      ]
+    },
+    {
+      "clip_id": "train_002",
+      "source_sha256": "7ec745f5f1e75b0c6d6dd27d409875f67c2ac3ab76c73f7123794c96be5aee22",
+      "container_duration_seconds": 22.895,
+      "processing_status": "not_started",
+      "game_id": null,
+      "official_data_status": "not_received",
+      "frames": [],
+      "events": [],
+      "review_status": "pending",
+      "reviewer": null,
+      "ai_generated": null,
+      "warnings": [
+        "No video decoding, content analysis, model invocation, or human event review has been performed."
+      ]
+    }
+  ]
+}

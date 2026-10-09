@@ -1,0 +1,3817 @@
+{
+  "date": "2026-10-09",
+  "scope": "all parent-workspace project materials including hidden research/spec directories; application remains at repository root",
+  "source_workspace": "NBA",
+  "repository": "xyh202131/aws-nba",
+  "files": [
+    {
+      "source": ".firecrawl/aws.amazon.com-bedrock-agentcore-pricing.md",
+      "repository_path": ".firecrawl/aws.amazon.com-bedrock-agentcore-pricing.md",
+      "source_bytes": 66174,
+      "source_sha256": "18456a5ef9e999c9a93b4a7993dcc35ecb76230e31adf5bff10fb86315881f9e",
+      "repository_bytes": 66174,
+      "repository_sha256": "18456a5ef9e999c9a93b4a7993dcc35ecb76230e31adf5bff10fb86315881f9e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": ".firecrawl/aws.amazon.com-bedrock-pricing.md",
+      "repository_path": ".firecrawl/aws.amazon.com-bedrock-pricing.md",
+      "source_bytes": 112723,
+      "source_sha256": "4d99559da2428c004679e78778f401eb3e9707545131b2538df3091eefebc411",
+      "repository_bytes": 112723,
+      "repository_sha256": "4d99559da2428c004679e78778f401eb3e9707545131b2538df3091eefebc411",
+      "local_link_adjustments": []
+    },
+    {
+      "source": ".firecrawl/aws.amazon.com-cloudfront-pricing-pay-as-you-go.md",
+      "repository_path": ".firecrawl/aws.amazon.com-cloudfront-pricing-pay-as-you-go.md",
+      "source_bytes": 45052,
+      "source_sha256": "8be679828dc83812a8dc566ec163dcae17b2916b456bc52030310c38aa7caa3e",
+      "repository_bytes": 45052,
+      "repository_sha256": "8be679828dc83812a8dc566ec163dcae17b2916b456bc52030310c38aa7caa3e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": ".firecrawl/aws.amazon.com-s3-pricing.md",
+      "repository_path": ".firecrawl/aws.amazon.com-s3-pricing.md",
+      "source_bytes": 86489,
+      "source_sha256": "9c649aa745ee355174d4c42a24e80c732fdf68233e61ef895c094ea0366a03ba",
+      "repository_bytes": 86489,
+      "repository_sha256": "9c649aa745ee355174d4c42a24e80c732fdf68233e61ef895c094ea0366a03ba",
+      "local_link_adjustments": []
+    },
+    {
+      "source": ".firecrawl/bedrock-supported-models.md",
+      "repository_path": ".firecrawl/bedrock-supported-models.md",
+      "source_bytes": 12060,
+      "source_sha256": "8f9c676659e09e7d4e78c5f330507edf10a031c00275e942a644a6771ddaa00b",
+      "repository_bytes": 12060,
+      "repository_sha256": "8f9c676659e09e7d4e78c5f330507edf10a031c00275e942a644a6771ddaa00b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": ".firecrawl/competition-portal-public.md",
+      "repository_path": ".firecrawl/competition-portal-public.md",
+      "source_bytes": 22,
+      "source_sha256": "7e4d440e807cd9a131e2af8d253122616bbffbac6a45f17f42a15666fbc04843",
+      "repository_bytes": 22,
+      "repository_sha256": "7e4d440e807cd9a131e2af8d253122616bbffbac6a45f17f42a15666fbc04843",
+      "local_link_adjustments": []
+    },
+    {
+      "source": ".firecrawl/docs.aws.amazon.com-accounts-latest-reference-supported-services-sign-up-new.html.md",
+      "repository_path": ".firecrawl/docs.aws.amazon.com-accounts-latest-reference-supported-services-sign-up-new.html.md",
+      "source_bytes": 35288,
+      "source_sha256": "8a52ec8cd9e2376cbc10300874a2bfd5f5ba21fb7aa462022b018d35d16e76ec",
+      "repository_bytes": 35288,
+      "repository_sha256": "8a52ec8cd9e2376cbc10300874a2bfd5f5ba21fb7aa462022b018d35d16e76ec",
+      "local_link_adjustments": []
+    },
+    {
+      "source": ".firecrawl/docs.aws.amazon.com-bedrock-latest-userguide-model-card-amazon-nova-lite.html.md",
+      "repository_path": ".firecrawl/docs.aws.amazon.com-bedrock-latest-userguide-model-card-amazon-nova-lite.html.md",
+      "source_bytes": 185524,
+      "source_sha256": "48f2722fe203a602e837bda861e3da77cc4069bcf46d9c03b77d1283be41bb32",
+      "repository_bytes": 185524,
+      "repository_sha256": "48f2722fe203a602e837bda861e3da77cc4069bcf46d9c03b77d1283be41bb32",
+      "local_link_adjustments": []
+    },
+    {
+      "source": ".firecrawl/docs.aws.amazon.com-bedrock-latest-userguide-model-card-amazon-nova-pro.html.md",
+      "repository_path": ".firecrawl/docs.aws.amazon.com-bedrock-latest-userguide-model-card-amazon-nova-pro.html.md",
+      "source_bytes": 192074,
+      "source_sha256": "bb2710ce7da6c0d13fc69693f2edf65ca0ed4e3fd4b13014cd23bc15491dfcdc",
+      "repository_bytes": 192074,
+      "repository_sha256": "bb2710ce7da6c0d13fc69693f2edf65ca0ed4e3fd4b13014cd23bc15491dfcdc",
+      "local_link_adjustments": []
+    },
+    {
+      "source": ".firecrawl/docs.ultralytics.com-modes-track.md",
+      "repository_path": ".firecrawl/docs.ultralytics.com-modes-track.md",
+      "source_bytes": 48402,
+      "source_sha256": "39ee71ce5d798c25a46d265ff66a31c67a1f3e759f233f993e6bb7391b970ea8",
+      "repository_bytes": 48402,
+      "repository_sha256": "39ee71ce5d798c25a46d265ff66a31c67a1f3e759f233f993e6bb7391b970ea8",
+      "local_link_adjustments": []
+    },
+    {
+      "source": ".firecrawl/github.com-PaddlePaddle-PaddleOCR.md",
+      "repository_path": ".firecrawl/github.com-PaddlePaddle-PaddleOCR.md",
+      "source_bytes": 54100,
+      "source_sha256": "6a817a32a32d6ec11d6a4555abec2c09d9c5b1829d70d610be75411ca099d4f9",
+      "repository_bytes": 54100,
+      "repository_sha256": "6a817a32a32d6ec11d6a4555abec2c09d9c5b1829d70d610be75411ca099d4f9",
+      "local_link_adjustments": []
+    },
+    {
+      "source": ".firecrawl/github.com-QwenLM-Qwen3-VL.md",
+      "repository_path": ".firecrawl/github.com-QwenLM-Qwen3-VL.md",
+      "source_bytes": 71822,
+      "source_sha256": "28ba613bd031991f72b371dd1856d37767efaf4044953f89e005b1187eb736ba",
+      "repository_bytes": 71822,
+      "repository_sha256": "28ba613bd031991f72b371dd1856d37767efaf4044953f89e005b1187eb736ba",
+      "local_link_adjustments": []
+    },
+    {
+      "source": ".firecrawl/nba-cn-index-8848e9f0.js",
+      "repository_path": ".firecrawl/nba-cn-index-8848e9f0.js",
+      "source_bytes": 450070,
+      "source_sha256": "d76a33b9b81c145bcc2eaea6a21d11abf4875815aadb381db01fffc8c82a7698",
+      "repository_bytes": 450070,
+      "repository_sha256": "d76a33b9b81c145bcc2eaea6a21d11abf4875815aadb381db01fffc8c82a7698",
+      "local_link_adjustments": []
+    },
+    {
+      "source": ".firecrawl/nba-cn-inside-the-game-20261009.html",
+      "repository_path": ".firecrawl/nba-cn-inside-the-game-20261009.html",
+      "source_bytes": 7364,
+      "source_sha256": "b840442bc9b2a83fb6ba5f0b54f4c3b24411a005e9969c2abeaec42c134e7276",
+      "repository_bytes": 7364,
+      "repository_sha256": "b840442bc9b2a83fb6ba5f0b54f4c3b24411a005e9969c2abeaec42c134e7276",
+      "local_link_adjustments": []
+    },
+    {
+      "source": ".kiro/specs/nba-deep-court-visualization/.config.kiro",
+      "repository_path": ".kiro/specs/nba-deep-court-visualization/.config.kiro",
+      "source_bytes": 111,
+      "source_sha256": "9b75bfa6ec4f9d38092f28758ca99b2cbcbe099dc9b09ef8f6dad82f207c16a7",
+      "repository_bytes": 111,
+      "repository_sha256": "9b75bfa6ec4f9d38092f28758ca99b2cbcbe099dc9b09ef8f6dad82f207c16a7",
+      "local_link_adjustments": []
+    },
+    {
+      "source": ".kiro/specs/nba-deep-court-visualization/design.md",
+      "repository_path": ".kiro/specs/nba-deep-court-visualization/design.md",
+      "source_bytes": 5837,
+      "source_sha256": "b825c975726d9b8fec949e28b1a890e7efda4477004a72c4573424736ed5d66b",
+      "repository_bytes": 5971,
+      "repository_sha256": "0cc80dd0db2f259e993624dd897cc5880860427e67cd29ed2a5506d65d9723f6",
+      "local_link_adjustments": [
+        {
+          "from": "../../../aws-nba/docs/PROJECT_PLAN.md",
+          "to": "../../../docs/PROJECT_PLAN.md"
+        },
+        {
+          "from": "../../../aws-nba/docs/AGENT_SKELETON.md",
+          "to": "../../../docs/AGENT_SKELETON.md"
+        },
+        {
+          "from": "../../../aws-nba/docs/PROJECT_PLAN.md",
+          "to": "../../../docs/PROJECT_PLAN.md"
+        },
+        {
+          "from": "../../../NBA深度赛场_总体预算与高质量模型选择_20261008.md",
+          "to": "../../../NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E6%80%BB%E4%BD%93%E9%A2%84%E7%AE%97%E4%B8%8E%E9%AB%98%E8%B4%A8%E9%87%8F%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9_20261008.md"
+        },
+        {
+          "from": "../../../aws-nba/docs/PROJECT_PLAN.md",
+          "to": "../../../docs/PROJECT_PLAN.md"
+        },
+        {
+          "from": "../../../准备资料/04_质量验收与实验记录.md",
+          "to": "../../../%E5%87%86%E5%A4%87%E8%B5%84%E6%96%99/04_%E8%B4%A8%E9%87%8F%E9%AA%8C%E6%94%B6%E4%B8%8E%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95.md"
+        },
+        {
+          "from": "../../../aws-nba/docs/AGENT_ACCEPTANCE.md",
+          "to": "../../../docs/AGENT_ACCEPTANCE.md"
+        }
+      ]
+    },
+    {
+      "source": ".kiro/specs/nba-deep-court-visualization/requirements.md",
+      "repository_path": ".kiro/specs/nba-deep-court-visualization/requirements.md",
+      "source_bytes": 4797,
+      "source_sha256": "8513237818a84a9102ee408dbbcd1633542cdd7fd3da173132c192b9f7987497",
+      "repository_bytes": 4851,
+      "repository_sha256": "d9db4798b992f8c8f2df2907059c74e5663f0429bded4bfb34f094a3b7feffe9",
+      "local_link_adjustments": [
+        {
+          "from": "../../../aws-nba/docs/PROJECT_PLAN.md",
+          "to": "../../../docs/PROJECT_PLAN.md"
+        },
+        {
+          "from": "../../../aws-nba/shared/agent.ts",
+          "to": "../../../shared/agent.ts"
+        },
+        {
+          "from": "../../../aws-nba/docs/PROJECT_PLAN.md",
+          "to": "../../../docs/PROJECT_PLAN.md"
+        },
+        {
+          "from": "../../../准备资料/04_质量验收与实验记录.md",
+          "to": "../../../%E5%87%86%E5%A4%87%E8%B5%84%E6%96%99/04_%E8%B4%A8%E9%87%8F%E9%AA%8C%E6%94%B6%E4%B8%8E%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95.md"
+        }
+      ]
+    },
+    {
+      "source": "AGENTS.md",
+      "repository_path": "AGENTS.md",
+      "source_bytes": 7678,
+      "source_sha256": "392c4a54d8355cbddf549776f0814e87353efc646da4a371503befcf84db4e70",
+      "repository_bytes": 7678,
+      "repository_sha256": "392c4a54d8355cbddf549776f0814e87353efc646da4a371503befcf84db4e70",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "AWS_Agent_Toolkit_安装记录.md",
+      "repository_path": "AWS_Agent_Toolkit_安装记录.md",
+      "source_bytes": 4748,
+      "source_sha256": "a578fdc60548041ef63e5fc94c46535d158c502b76a4947f476478cfa856eef9",
+      "repository_bytes": 4740,
+      "repository_sha256": "5f3d06e9a687cbc216dc8cb27d7e54cdc9983d9f3706c08be25b1450bd44978b",
+      "local_link_adjustments": [
+        {
+          "from": "aws-nba/docs/PROJECT_PLAN.md",
+          "to": "docs/PROJECT_PLAN.md"
+        }
+      ]
+    },
+    {
+      "source": "BroadcastCode「深度赛场」赛事 · 赛前培训直播 会议纪要.md",
+      "repository_path": "BroadcastCode「深度赛场」赛事 · 赛前培训直播 会议纪要.md",
+      "source_bytes": 74969,
+      "source_sha256": "1c1ffdd2e6322cdd01bc89d3e44af4e4f1d58c07e08615defd8be4109540ec0b",
+      "repository_bytes": 74969,
+      "repository_sha256": "1c1ffdd2e6322cdd01bc89d3e44af4e4f1d58c07e08615defd8be4109540ec0b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "NBA深度赛场_AWS只读核验_20261008.md",
+      "repository_path": "NBA深度赛场_AWS只读核验_20261008.md",
+      "source_bytes": 12817,
+      "source_sha256": "55278e9a2f30a52efce6f2ff77c03fb1110465860d3663a2cdf5faebdba76ab7",
+      "repository_bytes": 12809,
+      "repository_sha256": "395a2df9d81b9b42ec932dfd582593ada2b0dbcd0454a53c31ee47826c3c8dae",
+      "local_link_adjustments": [
+        {
+          "from": "aws-nba/docs/AGENT_SKELETON.md",
+          "to": "docs/AGENT_SKELETON.md"
+        }
+      ]
+    },
+    {
+      "source": "NBA深度赛场_官方公开数据抓取报告_20261009.md",
+      "repository_path": "NBA深度赛场_官方公开数据抓取报告_20261009.md",
+      "source_bytes": 8356,
+      "source_sha256": "4ce73226090874b5823f358ea557bf0137764dd221af418646fd2d98adadc810",
+      "repository_bytes": 8426,
+      "repository_sha256": "25e71e38c18861349f7178ba44067c44179d23b850845894c0addabf9d94d388",
+      "local_link_adjustments": [
+        {
+          "from": "aws-nba/docs/PROJECT_PLAN.md",
+          "to": "docs/PROJECT_PLAN.md"
+        },
+        {
+          "from": "NBA深度赛场_视频与事件核对报告_20261009.md",
+          "to": "NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E8%A7%86%E9%A2%91%E4%B8%8E%E4%BA%8B%E4%BB%B6%E6%A0%B8%E5%AF%B9%E6%8A%A5%E5%91%8A_20261009.md"
+        }
+      ]
+    },
+    {
+      "source": "NBA深度赛场_总体预算与高质量模型选择_20261008.md",
+      "repository_path": "NBA深度赛场_总体预算与高质量模型选择_20261008.md",
+      "source_bytes": 10295,
+      "source_sha256": "d13703c212b78434624bcf400fed345eb10302df7a94ef5f61299d8d6848a600",
+      "repository_bytes": 10461,
+      "repository_sha256": "7429c6643a361b6b2c992382c43ad945754e480b722a4e80a6d3beca5ef4cfbe",
+      "local_link_adjustments": [
+        {
+          "from": "aws-nba/docs/PROJECT_PLAN.md",
+          "to": "docs/PROJECT_PLAN.md"
+        },
+        {
+          "from": "资料/赛制与选手快速上手.md",
+          "to": "%E8%B5%84%E6%96%99/%E8%B5%9B%E5%88%B6%E4%B8%8E%E9%80%89%E6%89%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B.md"
+        },
+        {
+          "from": "NBA深度赛场_赛前准备方案_20261008.md",
+          "to": "NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E8%B5%9B%E5%89%8D%E5%87%86%E5%A4%87%E6%96%B9%E6%A1%88_20261008.md"
+        },
+        {
+          "from": "NBA深度赛场_AWS只读核验_20261008.md",
+          "to": "NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_AWS%E5%8F%AA%E8%AF%BB%E6%A0%B8%E9%AA%8C_20261008.md"
+        }
+      ]
+    },
+    {
+      "source": "NBA深度赛场_技术栈与选型建议.md",
+      "repository_path": "NBA深度赛场_技术栈与选型建议.md",
+      "source_bytes": 13687,
+      "source_sha256": "29bd2637533e135d5bd16b3713d95121da703d8a951761016e3c4907d3333d7c",
+      "repository_bytes": 13679,
+      "repository_sha256": "1f5538a156b68d23aa9e8a10d01efe391715e05478213e05d41121286c43bc33",
+      "local_link_adjustments": [
+        {
+          "from": "aws-nba/docs/PROJECT_PLAN.md",
+          "to": "docs/PROJECT_PLAN.md"
+        }
+      ]
+    },
+    {
+      "source": "NBA深度赛场_数据处理结果_20261009.md",
+      "repository_path": "NBA深度赛场_数据处理结果_20261009.md",
+      "source_bytes": 2735,
+      "source_sha256": "18e798da0f1f4655caaad8b815406c898ff905cfbe54bd8214db210a102af3bc",
+      "repository_bytes": 2735,
+      "repository_sha256": "18e798da0f1f4655caaad8b815406c898ff905cfbe54bd8214db210a102af3bc",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "NBA深度赛场_材料缺口与优先任务_20261008.md",
+      "repository_path": "NBA深度赛场_材料缺口与优先任务_20261008.md",
+      "source_bytes": 14773,
+      "source_sha256": "b2489e9dbd821f98b2b2848c73c9d22a5ca3f17dfa3091a39e6f13cccfc6a252",
+      "repository_bytes": 15263,
+      "repository_sha256": "7705562c3e3bc21d9e7dc95cebea5cda03a371328092e96533510df8597e4903",
+      "local_link_adjustments": [
+        {
+          "from": "aws-nba/docs/PROJECT_PLAN.md",
+          "to": "docs/PROJECT_PLAN.md"
+        },
+        {
+          "from": "NBA深度赛场_赛前准备方案_20261008.md",
+          "to": "NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E8%B5%9B%E5%89%8D%E5%87%86%E5%A4%87%E6%96%B9%E6%A1%88_20261008.md"
+        },
+        {
+          "from": "NBA深度赛场_官方公开数据抓取报告_20261009.md",
+          "to": "NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E5%AE%98%E6%96%B9%E5%85%AC%E5%BC%80%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96%E6%8A%A5%E5%91%8A_20261009.md"
+        },
+        {
+          "from": "NBA深度赛场_数据处理结果_20261009.md",
+          "to": "NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E7%BB%93%E6%9E%9C_20261009.md"
+        },
+        {
+          "from": "NBA深度赛场_视频与事件核对报告_20261009.md",
+          "to": "NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E8%A7%86%E9%A2%91%E4%B8%8E%E4%BA%8B%E4%BB%B6%E6%A0%B8%E5%AF%B9%E6%8A%A5%E5%91%8A_20261009.md"
+        },
+        {
+          "from": "准备资料/README.md",
+          "to": "%E5%87%86%E5%A4%87%E8%B5%84%E6%96%99/README.md"
+        },
+        {
+          "from": "资料/参赛终极指南.md",
+          "to": "%E8%B5%84%E6%96%99/%E5%8F%82%E8%B5%9B%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97.md"
+        },
+        {
+          "from": "资料/赛制与选手快速上手.md",
+          "to": "%E8%B5%84%E6%96%99/%E8%B5%9B%E5%88%B6%E4%B8%8E%E9%80%89%E6%89%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B.md"
+        },
+        {
+          "from": "NBA深度赛场_视频与事件核对报告_20261009.md",
+          "to": "NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E8%A7%86%E9%A2%91%E4%B8%8E%E4%BA%8B%E4%BB%B6%E6%A0%B8%E5%AF%B9%E6%8A%A5%E5%91%8A_20261009.md"
+        }
+      ]
+    },
+    {
+      "source": "NBA深度赛场_视频与事件核对报告_20261009.md",
+      "repository_path": "NBA深度赛场_视频与事件核对报告_20261009.md",
+      "source_bytes": 6831,
+      "source_sha256": "12b2876d785cb224a5542229df4b4b36824dab08910896f726d3d329dc58d6bd",
+      "repository_bytes": 6951,
+      "repository_sha256": "c6292395544d91bb8ffa66594d9ea349ef785f4fb5c0840d21f95a458c4d3c3e",
+      "local_link_adjustments": [
+        {
+          "from": "准备资料/表格/素材登记.csv",
+          "to": "%E5%87%86%E5%A4%87%E8%B5%84%E6%96%99/%E8%A1%A8%E6%A0%BC/%E7%B4%A0%E6%9D%90%E7%99%BB%E8%AE%B0.csv"
+        },
+        {
+          "from": "准备资料/表格/人工核对.csv",
+          "to": "%E5%87%86%E5%A4%87%E8%B5%84%E6%96%99/%E8%A1%A8%E6%A0%BC/%E4%BA%BA%E5%B7%A5%E6%A0%B8%E5%AF%B9.csv"
+        }
+      ]
+    },
+    {
+      "source": "NBA深度赛场_赛前准备方案_20261008.md",
+      "repository_path": "NBA深度赛场_赛前准备方案_20261008.md",
+      "source_bytes": 21881,
+      "source_sha256": "d2a0cdc9e0d51e3f1a992e70565d569a206deb26bd728f37d148fed6ab5abcbb",
+      "repository_bytes": 22627,
+      "repository_sha256": "959a5e87de5d627f552fd367ef62aee57a31467abcdcb9d51c30a22a9526172f",
+      "local_link_adjustments": [
+        {
+          "from": "aws-nba/docs/PROJECT_PLAN.md",
+          "to": "docs/PROJECT_PLAN.md"
+        },
+        {
+          "from": "NBA深度赛场_总体预算与高质量模型选择_20261008.md",
+          "to": "NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E6%80%BB%E4%BD%93%E9%A2%84%E7%AE%97%E4%B8%8E%E9%AB%98%E8%B4%A8%E9%87%8F%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9_20261008.md"
+        },
+        {
+          "from": "NBA深度赛场_材料缺口与优先任务_20261008.md",
+          "to": "NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E6%9D%90%E6%96%99%E7%BC%BA%E5%8F%A3%E4%B8%8E%E4%BC%98%E5%85%88%E4%BB%BB%E5%8A%A1_20261008.md"
+        },
+        {
+          "from": "NBA深度赛场_AWS只读核验_20261008.md",
+          "to": "NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_AWS%E5%8F%AA%E8%AF%BB%E6%A0%B8%E9%AA%8C_20261008.md"
+        },
+        {
+          "from": "资料/参赛终极指南.md",
+          "to": "%E8%B5%84%E6%96%99/%E5%8F%82%E8%B5%9B%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97.md"
+        },
+        {
+          "from": "资料/赛制与选手快速上手.md",
+          "to": "%E8%B5%84%E6%96%99/%E8%B5%9B%E5%88%B6%E4%B8%8E%E9%80%89%E6%89%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B.md"
+        },
+        {
+          "from": "NBA深度赛场_总体预算与高质量模型选择_20261008.md",
+          "to": "NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E6%80%BB%E4%BD%93%E9%A2%84%E7%AE%97%E4%B8%8E%E9%AB%98%E8%B4%A8%E9%87%8F%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9_20261008.md"
+        },
+        {
+          "from": "资料/参赛终极指南.md",
+          "to": "%E8%B5%84%E6%96%99/%E5%8F%82%E8%B5%9B%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97.md"
+        },
+        {
+          "from": "资料/赛制与选手快速上手.md",
+          "to": "%E8%B5%84%E6%96%99/%E8%B5%9B%E5%88%B6%E4%B8%8E%E9%80%89%E6%89%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B.md"
+        },
+        {
+          "from": "BroadcastCode「深度赛场」赛事%20·%20赛前培训直播%20会议纪要.md",
+          "to": "BroadcastCode%E3%80%8C%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA%E3%80%8D%E8%B5%9B%E4%BA%8B%20%C2%B7%20%E8%B5%9B%E5%89%8D%E5%9F%B9%E8%AE%AD%E7%9B%B4%E6%92%AD%20%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81.md"
+        },
+        {
+          "from": "NBA深度赛场_技术栈与选型建议.md",
+          "to": "NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%8E%E9%80%89%E5%9E%8B%E5%BB%BA%E8%AE%AE.md"
+        },
+        {
+          "from": "AWS_Agent_Toolkit_安装记录.md",
+          "to": "AWS_Agent_Toolkit_%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md"
+        }
+      ]
+    },
+    {
+      "source": "README.md",
+      "repository_path": "WORKSPACE.md",
+      "source_bytes": 12589,
+      "source_sha256": "0ccb06aef20e09a647ac4bcb99368aac9a16aa06219b885ffc543ea1d45d5638",
+      "repository_bytes": 12885,
+      "repository_sha256": "d2224f6480462f653a7b093595899b50adc8924ac6e2491cd92ba790dceebc28",
+      "local_link_adjustments": [
+        {
+          "from": "aws-nba/docs/PROJECT_PLAN.md",
+          "to": "docs/PROJECT_PLAN.md"
+        },
+        {
+          "from": "aws-nba/docs/PROJECT_PLAN.md",
+          "to": "docs/PROJECT_PLAN.md"
+        },
+        {
+          "from": "aws-nba/README.md",
+          "to": "README.md"
+        },
+        {
+          "from": "aws-nba/docs/AGENT_SKELETON.md",
+          "to": "docs/AGENT_SKELETON.md"
+        },
+        {
+          "from": "aws-nba/docs/DOCUMENTATION_REVIEW.md",
+          "to": "docs/DOCUMENTATION_REVIEW.md"
+        },
+        {
+          "from": "aws-nba/docs/DESIGN.md",
+          "to": "docs/DESIGN.md"
+        },
+        {
+          "from": "aws-nba/docs/AGENT_ACCEPTANCE.md",
+          "to": "docs/AGENT_ACCEPTANCE.md"
+        },
+        {
+          "from": "aws-nba/docs/REFERENCE_RECONCILIATION.md",
+          "to": "docs/REFERENCE_RECONCILIATION.md"
+        },
+        {
+          "from": "aws-nba/docs/BLUE_MINT_ACCEPTANCE.md",
+          "to": "docs/BLUE_MINT_ACCEPTANCE.md"
+        },
+        {
+          "from": "aws-nba/docs/QA.md",
+          "to": "docs/QA.md"
+        },
+        {
+          "from": "准备资料/表格/素材登记.csv",
+          "to": "%E5%87%86%E5%A4%87%E8%B5%84%E6%96%99/%E8%A1%A8%E6%A0%BC/%E7%B4%A0%E6%9D%90%E7%99%BB%E8%AE%B0.csv"
+        },
+        {
+          "from": "准备资料/表格/字段映射.csv",
+          "to": "%E5%87%86%E5%A4%87%E8%B5%84%E6%96%99/%E8%A1%A8%E6%A0%BC/%E5%AD%97%E6%AE%B5%E6%98%A0%E5%B0%84.csv"
+        },
+        {
+          "from": "准备资料/表格/人工核对.csv",
+          "to": "%E5%87%86%E5%A4%87%E8%B5%84%E6%96%99/%E8%A1%A8%E6%A0%BC/%E4%BA%BA%E5%B7%A5%E6%A0%B8%E5%AF%B9.csv"
+        },
+        {
+          "from": "准备资料/表格/模型实验.csv",
+          "to": "%E5%87%86%E5%A4%87%E8%B5%84%E6%96%99/%E8%A1%A8%E6%A0%BC/%E6%A8%A1%E5%9E%8B%E5%AE%9E%E9%AA%8C.csv"
+        },
+        {
+          "from": "准备资料/表格/事件记录待填.json",
+          "to": "%E5%87%86%E5%A4%87%E8%B5%84%E6%96%99/%E8%A1%A8%E6%A0%BC/%E4%BA%8B%E4%BB%B6%E8%AE%B0%E5%BD%95%E5%BE%85%E5%A1%AB.json"
+        },
+        {
+          "from": "output/pdf/NBA深度赛场_技术栈与选型建议.pdf",
+          "to": "output/pdf/NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%8E%E9%80%89%E5%9E%8B%E5%BB%BA%E8%AE%AE.pdf"
+        },
+        {
+          "from": "aws-nba/docs/DOCUMENTATION_REVIEW.md",
+          "to": "docs/DOCUMENTATION_REVIEW.md"
+        }
+      ]
+    },
+    {
+      "source": "data/processed/20261009/README.md",
+      "repository_path": "data/processed/20261009/README.md",
+      "source_bytes": 4714,
+      "source_sha256": "784ab60653c602daef7bf88983e4bef7b627ac77becf5563f6f26826f2a28c3a",
+      "repository_bytes": 4714,
+      "repository_sha256": "784ab60653c602daef7bf88983e4bef7b627ac77becf5563f6f26826f2a28c3a",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/processed/20261009/clip-events.json",
+      "repository_path": "data/processed/20261009/clip-events.json",
+      "source_bytes": 10601,
+      "source_sha256": "92d3d9b9458b1ea708895ee9c9dd06cc6b7574ba7a1816d3b499bfbb65d8ce18",
+      "repository_bytes": 10601,
+      "repository_sha256": "92d3d9b9458b1ea708895ee9c9dd06cc6b7574ba7a1816d3b499bfbb65d8ce18",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/processed/20261009/data-dictionary.md",
+      "repository_path": "data/processed/20261009/data-dictionary.md",
+      "source_bytes": 5877,
+      "source_sha256": "bc97d00e9fd0ee1fcd96f336660752c411a4539cbf470b6aed8c27cea33cbf15",
+      "repository_bytes": 5877,
+      "repository_sha256": "bc97d00e9fd0ee1fcd96f336660752c411a4539cbf470b6aed8c27cea33cbf15",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/processed/20261009/derived-player-summaries.json",
+      "repository_path": "data/processed/20261009/derived-player-summaries.json",
+      "source_bytes": 2207,
+      "source_sha256": "074f08c598ce57c06591a16eca321abe9bd950b968d7032c1774fd365a3229dd",
+      "repository_bytes": 2207,
+      "repository_sha256": "074f08c598ce57c06591a16eca321abe9bd950b968d7032c1774fd365a3229dd",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/processed/20261009/games.csv",
+      "repository_path": "data/processed/20261009/games.csv",
+      "source_bytes": 594,
+      "source_sha256": "bb725a4647ea73b9be9142597e045a10680f8cd33740de1735de6e5cc667507a",
+      "repository_bytes": 594,
+      "repository_sha256": "bb725a4647ea73b9be9142597e045a10680f8cd33740de1735de6e5cc667507a",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/processed/20261009/overlay-cues.draft.json",
+      "repository_path": "data/processed/20261009/overlay-cues.draft.json",
+      "source_bytes": 2017,
+      "source_sha256": "a5ff256ba2c3fba7522c4453175150aa76d0eb8f26daa3d5b7c64f6828df6d29",
+      "repository_bytes": 2017,
+      "repository_sha256": "a5ff256ba2c3fba7522c4453175150aa76d0eb8f26daa3d5b7c64f6828df6d29",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/processed/20261009/package-manifest.json",
+      "repository_path": "data/processed/20261009/package-manifest.json",
+      "source_bytes": 2387,
+      "source_sha256": "30e75478b0d3daf5e85fd27a55298a5ef79b05d87fbc684510463c3d381bc722",
+      "repository_bytes": 2387,
+      "repository_sha256": "30e75478b0d3daf5e85fd27a55298a5ef79b05d87fbc684510463c3d381bc722",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/processed/20261009/review-queue.csv",
+      "repository_path": "data/processed/20261009/review-queue.csv",
+      "source_bytes": 1617,
+      "source_sha256": "66c91720e02be5004c2f7909e1dab7c82d15e86bac12724e030efb5f57919f7e",
+      "repository_bytes": 1617,
+      "repository_sha256": "66c91720e02be5004c2f7909e1dab7c82d15e86bac12724e030efb5f57919f7e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/processed/20261009/selected-pbp-fields.json",
+      "repository_path": "data/processed/20261009/selected-pbp-fields.json",
+      "source_bytes": 16010,
+      "source_sha256": "addf4cbc5290b54271c0fa41c1b807e335b82de672fa386d53d97ab8f930bfe5",
+      "repository_bytes": 16010,
+      "repository_sha256": "addf4cbc5290b54271c0fa41c1b807e335b82de672fa386d53d97ab8f930bfe5",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/processed/20261009/shot-index.md",
+      "repository_path": "data/processed/20261009/shot-index.md",
+      "source_bytes": 4306,
+      "source_sha256": "81f368cb22221350ec52755f1f861b05a9f28911af62821c7fdbea64539a18ca",
+      "repository_bytes": 4306,
+      "repository_sha256": "81f368cb22221350ec52755f1f861b05a9f28911af62821c7fdbea64539a18ca",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/processed/20261009/shots-enriched.csv",
+      "repository_path": "data/processed/20261009/shots-enriched.csv",
+      "source_bytes": 20124,
+      "source_sha256": "595872ef27985a11e82bda78f4a9c09b1907d16c9d8d43741bde23bea6f72a9e",
+      "repository_bytes": 20124,
+      "repository_sha256": "595872ef27985a11e82bda78f4a9c09b1907d16c9d8d43741bde23bea6f72a9e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/processed/20261009/shots-enriched.json",
+      "repository_path": "data/processed/20261009/shots-enriched.json",
+      "source_bytes": 73380,
+      "source_sha256": "176e87462ad736954b4df79d018c6be08c4e58633a3b002e60a9792989e5299b",
+      "repository_bytes": 73380,
+      "repository_sha256": "176e87462ad736954b4df79d018c6be08c4e58633a3b002e60a9792989e5299b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/processed/20261009/source-field-conflicts.json",
+      "repository_path": "data/processed/20261009/source-field-conflicts.json",
+      "source_bytes": 2695,
+      "source_sha256": "06e24f4047d9d6fd72ba04677cd3ef5040ec9987528f453d32a7dd48bd9d5023",
+      "repository_bytes": 2695,
+      "repository_sha256": "06e24f4047d9d6fd72ba04677cd3ef5040ec9987528f453d32a7dd48bd9d5023",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/processed/20261009/sources-manifest.json",
+      "repository_path": "data/processed/20261009/sources-manifest.json",
+      "source_bytes": 6653,
+      "source_sha256": "fb6d36fd8e31937c18bc66eb4bd4d8fa6d4eb559194fa222b2b39bf999c46bc8",
+      "repository_bytes": 6653,
+      "repository_sha256": "fb6d36fd8e31937c18bc66eb4bd4d8fa6d4eb559194fa222b2b39bf999c46bc8",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/processed/20261009/validation.json",
+      "repository_path": "data/processed/20261009/validation.json",
+      "source_bytes": 1736,
+      "source_sha256": "3b5507d4a68a296a7abc3d2a88cc37d6fc7e859938b046cb7c1390da6e047859",
+      "repository_bytes": 1736,
+      "repository_sha256": "3b5507d4a68a296a7abc3d2a88cc37d6fc7e859938b046cb7c1390da6e047859",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/README.md",
+      "repository_path": "data/public-nba/20261009/README.md",
+      "source_bytes": 4786,
+      "source_sha256": "b801d546e772e6c0f0ac9e335424e2a639496500c3c2ce1e909a47c908b87036",
+      "repository_bytes": 4948,
+      "repository_sha256": "5e1c2c90e18456c5ff58a4f80a2689879f6ddf27edeef6c457d58b936376a22c",
+      "local_link_adjustments": [
+        {
+          "from": "../../../NBA深度赛场_视频与事件核对报告_20261009.md",
+          "to": "../../../NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E8%A7%86%E9%A2%91%E4%B8%8E%E4%BA%8B%E4%BB%B6%E6%A0%B8%E5%AF%B9%E6%8A%A5%E5%91%8A_20261009.md"
+        },
+        {
+          "from": "../../../NBA深度赛场_官方公开数据抓取报告_20261009.md",
+          "to": "../../../NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E5%AE%98%E6%96%B9%E5%85%AC%E5%BC%80%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96%E6%8A%A5%E5%91%8A_20261009.md"
+        }
+      ]
+    },
+    {
+      "source": "data/public-nba/20261009/datasets.json",
+      "repository_path": "data/public-nba/20261009/datasets.json",
+      "source_bytes": 8137,
+      "source_sha256": "8c613f7e5af2e60f3d238ac5ae1ff4b6ef8fd387445b062c2c08ad38ad4da60d",
+      "repository_bytes": 8137,
+      "repository_sha256": "8c613f7e5af2e60f3d238ac5ae1ff4b6ef8fd387445b062c2c08ad38ad4da60d",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/fetch-log-batch1.json",
+      "repository_path": "data/public-nba/20261009/fetch-log-batch1.json",
+      "source_bytes": 4213,
+      "source_sha256": "1253789ce10a31481650be979753728d9dce3870b5a4b21bc682c285d8b5e4f5",
+      "repository_bytes": 4213,
+      "repository_sha256": "1253789ce10a31481650be979753728d9dce3870b5a4b21bc682c285d8b5e4f5",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/fetch-log-batch2.json",
+      "repository_path": "data/public-nba/20261009/fetch-log-batch2.json",
+      "source_bytes": 4383,
+      "source_sha256": "d90e7f6a5b0cc2b06508b8486976bc35ec382df321c77519e3969deb9c52f4a3",
+      "repository_bytes": 4383,
+      "repository_sha256": "d90e7f6a5b0cc2b06508b8486976bc35ec382df321c77519e3969deb9c52f4a3",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/fetch-log-batch3.json",
+      "repository_path": "data/public-nba/20261009/fetch-log-batch3.json",
+      "source_bytes": 257,
+      "source_sha256": "2fd1b85773a02482457057cc220ed3ef9c360f7bbeb8c47ebc3593ef94082d94",
+      "repository_bytes": 257,
+      "repository_sha256": "2fd1b85773a02482457057cc220ed3ef9c360f7bbeb8c47ebc3593ef94082d94",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/normalized/available-seasons.csv",
+      "repository_path": "data/public-nba/20261009/normalized/available-seasons.csv",
+      "source_bytes": 837,
+      "source_sha256": "1d1c95da3b8b0c734c73e0d70b09978ee30e6f99380c1e6177b2f9105818540f",
+      "repository_bytes": 837,
+      "repository_sha256": "1d1c95da3b8b0c734c73e0d70b09978ee30e6f99380c1e6177b2f9105818540f",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/normalized/candidate-game-teams.csv",
+      "repository_path": "data/public-nba/20261009/normalized/candidate-game-teams.csv",
+      "source_bytes": 1255,
+      "source_sha256": "355dc810393fd6dbcf6535026649cf47c9a93af535a75f9922a15d3e45f1f0f2",
+      "repository_bytes": 1255,
+      "repository_sha256": "355dc810393fd6dbcf6535026649cf47c9a93af535a75f9922a15d3e45f1f0f2",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/normalized/candidate-player-game-summaries-quarantined.csv",
+      "repository_path": "data/public-nba/20261009/normalized/candidate-player-game-summaries-quarantined.csv",
+      "source_bytes": 1570,
+      "source_sha256": "d472eb6585f366b0fd3bca0006d2409a63d2fcfbe82f8f5877192597e91d584b",
+      "repository_bytes": 1570,
+      "repository_sha256": "d472eb6585f366b0fd3bca0006d2409a63d2fcfbe82f8f5877192597e91d584b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/normalized/candidate-player-shots.csv",
+      "repository_path": "data/public-nba/20261009/normalized/candidate-player-shots.csv",
+      "source_bytes": 15205,
+      "source_sha256": "f7391b4c0642ed092b92f8a234c348eafbaed42b3e347426d8d0fd0800ead3eb",
+      "repository_bytes": 15205,
+      "repository_sha256": "f7391b4c0642ed092b92f8a234c348eafbaed42b3e347426d8d0fd0800ead3eb",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/normalized/candidate-team-shot-distributions.csv",
+      "repository_path": "data/public-nba/20261009/normalized/candidate-team-shot-distributions.csv",
+      "source_bytes": 79409,
+      "source_sha256": "b17b1183a45089c0525d3b0fc254c7f6838af7c4f044a3c76935d1367f6e6357",
+      "repository_bytes": 79409,
+      "repository_sha256": "b17b1183a45089c0525d3b0fc254c7f6838af7c4f044a3c76935d1367f6e6357",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/normalized/candidate-video-game-links.json",
+      "repository_path": "data/public-nba/20261009/normalized/candidate-video-game-links.json",
+      "source_bytes": 2279,
+      "source_sha256": "9a01d8a78f340ab670504aba8cdda024347c594bda35b79cc4654a5b8ff80481",
+      "repository_bytes": 2279,
+      "repository_sha256": "9a01d8a78f340ab670504aba8cdda024347c594bda35b79cc4654a5b8ff80481",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/normalized/field-mapping.csv",
+      "repository_path": "data/public-nba/20261009/normalized/field-mapping.csv",
+      "source_bytes": 3271,
+      "source_sha256": "61048e791138eeea0c4a9483d11ec79878570b4f94a7016f8a6ce35748037d51",
+      "repository_bytes": 3271,
+      "repository_sha256": "61048e791138eeea0c4a9483d11ec79878570b4f94a7016f8a6ce35748037d51",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/normalized/games.csv",
+      "repository_path": "data/public-nba/20261009/normalized/games.csv",
+      "source_bytes": 4888,
+      "source_sha256": "fd4dd0415d8999f700ce85bfa95e6ea49b296e7637e217a19e3416d294b27442",
+      "repository_bytes": 4888,
+      "repository_sha256": "fd4dd0415d8999f700ce85bfa95e6ea49b296e7637e217a19e3416d294b27442",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/normalized/glossary-source.json",
+      "repository_path": "data/public-nba/20261009/normalized/glossary-source.json",
+      "source_bytes": 6038,
+      "source_sha256": "3f8859146bf404f0154624d4fd5561eea357c77a4b62e44ff6f4685d0b94e3e5",
+      "repository_bytes": 6038,
+      "repository_sha256": "3f8859146bf404f0154624d4fd5561eea357c77a4b62e44ff6f4685d0b94e3e5",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/normalized/gravity-2025-26-regular.csv",
+      "repository_path": "data/public-nba/20261009/normalized/gravity-2025-26-regular.csv",
+      "source_bytes": 103515,
+      "source_sha256": "a8cbbb9da762d9b7f304864fe424861a9095f31a383187e68650bc0a716aca39",
+      "repository_bytes": 103515,
+      "repository_sha256": "a8cbbb9da762d9b7f304864fe424861a9095f31a383187e68650bc0a716aca39",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/normalized/leverage-2025-26-regular.csv",
+      "repository_path": "data/public-nba/20261009/normalized/leverage-2025-26-regular.csv",
+      "source_bytes": 118087,
+      "source_sha256": "7aabadedf3d080f936439a66ebe591baae2671e78e4618137fa37b232b52dea0",
+      "repository_bytes": 118087,
+      "repository_sha256": "7aabadedf3d080f936439a66ebe591baae2671e78e4618137fa37b232b52dea0",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/normalized/metric-glossary.csv",
+      "repository_path": "data/public-nba/20261009/normalized/metric-glossary.csv",
+      "source_bytes": 7687,
+      "source_sha256": "6cd8e79c80724f2a93ee63c37c10cd5eca54e09fe05d47b36b17a7946a5e01b1",
+      "repository_bytes": 7687,
+      "repository_sha256": "6cd8e79c80724f2a93ee63c37c10cd5eca54e09fe05d47b36b17a7946a5e01b1",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/normalized/players-of-interest.json",
+      "repository_path": "data/public-nba/20261009/normalized/players-of-interest.json",
+      "source_bytes": 7669,
+      "source_sha256": "7d9eb6614775b5552a356dc3c7da91e12530f4bb739c4f7397770d34f6c77f05",
+      "repository_bytes": 7669,
+      "repository_sha256": "7d9eb6614775b5552a356dc3c7da91e12530f4bb739c4f7397770d34f6c77f05",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/normalized/shot-difficulty-2025-26-regular.csv",
+      "repository_path": "data/public-nba/20261009/normalized/shot-difficulty-2025-26-regular.csv",
+      "source_bytes": 61184,
+      "source_sha256": "8e64043eaf9e321027a1274e0ba4baf38f8b777a95dcdf44c40b3d97c44f3a93",
+      "repository_bytes": 61184,
+      "repository_sha256": "8e64043eaf9e321027a1274e0ba4baf38f8b777a95dcdf44c40b3d97c44f3a93",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/normalized/shot-difficulty-2026-27-preseason.csv",
+      "repository_path": "data/public-nba/20261009/normalized/shot-difficulty-2026-27-preseason.csv",
+      "source_bytes": 38054,
+      "source_sha256": "44057e9d8decd1f945e66872fa78dd4b71389d9ba0fa3aba920393251f91700d",
+      "repository_bytes": 38054,
+      "repository_sha256": "44057e9d8decd1f945e66872fa78dd4b71389d9ba0fa3aba920393251f91700d",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/quality-report.json",
+      "repository_path": "data/public-nba/20261009/quality-report.json",
+      "source_bytes": 5136,
+      "source_sha256": "1016cd9ecc41a7361b35cb0714f53aec25a3cfcd43d984dcf25e806f2733a58f",
+      "repository_bytes": 5136,
+      "repository_sha256": "1016cd9ecc41a7361b35cb0714f53aec25a3cfcd43d984dcf25e806f2733a58f",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/raw/game-0022500491-defense.json",
+      "repository_path": "data/public-nba/20261009/raw/game-0022500491-defense.json",
+      "source_bytes": 33,
+      "source_sha256": "32de289b6b32ddafc0f7590cabcb3b7586b08e53feed14289f38db9761388ab1",
+      "repository_bytes": 33,
+      "repository_sha256": "32de289b6b32ddafc0f7590cabcb3b7586b08e53feed14289f38db9761388ab1",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/raw/game-0022500491-player-1641708-shots.json",
+      "repository_path": "data/public-nba/20261009/raw/game-0022500491-player-1641708-shots.json",
+      "source_bytes": 4429,
+      "source_sha256": "4b75a51aa4620ce879850dc30ade9246b25bf5c47d4957a3f769c527c7ceccf7",
+      "repository_bytes": 4429,
+      "repository_sha256": "4b75a51aa4620ce879850dc30ade9246b25bf5c47d4957a3f769c527c7ceccf7",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/raw/game-0022500491-shots.json",
+      "repository_path": "data/public-nba/20261009/raw/game-0022500491-shots.json",
+      "source_bytes": 6683,
+      "source_sha256": "274dc8cb87cf82598f9198655bdd02a09ea9285022db2c33dd12ecdf1de605ef",
+      "repository_bytes": 6683,
+      "repository_sha256": "274dc8cb87cf82598f9198655bdd02a09ea9285022db2c33dd12ecdf1de605ef",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/raw/game-0022500701-defense.json",
+      "repository_path": "data/public-nba/20261009/raw/game-0022500701-defense.json",
+      "source_bytes": 33,
+      "source_sha256": "32de289b6b32ddafc0f7590cabcb3b7586b08e53feed14289f38db9761388ab1",
+      "repository_bytes": 33,
+      "repository_sha256": "32de289b6b32ddafc0f7590cabcb3b7586b08e53feed14289f38db9761388ab1",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/raw/game-0022500701-player-1642843-shots.json",
+      "repository_path": "data/public-nba/20261009/raw/game-0022500701-player-1642843-shots.json",
+      "source_bytes": 5712,
+      "source_sha256": "95238bb31f32bd07c5588b0e26331fc0f1a12181567e339150058d23826d265d",
+      "repository_bytes": 5712,
+      "repository_sha256": "95238bb31f32bd07c5588b0e26331fc0f1a12181567e339150058d23826d265d",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/raw/game-0022500701-shots.json",
+      "repository_path": "data/public-nba/20261009/raw/game-0022500701-shots.json",
+      "source_bytes": 6987,
+      "source_sha256": "dc89d06bfae299087a1279eef7e4022eb51d475e20563ce177023ab5dcb65005",
+      "repository_bytes": 6987,
+      "repository_sha256": "dc89d06bfae299087a1279eef7e4022eb51d475e20563ce177023ab5dcb65005",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/raw/games-2026-01-04-candidate.json",
+      "repository_path": "data/public-nba/20261009/raw/games-2026-01-04-candidate.json",
+      "source_bytes": 1424,
+      "source_sha256": "5816910a32c5aae47688ced2af9e8a049b564b44ea4059c6d02ebc4a478d23b8",
+      "repository_bytes": 1424,
+      "repository_sha256": "5816910a32c5aae47688ced2af9e8a049b564b44ea4059c6d02ebc4a478d23b8",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/raw/games-2026-02-01-candidate.json",
+      "repository_path": "data/public-nba/20261009/raw/games-2026-02-01-candidate.json",
+      "source_bytes": 1074,
+      "source_sha256": "fd50dbff6c13199ba9689b8222f2c748089e4a0c3d549d5db0afd895e4156c27",
+      "repository_bytes": 1074,
+      "repository_sha256": "fd50dbff6c13199ba9689b8222f2c748089e4a0c3d549d5db0afd895e4156c27",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/raw/games-2026-10-09.json",
+      "repository_path": "data/public-nba/20261009/raw/games-2026-10-09.json",
+      "source_bytes": 1244,
+      "source_sha256": "420b245f7f985ea268019fffaad2c65ae8dfa393cc87cccbb6baf49a82a12f01",
+      "repository_bytes": 1244,
+      "repository_sha256": "420b245f7f985ea268019fffaad2c65ae8dfa393cc87cccbb6baf49a82a12f01",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/raw/gravity-2025-26-regular.json",
+      "repository_path": "data/public-nba/20261009/raw/gravity-2025-26-regular.json",
+      "source_bytes": 109378,
+      "source_sha256": "89f70e16fc870e29e9efaa4f1f81ca5f372ac02431aa194e5a2908dcea1195a1",
+      "repository_bytes": 109378,
+      "repository_sha256": "89f70e16fc870e29e9efaa4f1f81ca5f372ac02431aa194e5a2908dcea1195a1",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/raw/leverage-2025-26-regular.json",
+      "repository_path": "data/public-nba/20261009/raw/leverage-2025-26-regular.json",
+      "source_bytes": 120815,
+      "source_sha256": "ebdde198bd0846897863a5dbf34371be626f591b5989aa2d3dc22372a5fd5a24",
+      "repository_bytes": 120815,
+      "repository_sha256": "ebdde198bd0846897863a5dbf34371be626f591b5989aa2d3dc22372a5fd5a24",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/raw/nba-com-selected-page-facts.json",
+      "repository_path": "data/public-nba/20261009/raw/nba-com-selected-page-facts.json",
+      "source_bytes": 1159,
+      "source_sha256": "7fd9b1de9c0de89825e780cc9d511e8ef821aa09e159b508bd3ca5ec6aa1d37f",
+      "repository_bytes": 1159,
+      "repository_sha256": "7fd9b1de9c0de89825e780cc9d511e8ef821aa09e159b508bd3ca5ec6aa1d37f",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/raw/seasons.json",
+      "repository_path": "data/public-nba/20261009/raw/seasons.json",
+      "source_bytes": 489,
+      "source_sha256": "a9223f65c2ad3ab95769ee1bed6cdd6fd90b45fc15063c15932802cdc69e6f77",
+      "repository_bytes": 489,
+      "repository_sha256": "a9223f65c2ad3ab95769ee1bed6cdd6fd90b45fc15063c15932802cdc69e6f77",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/raw/shot-difficulty-2025-26-regular.json",
+      "repository_path": "data/public-nba/20261009/raw/shot-difficulty-2025-26-regular.json",
+      "source_bytes": 82752,
+      "source_sha256": "4da37636619135883f2b7e5e5ad331737d63256fefa7719d3dc0078a3bd3ae55",
+      "repository_bytes": 82752,
+      "repository_sha256": "4da37636619135883f2b7e5e5ad331737d63256fefa7719d3dc0078a3bd3ae55",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/raw/shot-difficulty-2026-27-preseason.json",
+      "repository_path": "data/public-nba/20261009/raw/shot-difficulty-2026-27-preseason.json",
+      "source_bytes": 52229,
+      "source_sha256": "8254bca5634f49bb43e89484aa5490b0a5b1518422e7035c50d6c40bdb738a6c",
+      "repository_bytes": 52229,
+      "repository_sha256": "8254bca5634f49bb43e89484aa5490b0a5b1518422e7035c50d6c40bdb738a6c",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/sources.json",
+      "repository_path": "data/public-nba/20261009/sources.json",
+      "source_bytes": 12520,
+      "source_sha256": "025f7d68595b1ed2f2292b135474e19ac13eac842dcce2c1fe2c96d7b1d94894",
+      "repository_bytes": 12520,
+      "repository_sha256": "025f7d68595b1ed2f2292b135474e19ac13eac842dcce2c1fe2c96d7b1d94894",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "data/public-nba/20261009/validation.json",
+      "repository_path": "data/public-nba/20261009/validation.json",
+      "source_bytes": 545,
+      "source_sha256": "45dc1343a0d6824b3467f96e42a1fda8d94e3cf2ba0b84d76ad6544693b5b0f8",
+      "repository_bytes": 545,
+      "repository_sha256": "45dc1343a0d6824b3467f96e42a1fda8d94e3cf2ba0b84d76ad6544693b5b0f8",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/.kiro/specs/nba-deep-court-visualization/design.md",
+      "repository_path": "output/documentation-review-20261009/before/.kiro/specs/nba-deep-court-visualization/design.md",
+      "source_bytes": 31037,
+      "source_sha256": "3ac7e8630bd05c378dd4ac075c24c768fdd0c21488f2d55242bc0b41dd8ca852",
+      "repository_bytes": 31037,
+      "repository_sha256": "3ac7e8630bd05c378dd4ac075c24c768fdd0c21488f2d55242bc0b41dd8ca852",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/.kiro/specs/nba-deep-court-visualization/requirements.md",
+      "repository_path": "output/documentation-review-20261009/before/.kiro/specs/nba-deep-court-visualization/requirements.md",
+      "source_bytes": 20753,
+      "source_sha256": "acb6de2d723258ee9e3696755918c59683964f156cdf32ca0b931c50eaec10d8",
+      "repository_bytes": 20753,
+      "repository_sha256": "acb6de2d723258ee9e3696755918c59683964f156cdf32ca0b931c50eaec10d8",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/AGENTS.md",
+      "repository_path": "output/documentation-review-20261009/before/AGENTS.md",
+      "source_bytes": 7678,
+      "source_sha256": "392c4a54d8355cbddf549776f0814e87353efc646da4a371503befcf84db4e70",
+      "repository_bytes": 7678,
+      "repository_sha256": "392c4a54d8355cbddf549776f0814e87353efc646da4a371503befcf84db4e70",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/AWS_Agent_Toolkit_安装记录.md",
+      "repository_path": "output/documentation-review-20261009/before/AWS_Agent_Toolkit_安装记录.md",
+      "source_bytes": 4387,
+      "source_sha256": "2f5d438dbac54bacce07e50901dc9ec4d630d41d94e3364af5835d1b290cbe83",
+      "repository_bytes": 4387,
+      "repository_sha256": "2f5d438dbac54bacce07e50901dc9ec4d630d41d94e3364af5835d1b290cbe83",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/BroadcastCode「深度赛场」赛事 · 赛前培训直播 会议纪要.md",
+      "repository_path": "output/documentation-review-20261009/before/BroadcastCode「深度赛场」赛事 · 赛前培训直播 会议纪要.md",
+      "source_bytes": 74969,
+      "source_sha256": "1c1ffdd2e6322cdd01bc89d3e44af4e4f1d58c07e08615defd8be4109540ec0b",
+      "repository_bytes": 74969,
+      "repository_sha256": "1c1ffdd2e6322cdd01bc89d3e44af4e4f1d58c07e08615defd8be4109540ec0b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/NBA深度赛场_AWS只读核验_20261008.md",
+      "repository_path": "output/documentation-review-20261009/before/NBA深度赛场_AWS只读核验_20261008.md",
+      "source_bytes": 12347,
+      "source_sha256": "6d092a5694d048fd8c49e7a3f55fcc452c983f021df9a2df0b70fb1661907bfd",
+      "repository_bytes": 12347,
+      "repository_sha256": "6d092a5694d048fd8c49e7a3f55fcc452c983f021df9a2df0b70fb1661907bfd",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/NBA深度赛场_官方公开数据抓取报告_20261009.md",
+      "repository_path": "output/documentation-review-20261009/before/NBA深度赛场_官方公开数据抓取报告_20261009.md",
+      "source_bytes": 7996,
+      "source_sha256": "22f09b63d4762ebc5cfb9de2b1646b6b8838af57c1cd0fbe9b48e1f679297a08",
+      "repository_bytes": 7996,
+      "repository_sha256": "22f09b63d4762ebc5cfb9de2b1646b6b8838af57c1cd0fbe9b48e1f679297a08",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/NBA深度赛场_总体预算与高质量模型选择_20261008.md",
+      "repository_path": "output/documentation-review-20261009/before/NBA深度赛场_总体预算与高质量模型选择_20261008.md",
+      "source_bytes": 9893,
+      "source_sha256": "b8d7065691a0e4fc9bb36dad668e21a64d95c75b89df23e68902678d8082802d",
+      "repository_bytes": 9893,
+      "repository_sha256": "b8d7065691a0e4fc9bb36dad668e21a64d95c75b89df23e68902678d8082802d",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/NBA深度赛场_技术栈与选型建议.md",
+      "repository_path": "output/documentation-review-20261009/before/NBA深度赛场_技术栈与选型建议.md",
+      "source_bytes": 13196,
+      "source_sha256": "20b6833fba0237c77eadf68c1c96f14d7b54cad3742e7e8f1f6510eaa3f562bf",
+      "repository_bytes": 13196,
+      "repository_sha256": "20b6833fba0237c77eadf68c1c96f14d7b54cad3742e7e8f1f6510eaa3f562bf",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/NBA深度赛场_数据处理结果_20261009.md",
+      "repository_path": "output/documentation-review-20261009/before/NBA深度赛场_数据处理结果_20261009.md",
+      "source_bytes": 2735,
+      "source_sha256": "18e798da0f1f4655caaad8b815406c898ff905cfbe54bd8214db210a102af3bc",
+      "repository_bytes": 2735,
+      "repository_sha256": "18e798da0f1f4655caaad8b815406c898ff905cfbe54bd8214db210a102af3bc",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/NBA深度赛场_材料缺口与优先任务_20261008.md",
+      "repository_path": "output/documentation-review-20261009/before/NBA深度赛场_材料缺口与优先任务_20261008.md",
+      "source_bytes": 14407,
+      "source_sha256": "7dee5016184d3504606579ac2f98348d3c6667982b876f6a6515905e6adc9647",
+      "repository_bytes": 14407,
+      "repository_sha256": "7dee5016184d3504606579ac2f98348d3c6667982b876f6a6515905e6adc9647",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/NBA深度赛场_视频与事件核对报告_20261009.md",
+      "repository_path": "output/documentation-review-20261009/before/NBA深度赛场_视频与事件核对报告_20261009.md",
+      "source_bytes": 6831,
+      "source_sha256": "12b2876d785cb224a5542229df4b4b36824dab08910896f726d3d329dc58d6bd",
+      "repository_bytes": 6831,
+      "repository_sha256": "12b2876d785cb224a5542229df4b4b36824dab08910896f726d3d329dc58d6bd",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/NBA深度赛场_赛前准备方案_20261008.md",
+      "repository_path": "output/documentation-review-20261009/before/NBA深度赛场_赛前准备方案_20261008.md",
+      "source_bytes": 21576,
+      "source_sha256": "f055525fdfad0e0e86032c263cd2cc9a3cfcbb0ef0d0261259d74b1f4110d5a2",
+      "repository_bytes": 21576,
+      "repository_sha256": "f055525fdfad0e0e86032c263cd2cc9a3cfcbb0ef0d0261259d74b1f4110d5a2",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/aws-nba/README.md",
+      "repository_path": "output/documentation-review-20261009/before/aws-nba/README.md",
+      "source_bytes": 7966,
+      "source_sha256": "452c651c42b3f707e7e54a52b003a3aac7977e2fe4694a42626ae1ecaa43e201",
+      "repository_bytes": 7966,
+      "repository_sha256": "452c651c42b3f707e7e54a52b003a3aac7977e2fe4694a42626ae1ecaa43e201",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/aws-nba/docs/AGENT_ACCEPTANCE.md",
+      "repository_path": "output/documentation-review-20261009/before/aws-nba/docs/AGENT_ACCEPTANCE.md",
+      "source_bytes": 4649,
+      "source_sha256": "65b566efc32edbab4071c1dbfc1ecb35e9a4ded84b45ecb8e0755f44c9a595d0",
+      "repository_bytes": 4649,
+      "repository_sha256": "65b566efc32edbab4071c1dbfc1ecb35e9a4ded84b45ecb8e0755f44c9a595d0",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/aws-nba/docs/AGENT_SKELETON.md",
+      "repository_path": "output/documentation-review-20261009/before/aws-nba/docs/AGENT_SKELETON.md",
+      "source_bytes": 8629,
+      "source_sha256": "ec8e8021f04b6a39bf5f5e7670a99402c3c48fc4b03dc19cc150197e4f630f6b",
+      "repository_bytes": 8629,
+      "repository_sha256": "ec8e8021f04b6a39bf5f5e7670a99402c3c48fc4b03dc19cc150197e4f630f6b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/aws-nba/docs/BLUE_MINT_ACCEPTANCE.md",
+      "repository_path": "output/documentation-review-20261009/before/aws-nba/docs/BLUE_MINT_ACCEPTANCE.md",
+      "source_bytes": 7366,
+      "source_sha256": "57777fc3400225354db1ad8fbf32bf63e60ce8a76d819dccf4facf47a5676904",
+      "repository_bytes": 7366,
+      "repository_sha256": "57777fc3400225354db1ad8fbf32bf63e60ce8a76d819dccf4facf47a5676904",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/aws-nba/docs/DESIGN.md",
+      "repository_path": "output/documentation-review-20261009/before/aws-nba/docs/DESIGN.md",
+      "source_bytes": 5176,
+      "source_sha256": "58dc75965a7a7d6736994c58d42084fbc80be693f1f7b126240d3558b4cca573",
+      "repository_bytes": 5176,
+      "repository_sha256": "58dc75965a7a7d6736994c58d42084fbc80be693f1f7b126240d3558b4cca573",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/aws-nba/docs/QA.md",
+      "repository_path": "output/documentation-review-20261009/before/aws-nba/docs/QA.md",
+      "source_bytes": 9979,
+      "source_sha256": "26a91a2841a78e07fa6c7228c9a52241fd71c297273ee21bf7fdcde9a212a721",
+      "repository_bytes": 9979,
+      "repository_sha256": "26a91a2841a78e07fa6c7228c9a52241fd71c297273ee21bf7fdcde9a212a721",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/aws-nba/docs/REFERENCE_RECONCILIATION.md",
+      "repository_path": "output/documentation-review-20261009/before/aws-nba/docs/REFERENCE_RECONCILIATION.md",
+      "source_bytes": 8226,
+      "source_sha256": "a3ae0e3478def589f61d9254533a680e0c7cbe48382af5ff91d922d8a7bf7748",
+      "repository_bytes": 8226,
+      "repository_sha256": "a3ae0e3478def589f61d9254533a680e0c7cbe48382af5ff91d922d8a7bf7748",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/data/processed/20261009/README.md",
+      "repository_path": "output/documentation-review-20261009/before/data/processed/20261009/README.md",
+      "source_bytes": 4714,
+      "source_sha256": "784ab60653c602daef7bf88983e4bef7b627ac77becf5563f6f26826f2a28c3a",
+      "repository_bytes": 4714,
+      "repository_sha256": "784ab60653c602daef7bf88983e4bef7b627ac77becf5563f6f26826f2a28c3a",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/data/processed/20261009/data-dictionary.md",
+      "repository_path": "output/documentation-review-20261009/before/data/processed/20261009/data-dictionary.md",
+      "source_bytes": 5877,
+      "source_sha256": "bc97d00e9fd0ee1fcd96f336660752c411a4539cbf470b6aed8c27cea33cbf15",
+      "repository_bytes": 5877,
+      "repository_sha256": "bc97d00e9fd0ee1fcd96f336660752c411a4539cbf470b6aed8c27cea33cbf15",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/data/processed/20261009/shot-index.md",
+      "repository_path": "output/documentation-review-20261009/before/data/processed/20261009/shot-index.md",
+      "source_bytes": 4306,
+      "source_sha256": "81f368cb22221350ec52755f1f861b05a9f28911af62821c7fdbea64539a18ca",
+      "repository_bytes": 4306,
+      "repository_sha256": "81f368cb22221350ec52755f1f861b05a9f28911af62821c7fdbea64539a18ca",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/data/public-nba/20261009/README.md",
+      "repository_path": "output/documentation-review-20261009/before/data/public-nba/20261009/README.md",
+      "source_bytes": 4623,
+      "source_sha256": "8f532bdc58ec784f97bfb1c704235ba17a2d0896b24a0cc9aa313c71e182d27f",
+      "repository_bytes": 4623,
+      "repository_sha256": "8f532bdc58ec784f97bfb1c704235ba17a2d0896b24a0cc9aa313c71e182d27f",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/准备资料/01_赛规与交付检查表.md",
+      "repository_path": "output/documentation-review-20261009/before/准备资料/01_赛规与交付检查表.md",
+      "source_bytes": 4234,
+      "source_sha256": "939870bb5342595f999f597a5ebc7e7ef8757b865185ba0f324c6ff7e9d979b5",
+      "repository_bytes": 4234,
+      "repository_sha256": "939870bb5342595f999f597a5ebc7e7ef8757b865185ba0f324c6ff7e9d979b5",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/准备资料/02_数据接入与标注规范.md",
+      "repository_path": "output/documentation-review-20261009/before/准备资料/02_数据接入与标注规范.md",
+      "source_bytes": 5957,
+      "source_sha256": "fdf451082c8e403f74d725b4a4adfd239543108d989aa3632895bd0726f74dd5",
+      "repository_bytes": 5957,
+      "repository_sha256": "fdf451082c8e403f74d725b4a4adfd239543108d989aa3632895bd0726f74dd5",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/准备资料/03_模型提示词与复核流程.md",
+      "repository_path": "output/documentation-review-20261009/before/准备资料/03_模型提示词与复核流程.md",
+      "source_bytes": 4053,
+      "source_sha256": "9437e6151a056d2c26f9dc1c5446c9406a841318f689224a4d2b752c77972acd",
+      "repository_bytes": 4053,
+      "repository_sha256": "9437e6151a056d2c26f9dc1c5446c9406a841318f689224a4d2b752c77972acd",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/准备资料/04_质量验收与实验记录.md",
+      "repository_path": "output/documentation-review-20261009/before/准备资料/04_质量验收与实验记录.md",
+      "source_bytes": 4463,
+      "source_sha256": "87440867165f17d039eca7afc5a53e129f84282984098f2ed2d6230923fa07c3",
+      "repository_bytes": 4463,
+      "repository_sha256": "87440867165f17d039eca7afc5a53e129f84282984098f2ed2d6230923fa07c3",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/准备资料/05_作品说明与五分钟演示稿.md",
+      "repository_path": "output/documentation-review-20261009/before/准备资料/05_作品说明与五分钟演示稿.md",
+      "source_bytes": 5421,
+      "source_sha256": "aba3bd0982b607721fecfc02172d6a21a3dd7e52ad0948e1ee72381ce36902f9",
+      "repository_bytes": 5421,
+      "repository_sha256": "aba3bd0982b607721fecfc02172d6a21a3dd7e52ad0948e1ee72381ce36902f9",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/准备资料/06_比赛日执行手册.md",
+      "repository_path": "output/documentation-review-20261009/before/准备资料/06_比赛日执行手册.md",
+      "source_bytes": 4632,
+      "source_sha256": "3004cc7821b0db007a33753d5c2e5698fc1d0003b52160f2b7d269f9ff8adee3",
+      "repository_bytes": 4632,
+      "repository_sha256": "3004cc7821b0db007a33753d5c2e5698fc1d0003b52160f2b7d269f9ff8adee3",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/准备资料/07_材料获取清单与待确认问题.md",
+      "repository_path": "output/documentation-review-20261009/before/准备资料/07_材料获取清单与待确认问题.md",
+      "source_bytes": 4109,
+      "source_sha256": "c509c08cd0e886f57acfce05ae5aff51e7d3e56796e08217025a069762496344",
+      "repository_bytes": 4109,
+      "repository_sha256": "c509c08cd0e886f57acfce05ae5aff51e7d3e56796e08217025a069762496344",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/准备资料/08_来源与证据索引.md",
+      "repository_path": "output/documentation-review-20261009/before/准备资料/08_来源与证据索引.md",
+      "source_bytes": 4573,
+      "source_sha256": "da361b4af92300a1f96bc4748ed9da995c985943e809323db2ace21c9f084720",
+      "repository_bytes": 4573,
+      "repository_sha256": "da361b4af92300a1f96bc4748ed9da995c985943e809323db2ace21c9f084720",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/准备资料/README.md",
+      "repository_path": "output/documentation-review-20261009/before/准备资料/README.md",
+      "source_bytes": 4953,
+      "source_sha256": "fe45b016d349ec7f0efce8961494a50186a94234467f5458bb55ced33fbdb93c",
+      "repository_bytes": 4953,
+      "repository_sha256": "fe45b016d349ec7f0efce8961494a50186a94234467f5458bb55ced33fbdb93c",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/资料/参赛终极指南.md",
+      "repository_path": "output/documentation-review-20261009/before/资料/参赛终极指南.md",
+      "source_bytes": 15904,
+      "source_sha256": "8b97e8160c94835888636976cb481d8694e2dd94d0cf0bc7a7aef3a2479c0309",
+      "repository_bytes": 15904,
+      "repository_sha256": "8b97e8160c94835888636976cb481d8694e2dd94d0cf0bc7a7aef3a2479c0309",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/before/资料/赛制与选手快速上手.md",
+      "repository_path": "output/documentation-review-20261009/before/资料/赛制与选手快速上手.md",
+      "source_bytes": 23091,
+      "source_sha256": "3220b7eef4ef5c97ffb7bd22d694416b184eb82519452c7219290e3f45a8b1eb",
+      "repository_bytes": 23091,
+      "repository_sha256": "3220b7eef4ef5c97ffb7bd22d694416b184eb82519452c7219290e3f45a8b1eb",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/inventory-before.json",
+      "repository_path": "output/documentation-review-20261009/inventory-before.json",
+      "source_bytes": 9541,
+      "source_sha256": "4c36e862b92341046b5e17693d15adf7dc713295573f17a45ffce807de9c9ce8",
+      "repository_bytes": 9541,
+      "repository_sha256": "4c36e862b92341046b5e17693d15adf7dc713295573f17a45ffce807de9c9ce8",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/validate_docs.py",
+      "repository_path": "output/documentation-review-20261009/validate_docs.py",
+      "source_bytes": 6398,
+      "source_sha256": "7c34fc00756b1261a01d3ad04e642aafc23b2ec4b676887a7f18d118c19eddac",
+      "repository_bytes": 6398,
+      "repository_sha256": "7c34fc00756b1261a01d3ad04e642aafc23b2ec4b676887a7f18d118c19eddac",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/documentation-review-20261009/validation.json",
+      "repository_path": "output/documentation-review-20261009/validation.json",
+      "source_bytes": 8277,
+      "source_sha256": "9b5117c7959924094f1a2c46b0a4c081b72d6f840466315059f1ea5d4ad9c6f3",
+      "repository_bytes": 8277,
+      "repository_sha256": "9b5117c7959924094f1a2c46b0a4c081b72d6f840466315059f1ea5d4ad9c6f3",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/pdf/NBA深度赛场_技术栈与选型建议.pdf",
+      "repository_path": "output/pdf/NBA深度赛场_技术栈与选型建议.pdf",
+      "source_bytes": 386201,
+      "source_sha256": "f1701add4764028508da4f336390e364c19b251d5366cf0147fa6b47b827eeb2",
+      "repository_bytes": 386201,
+      "repository_sha256": "f1701add4764028508da4f336390e364c19b251d5366cf0147fa6b47b827eeb2",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/aws-catalog-parsed.json",
+      "repository_path": "output/preparation-evidence/aws-catalog-parsed.json",
+      "source_bytes": 83253,
+      "source_sha256": "57b61a33680cda62655ab8278b48537b1e31e50ba9a7ae17985428c1832d5a3e",
+      "repository_bytes": 83253,
+      "repository_sha256": "57b61a33680cda62655ab8278b48537b1e31e50ba9a7ae17985428c1832d5a3e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/aws-mcp-tools.json",
+      "repository_path": "output/preparation-evidence/aws-mcp-tools.json",
+      "source_bytes": 18645,
+      "source_sha256": "30708fbbb61c81e91c9aad29188d6dda1225879c5f9329296df2b64249abe480",
+      "repository_bytes": 18645,
+      "repository_sha256": "30708fbbb61c81e91c9aad29188d6dda1225879c5f9329296df2b64249abe480",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/bedrock-access-docs.json",
+      "repository_path": "output/preparation-evidence/bedrock-access-docs.json",
+      "source_bytes": 3422,
+      "source_sha256": "4b2cb60e0cd9e734c417a4e6793448715e8f729e1728c7df32103a346812f45e",
+      "repository_bytes": 3422,
+      "repository_sha256": "4b2cb60e0cd9e734c417a4e6793448715e8f729e1728c7df32103a346812f45e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/bedrock-ohio-prices.json",
+      "repository_path": "output/preparation-evidence/bedrock-ohio-prices.json",
+      "source_bytes": 30433,
+      "source_sha256": "9ef5bc63d18f73e374bcb9ae8228b2984ddc168029d61926128fc47a6bb4f19b",
+      "repository_bytes": 30433,
+      "repository_sha256": "9ef5bc63d18f73e374bcb9ae8228b2984ddc168029d61926128fc47a6bb4f19b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/bedrock-price-rates.json",
+      "repository_path": "output/preparation-evidence/bedrock-price-rates.json",
+      "source_bytes": 15397,
+      "source_sha256": "2bc7c3a9a80e64ca7748eb9b715b0360067f633b790d2cf9e469dbc175034517",
+      "repository_bytes": 15397,
+      "repository_sha256": "2bc7c3a9a80e64ca7748eb9b715b0360067f633b790d2cf9e469dbc175034517",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/bedrock-skill-retrieved.json",
+      "repository_path": "output/preparation-evidence/bedrock-skill-retrieved.json",
+      "source_bytes": 34911,
+      "source_sha256": "8d5afa4577cd7f072f8239136271047ab3ab24d60c255874ee8f5cbe95f74168",
+      "repository_bytes": 34911,
+      "repository_sha256": "8d5afa4577cd7f072f8239136271047ab3ab24d60c255874ee8f5cbe95f74168",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/bedrock-skill-search.json",
+      "repository_path": "output/preparation-evidence/bedrock-skill-search.json",
+      "source_bytes": 1585,
+      "source_sha256": "c83138c49540852813a9cafbe64f69454c8f91d04660fe30a292e19fbfed2261",
+      "repository_bytes": 1585,
+      "repository_sha256": "c83138c49540852813a9cafbe64f69454c8f91d04660fe30a292e19fbfed2261",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/cloudfront-price-rates.json",
+      "repository_path": "output/preparation-evidence/cloudfront-price-rates.json",
+      "source_bytes": 14200,
+      "source_sha256": "580bca631eeb17b2bf66ba6e32fe86d210dd947e648037c6d664eb1a31708554",
+      "repository_bytes": 14200,
+      "repository_sha256": "580bca631eeb17b2bf66ba6e32fe86d210dd947e648037c6d664eb1a31708554",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/cost-estimate.json",
+      "repository_path": "output/preparation-evidence/cost-estimate.json",
+      "source_bytes": 1795,
+      "source_sha256": "4dbf74e4197193d3539d66eed69c44a3fad0e910c272f8b2b59f52c047985d4f",
+      "repository_bytes": 1795,
+      "repository_sha256": "4dbf74e4197193d3539d66eed69c44a3fad0e910c272f8b2b59f52c047985d4f",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/delivery-validation.json",
+      "repository_path": "output/preparation-evidence/delivery-validation.json",
+      "source_bytes": 966,
+      "source_sha256": "755094eb521f74c3e2c19ac180e53beaf542651848aa8e930bd1ba065feefa19",
+      "repository_bytes": 966,
+      "repository_sha256": "755094eb521f74c3e2c19ac180e53beaf542651848aa8e930bd1ba065feefa19",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/input-manifest.json",
+      "repository_path": "output/preparation-evidence/input-manifest.json",
+      "source_bytes": 1038,
+      "source_sha256": "4b662c350e5f4e62caf472cbae621d793dcd769ca096bbd8a118f4cc1569d285",
+      "repository_bytes": 1038,
+      "repository_sha256": "4b662c350e5f4e62caf472cbae621d793dcd769ca096bbd8a118f4cc1569d285",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/model-access-and-quotas.json",
+      "repository_path": "output/preparation-evidence/model-access-and-quotas.json",
+      "source_bytes": 12293,
+      "source_sha256": "cfad3ff2b8d9f92bad6565d07eb3c3a468e02274b236ee6025c715cf22af8281",
+      "repository_bytes": 12293,
+      "repository_sha256": "cfad3ff2b8d9f92bad6565d07eb3c3a468e02274b236ee6025c715cf22af8281",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/model-regional-docs.json",
+      "repository_path": "output/preparation-evidence/model-regional-docs.json",
+      "source_bytes": 5438,
+      "source_sha256": "2cdf9b35e4a9b190bb1efa4b51d098d6608f390e2b87cd57f419985c5eecf06d",
+      "repository_bytes": 5438,
+      "repository_sha256": "2cdf9b35e4a9b190bb1efa4b51d098d6608f390e2b87cd57f419985c5eecf06d",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/new-source-manifest.json",
+      "repository_path": "output/preparation-evidence/new-source-manifest.json",
+      "source_bytes": 906,
+      "source_sha256": "82b6ef0527679ab1832024aedfd1ec26c4c8b35d168a7608b8bde25e688f87a9",
+      "repository_bytes": 906,
+      "repository_sha256": "82b6ef0527679ab1832024aedfd1ec26c4c8b35d168a7608b8bde25e688f87a9",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/nova-video-docs.json",
+      "repository_path": "output/preparation-evidence/nova-video-docs.json",
+      "source_bytes": 4438,
+      "source_sha256": "4435d3257798459b55593128880084cf9895149add12eb748f03e3604647b84e",
+      "repository_bytes": 4438,
+      "repository_sha256": "4435d3257798459b55593128880084cf9895149add12eb748f03e3604647b84e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/nova-video-reference.json",
+      "repository_path": "output/preparation-evidence/nova-video-reference.json",
+      "source_bytes": 5321,
+      "source_sha256": "ac9c1e06b81f372660e2a314b8814458c5b3d17b90379992a89e77bd030369fb",
+      "repository_bytes": 5321,
+      "repository_sha256": "ac9c1e06b81f372660e2a314b8814458c5b3d17b90379992a89e77bd030369fb",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/preparation-materials-validation.json",
+      "repository_path": "output/preparation-evidence/preparation-materials-validation.json",
+      "source_bytes": 3620,
+      "source_sha256": "afc3f8b022d38c259f0c3e49a6d7efce6a876d7edc0532ea496d04d4ba436ac2",
+      "repository_bytes": 3620,
+      "repository_sha256": "afc3f8b022d38c259f0c3e49a6d7efce6a876d7edc0532ea496d04d4ba436ac2",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/quality-budget-validation.json",
+      "repository_path": "output/preparation-evidence/quality-budget-validation.json",
+      "source_bytes": 1213,
+      "source_sha256": "e217374352cc5ada44da49a2e1e4ce4c07a7d790ef9f3c858ace1c31b4b94a39",
+      "repository_bytes": 1213,
+      "repository_sha256": "e217374352cc5ada44da49a2e1e4ce4c07a7d790ef9f3c858ace1c31b4b94a39",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/quality-cost-estimate.json",
+      "repository_path": "output/preparation-evidence/quality-cost-estimate.json",
+      "source_bytes": 2339,
+      "source_sha256": "3b74e0d92c7feb910e247f040281a519d463515d39d390a62aa45d82b10b2d27",
+      "repository_bytes": 2339,
+      "repository_sha256": "3b74e0d92c7feb910e247f040281a519d463515d39d390a62aa45d82b10b2d27",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/quality-cost-mcp-check.json",
+      "repository_path": "output/preparation-evidence/quality-cost-mcp-check.json",
+      "source_bytes": 1404,
+      "source_sha256": "c6659d66100f513f488b8fe7bc067c60064904a721353459b07abd3e8fca3177",
+      "repository_bytes": 1404,
+      "repository_sha256": "c6659d66100f513f488b8fe7bc067c60064904a721353459b07abd3e8fca3177",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/quality-model-mcp-doc.json",
+      "repository_path": "output/preparation-evidence/quality-model-mcp-doc.json",
+      "source_bytes": 13456,
+      "source_sha256": "f1d662f7732e4be0c2915e37144e43b0ceb118acfc08556c106bfc4e237535a9",
+      "repository_bytes": 13456,
+      "repository_sha256": "f1d662f7732e4be0c2915e37144e43b0ceb118acfc08556c106bfc4e237535a9",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/quality-model-price-rates.json",
+      "repository_path": "output/preparation-evidence/quality-model-price-rates.json",
+      "source_bytes": 1191,
+      "source_sha256": "288cab997a221d845485214653b3c137becfd5b2684715843362ca89fa579910",
+      "repository_bytes": 1191,
+      "repository_sha256": "288cab997a221d845485214653b3c137becfd5b2684715843362ca89fa579910",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/quota-confirmation.json",
+      "repository_path": "output/preparation-evidence/quota-confirmation.json",
+      "source_bytes": 6114,
+      "source_sha256": "05ccef4a6a92d6a961877e983a6497be5731730ed1a47b00a154c8a3f2c76f71",
+      "repository_bytes": 6114,
+      "repository_sha256": "05ccef4a6a92d6a961877e983a6497be5731730ed1a47b00a154c8a3f2c76f71",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/readonly-aws-catalog.json",
+      "repository_path": "output/preparation-evidence/readonly-aws-catalog.json",
+      "source_bytes": 156163,
+      "source_sha256": "a13a9f8a7f6cd19ee53d9b651fe567d547e5268e176095ece921ebff5e032788",
+      "repository_bytes": 156163,
+      "repository_sha256": "a13a9f8a7f6cd19ee53d9b651fe567d547e5268e176095ece921ebff5e032788",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/regional-availability.json",
+      "repository_path": "output/preparation-evidence/regional-availability.json",
+      "source_bytes": 492,
+      "source_sha256": "9eca67caf3b4b023312953d5883534175cda568ac3f601c4b698ac7bdb94dc86",
+      "repository_bytes": 492,
+      "repository_sha256": "9eca67caf3b4b023312953d5883534175cda568ac3f601c4b698ac7bdb94dc86",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/s3-price-rates.json",
+      "repository_path": "output/preparation-evidence/s3-price-rates.json",
+      "source_bytes": 4597,
+      "source_sha256": "c42caba7491b62498446c7bef0bc5247e95813bbadce63f25af7e6b8ec96b83b",
+      "repository_bytes": 4597,
+      "repository_sha256": "c42caba7491b62498446c7bef0bc5247e95813bbadce63f25af7e6b8ec96b83b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/preparation-evidence/video-manifest.json",
+      "repository_path": "output/preparation-evidence/video-manifest.json",
+      "source_bytes": 1628,
+      "source_sha256": "929cdc266935a55001ab40a63107d9f5523dcd7091f44efc221bbbec5a520dc7",
+      "repository_bytes": 1628,
+      "repository_sha256": "929cdc266935a55001ab40a63107d9f5523dcd7091f44efc221bbbec5a520dc7",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/before-review-人工核对.csv",
+      "repository_path": "output/video-verification-20261009/before-review-人工核对.csv",
+      "source_bytes": 1542,
+      "source_sha256": "f27068ea4f621f9e4945e76a0e8eb9ac0f24736d66c3e5d14902adf83fd37bde",
+      "repository_bytes": 1542,
+      "repository_sha256": "f27068ea4f621f9e4945e76a0e8eb9ac0f24736d66c3e5d14902adf83fd37bde",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/before-review-素材登记.csv",
+      "repository_path": "output/video-verification-20261009/before-review-素材登记.csv",
+      "source_bytes": 1070,
+      "source_sha256": "229429fa298547349eb99222e172ed840f84acc0155c209181124536c3077058",
+      "repository_bytes": 1070,
+      "repository_sha256": "229429fa298547349eb99222e172ed840f84acc0155c209181124536c3077058",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/decode-manifest.json",
+      "repository_path": "output/video-verification-20261009/decode-manifest.json",
+      "source_bytes": 2642,
+      "source_sha256": "8a6b23d032064e08e601e476376d8c06ec76f6a0d3f5d1f3786cf2136599f087",
+      "repository_bytes": 2642,
+      "repository_sha256": "8a6b23d032064e08e601e476376d8c06ec76f6a0d3f5d1f3786cf2136599f087",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/official-fetch-log.json",
+      "repository_path": "output/video-verification-20261009/official-fetch-log.json",
+      "source_bytes": 473,
+      "source_sha256": "a503ad95a3d9579ae727d17fbc314370ee7efa560496879ad1a0861e3fa9c46e",
+      "repository_bytes": 473,
+      "repository_sha256": "a503ad95a3d9579ae727d17fbc314370ee7efa560496879ad1a0861e3fa9c46e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/official/selected-play-by-play-records.json",
+      "repository_path": "output/video-verification-20261009/official/selected-play-by-play-records.json",
+      "source_bytes": 3083,
+      "source_sha256": "1dc3b9a9e39028fea3506016af86f775925ab1028516d334d8407c0f3380df6b",
+      "repository_bytes": 3083,
+      "repository_sha256": "1dc3b9a9e39028fea3506016af86f775925ab1028516d334d8407c0f3380df6b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001-overview.jpg",
+      "repository_path": "output/video-verification-20261009/train_001-overview.jpg",
+      "source_bytes": 1356295,
+      "source_sha256": "32aa424e2e1f1dcf13ab21b42cfbd7191a451115aa193aaaa64d3a79054a1b54",
+      "repository_bytes": 1356295,
+      "repository_sha256": "32aa424e2e1f1dcf13ab21b42cfbd7191a451115aa193aaaa64d3a79054a1b54",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001-release-close.jpg",
+      "repository_path": "output/video-verification-20261009/train_001-release-close.jpg",
+      "source_bytes": 875958,
+      "source_sha256": "245c8b0649dcd1858c197b789c5ee0720e887a9e93483e04c258822b7b4ea229",
+      "repository_bytes": 875958,
+      "repository_sha256": "245c8b0649dcd1858c197b789c5ee0720e887a9e93483e04c258822b7b4ea229",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001-release-review.jpg",
+      "repository_path": "output/video-verification-20261009/train_001-release-review.jpg",
+      "source_bytes": 1400262,
+      "source_sha256": "846ab9b0beaca50e6031602ef09d5c33f48cd7697ab40ed48cbfd9a3cb9b40d4",
+      "repository_bytes": 1400262,
+      "repository_sha256": "846ab9b0beaca50e6031602ef09d5c33f48cd7697ab40ed48cbfd9a3cb9b40d4",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame-index.json",
+      "repository_path": "output/video-verification-20261009/train_001/frame-index.json",
+      "source_bytes": 14788,
+      "source_sha256": "31c6dafa060a562879ff6e67c9b35b383f2c043671f2a195317a45faa1e0752b",
+      "repository_bytes": 14788,
+      "repository_sha256": "31c6dafa060a562879ff6e67c9b35b383f2c043671f2a195317a45faa1e0752b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00000_000000.000ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00000_000000.000ms.jpg",
+      "source_bytes": 399573,
+      "source_sha256": "fc184bdb121ca82113a4c464462cb28864d9e49ed338068201f76021f2dde7fd",
+      "repository_bytes": 399573,
+      "repository_sha256": "fc184bdb121ca82113a4c464462cb28864d9e49ed338068201f76021f2dde7fd",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00030_000500.500ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00030_000500.500ms.jpg",
+      "source_bytes": 520753,
+      "source_sha256": "e860d5461198ef55cffbfad1f9325c3a595b6a79984930a007bfb7a5fcb9a980",
+      "repository_bytes": 520753,
+      "repository_sha256": "e860d5461198ef55cffbfad1f9325c3a595b6a79984930a007bfb7a5fcb9a980",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00060_001001.000ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00060_001001.000ms.jpg",
+      "source_bytes": 494085,
+      "source_sha256": "5feadf4e7f2b6eea6a8d6404b8704719de35a4f428f48a2d3a71040379cfddbf",
+      "repository_bytes": 494085,
+      "repository_sha256": "5feadf4e7f2b6eea6a8d6404b8704719de35a4f428f48a2d3a71040379cfddbf",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00090_001501.500ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00090_001501.500ms.jpg",
+      "source_bytes": 520490,
+      "source_sha256": "ac8f0ffd55abfb8982271ee85e4225eaf67f70a60c62d9d033f5fd46cf3c349e",
+      "repository_bytes": 520490,
+      "repository_sha256": "ac8f0ffd55abfb8982271ee85e4225eaf67f70a60c62d9d033f5fd46cf3c349e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00120_002002.000ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00120_002002.000ms.jpg",
+      "source_bytes": 530938,
+      "source_sha256": "79c40a7d6ff2dcf43770b7ba25d3ae0935dcfc18d527d6c3366693f38b362911",
+      "repository_bytes": 530938,
+      "repository_sha256": "79c40a7d6ff2dcf43770b7ba25d3ae0935dcfc18d527d6c3366693f38b362911",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00150_002502.500ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00150_002502.500ms.jpg",
+      "source_bytes": 519989,
+      "source_sha256": "ce178500792c79ea910b61d7439a7eb70eeb6b544bb4fab14bbda97b16636c5f",
+      "repository_bytes": 519989,
+      "repository_sha256": "ce178500792c79ea910b61d7439a7eb70eeb6b544bb4fab14bbda97b16636c5f",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00180_003003.000ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00180_003003.000ms.jpg",
+      "source_bytes": 531589,
+      "source_sha256": "64517fd5c6f2212906eb9606ec294a9364b127755ccf84c70c4c025d87f12f5e",
+      "repository_bytes": 531589,
+      "repository_sha256": "64517fd5c6f2212906eb9606ec294a9364b127755ccf84c70c4c025d87f12f5e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00210_003503.500ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00210_003503.500ms.jpg",
+      "source_bytes": 538590,
+      "source_sha256": "34ac81113376565edbefb28390cb00a985609b75317307d8f11309cbd41a36a0",
+      "repository_bytes": 538590,
+      "repository_sha256": "34ac81113376565edbefb28390cb00a985609b75317307d8f11309cbd41a36a0",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00240_004004.000ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00240_004004.000ms.jpg",
+      "source_bytes": 567565,
+      "source_sha256": "75c23af0a8319dc600943a1f09181f9c7144baa62058e18f0a0f20b98272fada",
+      "repository_bytes": 567565,
+      "repository_sha256": "75c23af0a8319dc600943a1f09181f9c7144baa62058e18f0a0f20b98272fada",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00270_004504.500ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00270_004504.500ms.jpg",
+      "source_bytes": 571549,
+      "source_sha256": "0d4671cb767f20f258adc610159b0066ca0426aa50daa064bf4dfe9cfff8cdde",
+      "repository_bytes": 571549,
+      "repository_sha256": "0d4671cb767f20f258adc610159b0066ca0426aa50daa064bf4dfe9cfff8cdde",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00300_005005.000ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00300_005005.000ms.jpg",
+      "source_bytes": 558496,
+      "source_sha256": "54d891983293a86dc146451b40038ef9ce8588ffc0fe3b6eb453309a6b16b110",
+      "repository_bytes": 558496,
+      "repository_sha256": "54d891983293a86dc146451b40038ef9ce8588ffc0fe3b6eb453309a6b16b110",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00330_005505.500ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00330_005505.500ms.jpg",
+      "source_bytes": 560497,
+      "source_sha256": "7e81bf118510129e0e8eeb0b1294265d20530a7b75ac1ff5fbc62f278a59d9eb",
+      "repository_bytes": 560497,
+      "repository_sha256": "7e81bf118510129e0e8eeb0b1294265d20530a7b75ac1ff5fbc62f278a59d9eb",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00360_006006.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00360_006006.011ms.jpg",
+      "source_bytes": 561409,
+      "source_sha256": "7dd651c2ae51d062bd0f82b5d16c306f99b78fc7aa7a193d931924bacd2634e2",
+      "repository_bytes": 561409,
+      "repository_sha256": "7dd651c2ae51d062bd0f82b5d16c306f99b78fc7aa7a193d931924bacd2634e2",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00390_006506.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00390_006506.511ms.jpg",
+      "source_bytes": 593490,
+      "source_sha256": "87682abf3e624d1f48c53738acf3068c786c40de8639456b275fbadf0557216f",
+      "repository_bytes": 593490,
+      "repository_sha256": "87682abf3e624d1f48c53738acf3068c786c40de8639456b275fbadf0557216f",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00420_007007.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00420_007007.011ms.jpg",
+      "source_bytes": 584425,
+      "source_sha256": "9fb74dc5c3530f9b18bcb5a10ecbdab99d0b5f3469c009d029b0e0b7ff1d86fa",
+      "repository_bytes": 584425,
+      "repository_sha256": "9fb74dc5c3530f9b18bcb5a10ecbdab99d0b5f3469c009d029b0e0b7ff1d86fa",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00450_007507.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00450_007507.511ms.jpg",
+      "source_bytes": 556299,
+      "source_sha256": "f83149471d132219fb799a9e0dc93e2a21519ecc3702eb4f26547df9b9803898",
+      "repository_bytes": 556299,
+      "repository_sha256": "f83149471d132219fb799a9e0dc93e2a21519ecc3702eb4f26547df9b9803898",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00480_008008.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00480_008008.011ms.jpg",
+      "source_bytes": 561733,
+      "source_sha256": "f93a7fe094c62fa50d0ed289b9676a4b34ac81577cbad1b8a616c6a9bb9327c6",
+      "repository_bytes": 561733,
+      "repository_sha256": "f93a7fe094c62fa50d0ed289b9676a4b34ac81577cbad1b8a616c6a9bb9327c6",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00510_008508.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00510_008508.511ms.jpg",
+      "source_bytes": 572503,
+      "source_sha256": "598f55a3c0d2f324f3ad8af3bb283c8444ae0c395d75b451f6abfc948c611f15",
+      "repository_bytes": 572503,
+      "repository_sha256": "598f55a3c0d2f324f3ad8af3bb283c8444ae0c395d75b451f6abfc948c611f15",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00540_009009.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00540_009009.011ms.jpg",
+      "source_bytes": 572992,
+      "source_sha256": "b386f686676babb22fef4cfea4054abf6a67580382fef5843aea62f30bdd19e7",
+      "repository_bytes": 572992,
+      "repository_sha256": "b386f686676babb22fef4cfea4054abf6a67580382fef5843aea62f30bdd19e7",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00570_009509.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00570_009509.511ms.jpg",
+      "source_bytes": 577991,
+      "source_sha256": "61055965d724749fcccce63ef0299ee8d5acb4512aa9845ae2129b6208a1cf5d",
+      "repository_bytes": 577991,
+      "repository_sha256": "61055965d724749fcccce63ef0299ee8d5acb4512aa9845ae2129b6208a1cf5d",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00600_010010.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00600_010010.011ms.jpg",
+      "source_bytes": 543664,
+      "source_sha256": "c1c8f89d232c983440f12c9ae3a204b40b14b440d079fa7f542eee438817e9ce",
+      "repository_bytes": 543664,
+      "repository_sha256": "c1c8f89d232c983440f12c9ae3a204b40b14b440d079fa7f542eee438817e9ce",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00630_010510.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00630_010510.511ms.jpg",
+      "source_bytes": 550516,
+      "source_sha256": "137e6fd5220c435fb2a70857839e524e67ec60ba277e3ad862e59337e59c597f",
+      "repository_bytes": 550516,
+      "repository_sha256": "137e6fd5220c435fb2a70857839e524e67ec60ba277e3ad862e59337e59c597f",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00660_011011.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00660_011011.011ms.jpg",
+      "source_bytes": 546482,
+      "source_sha256": "a79c06f190eb3f3d127e0ee3fef9d62ddcad1fb5190a0a8e299f8ada6662c45e",
+      "repository_bytes": 546482,
+      "repository_sha256": "a79c06f190eb3f3d127e0ee3fef9d62ddcad1fb5190a0a8e299f8ada6662c45e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00690_011511.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00690_011511.511ms.jpg",
+      "source_bytes": 577461,
+      "source_sha256": "ecb65d7d2ba7b17cd4c887576668c1ac2a0dc8b713ed907522f26b7340dac90c",
+      "repository_bytes": 577461,
+      "repository_sha256": "ecb65d7d2ba7b17cd4c887576668c1ac2a0dc8b713ed907522f26b7340dac90c",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00720_012012.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00720_012012.011ms.jpg",
+      "source_bytes": 576764,
+      "source_sha256": "13e58309cafb055231d4b2265987163d16f382690b7a7d5ccb6d1f7895b17bd3",
+      "repository_bytes": 576764,
+      "repository_sha256": "13e58309cafb055231d4b2265987163d16f382690b7a7d5ccb6d1f7895b17bd3",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00750_012512.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00750_012512.511ms.jpg",
+      "source_bytes": 553103,
+      "source_sha256": "8f726b810ce441a1dac83d6c9a19326a245b0c223d70b45426596a8bf05166ab",
+      "repository_bytes": 553103,
+      "repository_sha256": "8f726b810ce441a1dac83d6c9a19326a245b0c223d70b45426596a8bf05166ab",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00780_013013.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00780_013013.011ms.jpg",
+      "source_bytes": 563359,
+      "source_sha256": "142d1166c89baa69e15f867dfd3e6fda98948f5a526dc6b28cecb9282e72c33f",
+      "repository_bytes": 563359,
+      "repository_sha256": "142d1166c89baa69e15f867dfd3e6fda98948f5a526dc6b28cecb9282e72c33f",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00810_013513.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00810_013513.511ms.jpg",
+      "source_bytes": 550143,
+      "source_sha256": "2f00d4c4cc7bf7c28e55d36f31d241d8f7333d96c45038cbdbc78b96bc515ccb",
+      "repository_bytes": 550143,
+      "repository_sha256": "2f00d4c4cc7bf7c28e55d36f31d241d8f7333d96c45038cbdbc78b96bc515ccb",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00840_014014.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00840_014014.011ms.jpg",
+      "source_bytes": 572291,
+      "source_sha256": "dcabfa00bbe60386a3719150f1521c04bcbf16d440a87db3d25c2ea05b23156b",
+      "repository_bytes": 572291,
+      "repository_sha256": "dcabfa00bbe60386a3719150f1521c04bcbf16d440a87db3d25c2ea05b23156b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00870_014514.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00870_014514.511ms.jpg",
+      "source_bytes": 577427,
+      "source_sha256": "88c324ac6aa5008f45d3756c04e787f55cf06ce5ee22a2f72c908265c2004f92",
+      "repository_bytes": 577427,
+      "repository_sha256": "88c324ac6aa5008f45d3756c04e787f55cf06ce5ee22a2f72c908265c2004f92",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00900_015015.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00900_015015.011ms.jpg",
+      "source_bytes": 583370,
+      "source_sha256": "9e4fcb5b7687f0b6bbdda0eea182ffc2b38d108127a680b3f5359e317f063423",
+      "repository_bytes": 583370,
+      "repository_sha256": "9e4fcb5b7687f0b6bbdda0eea182ffc2b38d108127a680b3f5359e317f063423",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00930_015515.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00930_015515.511ms.jpg",
+      "source_bytes": 566419,
+      "source_sha256": "39b5e2b4d5fa1697f1797827a860e69ed064036799c24c1865aab422bc157aa6",
+      "repository_bytes": 566419,
+      "repository_sha256": "39b5e2b4d5fa1697f1797827a860e69ed064036799c24c1865aab422bc157aa6",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00960_016016.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00960_016016.011ms.jpg",
+      "source_bytes": 545829,
+      "source_sha256": "bd81a24195216d88c28e40dbfa6760f240feb96daf9020e98d2bee86197900c1",
+      "repository_bytes": 545829,
+      "repository_sha256": "bd81a24195216d88c28e40dbfa6760f240feb96daf9020e98d2bee86197900c1",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_00990_016516.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_00990_016516.511ms.jpg",
+      "source_bytes": 563807,
+      "source_sha256": "8eb6536dd47cbefa407724aec6d4f4559498349b84fdcfea04bcf52e09e87169",
+      "repository_bytes": 563807,
+      "repository_sha256": "8eb6536dd47cbefa407724aec6d4f4559498349b84fdcfea04bcf52e09e87169",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_01019_017000.333ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_01019_017000.333ms.jpg",
+      "source_bytes": 552381,
+      "source_sha256": "61e5dace2182f272fd4ae9208f40749299e5103a5ecf6d5e171179fc915506f2",
+      "repository_bytes": 552381,
+      "repository_sha256": "61e5dace2182f272fd4ae9208f40749299e5103a5ecf6d5e171179fc915506f2",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_01049_017500.833ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_01049_017500.833ms.jpg",
+      "source_bytes": 575983,
+      "source_sha256": "24a89dd8982e421cb2de821a03abf859ed3e49e5f4051ac5d0cb8c100eca2547",
+      "repository_bytes": 575983,
+      "repository_sha256": "24a89dd8982e421cb2de821a03abf859ed3e49e5f4051ac5d0cb8c100eca2547",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_01079_018001.333ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_01079_018001.333ms.jpg",
+      "source_bytes": 571721,
+      "source_sha256": "3523a3e3ce769b694d87fd777202dfbc4e4f1909411d902d2a952fa36dd5cc9c",
+      "repository_bytes": 571721,
+      "repository_sha256": "3523a3e3ce769b694d87fd777202dfbc4e4f1909411d902d2a952fa36dd5cc9c",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_01109_018501.833ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_01109_018501.833ms.jpg",
+      "source_bytes": 560623,
+      "source_sha256": "512818a6e8d2a52a4357a8d11493453dd6a26d52162904373496379f7abab62a",
+      "repository_bytes": 560623,
+      "repository_sha256": "512818a6e8d2a52a4357a8d11493453dd6a26d52162904373496379f7abab62a",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_01139_019002.333ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_01139_019002.333ms.jpg",
+      "source_bytes": 534295,
+      "source_sha256": "1e2a5ee3744d4e4bbfefe9efa1b371fb908779bd2b761781f7bd1f2c8688aa05",
+      "repository_bytes": 534295,
+      "repository_sha256": "1e2a5ee3744d4e4bbfefe9efa1b371fb908779bd2b761781f7bd1f2c8688aa05",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_01169_019502.833ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_01169_019502.833ms.jpg",
+      "source_bytes": 518962,
+      "source_sha256": "ebc0812927f4744f39772dc33000bb9d68b80de925c08a319c29f0cedd7ade94",
+      "repository_bytes": 518962,
+      "repository_sha256": "ebc0812927f4744f39772dc33000bb9d68b80de925c08a319c29f0cedd7ade94",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_01199_020003.333ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_01199_020003.333ms.jpg",
+      "source_bytes": 538670,
+      "source_sha256": "d77073b79cede45b7eb1ed07bc1e1abc50facfd24c8b3cce292e19a6905b9c31",
+      "repository_bytes": 538670,
+      "repository_sha256": "d77073b79cede45b7eb1ed07bc1e1abc50facfd24c8b3cce292e19a6905b9c31",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_01229_020503.833ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_01229_020503.833ms.jpg",
+      "source_bytes": 533958,
+      "source_sha256": "0021e6473c9c58b0adb26d0efcecd04612a3b2ba60bbb28d053ba0357169adfb",
+      "repository_bytes": 533958,
+      "repository_sha256": "0021e6473c9c58b0adb26d0efcecd04612a3b2ba60bbb28d053ba0357169adfb",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_01259_021004.333ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_01259_021004.333ms.jpg",
+      "source_bytes": 536936,
+      "source_sha256": "d2b224c56e0e9d3dcac2ad4b2f9f8459c99c24318c37aa642099452db46444ef",
+      "repository_bytes": 536936,
+      "repository_sha256": "d2b224c56e0e9d3dcac2ad4b2f9f8459c99c24318c37aa642099452db46444ef",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/frame_01289_021504.833ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/frame_01289_021504.833ms.jpg",
+      "source_bytes": 531934,
+      "source_sha256": "99a1d02e1f10217990e91311be1e1ccdae83ee1f11e8f0996dcb902942b39997",
+      "repository_bytes": 531934,
+      "repository_sha256": "99a1d02e1f10217990e91311be1e1ccdae83ee1f11e8f0996dcb902942b39997",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00978_016316.311ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00978_016316.311ms.jpg",
+      "source_bytes": 743573,
+      "source_sha256": "7d747edfa2961204b8c9225f06cecaec9dd598da4814c62e54d869624d975d98",
+      "repository_bytes": 743573,
+      "repository_sha256": "7d747edfa2961204b8c9225f06cecaec9dd598da4814c62e54d869624d975d98",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00979_016333.000ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00979_016333.000ms.jpg",
+      "source_bytes": 723712,
+      "source_sha256": "8ffe29acca527626f8ffe8b0db4ec06366a299e08d77fa5502aaa0a07e644ebd",
+      "repository_bytes": 723712,
+      "repository_sha256": "8ffe29acca527626f8ffe8b0db4ec06366a299e08d77fa5502aaa0a07e644ebd",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00980_016349.678ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00980_016349.678ms.jpg",
+      "source_bytes": 719857,
+      "source_sha256": "466f75c7909c82a735f0a75295951c5d5c3eea2dc582ab585d90380959e1568b",
+      "repository_bytes": 719857,
+      "repository_sha256": "466f75c7909c82a735f0a75295951c5d5c3eea2dc582ab585d90380959e1568b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00981_016366.367ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00981_016366.367ms.jpg",
+      "source_bytes": 725073,
+      "source_sha256": "d88b7a4272c2b4e14d1d8662efcec2b3999077bbd0c1ac0b850c64954ad9e7d6",
+      "repository_bytes": 725073,
+      "repository_sha256": "d88b7a4272c2b4e14d1d8662efcec2b3999077bbd0c1ac0b850c64954ad9e7d6",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00982_016383.044ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00982_016383.044ms.jpg",
+      "source_bytes": 746932,
+      "source_sha256": "3885bda09f11dc57d9eadaf042c861e975a0db19243e39b310bf2f45bedba335",
+      "repository_bytes": 746932,
+      "repository_sha256": "3885bda09f11dc57d9eadaf042c861e975a0db19243e39b310bf2f45bedba335",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00983_016399.733ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00983_016399.733ms.jpg",
+      "source_bytes": 726569,
+      "source_sha256": "5fe287e62444173453c0f7796026d78b64be9425332c9c3f3fab13e45238d9b2",
+      "repository_bytes": 726569,
+      "repository_sha256": "5fe287e62444173453c0f7796026d78b64be9425332c9c3f3fab13e45238d9b2",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00984_016416.411ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00984_016416.411ms.jpg",
+      "source_bytes": 723371,
+      "source_sha256": "eb4a9df7a56a83bd587171c36aa7d553cdd490ec0f38370d8a487467e7be93b5",
+      "repository_bytes": 723371,
+      "repository_sha256": "eb4a9df7a56a83bd587171c36aa7d553cdd490ec0f38370d8a487467e7be93b5",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00985_016433.100ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00985_016433.100ms.jpg",
+      "source_bytes": 724820,
+      "source_sha256": "34c2d5f2be1e6f276713cecdcca4c92f81115a845a04c518e53b063569a2d90f",
+      "repository_bytes": 724820,
+      "repository_sha256": "34c2d5f2be1e6f276713cecdcca4c92f81115a845a04c518e53b063569a2d90f",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00986_016449.778ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00986_016449.778ms.jpg",
+      "source_bytes": 748491,
+      "source_sha256": "58eb93c12d2e3c69dbe6a0e9a295760011bfac9c8ff0bdb9fc9b27f69bf141b3",
+      "repository_bytes": 748491,
+      "repository_sha256": "58eb93c12d2e3c69dbe6a0e9a295760011bfac9c8ff0bdb9fc9b27f69bf141b3",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00987_016466.467ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00987_016466.467ms.jpg",
+      "source_bytes": 734982,
+      "source_sha256": "eaa677d5e2125ccf77f4dc0109f9cf0a43df59723c0bca0832ab6e7709093255",
+      "repository_bytes": 734982,
+      "repository_sha256": "eaa677d5e2125ccf77f4dc0109f9cf0a43df59723c0bca0832ab6e7709093255",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00988_016483.144ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00988_016483.144ms.jpg",
+      "source_bytes": 733011,
+      "source_sha256": "f7620039f53f1b4d27b3fd092f3e0baffe89cff3f53a7f4fd6cf7b6e1cbd3bd6",
+      "repository_bytes": 733011,
+      "repository_sha256": "f7620039f53f1b4d27b3fd092f3e0baffe89cff3f53a7f4fd6cf7b6e1cbd3bd6",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00989_016499.833ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00989_016499.833ms.jpg",
+      "source_bytes": 731200,
+      "source_sha256": "ceca4a7dd3da36bc1d4c9a08cd9b53e6b4b7fb146fea406bfb105573566386c5",
+      "repository_bytes": 731200,
+      "repository_sha256": "ceca4a7dd3da36bc1d4c9a08cd9b53e6b4b7fb146fea406bfb105573566386c5",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00990_016516.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00990_016516.511ms.jpg",
+      "source_bytes": 731431,
+      "source_sha256": "d44eb1ae4effc49bf5396c0e5bf586dcb908f416cb740729baee9666dec0b313",
+      "repository_bytes": 731431,
+      "repository_sha256": "d44eb1ae4effc49bf5396c0e5bf586dcb908f416cb740729baee9666dec0b313",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00991_016533.200ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00991_016533.200ms.jpg",
+      "source_bytes": 737786,
+      "source_sha256": "8035ea94b229c8ff3844b2724089dcfe6cf39c1d7cec61eaedc5a855b09984d9",
+      "repository_bytes": 737786,
+      "repository_sha256": "8035ea94b229c8ff3844b2724089dcfe6cf39c1d7cec61eaedc5a855b09984d9",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00992_016549.878ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00992_016549.878ms.jpg",
+      "source_bytes": 725102,
+      "source_sha256": "48b329d7f5dc1ff9fe4de97eae7973cea34da0fd0c11a424e8ffb09cceff0a69",
+      "repository_bytes": 725102,
+      "repository_sha256": "48b329d7f5dc1ff9fe4de97eae7973cea34da0fd0c11a424e8ffb09cceff0a69",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00993_016566.567ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00993_016566.567ms.jpg",
+      "source_bytes": 720960,
+      "source_sha256": "f8a29919813788c6b3bd6e7094c7f47f5adfc3fcd11ff03dd1298a4a9dafa649",
+      "repository_bytes": 720960,
+      "repository_sha256": "f8a29919813788c6b3bd6e7094c7f47f5adfc3fcd11ff03dd1298a4a9dafa649",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00994_016583.244ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00994_016583.244ms.jpg",
+      "source_bytes": 722881,
+      "source_sha256": "d0807e87ae95aaa634513f7dcc1c4866521ca9e187b1880f4005fcb8c179e427",
+      "repository_bytes": 722881,
+      "repository_sha256": "d0807e87ae95aaa634513f7dcc1c4866521ca9e187b1880f4005fcb8c179e427",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00995_016599.933ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00995_016599.933ms.jpg",
+      "source_bytes": 744156,
+      "source_sha256": "6aceb96549e951308b04969b476d1cb96ba54d0d16160011ea297f3860c8996b",
+      "repository_bytes": 744156,
+      "repository_sha256": "6aceb96549e951308b04969b476d1cb96ba54d0d16160011ea297f3860c8996b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00996_016616.611ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00996_016616.611ms.jpg",
+      "source_bytes": 722952,
+      "source_sha256": "d2ce0d85392835d5f30a4702f44a9355e71e765e8d081ac014d3837247df1b2f",
+      "repository_bytes": 722952,
+      "repository_sha256": "d2ce0d85392835d5f30a4702f44a9355e71e765e8d081ac014d3837247df1b2f",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00997_016633.300ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00997_016633.300ms.jpg",
+      "source_bytes": 725166,
+      "source_sha256": "85959cc09a8ed91cb9da705d8cf6eaaacce24ce3254426883060eaafa45fef0f",
+      "repository_bytes": 725166,
+      "repository_sha256": "85959cc09a8ed91cb9da705d8cf6eaaacce24ce3254426883060eaafa45fef0f",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00998_016649.978ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00998_016649.978ms.jpg",
+      "source_bytes": 726988,
+      "source_sha256": "f835281377f4b394ba45b2ed1350e93e7c8ee3b4fb5e93b69f572d25b13d0eeb",
+      "repository_bytes": 726988,
+      "repository_sha256": "f835281377f4b394ba45b2ed1350e93e7c8ee3b4fb5e93b69f572d25b13d0eeb",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_00999_016666.667ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_00999_016666.667ms.jpg",
+      "source_bytes": 746260,
+      "source_sha256": "9a3a08dcc20474eef9319edfcad8c4ad316aa120a0ce1043a27d2e518d553705",
+      "repository_bytes": 746260,
+      "repository_sha256": "9a3a08dcc20474eef9319edfcad8c4ad316aa120a0ce1043a27d2e518d553705",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01000_016683.344ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01000_016683.344ms.jpg",
+      "source_bytes": 734864,
+      "source_sha256": "6c0c6896995f428bc2db248d992d3a737ff247a59658c8caee737e5f3961d12e",
+      "repository_bytes": 734864,
+      "repository_sha256": "6c0c6896995f428bc2db248d992d3a737ff247a59658c8caee737e5f3961d12e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01001_016700.033ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01001_016700.033ms.jpg",
+      "source_bytes": 728361,
+      "source_sha256": "9470e75ee6aa9413189fa9f6c88a6086d4c8af60a68b83a07aa7da933a6cd26a",
+      "repository_bytes": 728361,
+      "repository_sha256": "9470e75ee6aa9413189fa9f6c88a6086d4c8af60a68b83a07aa7da933a6cd26a",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01002_016716.711ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01002_016716.711ms.jpg",
+      "source_bytes": 725029,
+      "source_sha256": "0cc72167e9dd6c812562a022380d44abb45b3938358b043510706485c83a816d",
+      "repository_bytes": 725029,
+      "repository_sha256": "0cc72167e9dd6c812562a022380d44abb45b3938358b043510706485c83a816d",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01003_016733.400ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01003_016733.400ms.jpg",
+      "source_bytes": 725985,
+      "source_sha256": "36dfe548a2d10008ca74969efdca8aac10499cd4d54b0d993d402e82ac5e8511",
+      "repository_bytes": 725985,
+      "repository_sha256": "36dfe548a2d10008ca74969efdca8aac10499cd4d54b0d993d402e82ac5e8511",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01004_016750.078ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01004_016750.078ms.jpg",
+      "source_bytes": 744477,
+      "source_sha256": "be7a731f8c1076d645d8a293ade127b20e168a5bd4675c531b11dd6705bb9fa4",
+      "repository_bytes": 744477,
+      "repository_sha256": "be7a731f8c1076d645d8a293ade127b20e168a5bd4675c531b11dd6705bb9fa4",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01005_016766.767ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01005_016766.767ms.jpg",
+      "source_bytes": 725678,
+      "source_sha256": "628a4fdaf700634477fbff714625c1127c3ef02dcf60a6566d3f0a7e53c98671",
+      "repository_bytes": 725678,
+      "repository_sha256": "628a4fdaf700634477fbff714625c1127c3ef02dcf60a6566d3f0a7e53c98671",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01006_016783.444ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01006_016783.444ms.jpg",
+      "source_bytes": 721816,
+      "source_sha256": "da3342ca40f40b0f86ddc715ed2b38b7a6000760800fd21ea5f0afa218f64be8",
+      "repository_bytes": 721816,
+      "repository_sha256": "da3342ca40f40b0f86ddc715ed2b38b7a6000760800fd21ea5f0afa218f64be8",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01007_016800.133ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01007_016800.133ms.jpg",
+      "source_bytes": 722475,
+      "source_sha256": "a4e23248cde17a9220c3a1f196efe017835539836c3b270c11beac3fe8d2fd54",
+      "repository_bytes": 722475,
+      "repository_sha256": "a4e23248cde17a9220c3a1f196efe017835539836c3b270c11beac3fe8d2fd54",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01008_016816.811ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01008_016816.811ms.jpg",
+      "source_bytes": 740049,
+      "source_sha256": "d554e44ba4739d30c9c851d76562213aa77788eb9346bfa6040c786a70209de7",
+      "repository_bytes": 740049,
+      "repository_sha256": "d554e44ba4739d30c9c851d76562213aa77788eb9346bfa6040c786a70209de7",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01009_016833.500ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01009_016833.500ms.jpg",
+      "source_bytes": 722698,
+      "source_sha256": "543febc15a64b4afa2c62c5ba3d412eed8c5650251da240737f00390e8b46950",
+      "repository_bytes": 722698,
+      "repository_sha256": "543febc15a64b4afa2c62c5ba3d412eed8c5650251da240737f00390e8b46950",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01010_016850.178ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01010_016850.178ms.jpg",
+      "source_bytes": 717328,
+      "source_sha256": "8e316e46907d4c53d75714f1ede7175c697d8a975b47718d993aecf76ac3bcf9",
+      "repository_bytes": 717328,
+      "repository_sha256": "8e316e46907d4c53d75714f1ede7175c697d8a975b47718d993aecf76ac3bcf9",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01011_016866.867ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01011_016866.867ms.jpg",
+      "source_bytes": 718445,
+      "source_sha256": "b13ff9cd7c84acd8bfbc6edf200c8c04caa87126846f6f49e512b0855521952e",
+      "repository_bytes": 718445,
+      "repository_sha256": "b13ff9cd7c84acd8bfbc6edf200c8c04caa87126846f6f49e512b0855521952e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01012_016883.544ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01012_016883.544ms.jpg",
+      "source_bytes": 739817,
+      "source_sha256": "2e7efa159bf29410e7358c501febd77ab4bef3dc85eb5be4af80c2f533dfee62",
+      "repository_bytes": 739817,
+      "repository_sha256": "2e7efa159bf29410e7358c501febd77ab4bef3dc85eb5be4af80c2f533dfee62",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01013_016900.233ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01013_016900.233ms.jpg",
+      "source_bytes": 721350,
+      "source_sha256": "a95bdf933323b10427f9c9f2fd6914737eef8b0aea45e422789828f0847dbce1",
+      "repository_bytes": 721350,
+      "repository_sha256": "a95bdf933323b10427f9c9f2fd6914737eef8b0aea45e422789828f0847dbce1",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01014_016916.911ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01014_016916.911ms.jpg",
+      "source_bytes": 717563,
+      "source_sha256": "bf7541c190ba7fbb852b92f9a9ee25d000f6c961ffbbee3a3e556dd866bfd9c9",
+      "repository_bytes": 717563,
+      "repository_sha256": "bf7541c190ba7fbb852b92f9a9ee25d000f6c961ffbbee3a3e556dd866bfd9c9",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01015_016933.600ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01015_016933.600ms.jpg",
+      "source_bytes": 719037,
+      "source_sha256": "2329bba286e1e75a3b40ddbc036459fa2863e291d158e169bee0d7fd5e8ecb69",
+      "repository_bytes": 719037,
+      "repository_sha256": "2329bba286e1e75a3b40ddbc036459fa2863e291d158e169bee0d7fd5e8ecb69",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01016_016950.278ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01016_016950.278ms.jpg",
+      "source_bytes": 742434,
+      "source_sha256": "92ab8e8e48ffde64d3576a976d1e0e1f7acc1e57b47de905ee6586360d202fe1",
+      "repository_bytes": 742434,
+      "repository_sha256": "92ab8e8e48ffde64d3576a976d1e0e1f7acc1e57b47de905ee6586360d202fe1",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01017_016966.967ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01017_016966.967ms.jpg",
+      "source_bytes": 723796,
+      "source_sha256": "f2bf6f95a1478ed483b3636a08be86f0d0b27a15297cbf9672c068045976d024",
+      "repository_bytes": 723796,
+      "repository_sha256": "f2bf6f95a1478ed483b3636a08be86f0d0b27a15297cbf9672c068045976d024",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01018_016983.644ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01018_016983.644ms.jpg",
+      "source_bytes": 719375,
+      "source_sha256": "fe4f8f5d239bccf0bc9a07bc834f5a50b865e54afd2e640e6d5e7974c0c6e074",
+      "repository_bytes": 719375,
+      "repository_sha256": "fe4f8f5d239bccf0bc9a07bc834f5a50b865e54afd2e640e6d5e7974c0c6e074",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01019_017000.333ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01019_017000.333ms.jpg",
+      "source_bytes": 720303,
+      "source_sha256": "ff94bd04d657acf752cb76644988ebeb8ffc8503c7f273f9172174083bfce7cd",
+      "repository_bytes": 720303,
+      "repository_sha256": "ff94bd04d657acf752cb76644988ebeb8ffc8503c7f273f9172174083bfce7cd",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01020_017017.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01020_017017.011ms.jpg",
+      "source_bytes": 746169,
+      "source_sha256": "5b11179ef8b10bb2874e85d5bdb1e5df3fbc14c619fc41aef2a5445f851d3857",
+      "repository_bytes": 746169,
+      "repository_sha256": "5b11179ef8b10bb2874e85d5bdb1e5df3fbc14c619fc41aef2a5445f851d3857",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01021_017033.700ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01021_017033.700ms.jpg",
+      "source_bytes": 726816,
+      "source_sha256": "446c0bfa3e5dd94f7050d66c2f98c65c1ad7f4d9141a77c42e21888b6503e884",
+      "repository_bytes": 726816,
+      "repository_sha256": "446c0bfa3e5dd94f7050d66c2f98c65c1ad7f4d9141a77c42e21888b6503e884",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01022_017050.378ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01022_017050.378ms.jpg",
+      "source_bytes": 723310,
+      "source_sha256": "0c43d695755497872cc16203f942f22351738de309bfec8dfc89255d96829b93",
+      "repository_bytes": 723310,
+      "repository_sha256": "0c43d695755497872cc16203f942f22351738de309bfec8dfc89255d96829b93",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01023_017067.067ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01023_017067.067ms.jpg",
+      "source_bytes": 723702,
+      "source_sha256": "895fda0569aa945e1d141581c905c4ed95683b3a21d5169a2dff1b286d3cc887",
+      "repository_bytes": 723702,
+      "repository_sha256": "895fda0569aa945e1d141581c905c4ed95683b3a21d5169a2dff1b286d3cc887",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01024_017083.744ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01024_017083.744ms.jpg",
+      "source_bytes": 745205,
+      "source_sha256": "8be031eec0d578a27a460073df2316112ce76446d3a6247418f513075703ba86",
+      "repository_bytes": 745205,
+      "repository_sha256": "8be031eec0d578a27a460073df2316112ce76446d3a6247418f513075703ba86",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01025_017100.433ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01025_017100.433ms.jpg",
+      "source_bytes": 725426,
+      "source_sha256": "788e83b907d88b241e0ba0176e5cf7d6c04b3f1681272c8ec83dd19ba2e61e89",
+      "repository_bytes": 725426,
+      "repository_sha256": "788e83b907d88b241e0ba0176e5cf7d6c04b3f1681272c8ec83dd19ba2e61e89",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01026_017117.111ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01026_017117.111ms.jpg",
+      "source_bytes": 718010,
+      "source_sha256": "c7a688731284a464cb66b4958b534f0f4973bcd7bd7b9824fd522f73d283a265",
+      "repository_bytes": 718010,
+      "repository_sha256": "c7a688731284a464cb66b4958b534f0f4973bcd7bd7b9824fd522f73d283a265",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01027_017133.800ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01027_017133.800ms.jpg",
+      "source_bytes": 721674,
+      "source_sha256": "7bc8bdb0958d4ba0de94e57a6971df14340715a7a40fc042cb534a175d7dda3f",
+      "repository_bytes": 721674,
+      "repository_sha256": "7bc8bdb0958d4ba0de94e57a6971df14340715a7a40fc042cb534a175d7dda3f",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01028_017150.478ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01028_017150.478ms.jpg",
+      "source_bytes": 745554,
+      "source_sha256": "958250df318653b2b7428add1149d72ae433fc8e2b668265d49fa959ad08712e",
+      "repository_bytes": 745554,
+      "repository_sha256": "958250df318653b2b7428add1149d72ae433fc8e2b668265d49fa959ad08712e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01029_017167.167ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01029_017167.167ms.jpg",
+      "source_bytes": 725455,
+      "source_sha256": "eb3ffec42b16c297c0275ee3bce4afbed6d49f4141ced03fecc4ca86bf567f61",
+      "repository_bytes": 725455,
+      "repository_sha256": "eb3ffec42b16c297c0275ee3bce4afbed6d49f4141ced03fecc4ca86bf567f61",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/frame_01030_017183.844ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/frame_01030_017183.844ms.jpg",
+      "source_bytes": 722921,
+      "source_sha256": "618ab2df34aac0acc0553a6ce324707531b82e7bbb0f4891765e42257de1da42",
+      "repository_bytes": 722921,
+      "repository_sha256": "618ab2df34aac0acc0553a6ce324707531b82e7bbb0f4891765e42257de1da42",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_001/release-frames/index.json",
+      "repository_path": "output/video-verification-20261009/train_001/release-frames/index.json",
+      "source_bytes": 15458,
+      "source_sha256": "e57d4cf1dd554a610f2f67721e5a27ddfe6a151020e9e16132bf123b936a09ba",
+      "repository_bytes": 15458,
+      "repository_sha256": "e57d4cf1dd554a610f2f67721e5a27ddfe6a151020e9e16132bf123b936a09ba",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002-overview.jpg",
+      "repository_path": "output/video-verification-20261009/train_002-overview.jpg",
+      "source_bytes": 1582299,
+      "source_sha256": "7f87a6d035768628225768c704fc299c28fc1a12cd13ce8792e79dd071e2770e",
+      "repository_bytes": 1582299,
+      "repository_sha256": "7f87a6d035768628225768c704fc299c28fc1a12cd13ce8792e79dd071e2770e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002-release-boundary.jpg",
+      "repository_path": "output/video-verification-20261009/train_002-release-boundary.jpg",
+      "source_bytes": 905355,
+      "source_sha256": "185430ce3f700588893d546c3c155e6c673776e4efc644b7517ec3cd40be53fa",
+      "repository_bytes": 905355,
+      "repository_sha256": "185430ce3f700588893d546c3c155e6c673776e4efc644b7517ec3cd40be53fa",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002-release-close.jpg",
+      "repository_path": "output/video-verification-20261009/train_002-release-close.jpg",
+      "source_bytes": 919252,
+      "source_sha256": "0fce3614ddd616560c256b1d39294042628921fb4e8858cb75a62178a1baa896",
+      "repository_bytes": 919252,
+      "repository_sha256": "0fce3614ddd616560c256b1d39294042628921fb4e8858cb75a62178a1baa896",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002-release-review.jpg",
+      "repository_path": "output/video-verification-20261009/train_002-release-review.jpg",
+      "source_bytes": 1126282,
+      "source_sha256": "536c51aa850d722d7c04bd8cdb146098b53ffc037ccac9139dd0e8e7af5a24de",
+      "repository_bytes": 1126282,
+      "repository_sha256": "536c51aa850d722d7c04bd8cdb146098b53ffc037ccac9139dd0e8e7af5a24de",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame-index.json",
+      "repository_path": "output/video-verification-20261009/train_002/frame-index.json",
+      "source_bytes": 15422,
+      "source_sha256": "0e22abbec7679011c3f065ce21c1ca2a0c8e8384886e2fabd0e9d53dffdbbfa0",
+      "repository_bytes": 15422,
+      "repository_sha256": "0e22abbec7679011c3f065ce21c1ca2a0c8e8384886e2fabd0e9d53dffdbbfa0",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00000_000000.000ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00000_000000.000ms.jpg",
+      "source_bytes": 590473,
+      "source_sha256": "5e908bfbe955740dc2ca80e74b8b3c141c0e83ae80ba2390f4367114beea3c2b",
+      "repository_bytes": 590473,
+      "repository_sha256": "5e908bfbe955740dc2ca80e74b8b3c141c0e83ae80ba2390f4367114beea3c2b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00030_000500.500ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00030_000500.500ms.jpg",
+      "source_bytes": 598086,
+      "source_sha256": "e09a74385c3fdea0b00279cf5ae9c369ac9bb8679b271979f3b34d6e08aadd10",
+      "repository_bytes": 598086,
+      "repository_sha256": "e09a74385c3fdea0b00279cf5ae9c369ac9bb8679b271979f3b34d6e08aadd10",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00060_001001.000ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00060_001001.000ms.jpg",
+      "source_bytes": 584887,
+      "source_sha256": "fd1e479bc4c86f6604985a765ac1a630bc4cb3ae9fe5d21d7dc4502bc19cf331",
+      "repository_bytes": 584887,
+      "repository_sha256": "fd1e479bc4c86f6604985a765ac1a630bc4cb3ae9fe5d21d7dc4502bc19cf331",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00090_001501.500ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00090_001501.500ms.jpg",
+      "source_bytes": 607915,
+      "source_sha256": "f45555d0a719ea06dea46e43dce0289263b06b552351b3974f39dbfd3eefcaee",
+      "repository_bytes": 607915,
+      "repository_sha256": "f45555d0a719ea06dea46e43dce0289263b06b552351b3974f39dbfd3eefcaee",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00120_002002.000ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00120_002002.000ms.jpg",
+      "source_bytes": 628802,
+      "source_sha256": "0aeac64436e7fc66c1dba6e18846429f0cf3eb598667972d0d2d3af7e93e31b2",
+      "repository_bytes": 628802,
+      "repository_sha256": "0aeac64436e7fc66c1dba6e18846429f0cf3eb598667972d0d2d3af7e93e31b2",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00150_002502.500ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00150_002502.500ms.jpg",
+      "source_bytes": 593648,
+      "source_sha256": "cfc14f12b74d45db062f0a297ba450a2c22c062aaf8e576d7cf6193a1e967341",
+      "repository_bytes": 593648,
+      "repository_sha256": "cfc14f12b74d45db062f0a297ba450a2c22c062aaf8e576d7cf6193a1e967341",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00180_003003.000ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00180_003003.000ms.jpg",
+      "source_bytes": 593472,
+      "source_sha256": "ef5072c43f04eee7f74af4b644461278d08b638dab2fd7aa24cbe47329d0cdfb",
+      "repository_bytes": 593472,
+      "repository_sha256": "ef5072c43f04eee7f74af4b644461278d08b638dab2fd7aa24cbe47329d0cdfb",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00210_003503.500ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00210_003503.500ms.jpg",
+      "source_bytes": 592316,
+      "source_sha256": "87fb04af5b01e12e3510dae6eb6a15523fe4594c83e2117144f1c0d83596b80a",
+      "repository_bytes": 592316,
+      "repository_sha256": "87fb04af5b01e12e3510dae6eb6a15523fe4594c83e2117144f1c0d83596b80a",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00240_004004.000ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00240_004004.000ms.jpg",
+      "source_bytes": 613008,
+      "source_sha256": "c0be7fe6aefa8e1512e696e26578f49972ea0ba2891319d1264384d5b9f4825b",
+      "repository_bytes": 613008,
+      "repository_sha256": "c0be7fe6aefa8e1512e696e26578f49972ea0ba2891319d1264384d5b9f4825b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00270_004504.500ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00270_004504.500ms.jpg",
+      "source_bytes": 630975,
+      "source_sha256": "4e0e31487e2a2831c297db318595f6975bcb4d397ef87fc101c6c77722b43f61",
+      "repository_bytes": 630975,
+      "repository_sha256": "4e0e31487e2a2831c297db318595f6975bcb4d397ef87fc101c6c77722b43f61",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00300_005005.000ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00300_005005.000ms.jpg",
+      "source_bytes": 647184,
+      "source_sha256": "1e47805c853f2fc31ebddeb59699fa6e885749025a0f7d6056daf3cfb9ccf843",
+      "repository_bytes": 647184,
+      "repository_sha256": "1e47805c853f2fc31ebddeb59699fa6e885749025a0f7d6056daf3cfb9ccf843",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00330_005505.500ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00330_005505.500ms.jpg",
+      "source_bytes": 647696,
+      "source_sha256": "8007dee2cb764eb77109c2ad4df6f94959dc35e3458c252db20368cbf58b6d2d",
+      "repository_bytes": 647696,
+      "repository_sha256": "8007dee2cb764eb77109c2ad4df6f94959dc35e3458c252db20368cbf58b6d2d",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00360_006006.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00360_006006.011ms.jpg",
+      "source_bytes": 638863,
+      "source_sha256": "e576602d12432ab70115829ae1ade9cb1078252b152ffe6010511153a5b0482b",
+      "repository_bytes": 638863,
+      "repository_sha256": "e576602d12432ab70115829ae1ade9cb1078252b152ffe6010511153a5b0482b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00390_006506.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00390_006506.511ms.jpg",
+      "source_bytes": 675291,
+      "source_sha256": "7e2aca4dbe2cac90f8034437f76a67c14408be7634029516a47792682101c154",
+      "repository_bytes": 675291,
+      "repository_sha256": "7e2aca4dbe2cac90f8034437f76a67c14408be7634029516a47792682101c154",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00420_007007.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00420_007007.011ms.jpg",
+      "source_bytes": 667974,
+      "source_sha256": "dbb948c2b0d703774697e0a8c09ba779e1173c2e4c2a7f0d8f872b89cebb6950",
+      "repository_bytes": 667974,
+      "repository_sha256": "dbb948c2b0d703774697e0a8c09ba779e1173c2e4c2a7f0d8f872b89cebb6950",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00450_007507.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00450_007507.511ms.jpg",
+      "source_bytes": 648156,
+      "source_sha256": "bd5e1a2eb2f43e653060c8c878ac4265119a1bc2e4df2fc74f6d27e860267136",
+      "repository_bytes": 648156,
+      "repository_sha256": "bd5e1a2eb2f43e653060c8c878ac4265119a1bc2e4df2fc74f6d27e860267136",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00480_008008.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00480_008008.011ms.jpg",
+      "source_bytes": 663310,
+      "source_sha256": "a75b70deb451d32becd35e50a3fe79a570b796ef66322996865c60d847d566f0",
+      "repository_bytes": 663310,
+      "repository_sha256": "a75b70deb451d32becd35e50a3fe79a570b796ef66322996865c60d847d566f0",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00510_008508.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00510_008508.511ms.jpg",
+      "source_bytes": 643662,
+      "source_sha256": "0aa72eb0b72b1608431d66f8c9aeae3a0ae8c2ac6296ffe7a12d7bddbf955f41",
+      "repository_bytes": 643662,
+      "repository_sha256": "0aa72eb0b72b1608431d66f8c9aeae3a0ae8c2ac6296ffe7a12d7bddbf955f41",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00540_009009.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00540_009009.011ms.jpg",
+      "source_bytes": 673087,
+      "source_sha256": "3cfc70d76269a98f625106c5ca1347bc91be6cf4fa2b2d12f46d4777ad7b6d3e",
+      "repository_bytes": 673087,
+      "repository_sha256": "3cfc70d76269a98f625106c5ca1347bc91be6cf4fa2b2d12f46d4777ad7b6d3e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00570_009509.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00570_009509.511ms.jpg",
+      "source_bytes": 667888,
+      "source_sha256": "78b74f40693a0f7be09e265e49a7c502882c8f1eb007645779bd5eb173f7efdf",
+      "repository_bytes": 667888,
+      "repository_sha256": "78b74f40693a0f7be09e265e49a7c502882c8f1eb007645779bd5eb173f7efdf",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00600_010010.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00600_010010.011ms.jpg",
+      "source_bytes": 646932,
+      "source_sha256": "c76e427f7f834433e7b3796d55787a8935ab12062e0f50e4953c483960bd4a17",
+      "repository_bytes": 646932,
+      "repository_sha256": "c76e427f7f834433e7b3796d55787a8935ab12062e0f50e4953c483960bd4a17",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00630_010510.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00630_010510.511ms.jpg",
+      "source_bytes": 648820,
+      "source_sha256": "5608afd0fb1112f14003eaf858d699e8561d3e6a58ff4f0411a3e670039b41d9",
+      "repository_bytes": 648820,
+      "repository_sha256": "5608afd0fb1112f14003eaf858d699e8561d3e6a58ff4f0411a3e670039b41d9",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00660_011011.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00660_011011.011ms.jpg",
+      "source_bytes": 608744,
+      "source_sha256": "62a74c650323e782e4679462d5e2140a81ef95d6d60d78147cdf8a7dfe415c63",
+      "repository_bytes": 608744,
+      "repository_sha256": "62a74c650323e782e4679462d5e2140a81ef95d6d60d78147cdf8a7dfe415c63",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00690_011511.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00690_011511.511ms.jpg",
+      "source_bytes": 647913,
+      "source_sha256": "7368bd1694527a8364b9539ad79fc1b642042efe2618dcec218d1785b9910f01",
+      "repository_bytes": 647913,
+      "repository_sha256": "7368bd1694527a8364b9539ad79fc1b642042efe2618dcec218d1785b9910f01",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00720_012012.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00720_012012.011ms.jpg",
+      "source_bytes": 628032,
+      "source_sha256": "55f3b81ed127130fb164bdb080f55a7a4a60486cd704322e142398f7ff667989",
+      "repository_bytes": 628032,
+      "repository_sha256": "55f3b81ed127130fb164bdb080f55a7a4a60486cd704322e142398f7ff667989",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00750_012512.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00750_012512.511ms.jpg",
+      "source_bytes": 581785,
+      "source_sha256": "9d041dbc7561acfff1906fa26e0b80f0764d1b1874e66f719242abfaccf86d08",
+      "repository_bytes": 581785,
+      "repository_sha256": "9d041dbc7561acfff1906fa26e0b80f0764d1b1874e66f719242abfaccf86d08",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00780_013013.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00780_013013.011ms.jpg",
+      "source_bytes": 545316,
+      "source_sha256": "f09d49b8831cefb43a96c64522c98e75dae5ccc391a0b1cbd5e76c60d937c4a5",
+      "repository_bytes": 545316,
+      "repository_sha256": "f09d49b8831cefb43a96c64522c98e75dae5ccc391a0b1cbd5e76c60d937c4a5",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00810_013513.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00810_013513.511ms.jpg",
+      "source_bytes": 589917,
+      "source_sha256": "505af58e2d679ea2a6554b3523e4aafaf529cef8213d9150dafc2b5caffb230b",
+      "repository_bytes": 589917,
+      "repository_sha256": "505af58e2d679ea2a6554b3523e4aafaf529cef8213d9150dafc2b5caffb230b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00840_014014.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00840_014014.011ms.jpg",
+      "source_bytes": 663488,
+      "source_sha256": "9b61bc1ef931dbad2740302e6ebc1e555d2640fe6941a9dd0fc6b06123b9b32f",
+      "repository_bytes": 663488,
+      "repository_sha256": "9b61bc1ef931dbad2740302e6ebc1e555d2640fe6941a9dd0fc6b06123b9b32f",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00870_014514.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00870_014514.511ms.jpg",
+      "source_bytes": 675810,
+      "source_sha256": "4adb75b468efe665ed23b636b9dbe48c86b8608198225722d36a18bb6e1f1c96",
+      "repository_bytes": 675810,
+      "repository_sha256": "4adb75b468efe665ed23b636b9dbe48c86b8608198225722d36a18bb6e1f1c96",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00900_015015.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00900_015015.011ms.jpg",
+      "source_bytes": 666021,
+      "source_sha256": "69832d854b1972aefc52199d0793633f8a341b485dde7c11afab4c8ffe2935db",
+      "repository_bytes": 666021,
+      "repository_sha256": "69832d854b1972aefc52199d0793633f8a341b485dde7c11afab4c8ffe2935db",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00930_015515.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00930_015515.511ms.jpg",
+      "source_bytes": 621675,
+      "source_sha256": "f30041cb9673190c18ebfabc98918a3ead18a0ad5daa8dfe4989e1f5624f40a7",
+      "repository_bytes": 621675,
+      "repository_sha256": "f30041cb9673190c18ebfabc98918a3ead18a0ad5daa8dfe4989e1f5624f40a7",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00960_016016.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00960_016016.011ms.jpg",
+      "source_bytes": 633392,
+      "source_sha256": "71ab047aba22071705c40434b7f73550574279b269123895a363fe27ae655675",
+      "repository_bytes": 633392,
+      "repository_sha256": "71ab047aba22071705c40434b7f73550574279b269123895a363fe27ae655675",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_00990_016516.511ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_00990_016516.511ms.jpg",
+      "source_bytes": 638658,
+      "source_sha256": "cd78a04815d8157dadc7e6c0458a43ac38e3b9a3a6fc0e8e5692b83c1adf1f26",
+      "repository_bytes": 638658,
+      "repository_sha256": "cd78a04815d8157dadc7e6c0458a43ac38e3b9a3a6fc0e8e5692b83c1adf1f26",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_01019_017000.333ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_01019_017000.333ms.jpg",
+      "source_bytes": 609739,
+      "source_sha256": "a33672dfe2ee34444605cf558fb38b37e51880f2d1fb6b1eeaf181d4c744fe49",
+      "repository_bytes": 609739,
+      "repository_sha256": "a33672dfe2ee34444605cf558fb38b37e51880f2d1fb6b1eeaf181d4c744fe49",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_01049_017500.833ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_01049_017500.833ms.jpg",
+      "source_bytes": 630758,
+      "source_sha256": "d677530e6d2ac77718835c4bddc9b7f7782693062660fa4636aa0c9d92db5d43",
+      "repository_bytes": 630758,
+      "repository_sha256": "d677530e6d2ac77718835c4bddc9b7f7782693062660fa4636aa0c9d92db5d43",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_01079_018001.333ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_01079_018001.333ms.jpg",
+      "source_bytes": 621928,
+      "source_sha256": "88498d79c069b65dcdc069e88d021cb4976ea2f81543e92f2fb9a314906169e4",
+      "repository_bytes": 621928,
+      "repository_sha256": "88498d79c069b65dcdc069e88d021cb4976ea2f81543e92f2fb9a314906169e4",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_01109_018501.833ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_01109_018501.833ms.jpg",
+      "source_bytes": 614058,
+      "source_sha256": "9a8e85f0b81be765857b642128c705273035d821c120d22cb2d5e7030e6aa5bd",
+      "repository_bytes": 614058,
+      "repository_sha256": "9a8e85f0b81be765857b642128c705273035d821c120d22cb2d5e7030e6aa5bd",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_01139_019002.333ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_01139_019002.333ms.jpg",
+      "source_bytes": 623215,
+      "source_sha256": "cd4347edee28241b2f2d43a94d46e1e9288d96a2d99728f11625aa0f36a601e4",
+      "repository_bytes": 623215,
+      "repository_sha256": "cd4347edee28241b2f2d43a94d46e1e9288d96a2d99728f11625aa0f36a601e4",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_01169_019502.833ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_01169_019502.833ms.jpg",
+      "source_bytes": 656903,
+      "source_sha256": "e4ad65b975a312ad86d5ecd29df0d5290a46fd56c22a8d82f44481fbb76f2a0b",
+      "repository_bytes": 656903,
+      "repository_sha256": "e4ad65b975a312ad86d5ecd29df0d5290a46fd56c22a8d82f44481fbb76f2a0b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_01199_020003.333ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_01199_020003.333ms.jpg",
+      "source_bytes": 680872,
+      "source_sha256": "0b5da6f932b7af5d0dd489b8cc667742ecd248ded9b719c1c640c9a7440ab9a2",
+      "repository_bytes": 680872,
+      "repository_sha256": "0b5da6f932b7af5d0dd489b8cc667742ecd248ded9b719c1c640c9a7440ab9a2",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_01229_020503.833ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_01229_020503.833ms.jpg",
+      "source_bytes": 691520,
+      "source_sha256": "cb4814ba944519799b61416b66f72fc6c9c74b3706bdfe045a505f30a0ab751f",
+      "repository_bytes": 691520,
+      "repository_sha256": "cb4814ba944519799b61416b66f72fc6c9c74b3706bdfe045a505f30a0ab751f",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_01259_021004.333ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_01259_021004.333ms.jpg",
+      "source_bytes": 666713,
+      "source_sha256": "77c2c2a3e4cb8bd401cda0babf8f2bcb9fe376cbccc5ddd7e2989d709a45bbfb",
+      "repository_bytes": 666713,
+      "repository_sha256": "77c2c2a3e4cb8bd401cda0babf8f2bcb9fe376cbccc5ddd7e2989d709a45bbfb",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_01289_021504.833ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_01289_021504.833ms.jpg",
+      "source_bytes": 276985,
+      "source_sha256": "11eb347db513f449133127e4d7a8f9da66c12767464bcda9c24c9d58b8c0636a",
+      "repository_bytes": 276985,
+      "repository_sha256": "11eb347db513f449133127e4d7a8f9da66c12767464bcda9c24c9d58b8c0636a",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_01319_022005.333ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_01319_022005.333ms.jpg",
+      "source_bytes": 248554,
+      "source_sha256": "ed038889936b25899f144b4db83b38a9e760acb387936b213e3850fffad3ab1d",
+      "repository_bytes": 248554,
+      "repository_sha256": "ed038889936b25899f144b4db83b38a9e760acb387936b213e3850fffad3ab1d",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/frame_01349_022505.833ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/frame_01349_022505.833ms.jpg",
+      "source_bytes": 257564,
+      "source_sha256": "4e8e261afe3ac8e202d58ab9acc06a4cdd07fcbb09bb2b71a4d9955ac9eaf0ca",
+      "repository_bytes": 257564,
+      "repository_sha256": "4e8e261afe3ac8e202d58ab9acc06a4cdd07fcbb09bb2b71a4d9955ac9eaf0ca",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01061_017701.033ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01061_017701.033ms.jpg",
+      "source_bytes": 803149,
+      "source_sha256": "0e62ddc78e2748335c71e314d5c8eac59ba2fce20a3dbd642ecd37c39e21f79d",
+      "repository_bytes": 803149,
+      "repository_sha256": "0e62ddc78e2748335c71e314d5c8eac59ba2fce20a3dbd642ecd37c39e21f79d",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01062_017717.711ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01062_017717.711ms.jpg",
+      "source_bytes": 827830,
+      "source_sha256": "c55cec07032718439da87ef2390fecb9895ad5851672088c0c1b4dbd339d0b3e",
+      "repository_bytes": 827830,
+      "repository_sha256": "c55cec07032718439da87ef2390fecb9895ad5851672088c0c1b4dbd339d0b3e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01063_017734.400ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01063_017734.400ms.jpg",
+      "source_bytes": 807522,
+      "source_sha256": "c82405a4821da0f74235ed58a2382c151ed6f96d3c071fdbf2c939da7caabab8",
+      "repository_bytes": 807522,
+      "repository_sha256": "c82405a4821da0f74235ed58a2382c151ed6f96d3c071fdbf2c939da7caabab8",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01064_017751.078ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01064_017751.078ms.jpg",
+      "source_bytes": 804978,
+      "source_sha256": "0cdcaf4d93323040ed2c36ddc2cb7fb579e8f980b2bfba05a6bc73b1e525313f",
+      "repository_bytes": 804978,
+      "repository_sha256": "0cdcaf4d93323040ed2c36ddc2cb7fb579e8f980b2bfba05a6bc73b1e525313f",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01065_017767.767ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01065_017767.767ms.jpg",
+      "source_bytes": 805366,
+      "source_sha256": "14b106c66b91c7a1ab85887ff82bcd253e63bba96a4aac5bba7c71471249e4d6",
+      "repository_bytes": 805366,
+      "repository_sha256": "14b106c66b91c7a1ab85887ff82bcd253e63bba96a4aac5bba7c71471249e4d6",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01066_017784.444ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01066_017784.444ms.jpg",
+      "source_bytes": 830013,
+      "source_sha256": "92e166cdb3c2ccee75f3825864bfb50b9b96e18f3f8f0e5ebaf7b7c939120564",
+      "repository_bytes": 830013,
+      "repository_sha256": "92e166cdb3c2ccee75f3825864bfb50b9b96e18f3f8f0e5ebaf7b7c939120564",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01067_017801.133ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01067_017801.133ms.jpg",
+      "source_bytes": 809437,
+      "source_sha256": "e953fb3969b3ea8cc21eb23ae4771422b84902d293bddec38e5e098e8eff37ff",
+      "repository_bytes": 809437,
+      "repository_sha256": "e953fb3969b3ea8cc21eb23ae4771422b84902d293bddec38e5e098e8eff37ff",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01068_017817.811ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01068_017817.811ms.jpg",
+      "source_bytes": 807363,
+      "source_sha256": "4b84efb90f0389f84dffc55ff1d93734b7d07b1f06af6754183bc609d1a234c1",
+      "repository_bytes": 807363,
+      "repository_sha256": "4b84efb90f0389f84dffc55ff1d93734b7d07b1f06af6754183bc609d1a234c1",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01069_017834.500ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01069_017834.500ms.jpg",
+      "source_bytes": 808459,
+      "source_sha256": "bc74aac7f272a4187b03e4ab858cad309101f56d3781915e8c927c9a211fb2ff",
+      "repository_bytes": 808459,
+      "repository_sha256": "bc74aac7f272a4187b03e4ab858cad309101f56d3781915e8c927c9a211fb2ff",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01070_017851.178ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01070_017851.178ms.jpg",
+      "source_bytes": 833554,
+      "source_sha256": "4bea936da77bf9eabc1fccbb552e6c987aa7ca0b3f3acc1d7af32316a6ddbd0d",
+      "repository_bytes": 833554,
+      "repository_sha256": "4bea936da77bf9eabc1fccbb552e6c987aa7ca0b3f3acc1d7af32316a6ddbd0d",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01071_017867.867ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01071_017867.867ms.jpg",
+      "source_bytes": 813789,
+      "source_sha256": "8d2a0b5609903c23c80b4000c987d6abc1da649a6809f337263f64ae409cc8e6",
+      "repository_bytes": 813789,
+      "repository_sha256": "8d2a0b5609903c23c80b4000c987d6abc1da649a6809f337263f64ae409cc8e6",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01072_017884.544ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01072_017884.544ms.jpg",
+      "source_bytes": 811526,
+      "source_sha256": "d8a70b5c7b3ce4453fbe3e41e2a8bd81782cc90ed27d08f24397a5a0f69bc3f2",
+      "repository_bytes": 811526,
+      "repository_sha256": "d8a70b5c7b3ce4453fbe3e41e2a8bd81782cc90ed27d08f24397a5a0f69bc3f2",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01073_017901.233ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01073_017901.233ms.jpg",
+      "source_bytes": 809515,
+      "source_sha256": "d3aa3b2aa943c37e96f0a8e4b7e30605dbd65b2fd3e491bf09f91b23d22bc03e",
+      "repository_bytes": 809515,
+      "repository_sha256": "d3aa3b2aa943c37e96f0a8e4b7e30605dbd65b2fd3e491bf09f91b23d22bc03e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01074_017917.911ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01074_017917.911ms.jpg",
+      "source_bytes": 837518,
+      "source_sha256": "8dbf0939dc2120e8bb3a5b5fc129e93aa954c5dcffe5c1383937f963fc7eeaf5",
+      "repository_bytes": 837518,
+      "repository_sha256": "8dbf0939dc2120e8bb3a5b5fc129e93aa954c5dcffe5c1383937f963fc7eeaf5",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01075_017934.600ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01075_017934.600ms.jpg",
+      "source_bytes": 795056,
+      "source_sha256": "ad40dc8b80875462393369bfe0855bd0b0d5ea65364d29ea7b4f2a7ffeaae492",
+      "repository_bytes": 795056,
+      "repository_sha256": "ad40dc8b80875462393369bfe0855bd0b0d5ea65364d29ea7b4f2a7ffeaae492",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01076_017951.278ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01076_017951.278ms.jpg",
+      "source_bytes": 801823,
+      "source_sha256": "08989b94894ed682729b3900d2701cccf521e7a73e6ffb91e372064029ad3614",
+      "repository_bytes": 801823,
+      "repository_sha256": "08989b94894ed682729b3900d2701cccf521e7a73e6ffb91e372064029ad3614",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01077_017967.967ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01077_017967.967ms.jpg",
+      "source_bytes": 803976,
+      "source_sha256": "69ea97965a5e7fb4eb88cf1685685dc062c06a7c3de0dd225f8876b2ffc4dae6",
+      "repository_bytes": 803976,
+      "repository_sha256": "69ea97965a5e7fb4eb88cf1685685dc062c06a7c3de0dd225f8876b2ffc4dae6",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01078_017984.644ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01078_017984.644ms.jpg",
+      "source_bytes": 823844,
+      "source_sha256": "4114d5da1d42aa0b20e97714f241048c9ddf369ef4239fc62ea4d48750c3f0f9",
+      "repository_bytes": 823844,
+      "repository_sha256": "4114d5da1d42aa0b20e97714f241048c9ddf369ef4239fc62ea4d48750c3f0f9",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01079_018001.333ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01079_018001.333ms.jpg",
+      "source_bytes": 806006,
+      "source_sha256": "1db69c37e382281c8e5dfbbceeec987e7de8a7a2cdc2d3b86066bd9e066fa1e6",
+      "repository_bytes": 806006,
+      "repository_sha256": "1db69c37e382281c8e5dfbbceeec987e7de8a7a2cdc2d3b86066bd9e066fa1e6",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01080_018018.011ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01080_018018.011ms.jpg",
+      "source_bytes": 805498,
+      "source_sha256": "9fb6ff9f77f6ab29875d56b8684e73df083e43e6cedb014e80d50a58c4b84913",
+      "repository_bytes": 805498,
+      "repository_sha256": "9fb6ff9f77f6ab29875d56b8684e73df083e43e6cedb014e80d50a58c4b84913",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01081_018034.700ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01081_018034.700ms.jpg",
+      "source_bytes": 801562,
+      "source_sha256": "ee684ef81c1fb0151ebbd44f7bb015f71cd0f138142563238d0c45c2dd2fa964",
+      "repository_bytes": 801562,
+      "repository_sha256": "ee684ef81c1fb0151ebbd44f7bb015f71cd0f138142563238d0c45c2dd2fa964",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01082_018051.378ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01082_018051.378ms.jpg",
+      "source_bytes": 825459,
+      "source_sha256": "ba98951ab14330c50442cce841c4c53a21e7ba4aafd7cdaa8b39315e84698404",
+      "repository_bytes": 825459,
+      "repository_sha256": "ba98951ab14330c50442cce841c4c53a21e7ba4aafd7cdaa8b39315e84698404",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01083_018068.067ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01083_018068.067ms.jpg",
+      "source_bytes": 803861,
+      "source_sha256": "cfb4764661075ab6811ae577dec604fb94e22d7e0a6d14a986195397ba5b348c",
+      "repository_bytes": 803861,
+      "repository_sha256": "cfb4764661075ab6811ae577dec604fb94e22d7e0a6d14a986195397ba5b348c",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01084_018084.744ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01084_018084.744ms.jpg",
+      "source_bytes": 804129,
+      "source_sha256": "5df21ead27315c55032577c2bfcd31764b596025d0bb9705178c3ec4b56e7813",
+      "repository_bytes": 804129,
+      "repository_sha256": "5df21ead27315c55032577c2bfcd31764b596025d0bb9705178c3ec4b56e7813",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01085_018101.433ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01085_018101.433ms.jpg",
+      "source_bytes": 801365,
+      "source_sha256": "2709d0698aaa49dc7e8b7ef814a729de7fe56b532e558ac485cd04115e7bc856",
+      "repository_bytes": 801365,
+      "repository_sha256": "2709d0698aaa49dc7e8b7ef814a729de7fe56b532e558ac485cd04115e7bc856",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01086_018118.111ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01086_018118.111ms.jpg",
+      "source_bytes": 830302,
+      "source_sha256": "881a8566a82b2f588fc32e18a06a2a86fe209f3d753f7b519f41488369bdddc3",
+      "repository_bytes": 830302,
+      "repository_sha256": "881a8566a82b2f588fc32e18a06a2a86fe209f3d753f7b519f41488369bdddc3",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01087_018134.800ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01087_018134.800ms.jpg",
+      "source_bytes": 810274,
+      "source_sha256": "78306f75bbde0733c17b53728e823898145a737dda76ac6bd5f926fc7dbf5c8b",
+      "repository_bytes": 810274,
+      "repository_sha256": "78306f75bbde0733c17b53728e823898145a737dda76ac6bd5f926fc7dbf5c8b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01088_018151.478ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01088_018151.478ms.jpg",
+      "source_bytes": 807914,
+      "source_sha256": "aa056c456e059e84958e7faadcb792e0e0ca409a4fec6128b124316e27bb9d9e",
+      "repository_bytes": 807914,
+      "repository_sha256": "aa056c456e059e84958e7faadcb792e0e0ca409a4fec6128b124316e27bb9d9e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01089_018168.167ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01089_018168.167ms.jpg",
+      "source_bytes": 805152,
+      "source_sha256": "11b04f2a803f8f351e28101e020a5dd7ce1d4ddb009a6a403cd66202b0e5301c",
+      "repository_bytes": 805152,
+      "repository_sha256": "11b04f2a803f8f351e28101e020a5dd7ce1d4ddb009a6a403cd66202b0e5301c",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01090_018184.844ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01090_018184.844ms.jpg",
+      "source_bytes": 831098,
+      "source_sha256": "f6b99238e3b48b6a779c534ca8791ffd3f84e123ba5994bb49e797aedbe1e645",
+      "repository_bytes": 831098,
+      "repository_sha256": "f6b99238e3b48b6a779c534ca8791ffd3f84e123ba5994bb49e797aedbe1e645",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01091_018201.533ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01091_018201.533ms.jpg",
+      "source_bytes": 807196,
+      "source_sha256": "5354a1a051d1fa5a6c318838956a9cb832cb3c8cb2eb25fb91eaf545260d8efe",
+      "repository_bytes": 807196,
+      "repository_sha256": "5354a1a051d1fa5a6c318838956a9cb832cb3c8cb2eb25fb91eaf545260d8efe",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01092_018218.211ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01092_018218.211ms.jpg",
+      "source_bytes": 805460,
+      "source_sha256": "e5e16d8ca800cbba98f6643fabb9c3e58d7168b866ab6f4fb69aa64db3681c31",
+      "repository_bytes": 805460,
+      "repository_sha256": "e5e16d8ca800cbba98f6643fabb9c3e58d7168b866ab6f4fb69aa64db3681c31",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01093_018234.900ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01093_018234.900ms.jpg",
+      "source_bytes": 804123,
+      "source_sha256": "d1fc9c8e4d5a9949cb9f297c7b0cdbb8848bd76c6ff37e9da3467193c6b2961e",
+      "repository_bytes": 804123,
+      "repository_sha256": "d1fc9c8e4d5a9949cb9f297c7b0cdbb8848bd76c6ff37e9da3467193c6b2961e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01094_018251.578ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01094_018251.578ms.jpg",
+      "source_bytes": 832437,
+      "source_sha256": "1316b5adc9dcaea6b8caf6018e412fdc8eaa43fb4baa460984381653b18e32ca",
+      "repository_bytes": 832437,
+      "repository_sha256": "1316b5adc9dcaea6b8caf6018e412fdc8eaa43fb4baa460984381653b18e32ca",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01095_018268.267ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01095_018268.267ms.jpg",
+      "source_bytes": 808209,
+      "source_sha256": "5d419b3fd063457c78b63c3fe2a82916131680bae272b1c685a67feb19ab9dbb",
+      "repository_bytes": 808209,
+      "repository_sha256": "5d419b3fd063457c78b63c3fe2a82916131680bae272b1c685a67feb19ab9dbb",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01096_018284.944ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01096_018284.944ms.jpg",
+      "source_bytes": 804901,
+      "source_sha256": "5b1fdc1b041b3b23377e71ab2208ceeb848873c4d9a24d5605a5c218273a5629",
+      "repository_bytes": 804901,
+      "repository_sha256": "5b1fdc1b041b3b23377e71ab2208ceeb848873c4d9a24d5605a5c218273a5629",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01097_018301.633ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01097_018301.633ms.jpg",
+      "source_bytes": 804818,
+      "source_sha256": "bdfc44faba8f2dfbb85761d35050854ab327d2073ef806876bfcb52a6f63d91a",
+      "repository_bytes": 804818,
+      "repository_sha256": "bdfc44faba8f2dfbb85761d35050854ab327d2073ef806876bfcb52a6f63d91a",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01098_018318.311ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01098_018318.311ms.jpg",
+      "source_bytes": 832893,
+      "source_sha256": "26c58d511ca3638c00ea67bc452f3791215420dd0ad2bac2880b0e7c0fd8f082",
+      "repository_bytes": 832893,
+      "repository_sha256": "26c58d511ca3638c00ea67bc452f3791215420dd0ad2bac2880b0e7c0fd8f082",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01099_018335.000ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01099_018335.000ms.jpg",
+      "source_bytes": 824452,
+      "source_sha256": "2acb8978caa26eb1ae937a8a5e17e82d6dfb7562b08009127bd4792c91a74db7",
+      "repository_bytes": 824452,
+      "repository_sha256": "2acb8978caa26eb1ae937a8a5e17e82d6dfb7562b08009127bd4792c91a74db7",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01100_018351.678ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01100_018351.678ms.jpg",
+      "source_bytes": 807270,
+      "source_sha256": "b5b71b1c3319c49099a608d2044340d56ccd96f96f71324d1a020c9ddc823af5",
+      "repository_bytes": 807270,
+      "repository_sha256": "b5b71b1c3319c49099a608d2044340d56ccd96f96f71324d1a020c9ddc823af5",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01101_018368.367ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01101_018368.367ms.jpg",
+      "source_bytes": 803698,
+      "source_sha256": "e00fe64c6b3172d3647d0748444b84d0073d7ee738c15b099ef6eda6b5038a53",
+      "repository_bytes": 803698,
+      "repository_sha256": "e00fe64c6b3172d3647d0748444b84d0073d7ee738c15b099ef6eda6b5038a53",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/frame_01102_018385.044ms.jpg",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/frame_01102_018385.044ms.jpg",
+      "source_bytes": 804079,
+      "source_sha256": "43a676500e9059c1568cb1a4d54334181583b9ea126ebae85092333dfbf9cfac",
+      "repository_bytes": 804079,
+      "repository_sha256": "43a676500e9059c1568cb1a4d54334181583b9ea126ebae85092333dfbf9cfac",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/train_002/release-frames/index.json",
+      "repository_path": "output/video-verification-20261009/train_002/release-frames/index.json",
+      "source_bytes": 12289,
+      "source_sha256": "408efe80cbac55188598dfbdb40cd36a50a974d77050fad4a503ac7eed490c0e",
+      "repository_bytes": 12289,
+      "repository_sha256": "408efe80cbac55188598dfbdb40cd36a50a974d77050fad4a503ac7eed490c0e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/validation.json",
+      "repository_path": "output/video-verification-20261009/validation.json",
+      "source_bytes": 771,
+      "source_sha256": "0dd5d7be072c102062e81c5b80cf947ea4a47d987cbc2332ac8233440390d51b",
+      "repository_bytes": 771,
+      "repository_sha256": "0dd5d7be072c102062e81c5b80cf947ea4a47d987cbc2332ac8233440390d51b",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/verification-evidence-board.jpg",
+      "repository_path": "output/video-verification-20261009/verification-evidence-board.jpg",
+      "source_bytes": 628143,
+      "source_sha256": "17644f25347ab0e255e34fe04bc443f0c0330ae9aae6e7c4f5e372431b564f20",
+      "repository_bytes": 628143,
+      "repository_sha256": "17644f25347ab0e255e34fe04bc443f0c0330ae9aae6e7c4f5e372431b564f20",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/verified-event-links.csv",
+      "repository_path": "output/video-verification-20261009/verified-event-links.csv",
+      "source_bytes": 732,
+      "source_sha256": "dd15d3cad773c591d018aea6b81e1435447b9ed684e3ecde5da5881d6203be5e",
+      "repository_bytes": 732,
+      "repository_sha256": "dd15d3cad773c591d018aea6b81e1435447b9ed684e3ecde5da5881d6203be5e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "output/video-verification-20261009/verified-event-links.json",
+      "repository_path": "output/video-verification-20261009/verified-event-links.json",
+      "source_bytes": 7628,
+      "source_sha256": "0f3c7e4601517c8bb49d960ef85a32b3f44438350446717576db04c252fa0089",
+      "repository_bytes": 7628,
+      "repository_sha256": "0f3c7e4601517c8bb49d960ef85a32b3f44438350446717576db04c252fa0089",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "准备资料/01_赛规与交付检查表.md",
+      "repository_path": "准备资料/01_赛规与交付检查表.md",
+      "source_bytes": 4170,
+      "source_sha256": "4ea962ce4d767679ec19892ec73c19b5fc9703e7cb21c9991a3963011bd0e037",
+      "repository_bytes": 4318,
+      "repository_sha256": "23bb4b907d4c7bbbdcfd43fed48a3672c1ee0beceb5f8b169ce0dda848579655",
+      "local_link_adjustments": [
+        {
+          "from": "../资料/参赛终极指南.md",
+          "to": "../%E8%B5%84%E6%96%99/%E5%8F%82%E8%B5%9B%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97.md"
+        },
+        {
+          "from": "../资料/赛制与选手快速上手.md",
+          "to": "../%E8%B5%84%E6%96%99/%E8%B5%9B%E5%88%B6%E4%B8%8E%E9%80%89%E6%89%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B.md"
+        },
+        {
+          "from": "../aws-nba/docs/PROJECT_PLAN.md",
+          "to": "../docs/PROJECT_PLAN.md"
+        },
+        {
+          "from": "06_比赛日执行手册.md",
+          "to": "06_%E6%AF%94%E8%B5%9B%E6%97%A5%E6%89%A7%E8%A1%8C%E6%89%8B%E5%86%8C.md"
+        }
+      ]
+    },
+    {
+      "source": "准备资料/02_数据接入与标注规范.md",
+      "repository_path": "准备资料/02_数据接入与标注规范.md",
+      "source_bytes": 6617,
+      "source_sha256": "25d139f6a047d5d1409dfbf4a23dddc3a1ecfdf2baf08eb24b86b23fd142e2c6",
+      "repository_bytes": 6765,
+      "repository_sha256": "fd3d22d22437b2d1e4f0e658fe6b81ce3346a017a79b8b5f2119d662aec5a039",
+      "local_link_adjustments": [
+        {
+          "from": "../aws-nba/shared/agent.ts",
+          "to": "../shared/agent.ts"
+        },
+        {
+          "from": "表格/素材登记.csv",
+          "to": "%E8%A1%A8%E6%A0%BC/%E7%B4%A0%E6%9D%90%E7%99%BB%E8%AE%B0.csv"
+        },
+        {
+          "from": "表格/事件记录待填.json",
+          "to": "%E8%A1%A8%E6%A0%BC/%E4%BA%8B%E4%BB%B6%E8%AE%B0%E5%BD%95%E5%BE%85%E5%A1%AB.json"
+        },
+        {
+          "from": "表格/字段映射.csv",
+          "to": "%E8%A1%A8%E6%A0%BC/%E5%AD%97%E6%AE%B5%E6%98%A0%E5%B0%84.csv"
+        },
+        {
+          "from": "表格/人工核对.csv",
+          "to": "%E8%A1%A8%E6%A0%BC/%E4%BA%BA%E5%B7%A5%E6%A0%B8%E5%AF%B9.csv"
+        }
+      ]
+    },
+    {
+      "source": "准备资料/03_模型提示词与复核流程.md",
+      "repository_path": "准备资料/03_模型提示词与复核流程.md",
+      "source_bytes": 4404,
+      "source_sha256": "f65106028519f20e6661aafcc907f9df043fcf3d96fa36ad4c13b033ca04c576",
+      "repository_bytes": 4396,
+      "repository_sha256": "e7faa8430f50fb8f842c97e29f0b075d6d2c49a4fba973005663b94c085bcaec",
+      "local_link_adjustments": [
+        {
+          "from": "../aws-nba/agent/providers.ts",
+          "to": "../agent/providers.ts"
+        }
+      ]
+    },
+    {
+      "source": "准备资料/04_质量验收与实验记录.md",
+      "repository_path": "准备资料/04_质量验收与实验记录.md",
+      "source_bytes": 5088,
+      "source_sha256": "420951f72325bdb135829b350ec34389222162ee08741f18f69b779f2800a7ee",
+      "repository_bytes": 5116,
+      "repository_sha256": "1f2e7bd1275b54b91db05a9bf41f50bfd7d14421b0b35043967a9773792a3191",
+      "local_link_adjustments": [
+        {
+          "from": "../aws-nba/docs/AGENT_ACCEPTANCE.md",
+          "to": "../docs/AGENT_ACCEPTANCE.md"
+        },
+        {
+          "from": "表格/模型实验.csv",
+          "to": "%E8%A1%A8%E6%A0%BC/%E6%A8%A1%E5%9E%8B%E5%AE%9E%E9%AA%8C.csv"
+        }
+      ]
+    },
+    {
+      "source": "准备资料/05_作品说明与五分钟演示稿.md",
+      "repository_path": "准备资料/05_作品说明与五分钟演示稿.md",
+      "source_bytes": 5113,
+      "source_sha256": "fbc1b37fe6c78af47c1afedd18b0d4901beeffe3abcde823fc7146cfccae4b84",
+      "repository_bytes": 5097,
+      "repository_sha256": "1bbf46f6d5fa7143d8b6e21c1d6f4cb4426b238770e27ccb87254b22a7616f81",
+      "local_link_adjustments": [
+        {
+          "from": "../aws-nba/README.md",
+          "to": "../README.md"
+        },
+        {
+          "from": "../aws-nba/docs/AGENT_SKELETON.md",
+          "to": "../docs/AGENT_SKELETON.md"
+        }
+      ]
+    },
+    {
+      "source": "准备资料/06_比赛日执行手册.md",
+      "repository_path": "准备资料/06_比赛日执行手册.md",
+      "source_bytes": 4756,
+      "source_sha256": "827a59ed8b5bb15393f7fa161a442264b6b0aac9bdcf739964c9533f7eaa330a",
+      "repository_bytes": 4934,
+      "repository_sha256": "0fb0220d54bdad25d91a3072f6d1c49824583277a09e2df5febbe1554c8511c4",
+      "local_link_adjustments": [
+        {
+          "from": "../资料/参赛终极指南.md",
+          "to": "../%E8%B5%84%E6%96%99/%E5%8F%82%E8%B5%9B%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97.md"
+        },
+        {
+          "from": "../资料/赛制与选手快速上手.md",
+          "to": "../%E8%B5%84%E6%96%99/%E8%B5%9B%E5%88%B6%E4%B8%8E%E9%80%89%E6%89%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B.md"
+        },
+        {
+          "from": "07_材料获取清单与待确认问题.md",
+          "to": "07_%E6%9D%90%E6%96%99%E8%8E%B7%E5%8F%96%E6%B8%85%E5%8D%95%E4%B8%8E%E5%BE%85%E7%A1%AE%E8%AE%A4%E9%97%AE%E9%A2%98.md"
+        },
+        {
+          "from": "../aws-nba/docs/PROJECT_PLAN.md",
+          "to": "../docs/PROJECT_PLAN.md"
+        }
+      ]
+    },
+    {
+      "source": "准备资料/07_材料获取清单与待确认问题.md",
+      "repository_path": "准备资料/07_材料获取清单与待确认问题.md",
+      "source_bytes": 4244,
+      "source_sha256": "c336da52ee2bf7bba759ac9f9712acebe20ccd3151f2b81cbbbfbfc101f99eea",
+      "repository_bytes": 4244,
+      "repository_sha256": "c336da52ee2bf7bba759ac9f9712acebe20ccd3151f2b81cbbbfbfc101f99eea",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "准备资料/08_来源与证据索引.md",
+      "repository_path": "准备资料/08_来源与证据索引.md",
+      "source_bytes": 5435,
+      "source_sha256": "0fdf86520086d261477d58c2c867e059810b22d01f54534763e819663bea77b1",
+      "repository_bytes": 5995,
+      "repository_sha256": "766736be22406fdbd65d23c50ec805c60de009a49d3b7a7a64210bb6539cec00",
+      "local_link_adjustments": [
+        {
+          "from": "../资料/参赛终极指南.md",
+          "to": "../%E8%B5%84%E6%96%99/%E5%8F%82%E8%B5%9B%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97.md"
+        },
+        {
+          "from": "../资料/赛制与选手快速上手.md",
+          "to": "../%E8%B5%84%E6%96%99/%E8%B5%9B%E5%88%B6%E4%B8%8E%E9%80%89%E6%89%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B.md"
+        },
+        {
+          "from": "../NBA深度赛场_赛前准备方案_20261008.md",
+          "to": "../NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E8%B5%9B%E5%89%8D%E5%87%86%E5%A4%87%E6%96%B9%E6%A1%88_20261008.md"
+        },
+        {
+          "from": "../NBA深度赛场_AWS只读核验_20261008.md",
+          "to": "../NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_AWS%E5%8F%AA%E8%AF%BB%E6%A0%B8%E9%AA%8C_20261008.md"
+        },
+        {
+          "from": "../NBA深度赛场_总体预算与高质量模型选择_20261008.md",
+          "to": "../NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E6%80%BB%E4%BD%93%E9%A2%84%E7%AE%97%E4%B8%8E%E9%AB%98%E8%B4%A8%E9%87%8F%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9_20261008.md"
+        },
+        {
+          "from": "../BroadcastCode「深度赛场」赛事%20·%20赛前培训直播%20会议纪要.md",
+          "to": "../BroadcastCode%E3%80%8C%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA%E3%80%8D%E8%B5%9B%E4%BA%8B%20%C2%B7%20%E8%B5%9B%E5%89%8D%E5%9F%B9%E8%AE%AD%E7%9B%B4%E6%92%AD%20%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81.md"
+        },
+        {
+          "from": "../NBA深度赛场_官方公开数据抓取报告_20261009.md",
+          "to": "../NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E5%AE%98%E6%96%B9%E5%85%AC%E5%BC%80%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96%E6%8A%A5%E5%91%8A_20261009.md"
+        },
+        {
+          "from": "../NBA深度赛场_视频与事件核对报告_20261009.md",
+          "to": "../NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E8%A7%86%E9%A2%91%E4%B8%8E%E4%BA%8B%E4%BB%B6%E6%A0%B8%E5%AF%B9%E6%8A%A5%E5%91%8A_20261009.md"
+        },
+        {
+          "from": "../aws-nba/docs/PROJECT_PLAN.md",
+          "to": "../docs/PROJECT_PLAN.md"
+        },
+        {
+          "from": "../aws-nba/docs/AGENT_SKELETON.md",
+          "to": "../docs/AGENT_SKELETON.md"
+        },
+        {
+          "from": "../aws-nba/docs/AGENT_ACCEPTANCE.md",
+          "to": "../docs/AGENT_ACCEPTANCE.md"
+        },
+        {
+          "from": "../aws-nba/docs/DOCUMENTATION_REVIEW.md",
+          "to": "../docs/DOCUMENTATION_REVIEW.md"
+        }
+      ]
+    },
+    {
+      "source": "准备资料/README.md",
+      "repository_path": "准备资料/README.md",
+      "source_bytes": 5202,
+      "source_sha256": "89dc797cf84b245102e74397a4c1d920fa7180e5dc7e1842c46bcee266df38fd",
+      "repository_bytes": 6042,
+      "repository_sha256": "0efdde012f02b66923c0ccef407f3115fe5230325577886fa49638abd3c695f0",
+      "local_link_adjustments": [
+        {
+          "from": "../aws-nba/docs/PROJECT_PLAN.md",
+          "to": "../docs/PROJECT_PLAN.md"
+        },
+        {
+          "from": "../NBA深度赛场_总体预算与高质量模型选择_20261008.md",
+          "to": "../NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E6%80%BB%E4%BD%93%E9%A2%84%E7%AE%97%E4%B8%8E%E9%AB%98%E8%B4%A8%E9%87%8F%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9_20261008.md"
+        },
+        {
+          "from": "../NBA深度赛场_数据处理结果_20261009.md",
+          "to": "../NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E7%BB%93%E6%9E%9C_20261009.md"
+        },
+        {
+          "from": "../NBA深度赛场_视频与事件核对报告_20261009.md",
+          "to": "../NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E8%A7%86%E9%A2%91%E4%B8%8E%E4%BA%8B%E4%BB%B6%E6%A0%B8%E5%AF%B9%E6%8A%A5%E5%91%8A_20261009.md"
+        },
+        {
+          "from": "../aws-nba/docs/AGENT_SKELETON.md",
+          "to": "../docs/AGENT_SKELETON.md"
+        },
+        {
+          "from": "01_赛规与交付检查表.md",
+          "to": "01_%E8%B5%9B%E8%A7%84%E4%B8%8E%E4%BA%A4%E4%BB%98%E6%A3%80%E6%9F%A5%E8%A1%A8.md"
+        },
+        {
+          "from": "02_数据接入与标注规范.md",
+          "to": "02_%E6%95%B0%E6%8D%AE%E6%8E%A5%E5%85%A5%E4%B8%8E%E6%A0%87%E6%B3%A8%E8%A7%84%E8%8C%83.md"
+        },
+        {
+          "from": "03_模型提示词与复核流程.md",
+          "to": "03_%E6%A8%A1%E5%9E%8B%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%8E%E5%A4%8D%E6%A0%B8%E6%B5%81%E7%A8%8B.md"
+        },
+        {
+          "from": "04_质量验收与实验记录.md",
+          "to": "04_%E8%B4%A8%E9%87%8F%E9%AA%8C%E6%94%B6%E4%B8%8E%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95.md"
+        },
+        {
+          "from": "05_作品说明与五分钟演示稿.md",
+          "to": "05_%E4%BD%9C%E5%93%81%E8%AF%B4%E6%98%8E%E4%B8%8E%E4%BA%94%E5%88%86%E9%92%9F%E6%BC%94%E7%A4%BA%E7%A8%BF.md"
+        },
+        {
+          "from": "06_比赛日执行手册.md",
+          "to": "06_%E6%AF%94%E8%B5%9B%E6%97%A5%E6%89%A7%E8%A1%8C%E6%89%8B%E5%86%8C.md"
+        },
+        {
+          "from": "07_材料获取清单与待确认问题.md",
+          "to": "07_%E6%9D%90%E6%96%99%E8%8E%B7%E5%8F%96%E6%B8%85%E5%8D%95%E4%B8%8E%E5%BE%85%E7%A1%AE%E8%AE%A4%E9%97%AE%E9%A2%98.md"
+        },
+        {
+          "from": "08_来源与证据索引.md",
+          "to": "08_%E6%9D%A5%E6%BA%90%E4%B8%8E%E8%AF%81%E6%8D%AE%E7%B4%A2%E5%BC%95.md"
+        },
+        {
+          "from": "表格/素材登记.csv",
+          "to": "%E8%A1%A8%E6%A0%BC/%E7%B4%A0%E6%9D%90%E7%99%BB%E8%AE%B0.csv"
+        },
+        {
+          "from": "表格/字段映射.csv",
+          "to": "%E8%A1%A8%E6%A0%BC/%E5%AD%97%E6%AE%B5%E6%98%A0%E5%B0%84.csv"
+        },
+        {
+          "from": "表格/人工核对.csv",
+          "to": "%E8%A1%A8%E6%A0%BC/%E4%BA%BA%E5%B7%A5%E6%A0%B8%E5%AF%B9.csv"
+        },
+        {
+          "from": "表格/模型实验.csv",
+          "to": "%E8%A1%A8%E6%A0%BC/%E6%A8%A1%E5%9E%8B%E5%AE%9E%E9%AA%8C.csv"
+        },
+        {
+          "from": "表格/事件记录待填.json",
+          "to": "%E8%A1%A8%E6%A0%BC/%E4%BA%8B%E4%BB%B6%E8%AE%B0%E5%BD%95%E5%BE%85%E5%A1%AB.json"
+        },
+        {
+          "from": "../aws-nba/docs/PROJECT_PLAN.md",
+          "to": "../docs/PROJECT_PLAN.md"
+        }
+      ]
+    },
+    {
+      "source": "准备资料/表格/事件记录待填.json",
+      "repository_path": "准备资料/表格/事件记录待填.json",
+      "source_bytes": 1397,
+      "source_sha256": "c3658c67789cbfed0e098314cfaf7c691ddf826cf45375044436a9cb2953eb8e",
+      "repository_bytes": 1397,
+      "repository_sha256": "c3658c67789cbfed0e098314cfaf7c691ddf826cf45375044436a9cb2953eb8e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "准备资料/表格/人工核对.csv",
+      "repository_path": "准备资料/表格/人工核对.csv",
+      "source_bytes": 4816,
+      "source_sha256": "68b409ed960266029f8d1730d84c12eb43362de8b5c98c6da2517fe8bc086e5e",
+      "repository_bytes": 4816,
+      "repository_sha256": "68b409ed960266029f8d1730d84c12eb43362de8b5c98c6da2517fe8bc086e5e",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "准备资料/表格/字段映射.csv",
+      "repository_path": "准备资料/表格/字段映射.csv",
+      "source_bytes": 1961,
+      "source_sha256": "8127d7311f40d017e001bde419359bf2b6c6f7f8529c074e4538fdd006e4d70a",
+      "repository_bytes": 1961,
+      "repository_sha256": "8127d7311f40d017e001bde419359bf2b6c6f7f8529c074e4538fdd006e4d70a",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "准备资料/表格/模型实验.csv",
+      "repository_path": "准备资料/表格/模型实验.csv",
+      "source_bytes": 316,
+      "source_sha256": "5866b9e3e9fbee73bfeb6f32bdc1ba411f1e9daaca0823d9410a94fd3de6e8ae",
+      "repository_bytes": 316,
+      "repository_sha256": "5866b9e3e9fbee73bfeb6f32bdc1ba411f1e9daaca0823d9410a94fd3de6e8ae",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "准备资料/表格/素材登记.csv",
+      "repository_path": "准备资料/表格/素材登记.csv",
+      "source_bytes": 1438,
+      "source_sha256": "7ec9b6b465a0b0da84f464dad62600095c641f9fada64713efb67c2499dcfc52",
+      "repository_bytes": 1438,
+      "repository_sha256": "7ec9b6b465a0b0da84f464dad62600095c641f9fada64713efb67c2499dcfc52",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "资料/参赛终极指南.md",
+      "repository_path": "资料/参赛终极指南.md",
+      "source_bytes": 15904,
+      "source_sha256": "8b97e8160c94835888636976cb481d8694e2dd94d0cf0bc7a7aef3a2479c0309",
+      "repository_bytes": 15904,
+      "repository_sha256": "8b97e8160c94835888636976cb481d8694e2dd94d0cf0bc7a7aef3a2479c0309",
+      "local_link_adjustments": []
+    },
+    {
+      "source": "资料/赛制与选手快速上手.md",
+      "repository_path": "资料/赛制与选手快速上手.md",
+      "source_bytes": 23091,
+      "source_sha256": "3220b7eef4ef5c97ffb7bd22d694416b184eb82519452c7219290e3f45a8b1eb",
+      "repository_bytes": 23091,
+      "repository_sha256": "3220b7eef4ef5c97ffb7bd22d694416b184eb82519452c7219290e3f45a8b1eb",
+      "local_link_adjustments": []
+    }
+  ],
+  "excluded": [
+    {
+      "path": ".memorax-code/",
+      "reason": "client reminder/session state, not project content"
+    },
+    {
+      "path": ".gitignore",
+      "reason": "parent rule only excludes .firecrawl; repository ignore rules retained and amended instead"
+    }
+  ],
+  "application_exclusions": [
+    "node_modules/",
+    "dist/",
+    "cdk.out/",
+    ".local/",
+    ".env and credentials",
+    "log/cache files"
+  ],
+  "summary": {
+    "copied_files": 369,
+    "repository_bytes": 137745049,
+    "files_with_link_adjustments": 20,
+    "unmodified_files": 349
+  }
+}

@@ -1,0 +1,841 @@
+{
+  "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonBedrock/current/us-east-2/index.json",
+  "publicationDate": "2026-10-06T14:47:26Z",
+  "version": "20261006144726",
+  "products": {
+    "YEVHP7NXG6NZYX2H": {
+      "sku": "YEVHP7NXG6NZYX2H",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-Qwen3-VL-235B-A22B-input-tokens",
+        "operation": "",
+        "feature": "On-demand Inference",
+        "inferenceType": "Input tokens",
+        "model": "Qwen3 VL 235B A22B",
+        "provider": "Qwen",
+        "regionCode": "us-east-2",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "T4U7KW6SXXKERZG3": {
+      "sku": "T4U7KW6SXXKERZG3",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-NovaLite-output-tokens",
+        "operation": "",
+        "feature": "On-demand Inference",
+        "inferenceType": "Output tokens",
+        "model": "Nova Lite",
+        "regionCode": "us-east-2",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "C5SVKQZNVHHR7NT6": {
+      "sku": "C5SVKQZNVHHR7NT6",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-Qwen3-VL-235B-A22B-output-tokens-flex",
+        "operation": "",
+        "feature": "On-demand Inference",
+        "inferenceType": "Output tokens flex",
+        "model": "Qwen3 VL 235B A22B",
+        "provider": "Qwen",
+        "regionCode": "us-east-2",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "G5GJ2JG7UP2BWR6U": {
+      "sku": "G5GJ2JG7UP2BWR6U",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-qwen.qwen3-vl-235b-a22b-instruct-mantle-output-tokens-standard",
+        "operation": "",
+        "inferenceType": "Output tokens",
+        "model": "Qwen3 VL 235B A22B",
+        "provider": "Qwen",
+        "regionCode": "us-east-2",
+        "service_tier": "standard",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "P56V5WTJAYVM8EWU": {
+      "sku": "P56V5WTJAYVM8EWU",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-Qwen3-VL-235B-A22B-output-tokens-priority",
+        "operation": "",
+        "feature": "On-demand Inference",
+        "inferenceType": "Output tokens priority",
+        "model": "Qwen3 VL 235B A22B",
+        "provider": "Qwen",
+        "regionCode": "us-east-2",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "5VEM8ETX336KND55": {
+      "sku": "5VEM8ETX336KND55",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-Qwen3-VL-235B-A22B-input-tokens-priority",
+        "operation": "",
+        "feature": "On-demand Inference",
+        "inferenceType": "Input tokens priority",
+        "model": "Qwen3 VL 235B A22B",
+        "provider": "Qwen",
+        "regionCode": "us-east-2",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "APUJU7K2B5VFQGJX": {
+      "sku": "APUJU7K2B5VFQGJX",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-NovaLite-output-tokens-batch",
+        "operation": "",
+        "feature": "Batch Inference",
+        "inferenceType": "Output tokens",
+        "model": "Nova Lite",
+        "regionCode": "us-east-2",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "5DER4JAB8QQ8A7Y9": {
+      "sku": "5DER4JAB8QQ8A7Y9",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-qwen.qwen3-vl-235b-a22b-instruct-mantle-input-tokens-flex",
+        "operation": "",
+        "inferenceType": "Input tokens flex",
+        "model": "Qwen3 VL 235B A22B",
+        "provider": "Qwen",
+        "regionCode": "us-east-2",
+        "service_tier": "flex",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "KHFEXFZ7PQ574SHE": {
+      "sku": "KHFEXFZ7PQ574SHE",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-qwen.qwen3-vl-235b-a22b-instruct-mantle-output-tokens-flex",
+        "operation": "",
+        "inferenceType": "Output tokens flex",
+        "model": "Qwen3 VL 235B A22B",
+        "provider": "Qwen",
+        "regionCode": "us-east-2",
+        "service_tier": "flex",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "GK6ATSV57S6Z3EBQ": {
+      "sku": "GK6ATSV57S6Z3EBQ",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-qwen.qwen3-vl-235b-a22b-instruct-mantle-output-tokens-batch",
+        "operation": "",
+        "inferenceType": "output tokens batch",
+        "model": "Qwen3 VL 235B A22B",
+        "provider": "Qwen",
+        "regionCode": "us-east-2",
+        "service_tier": "batch",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "Z2B5YVM2AWE3EPQQ": {
+      "sku": "Z2B5YVM2AWE3EPQQ",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-qwen.qwen3-vl-235b-a22b-instruct-mantle-input-tokens-batch",
+        "operation": "",
+        "inferenceType": "input tokens batch",
+        "model": "Qwen3 VL 235B A22B",
+        "provider": "Qwen",
+        "regionCode": "us-east-2",
+        "service_tier": "batch",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "33HZGQDC55MW6UAY": {
+      "sku": "33HZGQDC55MW6UAY",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-Qwen3-VL-235B-A22B-input-tokens-batch",
+        "operation": "",
+        "feature": "Batch Inference",
+        "inferenceType": "Input tokens",
+        "model": "Qwen3 VL 235B A22B",
+        "provider": "Qwen",
+        "regionCode": "us-east-2",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "TKCKGDFN5NTBCWCN": {
+      "sku": "TKCKGDFN5NTBCWCN",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-NovaLite-cache-write-input-token-count",
+        "operation": "",
+        "feature": "On-demand Inference",
+        "inferenceType": "Prompt cache write input tokens",
+        "model": "Nova Lite",
+        "regionCode": "us-east-2",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "M872PT5MESKZ39MC": {
+      "sku": "M872PT5MESKZ39MC",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-Qwen3-VL-235B-A22B-output-tokens-batch",
+        "operation": "",
+        "feature": "Batch Inference",
+        "inferenceType": "Output tokens",
+        "model": "Qwen3 VL 235B A22B",
+        "provider": "Qwen",
+        "regionCode": "us-east-2",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "68N2Y76KQKQ4CEB8": {
+      "sku": "68N2Y76KQKQ4CEB8",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-NovaLite-input-tokens",
+        "operation": "",
+        "feature": "On-demand Inference",
+        "inferenceType": "Input tokens",
+        "model": "Nova Lite",
+        "regionCode": "us-east-2",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "PYXNFUV2DBQF5YKM": {
+      "sku": "PYXNFUV2DBQF5YKM",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-qwen.qwen3-vl-235b-a22b-instruct-mantle-output-tokens-priority",
+        "operation": "",
+        "inferenceType": "Output tokens priority",
+        "model": "Qwen3 VL 235B A22B",
+        "provider": "Qwen",
+        "regionCode": "us-east-2",
+        "service_tier": "priority",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "KFUB2QQW5DCMP8GM": {
+      "sku": "KFUB2QQW5DCMP8GM",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-qwen.qwen3-vl-235b-a22b-instruct-mantle-input-tokens-priority",
+        "operation": "",
+        "inferenceType": "Input tokens priority",
+        "model": "Qwen3 VL 235B A22B",
+        "provider": "Qwen",
+        "regionCode": "us-east-2",
+        "service_tier": "priority",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "8F4PU22YHX3V3G2J": {
+      "sku": "8F4PU22YHX3V3G2J",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-Qwen3-VL-235B-A22B-output-tokens",
+        "operation": "",
+        "feature": "On-demand Inference",
+        "inferenceType": "Output tokens",
+        "model": "Qwen3 VL 235B A22B",
+        "provider": "Qwen",
+        "regionCode": "us-east-2",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "NDUVMJQD9N2TUCP7": {
+      "sku": "NDUVMJQD9N2TUCP7",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-Qwen3-VL-235B-A22B-input-tokens-flex",
+        "operation": "",
+        "feature": "On-demand Inference",
+        "inferenceType": "Input tokens flex",
+        "model": "Qwen3 VL 235B A22B",
+        "provider": "Qwen",
+        "regionCode": "us-east-2",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "8QNRFMYWAKC7WZ7J": {
+      "sku": "8QNRFMYWAKC7WZ7J",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-NovaLite-cache-read-input-token-count",
+        "operation": "",
+        "feature": "On-demand Inference",
+        "inferenceType": "Prompt cache read input tokens",
+        "model": "Nova Lite",
+        "regionCode": "us-east-2",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "E5WE8THR9MMFSQM5": {
+      "sku": "E5WE8THR9MMFSQM5",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-qwen.qwen3-vl-235b-a22b-instruct-mantle-input-tokens-standard",
+        "operation": "",
+        "inferenceType": "Input tokens",
+        "model": "Qwen3 VL 235B A22B",
+        "provider": "Qwen",
+        "regionCode": "us-east-2",
+        "service_tier": "standard",
+        "servicename": "Amazon Bedrock"
+      }
+    },
+    "7NB43Q6YJDFPABFU": {
+      "sku": "7NB43Q6YJDFPABFU",
+      "productFamily": "Amazon Bedrock",
+      "attributes": {
+        "servicecode": "AmazonBedrock",
+        "location": "US East (Ohio)",
+        "locationType": "AWS Region",
+        "usagetype": "USE2-NovaLite-input-tokens-batch",
+        "operation": "",
+        "feature": "Batch Inference",
+        "inferenceType": "Input tokens",
+        "model": "Nova Lite",
+        "regionCode": "us-east-2",
+        "servicename": "Amazon Bedrock"
+      }
+    }
+  },
+  "terms": {
+    "OnDemand": {
+      "33HZGQDC55MW6UAY": {
+        "33HZGQDC55MW6UAY.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "33HZGQDC55MW6UAY",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "33HZGQDC55MW6UAY.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "33HZGQDC55MW6UAY.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00026 per 1K input tokens for Qwen3 VL 235B A22B in US East (Ohio) for Batch",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0002600000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "NDUVMJQD9N2TUCP7": {
+        "NDUVMJQD9N2TUCP7.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "NDUVMJQD9N2TUCP7",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "NDUVMJQD9N2TUCP7.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "NDUVMJQD9N2TUCP7.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00026 per 1K input tokens flex for Qwen3 VL 235B A22B in US East (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0002600000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "YEVHP7NXG6NZYX2H": {
+        "YEVHP7NXG6NZYX2H.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "YEVHP7NXG6NZYX2H",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "YEVHP7NXG6NZYX2H.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "YEVHP7NXG6NZYX2H.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00053 per 1K input tokens for Qwen3 VL 235B A22B in US East (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0005300000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "E5WE8THR9MMFSQM5": {
+        "E5WE8THR9MMFSQM5.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "E5WE8THR9MMFSQM5",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "E5WE8THR9MMFSQM5.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "E5WE8THR9MMFSQM5.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00053 per 1K token for qwen.qwen3-vl-235b-a22b-instruct-mantle-input-tokens-standard in US East (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0005300000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "5DER4JAB8QQ8A7Y9": {
+        "5DER4JAB8QQ8A7Y9.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "5DER4JAB8QQ8A7Y9",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "5DER4JAB8QQ8A7Y9.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "5DER4JAB8QQ8A7Y9.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00026 per 1K token for qwen.qwen3-vl-235b-a22b-instruct-mantle-input-tokens-flex in US East (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0002600000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "APUJU7K2B5VFQGJX": {
+        "APUJU7K2B5VFQGJX.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "APUJU7K2B5VFQGJX",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "APUJU7K2B5VFQGJX.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "APUJU7K2B5VFQGJX.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00012 per 1K tokens for Nova Lite-output-tokens in us-east-2 (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0001200000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "GK6ATSV57S6Z3EBQ": {
+        "GK6ATSV57S6Z3EBQ.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "GK6ATSV57S6Z3EBQ",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "GK6ATSV57S6Z3EBQ.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "GK6ATSV57S6Z3EBQ.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00133 per 1K token for qwen.qwen3-vl-235b-a22b-instruct-mantle-output-tokens-batch in US East (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0013300000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "8QNRFMYWAKC7WZ7J": {
+        "8QNRFMYWAKC7WZ7J.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "8QNRFMYWAKC7WZ7J",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "8QNRFMYWAKC7WZ7J.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "8QNRFMYWAKC7WZ7J.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.000015 per 1K cache read input tokens of Nova Lite in US East (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0000150000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "8F4PU22YHX3V3G2J": {
+        "8F4PU22YHX3V3G2J.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "8F4PU22YHX3V3G2J",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "8F4PU22YHX3V3G2J.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "8F4PU22YHX3V3G2J.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00266 per 1K output tokens for Qwen3 VL 235B A22B in US East (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0026600000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "G5GJ2JG7UP2BWR6U": {
+        "G5GJ2JG7UP2BWR6U.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "G5GJ2JG7UP2BWR6U",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "G5GJ2JG7UP2BWR6U.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "G5GJ2JG7UP2BWR6U.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00266 per 1K token for qwen.qwen3-vl-235b-a22b-instruct-mantle-output-tokens-standard in US East (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0026600000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "KFUB2QQW5DCMP8GM": {
+        "KFUB2QQW5DCMP8GM.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "KFUB2QQW5DCMP8GM",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "KFUB2QQW5DCMP8GM.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "KFUB2QQW5DCMP8GM.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00093 per 1K token for qwen.qwen3-vl-235b-a22b-instruct-mantle-input-tokens-priority in US East (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0009300000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "TKCKGDFN5NTBCWCN": {
+        "TKCKGDFN5NTBCWCN.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "TKCKGDFN5NTBCWCN",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "TKCKGDFN5NTBCWCN.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "TKCKGDFN5NTBCWCN.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00 per 1K tokens for USE2-NovaLite-cache-write-input-token-count in US East (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0000000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "KHFEXFZ7PQ574SHE": {
+        "KHFEXFZ7PQ574SHE.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "KHFEXFZ7PQ574SHE",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "KHFEXFZ7PQ574SHE.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "KHFEXFZ7PQ574SHE.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00133 per 1K token for qwen.qwen3-vl-235b-a22b-instruct-mantle-output-tokens-flex in US East (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0013300000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "M872PT5MESKZ39MC": {
+        "M872PT5MESKZ39MC.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "M872PT5MESKZ39MC",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "M872PT5MESKZ39MC.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "M872PT5MESKZ39MC.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00133 per 1K output tokens for Qwen3 VL 235B A22B in US East (Ohio) for Batch",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0013300000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "68N2Y76KQKQ4CEB8": {
+        "68N2Y76KQKQ4CEB8.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "68N2Y76KQKQ4CEB8",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "68N2Y76KQKQ4CEB8.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "68N2Y76KQKQ4CEB8.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00006 per 1K tokens for Nova Lite-input-tokens  in us-east-2 (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0000600000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "T4U7KW6SXXKERZG3": {
+        "T4U7KW6SXXKERZG3.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "T4U7KW6SXXKERZG3",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "T4U7KW6SXXKERZG3.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "T4U7KW6SXXKERZG3.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00024 per 1K tokens for Nova Lite-output-tokens  in us-east-2 (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0002400000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "P56V5WTJAYVM8EWU": {
+        "P56V5WTJAYVM8EWU.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "P56V5WTJAYVM8EWU",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "P56V5WTJAYVM8EWU.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "P56V5WTJAYVM8EWU.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00466 per 1K output tokens priority for Qwen3 VL 235B A22B in US East (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0046600000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "C5SVKQZNVHHR7NT6": {
+        "C5SVKQZNVHHR7NT6.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "C5SVKQZNVHHR7NT6",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "C5SVKQZNVHHR7NT6.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "C5SVKQZNVHHR7NT6.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00133 per 1K output tokens flex for Qwen3 VL 235B A22B in US East (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0013300000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "Z2B5YVM2AWE3EPQQ": {
+        "Z2B5YVM2AWE3EPQQ.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "Z2B5YVM2AWE3EPQQ",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "Z2B5YVM2AWE3EPQQ.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "Z2B5YVM2AWE3EPQQ.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00026 per 1K token for qwen.qwen3-vl-235b-a22b-instruct-mantle-input-tokens-batch in US East (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0002600000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "PYXNFUV2DBQF5YKM": {
+        "PYXNFUV2DBQF5YKM.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "PYXNFUV2DBQF5YKM",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "PYXNFUV2DBQF5YKM.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "PYXNFUV2DBQF5YKM.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00466 per 1K token for qwen.qwen3-vl-235b-a22b-instruct-mantle-output-tokens-priority in US East (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0046600000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "5VEM8ETX336KND55": {
+        "5VEM8ETX336KND55.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "5VEM8ETX336KND55",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "5VEM8ETX336KND55.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "5VEM8ETX336KND55.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00093 per 1K input tokens priority for Qwen3 VL 235B A22B in US East (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0009300000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      },
+      "7NB43Q6YJDFPABFU": {
+        "7NB43Q6YJDFPABFU.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "7NB43Q6YJDFPABFU",
+          "effectiveDate": "2026-10-01T00:00:00Z",
+          "priceDimensions": {
+            "7NB43Q6YJDFPABFU.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "7NB43Q6YJDFPABFU.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.00003 per 1K tokens for Nova Lite-input-tokens in us-east-2 (Ohio)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "1K tokens",
+              "pricePerUnit": {
+                "USD": "0.0000300000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    }
+  }
+}

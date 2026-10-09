@@ -1,0 +1,150 @@
+{
+  "schema_status": "internal_review_artifact_not_contest_schema",
+  "generated_at": "2026-10-09T17:51:31.274387+08:00",
+  "review_type": "AI visual review plus official website event lookup",
+  "independent_human_review": false,
+  "events": [
+    {
+      "clip_id": "train_001",
+      "source_path": "E:\\Compressed\\train_video\\train_video\\训练_弗拉格2月1日.mp4",
+      "source_sha256": "9c3e4606d04e7f79e29a112952fcf069ebab202af207af500bfbc3338bc079ce",
+      "game_id": "0022500701",
+      "player_id": "1642843",
+      "player_name": "库珀·弗拉格",
+      "jersey_number_observed": "32",
+      "official_event_id": 666,
+      "period": 4,
+      "official_game_clock_text": "01:34",
+      "video_release_time_ms_approx": 16800.133333,
+      "video_release_interval_ms": [
+        16783.444444,
+        16833.5
+      ],
+      "video_time_method": "Decoded presentation timestamps relative to first video frame; visual release interval, not exact physical release instant.",
+      "video_scorebug_clock_near_release": "01:35",
+      "score_before": "DAL 103–107 HOU",
+      "score_after": "DAL 105–107 HOU",
+      "made": true,
+      "points": 2,
+      "observation": "持球突破至篮下，挑篮命中。",
+      "official_shot_description": "突破挑篮",
+      "official_pbp_description": "[独行侠 105-107] 弗拉格 上篮：命中 (34分)",
+      "official_xfg_probability": 0.51,
+      "official_xfg_percent": 51.0,
+      "shot_source_file": "data/public-nba/20261009/raw/game-0022500701-player-1642843-shots.json",
+      "shot_source_sha256": "95238bb31f32bd07c5588b0e26331fc0f1a12181567e339150058d23826d265d",
+      "shot_source_pointer": "/data/shotList/19",
+      "pbp_source_file": "output/video-verification-20261009/official/selected-play-by-play-records.json",
+      "pbp_record_index": 0,
+      "pbp_source_page": "https://china.nba.cn/game/0022500701/play-by-play",
+      "evidence_frames": [
+        {
+          "file": "output/video-verification-20261009/train_001/release-frames/frame_01006_016783.444ms.jpg",
+          "video_time_ms": 16783.444444,
+          "frame_index": 1006,
+          "sha256": "da3342ca40f40b0f86ddc715ed2b38b7a6000760800fd21ea5f0afa218f64be8"
+        },
+        {
+          "file": "output/video-verification-20261009/train_001/release-frames/frame_01007_016800.133ms.jpg",
+          "video_time_ms": 16800.133333,
+          "frame_index": 1007,
+          "sha256": "a4e23248cde17a9220c3a1f196efe017835539836c3b270c11beac3fe8d2fd54"
+        },
+        {
+          "file": "output/video-verification-20261009/train_001/release-frames/frame_01009_016833.500ms.jpg",
+          "video_time_ms": 16833.5,
+          "frame_index": 1009,
+          "sha256": "543febc15a64b4afa2c62c5ba3d412eed8c5650251da240737f00390e8b46950"
+        },
+        {
+          "file": "output/video-verification-20261009/train_001/frame_01259_021004.333ms.jpg",
+          "video_time_ms": 21004.333333,
+          "frame_index": 1259,
+          "sha256": "d2b224c56e0e9d3dcac2ad4b2f9f8459c99c24318c37aa642099452db46444ef"
+        }
+      ],
+      "verification_status": "matched_ai_visual_and_official_event",
+      "reviewer": "Codex AI visual review",
+      "reviewed_at": "2026-10-09T17:51:31.274387+08:00",
+      "independent_human_review": "not_performed",
+      "replay_review": "No repeated scoring play observed in 0.5-second samples and dense release frames; full frame-level edit segmentation not performed.",
+      "limitations": [
+        "Audio fully decoded but not listened to.",
+        "Only this scoring shot is linked; passes, screens and full player trajectories are not fully annotated.",
+        "PBP locX/locY differs from Inside the Game coordinates; no cross-system coordinate merge.",
+        "Do not use official game clock as the video release time."
+      ]
+    },
+    {
+      "clip_id": "train_002",
+      "source_path": "E:\\Compressed\\train_video\\train_video\\训练_阿门1月4日 .mp4",
+      "source_sha256": "7ec745f5f1e75b0c6d6dd27d409875f67c2ac3ab76c73f7123794c96be5aee22",
+      "game_id": "0022500491",
+      "player_id": "1641708",
+      "player_name": "阿门·汤普森",
+      "jersey_number_observed": "1",
+      "official_event_id": 396,
+      "period": 3,
+      "official_game_clock_text": "07:25",
+      "video_release_time_ms_approx": 18034.7,
+      "video_release_interval_ms": [
+        18018.011111,
+        18051.377778
+      ],
+      "video_time_method": "Decoded presentation timestamps relative to first video frame; visual release interval, not exact physical release instant.",
+      "video_scorebug_clock_near_release": "07:27",
+      "score_before": "HOU 60–63 DAL",
+      "score_after": "HOU 62–63 DAL",
+      "made": true,
+      "points": 2,
+      "observation": "运球进入两分区域，急停起跳投篮命中。",
+      "official_shot_description": "急停跳投",
+      "official_pbp_description": "[火箭 62-63] 汤普森 急停跳投：命中 (14分) 助攻：杜兰特 (5次助攻)",
+      "official_xfg_probability": 0.445,
+      "official_xfg_percent": 44.5,
+      "shot_source_file": "data/public-nba/20261009/raw/game-0022500491-player-1641708-shots.json",
+      "shot_source_sha256": "4b75a51aa4620ce879850dc30ade9246b25bf5c47d4957a3f769c527c7ceccf7",
+      "shot_source_pointer": "/data/shotList/10",
+      "pbp_source_file": "output/video-verification-20261009/official/selected-play-by-play-records.json",
+      "pbp_record_index": 1,
+      "pbp_source_page": "https://china.nba.cn/game/0022500491/play-by-play",
+      "evidence_frames": [
+        {
+          "file": "output/video-verification-20261009/train_002/release-frames/frame_01080_018018.011ms.jpg",
+          "video_time_ms": 18018.011111,
+          "frame_index": 1080,
+          "sha256": "9fb6ff9f77f6ab29875d56b8684e73df083e43e6cedb014e80d50a58c4b84913"
+        },
+        {
+          "file": "output/video-verification-20261009/train_002/release-frames/frame_01081_018034.700ms.jpg",
+          "video_time_ms": 18034.7,
+          "frame_index": 1081,
+          "sha256": "ee684ef81c1fb0151ebbd44f7bb015f71cd0f138142563238d0c45c2dd2fa964"
+        },
+        {
+          "file": "output/video-verification-20261009/train_002/release-frames/frame_01082_018051.378ms.jpg",
+          "video_time_ms": 18051.377778,
+          "frame_index": 1082,
+          "sha256": "ba98951ab14330c50442cce841c4c53a21e7ba4aafd7cdaa8b39315e84698404"
+        },
+        {
+          "file": "output/video-verification-20261009/train_002/frame_01259_021004.333ms.jpg",
+          "video_time_ms": 21004.333333,
+          "frame_index": 1259,
+          "sha256": "77c2c2a3e4cb8bd401cda0babf8f2bcb9fe376cbccc5ddd7e2989d709a45bbfb"
+        }
+      ],
+      "verification_status": "matched_ai_visual_and_official_event",
+      "reviewer": "Codex AI visual review",
+      "reviewed_at": "2026-10-09T17:51:31.274387+08:00",
+      "independent_human_review": "not_performed",
+      "replay_review": "No repeated scoring play observed in 0.5-second samples and dense release frames; full frame-level edit segmentation not performed.",
+      "limitations": [
+        "Audio fully decoded but not listened to.",
+        "Only this scoring shot is linked; passes, screens and full player trajectories are not fully annotated.",
+        "PBP locX/locY differs from Inside the Game coordinates; no cross-system coordinate merge.",
+        "Do not use official game clock as the video release time."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,436 @@
+[
+  {
+    "sku": "YEVHP7NXG6NZYX2H",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-Qwen3-VL-235B-A22B-input-tokens",
+      "operation": "",
+      "feature": "On-demand Inference",
+      "inferenceType": "Input tokens",
+      "model": "Qwen3 VL 235B A22B",
+      "provider": "Qwen",
+      "regionCode": "us-east-2",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00053 per 1K input tokens for Qwen3 VL 235B A22B in US East (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0005300000"
+  },
+  {
+    "sku": "T4U7KW6SXXKERZG3",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-NovaLite-output-tokens",
+      "operation": "",
+      "feature": "On-demand Inference",
+      "inferenceType": "Output tokens",
+      "model": "Nova Lite",
+      "regionCode": "us-east-2",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00024 per 1K tokens for Nova Lite-output-tokens  in us-east-2 (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0002400000"
+  },
+  {
+    "sku": "C5SVKQZNVHHR7NT6",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-Qwen3-VL-235B-A22B-output-tokens-flex",
+      "operation": "",
+      "feature": "On-demand Inference",
+      "inferenceType": "Output tokens flex",
+      "model": "Qwen3 VL 235B A22B",
+      "provider": "Qwen",
+      "regionCode": "us-east-2",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00133 per 1K output tokens flex for Qwen3 VL 235B A22B in US East (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0013300000"
+  },
+  {
+    "sku": "G5GJ2JG7UP2BWR6U",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-qwen.qwen3-vl-235b-a22b-instruct-mantle-output-tokens-standard",
+      "operation": "",
+      "inferenceType": "Output tokens",
+      "model": "Qwen3 VL 235B A22B",
+      "provider": "Qwen",
+      "regionCode": "us-east-2",
+      "service_tier": "standard",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00266 per 1K token for qwen.qwen3-vl-235b-a22b-instruct-mantle-output-tokens-standard in US East (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0026600000"
+  },
+  {
+    "sku": "P56V5WTJAYVM8EWU",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-Qwen3-VL-235B-A22B-output-tokens-priority",
+      "operation": "",
+      "feature": "On-demand Inference",
+      "inferenceType": "Output tokens priority",
+      "model": "Qwen3 VL 235B A22B",
+      "provider": "Qwen",
+      "regionCode": "us-east-2",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00466 per 1K output tokens priority for Qwen3 VL 235B A22B in US East (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0046600000"
+  },
+  {
+    "sku": "5VEM8ETX336KND55",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-Qwen3-VL-235B-A22B-input-tokens-priority",
+      "operation": "",
+      "feature": "On-demand Inference",
+      "inferenceType": "Input tokens priority",
+      "model": "Qwen3 VL 235B A22B",
+      "provider": "Qwen",
+      "regionCode": "us-east-2",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00093 per 1K input tokens priority for Qwen3 VL 235B A22B in US East (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0009300000"
+  },
+  {
+    "sku": "APUJU7K2B5VFQGJX",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-NovaLite-output-tokens-batch",
+      "operation": "",
+      "feature": "Batch Inference",
+      "inferenceType": "Output tokens",
+      "model": "Nova Lite",
+      "regionCode": "us-east-2",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00012 per 1K tokens for Nova Lite-output-tokens in us-east-2 (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0001200000"
+  },
+  {
+    "sku": "5DER4JAB8QQ8A7Y9",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-qwen.qwen3-vl-235b-a22b-instruct-mantle-input-tokens-flex",
+      "operation": "",
+      "inferenceType": "Input tokens flex",
+      "model": "Qwen3 VL 235B A22B",
+      "provider": "Qwen",
+      "regionCode": "us-east-2",
+      "service_tier": "flex",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00026 per 1K token for qwen.qwen3-vl-235b-a22b-instruct-mantle-input-tokens-flex in US East (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0002600000"
+  },
+  {
+    "sku": "KHFEXFZ7PQ574SHE",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-qwen.qwen3-vl-235b-a22b-instruct-mantle-output-tokens-flex",
+      "operation": "",
+      "inferenceType": "Output tokens flex",
+      "model": "Qwen3 VL 235B A22B",
+      "provider": "Qwen",
+      "regionCode": "us-east-2",
+      "service_tier": "flex",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00133 per 1K token for qwen.qwen3-vl-235b-a22b-instruct-mantle-output-tokens-flex in US East (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0013300000"
+  },
+  {
+    "sku": "GK6ATSV57S6Z3EBQ",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-qwen.qwen3-vl-235b-a22b-instruct-mantle-output-tokens-batch",
+      "operation": "",
+      "inferenceType": "output tokens batch",
+      "model": "Qwen3 VL 235B A22B",
+      "provider": "Qwen",
+      "regionCode": "us-east-2",
+      "service_tier": "batch",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00133 per 1K token for qwen.qwen3-vl-235b-a22b-instruct-mantle-output-tokens-batch in US East (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0013300000"
+  },
+  {
+    "sku": "Z2B5YVM2AWE3EPQQ",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-qwen.qwen3-vl-235b-a22b-instruct-mantle-input-tokens-batch",
+      "operation": "",
+      "inferenceType": "input tokens batch",
+      "model": "Qwen3 VL 235B A22B",
+      "provider": "Qwen",
+      "regionCode": "us-east-2",
+      "service_tier": "batch",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00026 per 1K token for qwen.qwen3-vl-235b-a22b-instruct-mantle-input-tokens-batch in US East (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0002600000"
+  },
+  {
+    "sku": "33HZGQDC55MW6UAY",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-Qwen3-VL-235B-A22B-input-tokens-batch",
+      "operation": "",
+      "feature": "Batch Inference",
+      "inferenceType": "Input tokens",
+      "model": "Qwen3 VL 235B A22B",
+      "provider": "Qwen",
+      "regionCode": "us-east-2",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00026 per 1K input tokens for Qwen3 VL 235B A22B in US East (Ohio) for Batch",
+    "unit": "1K tokens",
+    "usd": "0.0002600000"
+  },
+  {
+    "sku": "TKCKGDFN5NTBCWCN",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-NovaLite-cache-write-input-token-count",
+      "operation": "",
+      "feature": "On-demand Inference",
+      "inferenceType": "Prompt cache write input tokens",
+      "model": "Nova Lite",
+      "regionCode": "us-east-2",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00 per 1K tokens for USE2-NovaLite-cache-write-input-token-count in US East (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0000000000"
+  },
+  {
+    "sku": "M872PT5MESKZ39MC",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-Qwen3-VL-235B-A22B-output-tokens-batch",
+      "operation": "",
+      "feature": "Batch Inference",
+      "inferenceType": "Output tokens",
+      "model": "Qwen3 VL 235B A22B",
+      "provider": "Qwen",
+      "regionCode": "us-east-2",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00133 per 1K output tokens for Qwen3 VL 235B A22B in US East (Ohio) for Batch",
+    "unit": "1K tokens",
+    "usd": "0.0013300000"
+  },
+  {
+    "sku": "68N2Y76KQKQ4CEB8",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-NovaLite-input-tokens",
+      "operation": "",
+      "feature": "On-demand Inference",
+      "inferenceType": "Input tokens",
+      "model": "Nova Lite",
+      "regionCode": "us-east-2",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00006 per 1K tokens for Nova Lite-input-tokens  in us-east-2 (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0000600000"
+  },
+  {
+    "sku": "PYXNFUV2DBQF5YKM",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-qwen.qwen3-vl-235b-a22b-instruct-mantle-output-tokens-priority",
+      "operation": "",
+      "inferenceType": "Output tokens priority",
+      "model": "Qwen3 VL 235B A22B",
+      "provider": "Qwen",
+      "regionCode": "us-east-2",
+      "service_tier": "priority",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00466 per 1K token for qwen.qwen3-vl-235b-a22b-instruct-mantle-output-tokens-priority in US East (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0046600000"
+  },
+  {
+    "sku": "KFUB2QQW5DCMP8GM",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-qwen.qwen3-vl-235b-a22b-instruct-mantle-input-tokens-priority",
+      "operation": "",
+      "inferenceType": "Input tokens priority",
+      "model": "Qwen3 VL 235B A22B",
+      "provider": "Qwen",
+      "regionCode": "us-east-2",
+      "service_tier": "priority",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00093 per 1K token for qwen.qwen3-vl-235b-a22b-instruct-mantle-input-tokens-priority in US East (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0009300000"
+  },
+  {
+    "sku": "8F4PU22YHX3V3G2J",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-Qwen3-VL-235B-A22B-output-tokens",
+      "operation": "",
+      "feature": "On-demand Inference",
+      "inferenceType": "Output tokens",
+      "model": "Qwen3 VL 235B A22B",
+      "provider": "Qwen",
+      "regionCode": "us-east-2",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00266 per 1K output tokens for Qwen3 VL 235B A22B in US East (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0026600000"
+  },
+  {
+    "sku": "NDUVMJQD9N2TUCP7",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-Qwen3-VL-235B-A22B-input-tokens-flex",
+      "operation": "",
+      "feature": "On-demand Inference",
+      "inferenceType": "Input tokens flex",
+      "model": "Qwen3 VL 235B A22B",
+      "provider": "Qwen",
+      "regionCode": "us-east-2",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00026 per 1K input tokens flex for Qwen3 VL 235B A22B in US East (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0002600000"
+  },
+  {
+    "sku": "8QNRFMYWAKC7WZ7J",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-NovaLite-cache-read-input-token-count",
+      "operation": "",
+      "feature": "On-demand Inference",
+      "inferenceType": "Prompt cache read input tokens",
+      "model": "Nova Lite",
+      "regionCode": "us-east-2",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.000015 per 1K cache read input tokens of Nova Lite in US East (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0000150000"
+  },
+  {
+    "sku": "E5WE8THR9MMFSQM5",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-qwen.qwen3-vl-235b-a22b-instruct-mantle-input-tokens-standard",
+      "operation": "",
+      "inferenceType": "Input tokens",
+      "model": "Qwen3 VL 235B A22B",
+      "provider": "Qwen",
+      "regionCode": "us-east-2",
+      "service_tier": "standard",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00053 per 1K token for qwen.qwen3-vl-235b-a22b-instruct-mantle-input-tokens-standard in US East (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0005300000"
+  },
+  {
+    "sku": "7NB43Q6YJDFPABFU",
+    "attributes": {
+      "servicecode": "AmazonBedrock",
+      "location": "US East (Ohio)",
+      "locationType": "AWS Region",
+      "usagetype": "USE2-NovaLite-input-tokens-batch",
+      "operation": "",
+      "feature": "Batch Inference",
+      "inferenceType": "Input tokens",
+      "model": "Nova Lite",
+      "regionCode": "us-east-2",
+      "servicename": "Amazon Bedrock"
+    },
+    "effectiveDate": "2026-10-01T00:00:00Z",
+    "description": "$0.00003 per 1K tokens for Nova Lite-input-tokens in us-east-2 (Ohio)",
+    "unit": "1K tokens",
+    "usd": "0.0000300000"
+  }
+]

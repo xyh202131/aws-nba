@@ -1,0 +1,77 @@
+{
+  "created_at": "2026-10-09T18:22:27.946841+08:00",
+  "path_base": "data/processed/20261009",
+  "excludes": "package-manifest.json itself",
+  "files": [
+    {
+      "file": "clip-events.json",
+      "bytes": 10601,
+      "sha256": "92d3d9b9458b1ea708895ee9c9dd06cc6b7574ba7a1816d3b499bfbb65d8ce18"
+    },
+    {
+      "file": "data-dictionary.md",
+      "bytes": 5877,
+      "sha256": "bc97d00e9fd0ee1fcd96f336660752c411a4539cbf470b6aed8c27cea33cbf15"
+    },
+    {
+      "file": "derived-player-summaries.json",
+      "bytes": 2207,
+      "sha256": "074f08c598ce57c06591a16eca321abe9bd950b968d7032c1774fd365a3229dd"
+    },
+    {
+      "file": "games.csv",
+      "bytes": 594,
+      "sha256": "bb725a4647ea73b9be9142597e045a10680f8cd33740de1735de6e5cc667507a"
+    },
+    {
+      "file": "overlay-cues.draft.json",
+      "bytes": 2017,
+      "sha256": "a5ff256ba2c3fba7522c4453175150aa76d0eb8f26daa3d5b7c64f6828df6d29"
+    },
+    {
+      "file": "README.md",
+      "bytes": 4714,
+      "sha256": "784ab60653c602daef7bf88983e4bef7b627ac77becf5563f6f26826f2a28c3a"
+    },
+    {
+      "file": "review-queue.csv",
+      "bytes": 1617,
+      "sha256": "66c91720e02be5004c2f7909e1dab7c82d15e86bac12724e030efb5f57919f7e"
+    },
+    {
+      "file": "selected-pbp-fields.json",
+      "bytes": 16010,
+      "sha256": "addf4cbc5290b54271c0fa41c1b807e335b82de672fa386d53d97ab8f930bfe5"
+    },
+    {
+      "file": "shot-index.md",
+      "bytes": 4306,
+      "sha256": "81f368cb22221350ec52755f1f861b05a9f28911af62821c7fdbea64539a18ca"
+    },
+    {
+      "file": "shots-enriched.csv",
+      "bytes": 20124,
+      "sha256": "595872ef27985a11e82bda78f4a9c09b1907d16c9d8d43741bde23bea6f72a9e"
+    },
+    {
+      "file": "shots-enriched.json",
+      "bytes": 73380,
+      "sha256": "176e87462ad736954b4df79d018c6be08c4e58633a3b002e60a9792989e5299b"
+    },
+    {
+      "file": "source-field-conflicts.json",
+      "bytes": 2695,
+      "sha256": "06e24f4047d9d6fd72ba04677cd3ef5040ec9987528f453d32a7dd48bd9d5023"
+    },
+    {
+      "file": "sources-manifest.json",
+      "bytes": 6653,
+      "sha256": "fb6d36fd8e31937c18bc66eb4bd4d8fa6d4eb559194fa222b2b39bf999c46bc8"
+    },
+    {
+      "file": "validation.json",
+      "bytes": 1736,
+      "sha256": "3b5507d4a68a296a7abc3d2a88cc37d6fc7e859938b046cb7c1390da6e047859"
+    }
+  ]
+}

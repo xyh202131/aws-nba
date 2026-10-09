@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 3,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"content\":{\"result\":{\"cfn_resources\":{\"AWS::BedrockAgentCore::Runtime\":\"isAvailableIn\",\"AWS::S3::Bucket\":\"isAvailableIn\",\"AWS::Lambda::Function\":\"isAvailableIn\",\"AWS::ApiGatewayV2::Api\":\"isAvailableIn\",\"AWS::CloudFront::Distribution\":\"isAvailableIn\"},\"next_token\":null,\"failed_regions\":null}}}"
+      }
+    ],
+    "isError": false
+  }
+}

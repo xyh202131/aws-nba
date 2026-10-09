@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-10-08T13:14:49.882638+08:00",
+  "scope": "Document links, evidence JSON syntax, price calculations, original document and video SHA256 integrity",
+  "errors": [],
+  "application_tests": "not applicable: no application implementation this phase",
+  "full_video_decode": "not performed",
+  "cloud_deployments": "not performed",
+  "model_invocations": "not performed",
+  "platform_submissions": "not performed",
+  "deliverables": [
+    {
+      "path": "NBA深度赛场_赛前准备方案_20261008.md",
+      "sha256": "36d5b5624a671bdbbc840fc20aff6c3a19e1872e026a2d72a2baad0a255e8262"
+    },
+    {
+      "path": "NBA深度赛场_材料缺口与优先任务_20261008.md",
+      "sha256": "374c9a6614dec03205d3d7421eb6f90ff706a85fce1cf66620f86a9076ab75eb"
+    },
+    {
+      "path": "NBA深度赛场_AWS只读核验_20261008.md",
+      "sha256": "24e96d7ad71adfbb6a39fd071c3fa6440b33be36f566b8bf7373922ad8791d54"
+    }
+  ]
+}

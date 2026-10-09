@@ -1,0 +1,9 @@
+﻿task_id,priority,clip_id,status,task,evidence_file,blocks_current_shot_source_join
+train_001_independent_review,P1,train_001,pending,独立复核球员、出手区间、比分变化与来源映射,output/video-verification-20261009/verified-event-links.json,False
+train_001_full_action_labels,P1,train_001,pending,补齐传球、突破、掩护等可见动作及相应区间；不可见则标未知,output/video-verification-20261009/verified-event-links.json,False
+train_001_scene_replay_review,P2,train_001,pending,完成全片切镜/回放边界核对；当前只核对主要出手,output/video-verification-20261009/verified-event-links.json,False
+train_001_overlay_layout,P2,train_001,pending,在实际画面检查叠字时序和位置；尚无画面坐标或渲染成片,output/video-verification-20261009/verified-event-links.json,False
+train_002_independent_review,P1,train_002,pending,独立复核球员、出手区间、比分变化与来源映射,output/video-verification-20261009/verified-event-links.json,False
+train_002_full_action_labels,P1,train_002,pending,补齐传球、突破、掩护等可见动作及相应区间；不可见则标未知,output/video-verification-20261009/verified-event-links.json,False
+train_002_scene_replay_review,P2,train_002,pending,完成全片切镜/回放边界核对；当前只核对主要出手,output/video-verification-20261009/verified-event-links.json,False
+train_002_overlay_layout,P2,train_002,pending,在实际画面检查叠字时序和位置；尚无画面坐标或渲染成片,output/video-verification-20261009/verified-event-links.json,False

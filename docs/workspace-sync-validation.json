@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-09",
+  "copied_files": 369,
+  "bytes": 137745049,
+  "missing": [],
+  "hash_mismatches": [],
+  "active_markdown_checked": 36,
+  "local_links_checked": 367,
+  "broken_local_links": [],
+  "over_github_single_file_limit": [],
+  "invalid_json": [],
+  "credential_pattern_scan": {
+    "text_files": 176,
+    "matches": 0,
+    "scope": "parent source files excluding binary media and client reminder state; AWS keys/private keys/JWT/signed URLs/secret assignments"
+  },
+  "staged_blob_check": {
+    "checked": 369,
+    "sha256_matches": true
+  },
+  "remote_check": "Verify final commit and material tree after push; receipt stored outside commit."
+}

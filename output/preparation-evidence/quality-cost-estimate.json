@@ -1,0 +1,76 @@
+{
+  "calculated_at": "2026-10-08T13:21:46.863115+08:00",
+  "currency": "USD",
+  "actual_model_invocations": false,
+  "scope": "incremental application cloud cost; not entire AWS project bill or developer subscriptions",
+  "assumptions": {
+    "round_definition": "one short-clip Qwen analysis plus one Sonnet independent frame-based review and explanation",
+    "qwen_input": 30000,
+    "qwen_output": 3000,
+    "sonnet_input": 20000,
+    "sonnet_output": 4000,
+    "optional_opus_input": 20000,
+    "optional_opus_output": 4000,
+    "output_includes_any_billed_reasoning_tokens": true,
+    "retry_and_extra_context_allowance": "30%",
+    "infrastructure_allowance_not_exact_quote": true
+  },
+  "per_round": {
+    "qwen": "0.02388",
+    "sonnet": "0.12",
+    "combined": "0.14388",
+    "combined_with_30percent_allowance": "0.187044",
+    "optional_opus_call": "0.20"
+  },
+  "scenarios": [
+    {
+      "name": "small",
+      "rounds": 100,
+      "base_model_calls": 200,
+      "extra_opus_calls": 0,
+      "base_model_cost": "14.38800",
+      "extra_opus_cost": "0.00",
+      "model_cost_with_allowance": "18.704400",
+      "infra_low": 5,
+      "infra_high": 15,
+      "total_low": "23.704400",
+      "total_high": "33.704400"
+    },
+    {
+      "name": "recommended",
+      "rounds": 300,
+      "base_model_calls": 600,
+      "extra_opus_calls": 30,
+      "base_model_cost": "43.16400",
+      "extra_opus_cost": "6.00",
+      "model_cost_with_allowance": "63.913200",
+      "infra_low": 5,
+      "infra_high": 15,
+      "total_low": "68.913200",
+      "total_high": "78.913200"
+    },
+    {
+      "name": "heavy",
+      "rounds": 1000,
+      "base_model_calls": 2000,
+      "extra_opus_calls": 100,
+      "base_model_cost": "143.88000",
+      "extra_opus_cost": "20.00",
+      "model_cost_with_allowance": "213.044000",
+      "infra_low": 15,
+      "infra_high": 30,
+      "total_low": "228.044000",
+      "total_high": "243.044000"
+    }
+  ],
+  "all_opus_reasoner_300_rounds": {
+    "definition": "replace all Sonnet calls with Opus; no extra reviewer calls",
+    "model_with_allowance": "87.313200",
+    "total_low": "92.313200",
+    "total_high": "102.313200"
+  },
+  "recommended_no_opus": {
+    "total_low": "61.113200",
+    "total_high": "71.113200"
+  }
+}

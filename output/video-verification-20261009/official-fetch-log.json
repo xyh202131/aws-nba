@@ -1,0 +1,14 @@
+[
+  {
+    "game_id": "0022500701",
+    "url": "https://cdn.nba.com/static/json/liveData/playbyplay/playbyplay_0022500701.json",
+    "retrieved_at": "2026-10-09T17:39:14.926406+08:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "game_id": "0022500491",
+    "url": "https://cdn.nba.com/static/json/liveData/playbyplay/playbyplay_0022500491.json",
+    "retrieved_at": "2026-10-09T17:39:14.501931+08:00",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

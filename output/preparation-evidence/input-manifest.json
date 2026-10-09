@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-08T13:00:32.316632+08:00",
+  "scope": "C:/Users/24048/Desktop/NBA",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 7678,
+      "sha256": "392c4a54d8355cbddf549776f0814e87353efc646da4a371503befcf84db4e70"
+    },
+    {
+      "path": "AWS_Agent_Toolkit_安装记录.md",
+      "bytes": 4387,
+      "sha256": "2f5d438dbac54bacce07e50901dc9ec4d630d41d94e3364af5835d1b290cbe83"
+    },
+    {
+      "path": "BroadcastCode「深度赛场」赛事 · 赛前培训直播 会议纪要.md",
+      "bytes": 74969,
+      "sha256": "1c1ffdd2e6322cdd01bc89d3e44af4e4f1d58c07e08615defd8be4109540ec0b"
+    },
+    {
+      "path": "NBA深度赛场_技术栈与选型建议.md",
+      "bytes": 13196,
+      "sha256": "20b6833fba0237c77eadf68c1c96f14d7b54cad3742e7e8f1f6510eaa3f562bf"
+    },
+    {
+      "path": "output\\pdf\\NBA深度赛场_技术栈与选型建议.pdf",
+      "bytes": 386201,
+      "sha256": "f1701add4764028508da4f336390e364c19b251d5366cf0147fa6b47b827eeb2"
+    }
+  ]
+}

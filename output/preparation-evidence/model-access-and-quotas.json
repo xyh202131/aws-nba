@@ -1,0 +1,225 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"success\", \"stdout\": \"\", \"stderr\": null, \"return_value\": {\"availability\": {\"amazon.nova-lite-v1:0\": {\"modelId\": \"amazon.nova-lite-v1\", \"agreementAvailability\": {\"status\": \"AVAILABLE\"}, \"authorizationStatus\": \"AUTHORIZED\", \"entitlementAvailability\": \"AVAILABLE\", \"regionAvailability\": \"AVAILABLE\"}, \"amazon.nova-pro-v1:0\": {\"modelId\": \"amazon.nova-pro-v1\", \"agreementAvailability\": {\"status\": \"AVAILABLE\"}, \"authorizationStatus\": \"AUTHORIZED\", \"entitlementAvailability\": \"AVAILABLE\", \"regionAvailability\": \"AVAILABLE\"}, \"qwen.qwen3-vl-235b-a22b\": {\"modelId\": \"qwen.qwen3-vl-235b-a22b\", \"agreementAvailability\": {\"status\": \"AVAILABLE\"}, \"authorizationStatus\": \"AUTHORIZED\", \"entitlementAvailability\": \"AVAILABLE\", \"regionAvailability\": \"AVAILABLE\"}, \"nvidia.nemotron-nano-12b-v2\": {\"modelId\": \"nvidia.nemotron-nano-12b-v2\", \"agreementAvailability\": {\"status\": \"AVAILABLE\"}, \"authorizationStatus\": \"AUTHORIZED\", \"entitlementAvailability\": \"AVAILABLE\", \"regionAvailability\": \"AVAILABLE\"}}, \"quotas\": [{\"QuotaName\": \"Cross-region model inference requests per minute for Amazon Nova Lite\", \"QuotaCode\": \"L-89F8391A\", \"Value\": 0.0, \"Unit\": \"None\", \"Adjustable\": false}, {\"QuotaName\": \"Records per batch inference job for Nova Lite V1\", \"QuotaCode\": \"L-916C9264\", \"Value\": 100000.0, \"Unit\": \"None\", \"Adjustable\": true}, {\"QuotaName\": \"Sum of in-progress and submitted batch inference jobs using a base model for Nova Lite V1\", \"QuotaCode\": \"L-E2ED42E6\", \"Value\": 100.0, \"Unit\": \"None\", \"Adjustable\": true}, {\"QuotaName\": \"Records per batch inference job for Qwen3 VL 235B\", \"QuotaCode\": \"L-1F7ACACC\", \"Value\": 100000.0, \"Unit\": \"None\", \"Adjustable\": true}, {\"QuotaName\": \"Batch inference input file size (in GB) for Qwen3 VL 235B\", \"QuotaCode\": \"L-80704AE9\", \"Value\": 1.0, \"Unit\": \"None\", \"Adjustable\": false}, {\"QuotaName\": \"Records per input file per batch inference job for Qwen3 VL 235B\", \"QuotaCode\": \"L-DFE5A893\", \"Value\": 100000.0, \"Unit\": \"None\", \"Adjustable\": true}, {\"QuotaName\": \"Minimum number of records per batch inference job for Nova Lite V1\", \"QuotaCode\": \"L-39FA8DCA\", \"Value\": 100.0, \"Unit\": \"None\", \"Adjustable\": false}, {\"QuotaName\": \"On-demand model inference requests per minute for Qwen3 VL 235B A22B\", \"QuotaCode\": \"L-11B56FB0\", \"Value\": 0.0, \"Unit\": \"None\", \"Adjustable\": false}, {\"QuotaName\": \"Records per input file per batch inference job for Nova Lite V1\", \"QuotaCode\": \"L-B8626674\", \"Value\": 100000.0, \"Unit\": \"None\", \"Adjustable\": true}, {\"QuotaName\": \"Batch inference job size (in GB) for Nova Lite V1\", \"QuotaCode\": \"L-19E52681\", \"Value\": 100.0, \"Unit\": \"None\", \"Adjustable\": false}, {\"QuotaName\": \"Model invocation max tokens per day for Amazon Nova Lite (doubled for cross-region calls)\", \"QuotaCode\": \"L-45E0AD92\", \"Value\": 0.0, \"Unit\": \"None\", \"Adjustable\": false}, {\"QuotaName\": \"On-demand model inference tokens per minute for Qwen3 VL 235B A22B\", \"QuotaCode\": \"L-46063925\", \"Value\": 0.0, \"Unit\": \"None\", \"Adjustable\": false}, {\"QuotaName\": \"Cross-region model inference tokens per minute for Amazon Nova Lite\", \"QuotaCode\": \"L-7C42E72A\", \"Value\": 0.0, \"Unit\": \"None\", \"Adjustable\": true}, {\"QuotaName\": \"Batch inference input file size (in GB) for Nova Lite V1\", \"QuotaCode\": \"L-F60B56CC\", \"Value\": 1.0, \"Unit\": \"None\", \"Adjustable\": false}, {\"QuotaName\": \"Minimum number of records per batch inference job for Qwen3 VL 235B\", \"QuotaCode\": \"L-6A5D5383\", \"Value\": 100.0, \"Unit\": \"None\", \"Adjustable\": false}, {\"QuotaName\": \"Sum of in-progress and submitted batch inference jobs using a base model for Qwen3 VL 235B\", \"QuotaCode\": \"L-990A2394\", \"Value\": 100.0, \"Unit\": \"None\", \"Adjustable\": true}, {\"QuotaName\": \"Batch inference job size (in GB) for Qwen3 VL 235B\", \"QuotaCode\": \"L-CE2F5EC0\", \"Value\": 5.0, \"Unit\": \"None\", \"Adjustable\": false}], \"cloudfront\": {\"count\": null}, \"apigatewayv2\": {\"count\": 0}}, \"warning\": null, \"api_calls\": [{\"service\": \"bedrock\", \"operation\": \"GetFoundationModelAvailability\", \"status\": \"success\"}, {\"service\": \"bedrock\", \"operation\": \"GetFoundationModelAvailability\", \"status\": \"success\"}, {\"service\": \"bedrock\", \"operation\": \"GetFoundationModelAvailability\", \"status\": \"success\"}, {\"service\": \"bedrock\", \"operation\": \"GetFoundationModelAvailability\", \"status\": \"success\"}, {\"service\": \"service-quotas\", \"operation\": \"ListServiceQuotas\", \"status\": \"success\", \"n_items\": {\"Quotas\": 911}}, {\"service\": \"cloudfront\", \"operation\": \"ListDistributions\", \"status\": \"success\"}, {\"service\": \"apigatewayv2\", \"operation\": \"GetApis\", \"status\": \"success\", \"n_items\": {\"Items\": 0}}]}"
+      }
+    ],
+    "structuredContent": {
+      "status": "success",
+      "stdout": "",
+      "return_value": {
+        "availability": {
+          "amazon.nova-lite-v1:0": {
+            "modelId": "amazon.nova-lite-v1",
+            "agreementAvailability": {
+              "status": "AVAILABLE"
+            },
+            "authorizationStatus": "AUTHORIZED",
+            "entitlementAvailability": "AVAILABLE",
+            "regionAvailability": "AVAILABLE"
+          },
+          "amazon.nova-pro-v1:0": {
+            "modelId": "amazon.nova-pro-v1",
+            "agreementAvailability": {
+              "status": "AVAILABLE"
+            },
+            "authorizationStatus": "AUTHORIZED",
+            "entitlementAvailability": "AVAILABLE",
+            "regionAvailability": "AVAILABLE"
+          },
+          "qwen.qwen3-vl-235b-a22b": {
+            "modelId": "qwen.qwen3-vl-235b-a22b",
+            "agreementAvailability": {
+              "status": "AVAILABLE"
+            },
+            "authorizationStatus": "AUTHORIZED",
+            "entitlementAvailability": "AVAILABLE",
+            "regionAvailability": "AVAILABLE"
+          },
+          "nvidia.nemotron-nano-12b-v2": {
+            "modelId": "nvidia.nemotron-nano-12b-v2",
+            "agreementAvailability": {
+              "status": "AVAILABLE"
+            },
+            "authorizationStatus": "AUTHORIZED",
+            "entitlementAvailability": "AVAILABLE",
+            "regionAvailability": "AVAILABLE"
+          }
+        },
+        "quotas": [
+          {
+            "QuotaName": "Cross-region model inference requests per minute for Amazon Nova Lite",
+            "QuotaCode": "L-89F8391A",
+            "Value": 0.0,
+            "Unit": "None",
+            "Adjustable": false
+          },
+          {
+            "QuotaName": "Records per batch inference job for Nova Lite V1",
+            "QuotaCode": "L-916C9264",
+            "Value": 100000.0,
+            "Unit": "None",
+            "Adjustable": true
+          },
+          {
+            "QuotaName": "Sum of in-progress and submitted batch inference jobs using a base model for Nova Lite V1",
+            "QuotaCode": "L-E2ED42E6",
+            "Value": 100.0,
+            "Unit": "None",
+            "Adjustable": true
+          },
+          {
+            "QuotaName": "Records per batch inference job for Qwen3 VL 235B",
+            "QuotaCode": "L-1F7ACACC",
+            "Value": 100000.0,
+            "Unit": "None",
+            "Adjustable": true
+          },
+          {
+            "QuotaName": "Batch inference input file size (in GB) for Qwen3 VL 235B",
+            "QuotaCode": "L-80704AE9",
+            "Value": 1.0,
+            "Unit": "None",
+            "Adjustable": false
+          },
+          {
+            "QuotaName": "Records per input file per batch inference job for Qwen3 VL 235B",
+            "QuotaCode": "L-DFE5A893",
+            "Value": 100000.0,
+            "Unit": "None",
+            "Adjustable": true
+          },
+          {
+            "QuotaName": "Minimum number of records per batch inference job for Nova Lite V1",
+            "QuotaCode": "L-39FA8DCA",
+            "Value": 100.0,
+            "Unit": "None",
+            "Adjustable": false
+          },
+          {
+            "QuotaName": "On-demand model inference requests per minute for Qwen3 VL 235B A22B",
+            "QuotaCode": "L-11B56FB0",
+            "Value": 0.0,
+            "Unit": "None",
+            "Adjustable": false
+          },
+          {
+            "QuotaName": "Records per input file per batch inference job for Nova Lite V1",
+            "QuotaCode": "L-B8626674",
+            "Value": 100000.0,
+            "Unit": "None",
+            "Adjustable": true
+          },
+          {
+            "QuotaName": "Batch inference job size (in GB) for Nova Lite V1",
+            "QuotaCode": "L-19E52681",
+            "Value": 100.0,
+            "Unit": "None",
+            "Adjustable": false
+          },
+          {
+            "QuotaName": "Model invocation max tokens per day for Amazon Nova Lite (doubled for cross-region calls)",
+            "QuotaCode": "L-45E0AD92",
+            "Value": 0.0,
+            "Unit": "None",
+            "Adjustable": false
+          },
+          {
+            "QuotaName": "On-demand model inference tokens per minute for Qwen3 VL 235B A22B",
+            "QuotaCode": "L-46063925",
+            "Value": 0.0,
+            "Unit": "None",
+            "Adjustable": false
+          },
+          {
+            "QuotaName": "Cross-region model inference tokens per minute for Amazon Nova Lite",
+            "QuotaCode": "L-7C42E72A",
+            "Value": 0.0,
+            "Unit": "None",
+            "Adjustable": true
+          },
+          {
+            "QuotaName": "Batch inference input file size (in GB) for Nova Lite V1",
+            "QuotaCode": "L-F60B56CC",
+            "Value": 1.0,
+            "Unit": "None",
+            "Adjustable": false
+          },
+          {
+            "QuotaName": "Minimum number of records per batch inference job for Qwen3 VL 235B",
+            "QuotaCode": "L-6A5D5383",
+            "Value": 100.0,
+            "Unit": "None",
+            "Adjustable": false
+          },
+          {
+            "QuotaName": "Sum of in-progress and submitted batch inference jobs using a base model for Qwen3 VL 235B",
+            "QuotaCode": "L-990A2394",
+            "Value": 100.0,
+            "Unit": "None",
+            "Adjustable": true
+          },
+          {
+            "QuotaName": "Batch inference job size (in GB) for Qwen3 VL 235B",
+            "QuotaCode": "L-CE2F5EC0",
+            "Value": 5.0,
+            "Unit": "None",
+            "Adjustable": false
+          }
+        ],
+        "cloudfront": {},
+        "apigatewayv2": {
+          "count": 0
+        }
+      },
+      "api_calls": [
+        {
+          "service": "bedrock",
+          "operation": "GetFoundationModelAvailability",
+          "status": "success"
+        },
+        {
+          "service": "bedrock",
+          "operation": "GetFoundationModelAvailability",
+          "status": "success"
+        },
+        {
+          "service": "bedrock",
+          "operation": "GetFoundationModelAvailability",
+          "status": "success"
+        },
+        {
+          "service": "bedrock",
+          "operation": "GetFoundationModelAvailability",
+          "status": "success"
+        },
+        {
+          "service": "service-quotas",
+          "operation": "ListServiceQuotas",
+          "status": "success",
+          "n_items": {
+            "Quotas": 911
+          }
+        },
+        {
+          "service": "cloudfront",
+          "operation": "ListDistributions",
+          "status": "success"
+        },
+        {
+          "service": "apigatewayv2",
+          "operation": "GetApis",
+          "status": "success",
+          "n_items": {
+            "Items": 0
+          }
+        }
+      ]
+    },
+    "isError": false
+  }
+}

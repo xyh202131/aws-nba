@@ -1,0 +1,26 @@
+{
+  "recorded_at": "2026-10-09T17:31:46.544666+08:00",
+  "method": "Selected factual fields transcribed from web-tool extraction; not raw NBA.com HTML",
+  "pages": [
+    {
+      "url": "https://www.nba.com/games",
+      "result": "Partially rendered schedule navigation/cards; full structured schedule unavailable; games.csv comes from China site API."
+    },
+    {
+      "url": "https://www.nba.com/game/dal-vs-hou-0022500701",
+      "game_id": "0022500701",
+      "nba_com_game_date": "2026-01-31",
+      "use": "Date and game identity cross-check only",
+      "play_by_play_url": "https://www.nba.com/game/dal-vs-hou-0022500701/play-by-play",
+      "play_by_play_result": "Date visible but event rows absent from extracted response."
+    },
+    {
+      "url": "https://www.nba.com/game/hou-vs-dal-0022500491",
+      "game_id": "0022500491",
+      "nba_com_game_date": "2026-01-03",
+      "use": "Date and game identity cross-check only",
+      "play_by_play_url": "https://www.nba.com/game/hou-vs-dal-0022500491/play-by-play",
+      "play_by_play_result": "Date visible but event rows absent from extracted response."
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "recorded_at": "2026-10-09T17:51:31.274387+08:00",
+  "records": [
+    {
+      "game_id": "0022500701",
+      "quarter_response_record_count": 131,
+      "source_record_index": 20,
+      "record": {
+        "period": 4,
+        "periodName": "第四节",
+        "evt": 666,
+        "wallclk": "2026-02-01 11:50:49",
+        "cl": "01:34",
+        "de": "[独行侠 105-107] 弗拉格 上篮：命中 (34分)",
+        "locX": 25,
+        "locY": 53,
+        "opt1": 0,
+        "opt2": 0,
+        "opt3": 0,
+        "opt4": 0,
+        "mtype": 1,
+        "etype": 5,
+        "opid": "0",
+        "tid": 1610612742,
+        "tn": "独行侠",
+        "abbr": "DAL",
+        "logoDark": "https://res.nba.cn/media/img/teams/logos/DAL_logo.png",
+        "logoLight": "https://res.nba.cn/media/img/teams/light/DAL_logo.png",
+        "pid": 1642843,
+        "hs": 107,
+        "vs": 105,
+        "epid": "0",
+        "oftid": 1610612742,
+        "ord": 6500000,
+        "pts": 2
+      },
+      "source_page": "https://china.nba.cn/game/0022500701/play-by-play",
+      "endpoint": "https://api.nba.cn/sib/v2/pbp/details",
+      "parameters_retained": {
+        "gameId": "0022500701",
+        "period": 4
+      },
+      "http_status": 200,
+      "api_code": 0,
+      "source_json_pointer": "/data/data/g/pla/20",
+      "method": "Selected record copied from Network.getResponseBody for a normal public browser page request; full quarter response not saved; browser transport/signature identifiers omitted."
+    },
+    {
+      "game_id": "0022500491",
+      "quarter_response_record_count": 115,
+      "source_record_index": 87,
+      "record": {
+        "period": 3,
+        "periodName": "第三节",
+        "evt": 396,
+        "wallclk": "2026-01-04 11:01:34",
+        "cl": "07:25",
+        "de": "[火箭 62-63] 汤普森 急停跳投：命中 (14分) 助攻：杜兰特 (5次助攻)",
+        "locX": 20,
+        "locY": 129,
+        "opt1": 0,
+        "opt2": 0,
+        "opt3": 0,
+        "opt4": 0,
+        "mtype": 1,
+        "etype": 79,
+        "opid": "0",
+        "tid": 1610612745,
+        "tn": "火箭",
+        "abbr": "HOU",
+        "logoDark": "https://res.nba.cn/media/img/teams/logos/HOU_logo.png",
+        "logoLight": "https://res.nba.cn/media/img/teams/light/HOU_logo.png",
+        "pid": 1641708,
+        "hs": 63,
+        "vs": 62,
+        "epid": "201142",
+        "oftid": 1610612745,
+        "ord": 3950000,
+        "pts": 2
+      },
+      "source_page": "https://china.nba.cn/game/0022500491/play-by-play",
+      "endpoint": "https://api.nba.cn/sib/v2/pbp/details",
+      "parameters_retained": {
+        "gameId": "0022500491",
+        "period": 3
+      },
+      "http_status": 200,
+      "api_code": 0,
+      "source_json_pointer": "/data/data/g/pla/87",
+      "method": "Selected record copied from Network.getResponseBody for a normal public browser page request; full quarter response not saved; browser transport/signature identifiers omitted."
+    }
+  ]
+}

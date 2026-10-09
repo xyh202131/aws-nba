@@ -1,0 +1,110 @@
+{
+  "checked_at": "2026-10-08T13:36:19.080489+08:00",
+  "scope": "Local preparation materials only; no application code added",
+  "errors": [],
+  "file_count": 14,
+  "local_markdown_links_checked": 33,
+  "table_rows": {
+    "materials": 2,
+    "field_mappings": 16,
+    "human_review_checklist": 16,
+    "actual_model_runs": 0
+  },
+  "video_source_integrity": [
+    {
+      "clip_id": "train_001",
+      "metadata_and_source_sha256_match": true
+    },
+    {
+      "clip_id": "train_002",
+      "metadata_and_source_sha256_match": true
+    }
+  ],
+  "official_document_integrity": [
+    {
+      "file": "资料\\参赛终极指南.md",
+      "original_and_copy_sha256_match": true
+    },
+    {
+      "file": "资料\\赛制与选手快速上手.md",
+      "original_and_copy_sha256_match": true
+    }
+  ],
+  "placeholders_intentionally_pending": true,
+  "full_video_decode": "not performed",
+  "model_invocation": "not performed",
+  "deployment": "not performed",
+  "platform_submission": "not performed",
+  "files": [
+    {
+      "path": "准备资料\\01_赛规与交付检查表.md",
+      "bytes": 4234,
+      "sha256": "939870bb5342595f999f597a5ebc7e7ef8757b865185ba0f324c6ff7e9d979b5"
+    },
+    {
+      "path": "准备资料\\02_数据接入与标注规范.md",
+      "bytes": 5154,
+      "sha256": "e45d738d6fe96fe82c8d6a57d3ea56346a3154f29e6fb57f3bca5fcbcb9e78a8"
+    },
+    {
+      "path": "准备资料\\03_模型提示词与复核流程.md",
+      "bytes": 4053,
+      "sha256": "9437e6151a056d2c26f9dc1c5446c9406a841318f689224a4d2b752c77972acd"
+    },
+    {
+      "path": "准备资料\\04_质量验收与实验记录.md",
+      "bytes": 4463,
+      "sha256": "87440867165f17d039eca7afc5a53e129f84282984098f2ed2d6230923fa07c3"
+    },
+    {
+      "path": "准备资料\\05_作品说明与五分钟演示稿.md",
+      "bytes": 5421,
+      "sha256": "aba3bd0982b607721fecfc02172d6a21a3dd7e52ad0948e1ee72381ce36902f9"
+    },
+    {
+      "path": "准备资料\\06_比赛日执行手册.md",
+      "bytes": 4632,
+      "sha256": "3004cc7821b0db007a33753d5c2e5698fc1d0003b52160f2b7d269f9ff8adee3"
+    },
+    {
+      "path": "准备资料\\07_材料获取清单与待确认问题.md",
+      "bytes": 3674,
+      "sha256": "8dca25f920225269b56473e68c48fe1f718cf359a7accb6add20a15690fd7f70"
+    },
+    {
+      "path": "准备资料\\08_来源与证据索引.md",
+      "bytes": 3784,
+      "sha256": "c3f518b79b65c1c38cccc8590aef1e7308a58aeebbfa8d8be08f96850e6cfc43"
+    },
+    {
+      "path": "准备资料\\README.md",
+      "bytes": 3549,
+      "sha256": "58aa4cf67ffa187e5d93ba9cc3ab3909acaf88afff0e80e06d636a6c0aab9ab8"
+    },
+    {
+      "path": "准备资料\\表格\\事件记录待填.json",
+      "bytes": 1397,
+      "sha256": "c3658c67789cbfed0e098314cfaf7c691ddf826cf45375044436a9cb2953eb8e"
+    },
+    {
+      "path": "准备资料\\表格\\人工核对.csv",
+      "bytes": 1542,
+      "sha256": "f27068ea4f621f9e4945e76a0e8eb9ac0f24736d66c3e5d14902adf83fd37bde"
+    },
+    {
+      "path": "准备资料\\表格\\字段映射.csv",
+      "bytes": 1961,
+      "sha256": "8127d7311f40d017e001bde419359bf2b6c6f7f8529c074e4538fdd006e4d70a"
+    },
+    {
+      "path": "准备资料\\表格\\模型实验.csv",
+      "bytes": 316,
+      "sha256": "5866b9e3e9fbee73bfeb6f32bdc1ba411f1e9daaca0823d9410a94fd3de6e8ae"
+    },
+    {
+      "path": "准备资料\\表格\\素材登记.csv",
+      "bytes": 1070,
+      "sha256": "229429fa298547349eb99222e172ed840f84acc0155c209181124536c3077058"
+    }
+  ]
+}

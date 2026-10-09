@@ -1,0 +1,346 @@
+{
+  "crop_for_contact_sheet": [
+    300,
+    100,
+    1000,
+    900
+  ],
+  "frames": [
+    {
+      "frame_index": 1061,
+      "pts": 1593093,
+      "time_base": "1/90000",
+      "video_time_ms": 17701.033333,
+      "file": "train_002/release-frames/frame_01061_017701.033ms.jpg",
+      "sha256": "0e62ddc78e2748335c71e314d5c8eac59ba2fce20a3dbd642ecd37c39e21f79d"
+    },
+    {
+      "frame_index": 1062,
+      "pts": 1594594,
+      "time_base": "1/90000",
+      "video_time_ms": 17717.711111,
+      "file": "train_002/release-frames/frame_01062_017717.711ms.jpg",
+      "sha256": "c55cec07032718439da87ef2390fecb9895ad5851672088c0c1b4dbd339d0b3e"
+    },
+    {
+      "frame_index": 1063,
+      "pts": 1596096,
+      "time_base": "1/90000",
+      "video_time_ms": 17734.4,
+      "file": "train_002/release-frames/frame_01063_017734.400ms.jpg",
+      "sha256": "c82405a4821da0f74235ed58a2382c151ed6f96d3c071fdbf2c939da7caabab8"
+    },
+    {
+      "frame_index": 1064,
+      "pts": 1597597,
+      "time_base": "1/90000",
+      "video_time_ms": 17751.077778,
+      "file": "train_002/release-frames/frame_01064_017751.078ms.jpg",
+      "sha256": "0cdcaf4d93323040ed2c36ddc2cb7fb579e8f980b2bfba05a6bc73b1e525313f"
+    },
+    {
+      "frame_index": 1065,
+      "pts": 1599099,
+      "time_base": "1/90000",
+      "video_time_ms": 17767.766667,
+      "file": "train_002/release-frames/frame_01065_017767.767ms.jpg",
+      "sha256": "14b106c66b91c7a1ab85887ff82bcd253e63bba96a4aac5bba7c71471249e4d6"
+    },
+    {
+      "frame_index": 1066,
+      "pts": 1600600,
+      "time_base": "1/90000",
+      "video_time_ms": 17784.444444,
+      "file": "train_002/release-frames/frame_01066_017784.444ms.jpg",
+      "sha256": "92e166cdb3c2ccee75f3825864bfb50b9b96e18f3f8f0e5ebaf7b7c939120564"
+    },
+    {
+      "frame_index": 1067,
+      "pts": 1602102,
+      "time_base": "1/90000",
+      "video_time_ms": 17801.133333,
+      "file": "train_002/release-frames/frame_01067_017801.133ms.jpg",
+      "sha256": "e953fb3969b3ea8cc21eb23ae4771422b84902d293bddec38e5e098e8eff37ff"
+    },
+    {
+      "frame_index": 1068,
+      "pts": 1603603,
+      "time_base": "1/90000",
+      "video_time_ms": 17817.811111,
+      "file": "train_002/release-frames/frame_01068_017817.811ms.jpg",
+      "sha256": "4b84efb90f0389f84dffc55ff1d93734b7d07b1f06af6754183bc609d1a234c1"
+    },
+    {
+      "frame_index": 1069,
+      "pts": 1605105,
+      "time_base": "1/90000",
+      "video_time_ms": 17834.5,
+      "file": "train_002/release-frames/frame_01069_017834.500ms.jpg",
+      "sha256": "bc74aac7f272a4187b03e4ab858cad309101f56d3781915e8c927c9a211fb2ff"
+    },
+    {
+      "frame_index": 1070,
+      "pts": 1606606,
+      "time_base": "1/90000",
+      "video_time_ms": 17851.177778,
+      "file": "train_002/release-frames/frame_01070_017851.178ms.jpg",
+      "sha256": "4bea936da77bf9eabc1fccbb552e6c987aa7ca0b3f3acc1d7af32316a6ddbd0d"
+    },
+    {
+      "frame_index": 1071,
+      "pts": 1608108,
+      "time_base": "1/90000",
+      "video_time_ms": 17867.866667,
+      "file": "train_002/release-frames/frame_01071_017867.867ms.jpg",
+      "sha256": "8d2a0b5609903c23c80b4000c987d6abc1da649a6809f337263f64ae409cc8e6"
+    },
+    {
+      "frame_index": 1072,
+      "pts": 1609609,
+      "time_base": "1/90000",
+      "video_time_ms": 17884.544444,
+      "file": "train_002/release-frames/frame_01072_017884.544ms.jpg",
+      "sha256": "d8a70b5c7b3ce4453fbe3e41e2a8bd81782cc90ed27d08f24397a5a0f69bc3f2"
+    },
+    {
+      "frame_index": 1073,
+      "pts": 1611111,
+      "time_base": "1/90000",
+      "video_time_ms": 17901.233333,
+      "file": "train_002/release-frames/frame_01073_017901.233ms.jpg",
+      "sha256": "d3aa3b2aa943c37e96f0a8e4b7e30605dbd65b2fd3e491bf09f91b23d22bc03e"
+    },
+    {
+      "frame_index": 1074,
+      "pts": 1612612,
+      "time_base": "1/90000",
+      "video_time_ms": 17917.911111,
+      "file": "train_002/release-frames/frame_01074_017917.911ms.jpg",
+      "sha256": "8dbf0939dc2120e8bb3a5b5fc129e93aa954c5dcffe5c1383937f963fc7eeaf5"
+    },
+    {
+      "frame_index": 1075,
+      "pts": 1614114,
+      "time_base": "1/90000",
+      "video_time_ms": 17934.6,
+      "file": "train_002/release-frames/frame_01075_017934.600ms.jpg",
+      "sha256": "ad40dc8b80875462393369bfe0855bd0b0d5ea65364d29ea7b4f2a7ffeaae492"
+    },
+    {
+      "frame_index": 1076,
+      "pts": 1615615,
+      "time_base": "1/90000",
+      "video_time_ms": 17951.277778,
+      "file": "train_002/release-frames/frame_01076_017951.278ms.jpg",
+      "sha256": "08989b94894ed682729b3900d2701cccf521e7a73e6ffb91e372064029ad3614"
+    },
+    {
+      "frame_index": 1077,
+      "pts": 1617117,
+      "time_base": "1/90000",
+      "video_time_ms": 17967.966667,
+      "file": "train_002/release-frames/frame_01077_017967.967ms.jpg",
+      "sha256": "69ea97965a5e7fb4eb88cf1685685dc062c06a7c3de0dd225f8876b2ffc4dae6"
+    },
+    {
+      "frame_index": 1078,
+      "pts": 1618618,
+      "time_base": "1/90000",
+      "video_time_ms": 17984.644444,
+      "file": "train_002/release-frames/frame_01078_017984.644ms.jpg",
+      "sha256": "4114d5da1d42aa0b20e97714f241048c9ddf369ef4239fc62ea4d48750c3f0f9"
+    },
+    {
+      "frame_index": 1079,
+      "pts": 1620120,
+      "time_base": "1/90000",
+      "video_time_ms": 18001.333333,
+      "file": "train_002/release-frames/frame_01079_018001.333ms.jpg",
+      "sha256": "1db69c37e382281c8e5dfbbceeec987e7de8a7a2cdc2d3b86066bd9e066fa1e6"
+    },
+    {
+      "frame_index": 1080,
+      "pts": 1621621,
+      "time_base": "1/90000",
+      "video_time_ms": 18018.011111,
+      "file": "train_002/release-frames/frame_01080_018018.011ms.jpg",
+      "sha256": "9fb6ff9f77f6ab29875d56b8684e73df083e43e6cedb014e80d50a58c4b84913"
+    },
+    {
+      "frame_index": 1081,
+      "pts": 1623123,
+      "time_base": "1/90000",
+      "video_time_ms": 18034.7,
+      "file": "train_002/release-frames/frame_01081_018034.700ms.jpg",
+      "sha256": "ee684ef81c1fb0151ebbd44f7bb015f71cd0f138142563238d0c45c2dd2fa964"
+    },
+    {
+      "frame_index": 1082,
+      "pts": 1624624,
+      "time_base": "1/90000",
+      "video_time_ms": 18051.377778,
+      "file": "train_002/release-frames/frame_01082_018051.378ms.jpg",
+      "sha256": "ba98951ab14330c50442cce841c4c53a21e7ba4aafd7cdaa8b39315e84698404"
+    },
+    {
+      "frame_index": 1083,
+      "pts": 1626126,
+      "time_base": "1/90000",
+      "video_time_ms": 18068.066667,
+      "file": "train_002/release-frames/frame_01083_018068.067ms.jpg",
+      "sha256": "cfb4764661075ab6811ae577dec604fb94e22d7e0a6d14a986195397ba5b348c"
+    },
+    {
+      "frame_index": 1084,
+      "pts": 1627627,
+      "time_base": "1/90000",
+      "video_time_ms": 18084.744444,
+      "file": "train_002/release-frames/frame_01084_018084.744ms.jpg",
+      "sha256": "5df21ead27315c55032577c2bfcd31764b596025d0bb9705178c3ec4b56e7813"
+    },
+    {
+      "frame_index": 1085,
+      "pts": 1629129,
+      "time_base": "1/90000",
+      "video_time_ms": 18101.433333,
+      "file": "train_002/release-frames/frame_01085_018101.433ms.jpg",
+      "sha256": "2709d0698aaa49dc7e8b7ef814a729de7fe56b532e558ac485cd04115e7bc856"
+    },
+    {
+      "frame_index": 1086,
+      "pts": 1630630,
+      "time_base": "1/90000",
+      "video_time_ms": 18118.111111,
+      "file": "train_002/release-frames/frame_01086_018118.111ms.jpg",
+      "sha256": "881a8566a82b2f588fc32e18a06a2a86fe209f3d753f7b519f41488369bdddc3"
+    },
+    {
+      "frame_index": 1087,
+      "pts": 1632132,
+      "time_base": "1/90000",
+      "video_time_ms": 18134.8,
+      "file": "train_002/release-frames/frame_01087_018134.800ms.jpg",
+      "sha256": "78306f75bbde0733c17b53728e823898145a737dda76ac6bd5f926fc7dbf5c8b"
+    },
+    {
+      "frame_index": 1088,
+      "pts": 1633633,
+      "time_base": "1/90000",
+      "video_time_ms": 18151.477778,
+      "file": "train_002/release-frames/frame_01088_018151.478ms.jpg",
+      "sha256": "aa056c456e059e84958e7faadcb792e0e0ca409a4fec6128b124316e27bb9d9e"
+    },
+    {
+      "frame_index": 1089,
+      "pts": 1635135,
+      "time_base": "1/90000",
+      "video_time_ms": 18168.166667,
+      "file": "train_002/release-frames/frame_01089_018168.167ms.jpg",
+      "sha256": "11b04f2a803f8f351e28101e020a5dd7ce1d4ddb009a6a403cd66202b0e5301c"
+    },
+    {
+      "frame_index": 1090,
+      "pts": 1636636,
+      "time_base": "1/90000",
+      "video_time_ms": 18184.844444,
+      "file": "train_002/release-frames/frame_01090_018184.844ms.jpg",
+      "sha256": "f6b99238e3b48b6a779c534ca8791ffd3f84e123ba5994bb49e797aedbe1e645"
+    },
+    {
+      "frame_index": 1091,
+      "pts": 1638138,
+      "time_base": "1/90000",
+      "video_time_ms": 18201.533333,
+      "file": "train_002/release-frames/frame_01091_018201.533ms.jpg",
+      "sha256": "5354a1a051d1fa5a6c318838956a9cb832cb3c8cb2eb25fb91eaf545260d8efe"
+    },
+    {
+      "frame_index": 1092,
+      "pts": 1639639,
+      "time_base": "1/90000",
+      "video_time_ms": 18218.211111,
+      "file": "train_002/release-frames/frame_01092_018218.211ms.jpg",
+      "sha256": "e5e16d8ca800cbba98f6643fabb9c3e58d7168b866ab6f4fb69aa64db3681c31"
+    },
+    {
+      "frame_index": 1093,
+      "pts": 1641141,
+      "time_base": "1/90000",
+      "video_time_ms": 18234.9,
+      "file": "train_002/release-frames/frame_01093_018234.900ms.jpg",
+      "sha256": "d1fc9c8e4d5a9949cb9f297c7b0cdbb8848bd76c6ff37e9da3467193c6b2961e"
+    },
+    {
+      "frame_index": 1094,
+      "pts": 1642642,
+      "time_base": "1/90000",
+      "video_time_ms": 18251.577778,
+      "file": "train_002/release-frames/frame_01094_018251.578ms.jpg",
+      "sha256": "1316b5adc9dcaea6b8caf6018e412fdc8eaa43fb4baa460984381653b18e32ca"
+    },
+    {
+      "frame_index": 1095,
+      "pts": 1644144,
+      "time_base": "1/90000",
+      "video_time_ms": 18268.266667,
+      "file": "train_002/release-frames/frame_01095_018268.267ms.jpg",
+      "sha256": "5d419b3fd063457c78b63c3fe2a82916131680bae272b1c685a67feb19ab9dbb"
+    },
+    {
+      "frame_index": 1096,
+      "pts": 1645645,
+      "time_base": "1/90000",
+      "video_time_ms": 18284.944444,
+      "file": "train_002/release-frames/frame_01096_018284.944ms.jpg",
+      "sha256": "5b1fdc1b041b3b23377e71ab2208ceeb848873c4d9a24d5605a5c218273a5629"
+    },
+    {
+      "frame_index": 1097,
+      "pts": 1647147,
+      "time_base": "1/90000",
+      "video_time_ms": 18301.633333,
+      "file": "train_002/release-frames/frame_01097_018301.633ms.jpg",
+      "sha256": "bdfc44faba8f2dfbb85761d35050854ab327d2073ef806876bfcb52a6f63d91a"
+    },
+    {
+      "frame_index": 1098,
+      "pts": 1648648,
+      "time_base": "1/90000",
+      "video_time_ms": 18318.311111,
+      "file": "train_002/release-frames/frame_01098_018318.311ms.jpg",
+      "sha256": "26c58d511ca3638c00ea67bc452f3791215420dd0ad2bac2880b0e7c0fd8f082"
+    },
+    {
+      "frame_index": 1099,
+      "pts": 1650150,
+      "time_base": "1/90000",
+      "video_time_ms": 18335.0,
+      "file": "train_002/release-frames/frame_01099_018335.000ms.jpg",
+      "sha256": "2acb8978caa26eb1ae937a8a5e17e82d6dfb7562b08009127bd4792c91a74db7"
+    },
+    {
+      "frame_index": 1100,
+      "pts": 1651651,
+      "time_base": "1/90000",
+      "video_time_ms": 18351.677778,
+      "file": "train_002/release-frames/frame_01100_018351.678ms.jpg",
+      "sha256": "b5b71b1c3319c49099a608d2044340d56ccd96f96f71324d1a020c9ddc823af5"
+    },
+    {
+      "frame_index": 1101,
+      "pts": 1653153,
+      "time_base": "1/90000",
+      "video_time_ms": 18368.366667,
+      "file": "train_002/release-frames/frame_01101_018368.367ms.jpg",
+      "sha256": "e00fe64c6b3172d3647d0748444b84d0073d7ee738c15b099ef6eda6b5038a53"
+    },
+    {
+      "frame_index": 1102,
+      "pts": 1654654,
+      "time_base": "1/90000",
+      "video_time_ms": 18385.044444,
+      "file": "train_002/release-frames/frame_01102_018385.044ms.jpg",
+      "sha256": "43a676500e9059c1568cb1a4d54334181583b9ea126ebae85092333dfbf9cfac"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-10-09T18:18:08.384648+08:00",
+  "records": [
+    {
+      "game_id": "0022500701",
+      "player_id": "1642843",
+      "source_file": "data/public-nba/20261009/raw/game-0022500701-player-1642843-shots.json",
+      "quarantined_raw_fields": {
+        "matchup": "火箭@独行侠",
+        "shotQuality": 0.565,
+        "fgPct": 0.565,
+        "avgShotQuality": 0.089,
+        "fgPctAboveExpected": 0.514,
+        "avgMissShotQuality": 0.427,
+        "avgDefenderBallDistance": 38.4
+      },
+      "canonical_matchup_from_explicit_team_ids": "独行侠@火箭",
+      "summary_semantics_status": "unresolved; numeric resemblance is diagnostic, not an official field definition",
+      "derived_diagnostics": {
+        "mean_all_attempt_values": 0.47604347826086957,
+        "fg_minus_mean_all_attempt_values": 0.08917391304347821,
+        "mean_made_attempt_values": 0.5138461538461538,
+        "raw_avgShotQuality_close_to_fg_minus_mean": true,
+        "raw_fgPctAboveExpected_close_to_mean_made_attempts": true
+      },
+      "action": "Omit all ambiguous top-level source summary metrics from usable event rows. Retain these source values here; do not rename or overwrite them."
+    },
+    {
+      "game_id": "0022500491",
+      "player_id": "1641708",
+      "source_file": "data/public-nba/20261009/raw/game-0022500491-player-1641708-shots.json",
+      "quarantined_raw_fields": {
+        "matchup": "独行侠@火箭",
+        "shotQuality": 0.444,
+        "fgPct": 0.444,
+        "avgShotQuality": 0.016,
+        "fgPctAboveExpected": 0.513,
+        "avgMissShotQuality": 0.361,
+        "avgDefenderBallDistance": 43.3
+      },
+      "canonical_matchup_from_explicit_team_ids": "火箭@独行侠",
+      "summary_semantics_status": "unresolved; numeric resemblance is diagnostic, not an official field definition",
+      "derived_diagnostics": {
+        "mean_all_attempt_values": 0.42844444444444446,
+        "fg_minus_mean_all_attempt_values": 0.01599999999999996,
+        "mean_made_attempt_values": 0.513125,
+        "raw_avgShotQuality_close_to_fg_minus_mean": true,
+        "raw_fgPctAboveExpected_close_to_mean_made_attempts": true
+      },
+      "action": "Omit all ambiguous top-level source summary metrics from usable event rows. Retain these source values here; do not rename or overwrite them."
+    }
+  ],
+  "coordinate_policy": "Preserve Inside and PBP locX/locY separately; units, origin and mapping to broadcast pixels unverified. No conversion or overlay geometry inferred.",
+  "season_policy": "Season aggregates remain outside event rows; not historical pregame context or event metrics."
+}

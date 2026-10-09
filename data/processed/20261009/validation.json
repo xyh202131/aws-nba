@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-09T18:22:27.946841+08:00",
+  "status": "passed",
+  "checks": {
+    "41_unique_composite_keys": true,
+    "41_valid_official_clocks": true,
+    "all_source_clocks_still_empty": true,
+    "two_video_links_only": true,
+    "input_hashes_match": true,
+    "original_public_response_hashes_unchanged": true,
+    "41_shot_to_pbp_identity_period_outcome_points_clock_and_probability_matches": true,
+    "csv_matches_json_all_fields": true,
+    "two_clip_events_valid_times_evidence_metric_sources_and_review_scope": true,
+    "draft_cues_within_video_durations_and_explicitly_unrendered": true,
+    "summary_conflicts_quarantined": true,
+    "eight_distinct_quarter_sources": true,
+    "new_and_updated_markdown_local_links_resolve": true
+  },
+  "counts": {
+    "shots": 41,
+    "official_clocks": 41,
+    "clip_events": 2,
+    "video_unlinked_shots": 39,
+    "quarter_sources": 8,
+    "source_quarter_records_observed": 1038,
+    "projected_records_saved": 41,
+    "original_api_response_hashes_checked": 14,
+    "input_hashes_checked": 16,
+    "local_document_links_checked": 63
+  },
+  "scope": "Local data integrity and cross-source consistency, not basketball action-recognition accuracy or independent human review. Original video decoding and hashes rely on prior verification evidence; no second full decode in this step.",
+  "limitations": [
+    "Only selected PBP field projections were saved; complete source quarter bodies and their byte-level hashes were not saved.",
+    "41 official shot records do not equal 41 annotated video events.",
+    "Human review, full action/scene annotation, video rendering, paid inference and platform evaluation not performed."
+  ]
+}

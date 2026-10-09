@@ -1,0 +1,126 @@
+[
+  {
+    "file": "raw/shot-difficulty-2025-26-regular.json",
+    "url": "https://api.nba.cn/nba-web/api/web/inside/season/shotDifficulty?season=2025-26&seasonType=Regular+Season",
+    "retrieved_at": "2026-10-09T17:19:01.711868+08:00",
+    "source_page": "https://china.nba.cn/inside-the-game",
+    "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+    "parameters": {
+      "season": "2025-26",
+      "seasonType": "Regular Season"
+    },
+    "http_status": 200,
+    "api_code": 0,
+    "bytes": 82752,
+    "sha256": "4da37636619135883f2b7e5e5ad331737d63256fefa7719d3dc0078a3bd3ae55",
+    "data_keys": [
+      "shots",
+      "insideGameUrl"
+    ],
+    "row_counts": {
+      "shots": 125
+    }
+  },
+  {
+    "file": "raw/gravity-2025-26-regular.json",
+    "url": "https://api.nba.cn/nba-web/api/web/inside/season/playerGravity?season=2025-26&seasonType=Regular+Season",
+    "retrieved_at": "2026-10-09T17:19:01.712888+08:00",
+    "source_page": "https://china.nba.cn/inside-the-game",
+    "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+    "parameters": {
+      "season": "2025-26",
+      "seasonType": "Regular Season"
+    },
+    "http_status": 200,
+    "api_code": 0,
+    "bytes": 109378,
+    "sha256": "89f70e16fc870e29e9efaa4f1f81ca5f372ac02431aa194e5a2908dcea1195a1",
+    "data_keys": [
+      "players"
+    ],
+    "row_counts": {
+      "players": 234
+    }
+  },
+  {
+    "file": "raw/leverage-2025-26-regular.json",
+    "url": "https://api.nba.cn/nba-web/api/web/inside/season/playerLeverage?season=2025-26&seasonType=Regular+Season",
+    "retrieved_at": "2026-10-09T17:19:02.257659+08:00",
+    "source_page": "https://china.nba.cn/inside-the-game",
+    "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+    "parameters": {
+      "season": "2025-26",
+      "seasonType": "Regular Season"
+    },
+    "http_status": 200,
+    "api_code": 0,
+    "bytes": 120815,
+    "sha256": "ebdde198bd0846897863a5dbf34371be626f591b5989aa2d3dc22372a5fd5a24",
+    "data_keys": [
+      "players"
+    ],
+    "row_counts": {
+      "players": 261
+    }
+  },
+  {
+    "file": "raw/games-2026-10-09.json",
+    "url": "https://api.nba.cn/nba-web/api/web/inside/game?date=2026-10-09",
+    "retrieved_at": "2026-10-09T17:19:02.319795+08:00",
+    "source_page": "https://china.nba.cn/inside-the-game",
+    "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+    "parameters": {
+      "date": "2026-10-09"
+    },
+    "http_status": 200,
+    "api_code": 0,
+    "bytes": 1244,
+    "sha256": "420b245f7f985ea268019fffaad2c65ae8dfa393cc87cccbb6baf49a82a12f01",
+    "data_keys": [
+      "games"
+    ],
+    "row_counts": {
+      "games": 7
+    }
+  },
+  {
+    "file": "raw/games-2026-02-01-candidate.json",
+    "url": "https://api.nba.cn/nba-web/api/web/inside/game?date=2026-02-01",
+    "retrieved_at": "2026-10-09T17:19:02.568390+08:00",
+    "source_page": "https://china.nba.cn/inside-the-game",
+    "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+    "parameters": {
+      "date": "2026-02-01"
+    },
+    "http_status": 200,
+    "api_code": 0,
+    "bytes": 1074,
+    "sha256": "fd50dbff6c13199ba9689b8222f2c748089e4a0c3d549d5db0afd895e4156c27",
+    "data_keys": [
+      "games"
+    ],
+    "row_counts": {
+      "games": 6
+    }
+  },
+  {
+    "file": "raw/games-2026-01-04-candidate.json",
+    "url": "https://api.nba.cn/nba-web/api/web/inside/game?date=2026-01-04",
+    "retrieved_at": "2026-10-09T17:19:02.798307+08:00",
+    "source_page": "https://china.nba.cn/inside-the-game",
+    "method": "Public unauthenticated GET; route and parameters observed in official frontend bundle",
+    "parameters": {
+      "date": "2026-01-04"
+    },
+    "http_status": 200,
+    "api_code": 0,
+    "bytes": 1424,
+    "sha256": "5816910a32c5aae47688ced2af9e8a049b564b44ea4059c6d02ebc4a478d23b8",
+    "data_keys": [
+      "games"
+    ],
+    "row_counts": {
+      "games": 8
+    }
+  }
+]
