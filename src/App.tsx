@@ -48,6 +48,7 @@ import {
   ReviewIntake,
 } from "./EvidenceStudio";
 import { momentAt, reviewPayload } from "./review";
+import { AgentPanel } from "./AgentPanel";
 
 type View = "review" | "analytics" | "archive" | "notes";
 type DialogState =
@@ -688,7 +689,7 @@ function Archive({
   onSource,
   onImport,
 }: {
-  onOpenClip: (id: string) => void;
+  onOpenClip: (id: string, time?: number) => void;
   onSource: (shot: Shot) => void;
   onImport: () => void;
 }) {
@@ -706,6 +707,7 @@ function Archive({
   );
   return (
     <section className="archive" aria-label="投篮数据档案">
+      <AgentPanel onOpenClip={onOpenClip} />
       <MaterialReadiness onImport={onImport} />
       <div className="archive-intro">
         <div>

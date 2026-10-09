@@ -1,6 +1,6 @@
 # COURTSIDE · 深度赛场
 
-一个让真实比赛画面与有来源的数据相互连接的回合工作台。当前交付是**可交互的前端设计原型**：两段本地视频、两条已核对的出手事件，以及 41 条官方逐次投篮记录。采用深蓝与薄荷绿配色，提供回合工作台、投篮分析、数据档案和复盘笔记四个工作区。
+一个让真实比赛画面与有来源的数据相互连接的回合工作台。当前交付包含**交互前端与可运行的本地 Agent 骨架**：两段本地视频、两条已核对的出手事件，以及 41 条官方逐次投篮记录。采用深蓝与薄荷绿配色，提供回合工作台、投篮分析、数据档案和复盘笔记四个工作区。
 
 ![桌面回合工作台](docs/design/evidence-review.jpg)
 
@@ -23,6 +23,10 @@ npm run preview
 ```
 
 `build` 输出到 `dist/`；当前未部署、未接入赛事 AgentCore / Portal。
+
+要运行新加入的数据档案 Agent 流程，在第二个终端执行 `npm run agent`，然后点击“运行离线流程”。默认真实核验素材、重新抽帧并回放既有观察，模型调用费用为 0。任务保存在忽略目录 `.local/agent`。
+
+启动、接口、模型关闭机制、CDK 离线合成与明天接入清单见 [Agent 骨架说明](docs/AGENT_SKELETON.md)；实际验证见 [Agent 验收记录](docs/AGENT_ACCEPTANCE.md)。
 
 ## 已实现的流程
 
@@ -78,7 +82,7 @@ npm run preview
 
 ## 技术结构
 
-React + TypeScript + Vite，原生 CSS 与 HTML Video；Lucide 图标。没有 UI 框架、外部字体请求、统计追踪或云端依赖。
+React + TypeScript + Vite，原生 CSS 与 HTML Video；Lucide 图标。后端使用 Node.js HTTP、FFmpeg 和 Bedrock SDK，默认离线；CDK 仅用于本地合成资源模板。无外部字体请求或统计追踪。
 
 ```text
 src/App.tsx          工作台、播放器、来源对话框、检索视图
@@ -88,6 +92,10 @@ src/review.ts        证据契约、时间节点与输入校验
 src/analytics.ts     样本聚合与分节计算
 src/data.ts          展示类型、时间格式、JSON 导出
 src/data/            2 个视频条目与 41 条投篮记录
+src/AgentPanel.tsx    本地 Agent 连接、任务进度、证据与结果
+shared/agent.ts       前后端共享的内部任务和结果类型
+agent/               HTTP 服务、队列、抽帧、模型适配、校验、官方适配预留
+infra/app.ts         CDK 离线基础设施骨架
 src/styles.css       基础布局、播放器、数据档案
 src/studio.css       蓝薄荷主题及工作区
 src/evidence.css     证据工作流与响应式布局
@@ -98,4 +106,4 @@ docs/design/         实际页面设计图
 
 笔记只保存在当前浏览器的当前站点，清理站点数据会移除笔记；建议用 JSON 导出留存。存储不可用时会显示提示，测试笔记不会随源码发布。
 
-范围仍限于前端设计与本地演示。未实现自动视频分析、轨迹追踪、TTS、带标注成片渲染、云部署、赛事重跑协议或平台提交。
+当前可完成本地离线工作流。真实模型推理尚未执行；自动事件发现、新素材上传、轨迹追踪、TTS、带标注成片渲染、云部署、赛事重跑协议和平台提交仍待接入。
