@@ -25,12 +25,31 @@ import {
   Volume2,
   VolumeX,
   X,
+  ChartNoAxesCombined,
+  NotebookPen,
+  BookmarkPlus,
+  Repeat2,
+  Undo2,
 } from "lucide-react";
 import { clips, shots, timecode, downloadJson } from "./data";
 import type { Clip, Shot } from "./data";
+import {
+  Analytics,
+  MatchStrip,
+  ReviewModules,
+  NotesLibrary,
+  NoteComposer,
+  readNotes,
+  NOTE_KEY,
+} from "./Studio";
+import type { NoteDraft, ReviewNote } from "./Studio";
 
-type View = "review" | "archive";
-type DialogState = { kind: "source"; shot?: Shot } | { kind: "help" } | null;
+type View = "review" | "analytics" | "archive" | "notes";
+type DialogState =
+  | { kind: "source"; shot?: Shot }
+  | { kind: "help" }
+  | { kind: "note"; draft: NoteDraft; note?: ReviewNote }
+  | null;
 type Layers = { player: boolean; metric: boolean; caption: boolean };
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
@@ -279,11 +298,15 @@ function Toggle({
 function Player({
   clip,
   jumpSignal,
+  jumpTime,
   onSource,
+  onMark,
 }: {
   clip: Clip;
   jumpSignal: number;
+  jumpTime: number | null;
   onSource: () => void;
+  onMark: (time: number) => void;
 }) {
   const video = useRef<HTMLVideoElement>(null);
   const stage = useRef<HTMLDivElement>(null);
@@ -296,6 +319,9 @@ function Player({
   const [notice, setNotice] = useState("");
   const [buffering, setBuffering] = useState(true);
   const [fullscreen, setFullscreen] = useState(false);
+  const [looping, setLooping] = useState(false);
+  const loopStart = Math.max(0, clip.release - 3);
+  const loopEnd = Math.min(clip.duration, clip.release + 3);
   const [ready, setReady] = useState(false);
   const [layers, setLayers] = useState<Layers>({
     player: true,
@@ -320,10 +346,10 @@ function Player({
   useEffect(() => {
     if (jumpSignal > 0 && video.current?.readyState) {
       video.current.pause();
-      video.current.currentTime = clip.release;
+      video.current.currentTime = jumpTime ?? clip.release;
       stage.current?.scrollIntoView({ block: "nearest", behavior: "instant" });
     }
-  }, [jumpSignal, clip.release]);
+  }, [jumpSignal, jumpTime, clip.release]);
   async function togglePlayback() {
     if (!video.current || !ready) return;
     if (video.current.paused) {
@@ -381,13 +407,22 @@ function Player({
             onLoadedMetadata={() => {
               if (video.current) {
                 setDuration(video.current.duration);
-                video.current.currentTime = clip.release;
+                video.current.currentTime = jumpTime ?? clip.release;
                 video.current.playbackRate = rate;
                 setReady(true);
               }
             }}
             onTimeUpdate={() => {
               const value = video.current?.currentTime ?? 0;
+              if (
+                looping &&
+                video.current &&
+                !video.current.paused &&
+                value >= loopEnd - 0.12
+              ) {
+                video.current.currentTime = loopStart;
+                return;
+              }
               setTime(value);
               setActiveMoment(
                 clip.moments.reduce(
@@ -408,7 +443,7 @@ function Player({
           />
           <div className="video-topline">
             <span className="video-context">
-              <span className="orange-dot" />
+              <span className="signal-dot" />
               回合 0{clip.id === "train_002" ? 1 : 2} <i />Q{clip.period} ·{" "}
               {clip.officialClock}
               <small>官方时钟</small>
@@ -547,6 +582,58 @@ function Player({
             }}
           >
             {fullscreen ? <Minimize2 size={17} /> : <Maximize2 size={17} />}
+          </button>
+        </div>
+      </div>
+      <div className="replay-tools" aria-label="精细回放工具">
+        <div>
+          <button
+            className={looping ? "active" : ""}
+            aria-pressed={looping}
+            onClick={() => {
+              setLooping(!looping);
+              if (!looping) {
+                seek(loopStart);
+              }
+            }}
+          >
+            <Repeat2 size={15} />
+            {looping ? "循环已开启" : "出手循环"}
+          </button>
+          <span>
+            {timecode(loopStart)} — {timecode(loopEnd)}
+          </span>
+        </div>
+        <div>
+          <button
+            onClick={() => {
+              video.current?.pause();
+              seek(time - 1);
+            }}
+            aria-label="后退一秒"
+          >
+            −1s
+          </button>
+          <button
+            onClick={() => {
+              video.current?.pause();
+              seek(time + 1);
+            }}
+            aria-label="前进一秒"
+          >
+            +1s
+          </button>
+          <button
+            className="mark-time"
+            onClick={() => {
+              video.current?.pause();
+              onMark(
+                Math.min(clip.duration, video.current?.currentTime ?? time),
+              );
+            }}
+          >
+            <BookmarkPlus size={15} />
+            标记此刻
           </button>
         </div>
       </div>
@@ -1054,7 +1141,44 @@ export default function App() {
   const [view, setView] = useState<View>("review");
   const [dialog, setDialog] = useState<DialogState>(null);
   const [jumpSignal, setJumpSignal] = useState(0);
+  const [jumpTime, setJumpTime] = useState<number | null>(null);
   const [toast, setToast] = useState("");
+  const [noteState, setNoteState] = useState(readNotes);
+  const [removedNote, setRemovedNote] = useState<ReviewNote | null>(null);
+  const noteDraft = { clipId: clip.id, time: clip.release };
+  const titles: Record<View, string> = {
+    review: "把这一球，看明白。",
+    analytics: "每次出手，都有线索。",
+    archive: "数据，让细节有据。",
+    notes: "你的视角，值得留下。",
+  };
+  const viewLabels: Record<View, string> = {
+    review: "比赛回看",
+    analytics: "投篮分析",
+    archive: "公开数据",
+    notes: "复盘笔记",
+  };
+  function saveNotes(next: ReviewNote[]) {
+    let warning = noteState.warning;
+    if (!warning) {
+      try {
+        localStorage.setItem(NOTE_KEY, JSON.stringify(next));
+      } catch {
+        warning = "浏览器存储不可用，本次笔记只保存在当前页面，请及时导出。";
+      }
+    }
+    setNoteState({ notes: next, warning });
+    return !warning;
+  }
+  function openClip(id: string, time?: number) {
+    const next = clips.find((c) => c.id === id);
+    if (!next) return;
+    focusReview.current = true;
+    setClip(next);
+    setView("review");
+    setJumpTime(time ?? null);
+    setJumpSignal((n) => n + 1);
+  }
   const focusReview = useRef(false);
   useEffect(() => {
     if (view !== "review" || !focusReview.current) return;
@@ -1072,10 +1196,19 @@ export default function App() {
     setClip(next);
     setView("review");
     setJumpSignal(0);
+    setJumpTime(null);
   }
   function exportData() {
+    if (view === "notes") {
+      downloadJson(
+        { schema: "courtside-personal-notes-v1", notes: noteState.notes },
+        "courtside-notes.json",
+      );
+      setToast("已请求下载全部复盘笔记");
+      return;
+    }
     const content =
-      view === "archive"
+      view === "archive" || view === "analytics"
         ? {
             schema_status: "internal_public_shot_index_not_contest_schema",
             snapshot: "2026-10-09",
@@ -1089,12 +1222,12 @@ export default function App() {
           };
     downloadJson(
       content,
-      view === "archive"
+      view === "archive" || view === "analytics"
         ? "courtside-shot-archive.json"
         : `courtside-${clip.id}.json`,
     );
     setToast(
-      view === "archive"
+      view === "archive" || view === "analytics"
         ? "已请求下载全部 41 条投篮记录"
         : "已请求下载当前回合 JSON 数据",
     );
@@ -1126,12 +1259,31 @@ export default function App() {
             回合工作台
           </button>
           <button
+            aria-current={view === "analytics" ? "page" : undefined}
+            className={view === "analytics" ? "active" : ""}
+            onClick={() => setView("analytics")}
+          >
+            <ChartNoAxesCombined size={15} />
+            投篮分析
+          </button>
+          <button
             aria-current={view === "archive" ? "page" : undefined}
             className={view === "archive" ? "active" : ""}
             onClick={() => setView("archive")}
           >
             <Layers2 size={15} />
             数据档案<span className="nav-count">41</span>
+          </button>
+          <button
+            aria-current={view === "notes" ? "page" : undefined}
+            className={view === "notes" ? "active" : ""}
+            onClick={() => setView("notes")}
+          >
+            <NotebookPen size={15} />
+            复盘笔记
+            {noteState.notes.length > 0 && (
+              <span className="nav-count">{noteState.notes.length}</span>
+            )}
           </button>
         </nav>
         <div className="header-actions">
@@ -1157,54 +1309,105 @@ export default function App() {
               <div className="breadcrumb">
                 <span>深度赛场</span>
                 <ChevronRight size={12} />
-                <span>{view === "review" ? "比赛回看" : "公开数据"}</span>
+                <span>{viewLabels[view]}</span>
               </div>
-              <h1>
-                {view === "review"
-                  ? "把这一球，看明白。"
-                  : "数据，让细节有据。"}
-              </h1>
+              <h1>{titles[view]}</h1>
             </div>
             <div className="match-context">
-              <span className={`team-coin ${clip.team.toLowerCase()}`}>
-                {clip.team}
-              </span>
+              {view === "review" ? (
+                <span className={`team-coin ${clip.team.toLowerCase()}`}>
+                  {clip.team}
+                </span>
+              ) : (
+                <span className="team-coin">
+                  {view === "notes" ? (
+                    <NotebookPen size={16} />
+                  ) : (
+                    <ChartNoAxesCombined size={16} />
+                  )}
+                </span>
+              )}
               <span>
                 <strong>
-                  {view === "review" ? clip.matchup : "2025–26 常规赛"}
+                  {view === "review"
+                    ? clip.matchup
+                    : view === "notes"
+                      ? "本机笔记库"
+                      : "2025–26 常规赛"}
                 </strong>
                 <small>
                   {view === "review"
                     ? `${clip.date} · 训练片段`
-                    : "官方公开数据 · 2026.10.09 快照"}
+                    : view === "notes"
+                      ? `${noteState.notes.length} 条个人观察 · 本地保存`
+                      : "官方公开数据 · 2026.10.09 快照"}
                 </small>
               </span>
             </div>
           </div>
           {view === "review" ? (
-            <div className="review-layout">
-              <Player
-                key={clip.id}
+            <>
+              <MatchStrip clip={clip} onAnalyze={() => setView("analytics")} />
+              <div className="review-layout">
+                <Player
+                  key={clip.id}
+                  clip={clip}
+                  jumpSignal={jumpSignal}
+                  jumpTime={jumpTime}
+                  onSource={() => setDialog({ kind: "source" })}
+                  onMark={(time) =>
+                    setDialog({
+                      kind: "note",
+                      draft: { clipId: clip.id, time },
+                    })
+                  }
+                />
+                <Inspector
+                  key={clip.id + "-inspector"}
+                  clip={clip}
+                  onJump={() => {
+                    setJumpTime(null);
+                    setJumpSignal((n) => n + 1);
+                  }}
+                  onSource={() => setDialog({ kind: "source" })}
+                />
+              </div>
+              <ReviewModules
                 clip={clip}
-                jumpSignal={jumpSignal}
-                onSource={() => setDialog({ kind: "source" })}
+                notes={noteState.notes}
+                onAnalyze={() => setView("analytics")}
+                onNote={() => setDialog({ kind: "note", draft: noteDraft })}
+                onNotes={() => setView("notes")}
               />
-              <Inspector
-                key={clip.id + "-inspector"}
-                clip={clip}
-                onJump={() => setJumpSignal((n) => n + 1)}
-                onSource={() => setDialog({ kind: "source" })}
-              />
-            </div>
+            </>
+          ) : view === "analytics" ? (
+            <Analytics
+              initialClip={clip}
+              onSource={(shot) => setDialog({ kind: "source", shot })}
+              onOpenClip={openClip}
+            />
+          ) : view === "notes" ? (
+            <NotesLibrary
+              notes={noteState.notes}
+              warning={noteState.warning}
+              onCreate={() => setDialog({ kind: "note", draft: noteDraft })}
+              onEdit={(note) =>
+                setDialog({
+                  kind: "note",
+                  draft: { clipId: note.clipId, time: note.time },
+                  note,
+                })
+              }
+              onRemove={(note) => {
+                saveNotes(noteState.notes.filter((n) => n.id !== note.id));
+                setRemovedNote(note);
+                setToast("笔记已移除，可撤销");
+              }}
+              onJump={(note) => openClip(note.clipId, note.time)}
+            />
           ) : (
             <Archive
-              onOpenClip={(id) => {
-                const next = clips.find((c) => c.id === id);
-                if (next) {
-                  focusReview.current = true;
-                  chooseClip(next);
-                }
-              }}
+              onOpenClip={openClip}
               onSource={(shot) => setDialog({ kind: "source", shot })}
             />
           )}
@@ -1230,10 +1433,36 @@ export default function App() {
       </div>
       {dialog && (
         <Modal
-          title={dialog.kind === "help" ? "让回看更顺手" : "数据与观察依据"}
+          title={
+            dialog.kind === "help"
+              ? "让回看更顺手"
+              : dialog.kind === "note"
+                ? dialog.note
+                  ? "编辑复盘笔记"
+                  : "记录这个瞬间"
+                : "数据与观察依据"
+          }
           onClose={() => setDialog(null)}
         >
-          {dialog.kind === "source" ? (
+          {dialog.kind === "note" ? (
+            <NoteComposer
+              draft={dialog.draft}
+              initial={dialog.note}
+              onClose={() => setDialog(null)}
+              onSave={(note) => {
+                const persisted = saveNotes([
+                  note,
+                  ...noteState.notes.filter((n) => n.id !== note.id),
+                ]);
+                setDialog(null);
+                setToast(
+                  persisted
+                    ? "笔记已保存到本机浏览器"
+                    : "笔记暂存当前页面，请前往笔记库导出",
+                );
+              }}
+            />
+          ) : dialog.kind === "source" ? (
             <SourceContent
               clip={
                 dialog.shot?.clip_id
@@ -1291,6 +1520,31 @@ export default function App() {
           </>
         )}
       </div>
+      {removedNote && (
+        <div className="undo-note" role="status">
+          <span>已移除一条笔记</span>
+          <button
+            onClick={() => {
+              saveNotes([
+                removedNote,
+                ...noteState.notes.filter((n) => n.id !== removedNote.id),
+              ]);
+              setRemovedNote(null);
+              setToast("笔记已恢复");
+            }}
+          >
+            <Undo2 size={15} />
+            撤销
+          </button>
+          <button
+            className="icon-button"
+            aria-label="关闭撤销提示"
+            onClick={() => setRemovedNote(null)}
+          >
+            <X size={15} />
+          </button>
+        </div>
+      )}
     </>
   );
 }

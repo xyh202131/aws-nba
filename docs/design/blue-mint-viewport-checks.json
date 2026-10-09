@@ -1,0 +1,226 @@
+[
+  {
+    "client": 305,
+    "overflow": false,
+    "scroll": 305,
+    "view": "回合工作台",
+    "width": 320
+  },
+  {
+    "client": 375,
+    "overflow": false,
+    "scroll": 375,
+    "view": "回合工作台",
+    "width": 390
+  },
+  {
+    "client": 705,
+    "overflow": false,
+    "scroll": 705,
+    "view": "回合工作台",
+    "width": 720
+  },
+  {
+    "client": 753,
+    "overflow": false,
+    "scroll": 753,
+    "view": "回合工作台",
+    "width": 768
+  },
+  {
+    "client": 1009,
+    "overflow": false,
+    "scroll": 1009,
+    "view": "回合工作台",
+    "width": 1024
+  },
+  {
+    "client": 1265,
+    "overflow": false,
+    "scroll": 1265,
+    "view": "回合工作台",
+    "width": 1280
+  },
+  {
+    "client": 1425,
+    "overflow": false,
+    "scroll": 1425,
+    "view": "回合工作台",
+    "width": 1440
+  },
+  {
+    "client": 1905,
+    "overflow": false,
+    "scroll": 1905,
+    "view": "回合工作台",
+    "width": 1920
+  },
+  {
+    "client": 305,
+    "overflow": false,
+    "scroll": 305,
+    "view": "投篮分析",
+    "width": 320
+  },
+  {
+    "client": 375,
+    "overflow": false,
+    "scroll": 375,
+    "view": "投篮分析",
+    "width": 390
+  },
+  {
+    "client": 705,
+    "overflow": false,
+    "scroll": 705,
+    "view": "投篮分析",
+    "width": 720
+  },
+  {
+    "client": 753,
+    "overflow": false,
+    "scroll": 753,
+    "view": "投篮分析",
+    "width": 768
+  },
+  {
+    "client": 1009,
+    "overflow": false,
+    "scroll": 1009,
+    "view": "投篮分析",
+    "width": 1024
+  },
+  {
+    "client": 1265,
+    "overflow": false,
+    "scroll": 1265,
+    "view": "投篮分析",
+    "width": 1280
+  },
+  {
+    "client": 1425,
+    "overflow": false,
+    "scroll": 1425,
+    "view": "投篮分析",
+    "width": 1440
+  },
+  {
+    "client": 1905,
+    "overflow": false,
+    "scroll": 1905,
+    "view": "投篮分析",
+    "width": 1920
+  },
+  {
+    "client": 305,
+    "overflow": false,
+    "scroll": 305,
+    "view": "数据档案41",
+    "width": 320
+  },
+  {
+    "client": 375,
+    "overflow": false,
+    "scroll": 375,
+    "view": "数据档案41",
+    "width": 390
+  },
+  {
+    "client": 705,
+    "overflow": false,
+    "scroll": 705,
+    "view": "数据档案41",
+    "width": 720
+  },
+  {
+    "client": 753,
+    "overflow": false,
+    "scroll": 753,
+    "view": "数据档案41",
+    "width": 768
+  },
+  {
+    "client": 1009,
+    "overflow": false,
+    "scroll": 1009,
+    "view": "数据档案41",
+    "width": 1024
+  },
+  {
+    "client": 1265,
+    "overflow": false,
+    "scroll": 1265,
+    "view": "数据档案41",
+    "width": 1280
+  },
+  {
+    "client": 1425,
+    "overflow": false,
+    "scroll": 1425,
+    "view": "数据档案41",
+    "width": 1440
+  },
+  {
+    "client": 1905,
+    "overflow": false,
+    "scroll": 1905,
+    "view": "数据档案41",
+    "width": 1920
+  },
+  {
+    "client": 305,
+    "overflow": false,
+    "scroll": 305,
+    "view": "复盘笔记",
+    "width": 320
+  },
+  {
+    "client": 375,
+    "overflow": false,
+    "scroll": 375,
+    "view": "复盘笔记",
+    "width": 390
+  },
+  {
+    "client": 705,
+    "overflow": false,
+    "scroll": 705,
+    "view": "复盘笔记",
+    "width": 720
+  },
+  {
+    "client": 753,
+    "overflow": false,
+    "scroll": 753,
+    "view": "复盘笔记",
+    "width": 768
+  },
+  {
+    "client": 1009,
+    "overflow": false,
+    "scroll": 1009,
+    "view": "复盘笔记",
+    "width": 1024
+  },
+  {
+    "client": 1280,
+    "overflow": false,
+    "scroll": 1280,
+    "view": "复盘笔记",
+    "width": 1280
+  },
+  {
+    "client": 1440,
+    "overflow": false,
+    "scroll": 1440,
+    "view": "复盘笔记",
+    "width": 1440
+  },
+  {
+    "client": 1920,
+    "overflow": false,
+    "scroll": 1920,
+    "view": "复盘笔记",
+    "width": 1920
+  }
+]
