@@ -4,6 +4,10 @@
 
 ![桌面回合工作台](docs/design/evidence-review.jpg)
 
+## 文档入口
+
+先读[当前执行方案](docs/PROJECT_PLAN.md)，查看已完成能力、剩余任务、模型/预算边界和第一项本地成片任务。文档冲突及整理范围见[核对记录](docs/DOCUMENTATION_REVIEW.md)。历史验收保留各自版本，不能替代当前云端运行证明。
+
 ## 本地运行
 
 环境：Node.js 24；已在 Windows、Node 24.19.0、npm 12.0.2 验证。
@@ -26,7 +30,7 @@ npm run preview
 
 要运行新加入的数据档案 Agent 流程，在第二个终端执行 `npm run agent`，然后点击“运行离线流程”。默认真实核验素材、重新抽帧并回放既有观察，模型调用费用为 0。任务保存在忽略目录 `.local/agent`。
 
-启动、接口、模型关闭机制、CDK 离线合成与明天接入清单见 [Agent 骨架说明](docs/AGENT_SKELETON.md)；实际验证见 [Agent 验收记录](docs/AGENT_ACCEPTANCE.md)。
+启动、接口、模型关闭机制、CDK 离线合成与资源到位后的接入清单见 [Agent 骨架说明](docs/AGENT_SKELETON.md)；实际验证见 [Agent 验收记录](docs/AGENT_ACCEPTANCE.md)。
 
 ## 已实现的流程
 

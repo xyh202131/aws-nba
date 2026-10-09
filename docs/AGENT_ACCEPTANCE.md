@@ -48,4 +48,4 @@
 
 ![手机端结果](design/agent-mobile-result.png)
 
-复现步骤与明日任务见 [AGENT_SKELETON.md](AGENT_SKELETON.md)。所有运行数据、临时任务、抽帧、CDK 输出和下载结果均为本地辅助材料，不随源码提交。
+复现步骤与资源接入任务见 [AGENT_SKELETON.md](AGENT_SKELETON.md)。所有运行数据、临时任务、抽帧、CDK 输出和下载结果均为本地辅助材料，不随源码提交。

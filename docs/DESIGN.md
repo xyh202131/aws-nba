@@ -12,7 +12,7 @@ COURTSIDE · 深度赛场是本项目的原创前端标识。球场线条标志�
 | ---------- | ------------------------------------------------------------------------------------------------ |
 | 回合工作台 | 两条片段、比分概览、视频控制、循环与 ±1 秒、标记此刻、回合时间轴、同步证据链、通俗/技术/复盘解读 |
 | 投篮分析   | 样本统计、球员与节次筛选、逐次 xFG、分节和方式分布、同阶段两回合对照、来源与视频跳转             |
-| 数据档案   | 材料状态、回合 JSON 核验与冲突报告、41 条记录的筛选检索、来源核对与 JSON 导出                    |
+| 数据档案   | 材料状态、回合 JSON 核验、离线 Agent 任务/证据帧、41 条记录检索与 JSON 导出                      |
 | 复盘笔记   | 时间点笔记、四种分类、编辑、浏览器本地保存、分类查看、回到视频时刻、JSON 导出、删除后撤销        |
 
 视频下方的工具响应真实播放时间。“标记此刻”暂停视频并绑定当前时间；出手循环覆盖出手前后约 3 秒，并受片段边界约束。它不是原片逐帧定位功能。
@@ -58,4 +58,4 @@ Awwwards、Webby Awards 和 FWA 作为设计完成度参照，不声称获奖。
 
 [Webby 官方评审维度](https://www.webbyawards.com/judging-criteria/)强调视觉、结构导航、功能、交互与整体体验。本轮坚持真实可操作模块，不增加无数据支撑的模拟图表。
 
-最新截图、功能验证和边界见 [REFERENCE_RECONCILIATION.md](REFERENCE_RECONCILIATION.md)；早期验证保留在 [QA.md](QA.md) 与 [BLUE_MINT_ACCEPTANCE.md](BLUE_MINT_ACCEPTANCE.md)。
+Agent 面板与工程边界见 [AGENT_SKELETON.md](AGENT_SKELETON.md)，整体任务见 [PROJECT_PLAN.md](PROJECT_PLAN.md)。前端截图、功能验证和边界见 [REFERENCE_RECONCILIATION.md](REFERENCE_RECONCILIATION.md)；早期验证保留在 [QA.md](QA.md) 与 [BLUE_MINT_ACCEPTANCE.md](BLUE_MINT_ACCEPTANCE.md)。
