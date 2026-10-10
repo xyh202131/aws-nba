@@ -8,10 +8,11 @@ import type { Clip } from "../src/data.ts";
 import type { Config } from "./config.ts";
 import { sha256 } from "./catalog.ts";
 import { AgentError } from "./errors.ts";
+import { VIDEO_INPUT_OPTIONS } from "./media.ts";
 
 const execute = promisify(execFile);
 export async function extractFrames(
-  clip: Clip,
+  clip: Pick<Clip, "id" | "moments">,
   videoPath: string,
   jobId: string,
   config: Config,
@@ -41,6 +42,7 @@ export async function extractFrames(
           "-nostats",
           "-loglevel",
           "info",
+          ...VIDEO_INPUT_OPTIONS,
           "-i",
           videoPath,
           "-vf",

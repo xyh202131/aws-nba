@@ -19,7 +19,7 @@ import { ROOT } from "../agent/config.ts";
 // Offline synthesis only: no lookups, uploads, bootstrap, credentials, or Docker builds.
 const app = new App({ outdir: resolve(ROOT, "cdk.out") });
 const stack = new Stack(app, "CourtsideSkeleton", {
-  env: { region: "us-east-2" },
+  env: { region: "us-east-1" },
   terminationProtection: true,
   description:
     "COURTSIDE scaffold; fixture only; requires separately reviewed runtime role and ARM64 image.",
@@ -32,9 +32,9 @@ const role = new CfnParameter(stack, "RuntimeRoleArn", {
 });
 const image = new CfnParameter(stack, "RuntimeImageUri", {
   type: "String",
-  description: "Pre-published ARM64 ECR image in us-east-2, pinned by digest.",
+  description: "Pre-published ARM64 ECR image in us-east-1, pinned by digest.",
   allowedPattern:
-    "[0-9]{12}\\.dkr\\.ecr\\.us-east-2\\.amazonaws\\.com/[a-z0-9/_-]+@sha256:[a-f0-9]{64}",
+    "[0-9]{12}\\.dkr\\.ecr\\.us-east-1\\.amazonaws\\.com/[a-z0-9/_-]+@sha256:[a-f0-9]{64}",
 });
 const site = new Bucket(stack, "Site", {
   blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
@@ -69,8 +69,8 @@ const runtime = new CfnRuntime(stack, "Agent", {
   environmentVariables: {
     AGENT_PROVIDER: "fixture",
     ALLOW_PAID_MODEL_CALLS: "false",
-    AWS_REGION: "us-east-2",
-    AWS_PROFILE: "aws-personal",
+    AWS_REGION: "us-east-1",
+    AWS_PROFILE: "nba",
     AGENT_HOST: "0.0.0.0",
     AGENT_PORT: "8080",
     AGENT_RUNTIME_CONTAINER: "true",

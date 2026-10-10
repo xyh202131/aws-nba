@@ -50,7 +50,7 @@ import {
 import { momentAt, reviewPayload } from "./review";
 import { AgentPanel } from "./AgentPanel";
 
-type View = "review" | "analytics" | "archive" | "notes";
+type View = "agent" | "review" | "analytics" | "archive" | "notes";
 type DialogState =
   | { kind: "source"; shot?: Shot }
   | { kind: "help" }
@@ -707,7 +707,6 @@ function Archive({
   );
   return (
     <section className="archive" aria-label="投篮数据档案">
-      <AgentPanel onOpenClip={onOpenClip} />
       <MaterialReadiness onImport={onImport} />
       <div className="archive-intro">
         <div>
@@ -915,7 +914,7 @@ function Archive({
 
 export default function App() {
   const [clip, setClip] = useState(clips[0]);
-  const [view, setView] = useState<View>("review");
+  const [view, setView] = useState<View>("agent");
   const [dialog, setDialog] = useState<DialogState>(null);
   const [jumpSignal, setJumpSignal] = useState(0);
   const [jumpTime, setJumpTime] = useState<number | null>(null);
@@ -925,12 +924,14 @@ export default function App() {
   const [removedNote, setRemovedNote] = useState<ReviewNote | null>(null);
   const noteDraft = { clipId: clip.id, time: clip.release };
   const titles: Record<View, string> = {
+    agent: "让比赛数据，走进画面。",
     review: "把这一球，看明白。",
     analytics: "每次出手，都有线索。",
     archive: "数据，让细节有据。",
     notes: "你的视角，值得留下。",
   };
   const viewLabels: Record<View, string> = {
+    agent: "AI 作品工作室",
     review: "比赛回看",
     analytics: "投篮分析",
     archive: "公开数据",
@@ -1019,12 +1020,20 @@ export default function App() {
           aria-label="COURTSIDE 深度赛场首页"
           onClick={(e) => {
             e.preventDefault();
-            setView("review");
+            setView("agent");
           }}
         >
           <Brand />
         </a>
         <nav aria-label="主导航">
+          <button
+            aria-current={view === "agent" ? "page" : undefined}
+            className={view === "agent" ? "active" : ""}
+            onClick={() => setView("agent")}
+          >
+            <Film size={15} />
+            AI 作品
+          </button>
           <button
             aria-current={view === "review" ? "page" : undefined}
             className={view === "review" ? "active" : ""}
@@ -1066,18 +1075,22 @@ export default function App() {
             <span />
             本地演示
           </span>
-          <button className="export-button" onClick={exportData}>
-            <ArrowDownToLine size={16} />
-            <span>导出数据</span>
-          </button>
+          {view !== "agent" && (
+            <button className="export-button" onClick={exportData}>
+              <ArrowDownToLine size={16} />
+              <span>导出数据</span>
+            </button>
+          )}
         </div>
       </header>
-      <div className="app-body">
-        <ClipRail
-          selected={clip}
-          onSelect={chooseClip}
-          onSource={() => setDialog({ kind: "source" })}
-        />
+      <div className={`app-body${view === "agent" ? " agent-body" : ""}`}>
+        {view !== "agent" && (
+          <ClipRail
+            selected={clip}
+            onSelect={chooseClip}
+            onSource={() => setDialog({ kind: "source" })}
+          />
+        )}
         <main id="workspace" className="workspace" tabIndex={-1}>
           <div className="workspace-heading">
             <div>
@@ -1106,21 +1119,27 @@ export default function App() {
                 <strong>
                   {view === "review"
                     ? clip.matchup
-                    : view === "notes"
-                      ? "本机笔记库"
-                      : "2025–26 常规赛"}
+                    : view === "agent"
+                      ? "视频 + 数据 → 比赛作品"
+                      : view === "notes"
+                        ? "本机笔记库"
+                        : "2025–26 常规赛"}
                 </strong>
                 <small>
                   {view === "review"
                     ? `${clip.date} · 训练片段`
-                    : view === "notes"
-                      ? `${noteState.notes.length} 条个人观察 · 本地保存`
-                      : "官方公开数据 · 2026.10.09 快照"}
+                    : view === "agent"
+                      ? "可播放 · 有解说 · 可下载"
+                      : view === "notes"
+                        ? `${noteState.notes.length} 条个人观察 · 本地保存`
+                        : "官方公开数据 · 2026.10.09 快照"}
                 </small>
               </span>
             </div>
           </div>
-          {view === "review" ? (
+          {view === "agent" ? (
+            <AgentPanel onOpenClip={openClip} />
+          ) : view === "review" ? (
             <>
               <MatchStrip clip={clip} onAnalyze={() => setView("analytics")} />
               <div className="review-layout">

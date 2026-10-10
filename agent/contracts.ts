@@ -11,7 +11,12 @@ export function parseRequest(value: unknown): AgentRequest {
     throw new AgentError("INVALID_REQUEST", "请求必须为 JSON 对象。");
   const data = value as Record<string, unknown>;
   if (
-    Object.keys(data).some((key) => !["schemaVersion", "clipId"].includes(key))
+    Object.keys(data).some(
+      (key) =>
+        !["schemaVersion", "clipId", "executionMode", "outputMode"].includes(
+          key,
+        ),
+    )
   )
     throw new AgentError("INVALID_REQUEST", "请求含有不支持的字段。");
   if (data.schemaVersion !== REQUEST_SCHEMA)
@@ -19,12 +24,36 @@ export function parseRequest(value: unknown): AgentRequest {
       "UNSUPPORTED_PROTOCOL",
       "当前只支持内部 v1 协议；官方赛事协议尚未接入。",
     );
-  if (typeof data.clipId !== "string" || !/^train_00[12]$/.test(data.clipId))
+  if (
+    typeof data.clipId !== "string" ||
+    !/^(?:train_\d{3}|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$/.test(
+      data.clipId,
+    )
+  )
     throw new AgentError(
       "UNKNOWN_CLIP",
-      "当前仅支持已收录的两段训练素材，不接受路径或远程 URL。",
+      "需要已注册素材 ID，不接受路径或远程 URL。",
     );
-  return { schemaVersion: REQUEST_SCHEMA, clipId: data.clipId };
+  if (
+    data.executionMode !== undefined &&
+    !["fixture", "bedrock"].includes(data.executionMode as string)
+  )
+    throw new AgentError("INVALID_REQUEST", "无效运行模式。");
+  if (
+    data.outputMode !== undefined &&
+    !["analysis", "film"].includes(data.outputMode as string)
+  )
+    throw new AgentError("INVALID_REQUEST", "无效输出模式。");
+  return {
+    schemaVersion: REQUEST_SCHEMA,
+    clipId: data.clipId,
+    ...(data.executionMode === undefined
+      ? {}
+      : { executionMode: data.executionMode as "fixture" | "bedrock" }),
+    ...(data.outputMode === undefined
+      ? {}
+      : { outputMode: data.outputMode as "analysis" | "film" }),
+  };
 }
 
 export function validateObservation(

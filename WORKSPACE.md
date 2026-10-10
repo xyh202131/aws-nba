@@ -2,7 +2,9 @@
 
 整理：2026-10-09。已盘点原有 **47 份 Markdown**：35 份项目/资料文档与 12 份抓取缓存。本次新增本目录、当前执行方案、核对记录后共 **50 份**（不计依赖、构建、Git、本地任务与整理前备份）。
 
-**现在先读 [当前执行方案](docs/PROJECT_PLAN.md)。** 前端、本地离线 Agent 与 CDK 骨架已存在；真实模型、标注 MP4、云部署和平台提交尚未完成。下一项工程工作是两片本地标注成片，资源到位后先核对官方 sample、项目/区域与模型容量。
+**现在先读 [当前执行方案](docs/PROJECT_PLAN.md)。** 2026-10-10 已完成真实上传→Sonnet→中文解说/数据图形 MP4→Web 播放和下载，见 [AI 作品工作流与实测](docs/AI_FILM_GUIDE.md)。此前单帧接入和 3 次 CLI 实测保留历史证据。云部署和平台提交尚未完成。
+
+10 月 10 日新增入口：[模型接入](docs/BEDROCK_INTEGRATION.md)、[赛事要求复核](docs/REQUIREMENTS_GAP_REVIEW_20261010.md)、[球员定位与云端处理方案](docs/PLAYER_LOCALIZATION_AWS_V1.md)。定位文件仍为规划，要求复核的 Git 状态仅反映核对时刻。
 
 ## 阅读顺序与使用规则
 
@@ -19,7 +21,7 @@
 
 | 文档 | 用途 / 状态 |
 | --- | --- |
-| [AGENTS.md](AGENTS.md) | 当前协作与授权规则；个人 aws-personal/us-east-2 |
+| [AGENTS.md](AGENTS.md) | 当前赛事 nba/us-east-1；个人配置仅作为历史保留 |
 | [PROJECT_PLAN.md](docs/PROJECT_PLAN.md) | 统一状态、环境/预算边界、任务 P01–P09；先读 |
 | [README.md](README.md) | 可运行工程、依赖和本地启动 |
 | [AGENT_SKELETON.md](docs/AGENT_SKELETON.md) | 本地 Agent 接口、真实能力与云接入顺序 |

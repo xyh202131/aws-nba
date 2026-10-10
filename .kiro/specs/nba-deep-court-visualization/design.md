@@ -1,21 +1,24 @@
-# COURTSIDE 工程设计 v2
+# COURTSIDE 工程设计 v3
 
-更新：2026-10-09。以代码基线 2d0a16e 为准。本文描述当前模块和下一步边界；完整优先级见[当前执行方案](../../../docs/PROJECT_PLAN.md)。[旧 v1 备份](../../../output/documentation-review-20261009/before/.kiro/specs/nba-deep-court-visualization/design.md)保留原字节，仅供追溯；其中伪代码、CloudFormation/YAML、价格小计和环境变量不能直接用来部署。
+2026-10-10 更新：视频＋NBA 数据→中文解说与数据图形 MP4→Web 播放/下载已在本地通过真实模型联调；操作、输入限制、调用费用和失败记录见 [AI_FILM_GUIDE.md](../../../docs/AI_FILM_GUIDE.md)。本轮只核验功能与产物，不检查布局/手机端。
+
+2026-10-09 整理背景：此前工程基线为 2d0a16e，当前实现按本页顶部与[执行方案](../../../docs/PROJECT_PLAN.md)更新。[旧 v1 备份](../../../output/documentation-review-20261009/before/.kiro/specs/nba-deep-court-visualization/design.md)仅供追溯；其中伪代码、CloudFormation/YAML、价格小计和环境变量不能直接用于部署。
 
 ## 当前实际链路
 
 ```mermaid
 flowchart LR
-  UI[React 工作台] --> HTTP[本地 Node HTTP 接口]
+  UI[AI 作品 Web] --> HTTP[视频上传与 JSON 数据接口]
   HTTP --> Queue[串行任务队列]
-  Queue --> Media[预览哈希与 FFmpeg 抽帧]
+  Queue --> Media[动态素材 ID 与哈希 / FFmpeg 抽帧]
   Media --> Provider{适配器}
   Provider --> Fixture[默认回放既有观察]
-  Provider -. 关闭 .-> Model[Bedrock Converse]
+  Provider --> Model[赛事 Bedrock Converse]
   Fixture --> Validate[字段/时间/证据校验]
   Model --> Validate
-  Validate --> Catalog[独立关联官方指标]
-  Catalog --> Store[本地 JSON 持久化]
+  Validate --> Catalog[输入数据与统一时间轴]
+  Catalog --> Render[中文 TTS / 数据图形 / 字幕 / MP4]
+  Render --> Store[本地任务与作品持久化]
   Store --> UI
 ```
 
@@ -34,7 +37,7 @@ flowchart LR
 
 精确路由及启动步骤见[Agent 说明](../../../docs/AGENT_SKELETON.md)，避免重复维护接口表。核心包括 /ping、/api/health、/api/jobs 和同步 /invocations；后者仍是内部 schema，/official/invocations 当前返回 501。
 
-输入限定 train_001/train_002，拒绝任意路径和 URL；三帧时间来自已有关键时刻，尚不自动定位事件。每条任务保存实际 PTS、原片/预览/图像哈希。待处理和运行任务合计最多 4 条，串行处理，本地保存最多 200 条，列表最近 20 条；重启中断任务标失败，不自动重跑。
+输入支持样片与注册上传 UUID，拒绝路径/URL；四种 JSON 适配器转换明确单位，未对齐数据不烧录。成片最多 20 张稀疏证据帧、1–6 段解说，每条任务保存实际 PTS 和素材/图像/作品哈希。最多 4 条待处理/运行任务，串行，本地保留最多 200 条、历史最近 20 条；重启中断不重跑。
 
 结果区分 fixture_replay 与 needs_review；interpretation 可为 null。模型只给观察文本、时间和证据 ID；官方 xFG 由已有目录独立关联。文本结构合规不证明观察真实。
 
@@ -49,13 +52,13 @@ flowchart LR
 
 ## 模型与成本保护
 
-当前仅本机 aws-personal/us-east-2 显式凭据模式，单次请求、1000 输出 token、60 秒超时；不自动格式修复/重试。付费路径默认关闭，网页 /api/jobs 还在服务端拒绝 paid provider。没有真实推理、双模型复核或提示词效果结论。
+当前赛事 nba/us-east-1，显式 fromIni，登录 SSO 自身区域 us-west-2；SDK 检查项目 ID，临时凭据只存内存并提前刷新。film 单次请求、2,400 输出 tokens、180 秒超时，不自动格式修复/重试；旧 analysis 保留 1,000 tokens。仓库默认 fixture，本机按授权开启 Bedrock；创建作品先检查 SDK 连接，失败不启动模型。真实单片成片已验收，双模型复核和独立语义质量未验证。
 
 质量候选与历史价格场景见[当前方案](../../../docs/PROJECT_PLAN.md)和[10/08 预算](../../../NBA%E6%B7%B1%E5%BA%A6%E8%B5%9B%E5%9C%BA_%E6%80%BB%E4%BD%93%E9%A2%84%E7%AE%97%E4%B8%8E%E9%AB%98%E8%B4%A8%E9%87%8F%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9_20261008.md)。$100 是建议预留，不存在 BUDGET_HARD_LIMIT_USD 自动拦截实现；单请求限制不等于项目总预算控制。正式调用前更新价格、可用性、区域路由及支出授权。
 
 ## CDK 与云接入缺口
 
-现有模板固定 us-east-2，包含两个私有、版本化、保留删除策略的 S3 bucket，CloudFront/OAC 和 HTTP AgentCore Runtime。执行角色 ARN 与同区 ARM64 ECR 镜像 digest 为必填外部参数；模板未建角色、未上传镜像/静态文件、未连鉴权 API。没有 Lambda，也不自动 bootstrap。
+现有模板固定赛事 us-east-1，包含两个私有、版本化、保留删除策略的 S3 bucket，CloudFront/OAC 和 HTTP AgentCore Runtime。执行角色 ARN 与同区 ARM64 ECR 镜像 digest 为必填外部参数；模板未建角色、未上传镜像/静态文件、未连鉴权 API。没有 Lambda，也不自动 bootstrap；部署仍需相应授权。
 
 Dockerfile 有普通用户和 FFmpeg 配方，但未构建/启动验证；运行时模型访问尚缺 IAM role 凭据模式，不复制本地 profile 凭据进容器。云任务持久化、S3 读写、访问控制、Web 到 API 联通与正式权限边界仍待实现。
 
@@ -63,8 +66,8 @@ Dockerfile 有普通用户和 FFmpeg 配方，但未构建/启动验证；运行
 
 ## 接下来补哪一段
 
-第一项为本地成片：消费现有 clip-events 和 overlay 草案，形成统一标注清单，先做阿门再做弗拉格；核验完整时长、声音、中文字体、遮挡、来源与 AI 声明。渲染的资产哈希、时间坐标与 Web 一致；只有成片持久化/播放核对后才发布完成状态。
+本地成片已完成真实上传、Sonnet 解说、中文音轨、字体/数据烧录、时间轴、Web 播放与下载。下一项为语义独立复核及官方 sample 适配。当前语音依赖 Windows Huihui，移入 Linux Runtime 前必须接入适用的语音/字体实现，不能原样宣称云端成功。
 
 官方适配和新输入入口依 sample；真实模型依非零配额与调用授权；云联通依运行时、存储、鉴权和部署授权。详细验收见[执行方案](../../../docs/PROJECT_PLAN.md)及[质量协议](../../../%E5%87%86%E5%A4%87%E8%B5%84%E6%96%99/04_%E8%B4%A8%E9%87%8F%E9%AA%8C%E6%94%B6%E4%B8%8E%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95.md)。
 
-最近工程验收见[AGENT_ACCEPTANCE.md](../../../docs/AGENT_ACCEPTANCE.md)：20 项既有测试、本地抽帧和界面、CDK 离线合成。此次只核对文档，未重跑、不扩大为云或模型实测结论。
+历史 20 项验收见[AGENT_ACCEPTANCE.md](../../../docs/AGENT_ACCEPTANCE.md)；最新 31 项功能测试与真实模型成片见 [AI_FILM_GUIDE.md](../../../docs/AI_FILM_GUIDE.md)。本地检查和单片模型成功不代表公网、批量质量或正式赛事验收。

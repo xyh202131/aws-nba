@@ -1,0 +1,108 @@
+{
+  "startedAt": "2026-10-10T01:57:33.174Z",
+  "checks": {
+    "inputPreview": true,
+    "dynamicMaterial": true,
+    "playback": {
+      "currentTime": 0.378453,
+      "duration": 22.89,
+      "paused": false,
+      "muted": false,
+      "volume": 1,
+      "width": 1280,
+      "height": 720,
+      "audioDecodedBytes": 13260,
+      "error": null
+    },
+    "transcriptSeek": true,
+    "syncedMetric": true,
+    "videoDownload": true,
+    "restoreWithoutPaidRerun": true
+  },
+  "errors": [],
+  "jobId": "4cd247e2-6a4f-4b2c-aae1-151f69e41d63",
+  "usage": {
+    "inputTokens": 5860,
+    "outputTokens": 319,
+    "modelCalls": 1,
+    "estimatedUsd": 0.022365
+  },
+  "artifact": {
+    "title": "amen.mp4",
+    "duration": 22.89,
+    "video": "/api/jobs/4cd247e2-6a4f-4b2c-aae1-151f69e41d63/artifacts/film.mp4",
+    "captions": "/api/jobs/4cd247e2-6a4f-4b2c-aae1-151f69e41d63/artifacts/captions.vtt",
+    "timeline": "/api/jobs/4cd247e2-6a4f-4b2c-aae1-151f69e41d63/artifacts/timeline.json",
+    "sha256": "5a3c5cccd30ca7f2db1387112b32146a7cf36e20e85ef18e090918ee7ccaf749",
+    "bytes": 14312541,
+    "voice": "Microsoft Huihui Desktop",
+    "cues": [
+      {
+        "text": "进攻方在中场附近控球推进，防守方低重心展开防守站位，双方球员分散于半场各处。",
+        "time": 1.93527,
+        "evidenceIds": [
+          "38172313-7741-4c53-ba9b-e258af2519c3:frame:0"
+        ],
+        "start": 0,
+        "end": 7.63,
+        "narration": "进攻方在中场附近控球推进，防守方低重心展开防守站位，双方球员分散于半场各处。",
+        "dataEventIds": []
+      },
+      {
+        "text": "持球人运球推进至内线弧顶区域，防守方贴身跟防，周围队员拉开站位准备支援。",
+        "time": 9.54287,
+        "evidenceIds": [
+          "38172313-7741-4c53-ba9b-e258af2519c3:frame:2",
+          "38172313-7741-4c53-ba9b-e258af2519c3:frame:3"
+        ],
+        "start": 7.63,
+        "end": 15.26,
+        "narration": "持球人运球推进至内线弧顶区域，防守方贴身跟防，周围队员拉开站位准备支援。",
+        "dataEventIds": []
+      },
+      {
+        "text": "持球人在弧顶急停跳起出手投篮，防守队员伸手上跳封盖，其余球员就位等待篮板。",
+        "time": 18.0514,
+        "evidenceIds": [
+          "38172313-7741-4c53-ba9b-e258af2519c3:frame:4",
+          "38172313-7741-4c53-ba9b-e258af2519c3:frame:5"
+        ],
+        "start": 15.26,
+        "end": 22.89,
+        "narration": "持球人在弧顶急停跳起出手投篮，防守队员伸手上跳封盖，其余球员就位等待篮板。数据记录给出的预期命中率约为百分之44.5。",
+        "dataEventIds": [
+          "amen-shot-396"
+        ]
+      }
+    ],
+    "data": {
+      "schemaVersion": "courtside.match-data.v1",
+      "source": "uploaded",
+      "events": [
+        {
+          "id": "amen-shot-396",
+          "recordId": "0022500491-396",
+          "videoTimeSeconds": 18.0347,
+          "playerName": "阿门·汤普森",
+          "description": "急停跳投",
+          "xfgPercent": 44.5,
+          "sourceUrl": "https://china.nba.cn/inside-the-game"
+        },
+        {
+          "id": "unlinked-test",
+          "recordId": "unlinked-test",
+          "videoTimeSeconds": null,
+          "playerName": "",
+          "description": "未对齐记录",
+          "xfgPercent": 97,
+          "sourceUrl": null
+        }
+      ],
+      "warnings": [
+        "上传数据的真实性尚未独立核验。",
+        "1 条记录未对齐，不叠加到画面。"
+      ]
+    }
+  },
+  "completedAt": "2026-10-10T01:58:02.543Z"
+}

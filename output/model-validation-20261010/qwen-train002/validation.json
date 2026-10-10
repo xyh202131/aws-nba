@@ -1,0 +1,20 @@
+{
+  "schemaValid": true,
+  "observation": {
+    "text": "一名穿白色球衣的球员跳起投篮，球随后入网，比分牌显示分数变化。",
+    "time": 18.0514,
+    "evidenceIds": [
+      "train_002:frame:0",
+      "train_002:frame:1",
+      "train_002:frame:2"
+    ]
+  },
+  "inputHashesValid": true,
+  "reviewMethod": "Codex visual inspection; not independent human ground truth",
+  "status": "needs_review",
+  "findings": [
+    "目标帧可见白衣球员起跳出手；末帧比分增加。",
+    "三张稀疏静帧没有直接展示球穿过篮网，原回答把比分变化推断写成直接观察。"
+  ],
+  "publishable": false
+}

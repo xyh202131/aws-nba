@@ -1,0 +1,217 @@
+{
+  "id": "4cd247e2-6a4f-4b2c-aae1-151f69e41d63",
+  "request": {
+    "schemaVersion": "courtside.agent.request.v1",
+    "clipId": "38172313-7741-4c53-ba9b-e258af2519c3",
+    "executionMode": "bedrock",
+    "outputMode": "film"
+  },
+  "createdAt": "2026-10-10T01:57:34.041Z",
+  "updatedAt": "2026-10-10T01:57:58.647Z",
+  "status": "completed",
+  "stages": [
+    {
+      "id": "material",
+      "status": "completed"
+    },
+    {
+      "id": "frames",
+      "status": "completed"
+    },
+    {
+      "id": "analysis",
+      "status": "completed"
+    },
+    {
+      "id": "validation",
+      "status": "completed"
+    },
+    {
+      "id": "render",
+      "status": "completed"
+    },
+    {
+      "id": "package",
+      "status": "completed"
+    }
+  ],
+  "invocation": {
+    "modelId": "global.anthropic.claude-sonnet-4-6",
+    "status": "received",
+    "startedAt": "2026-10-10T01:57:36.699Z",
+    "elapsedMs": 15564,
+    "latencyMs": 7771,
+    "stopReason": "end_turn",
+    "rawText": "{\"scenes\":[{\"text\":\"进攻方在中场附近控球推进，防守方低重心展开防守站位，双方球员分散于半场各处。\",\"time\":1.93527,\"evidenceIds\":[\"38172313-7741-4c53-ba9b-e258af2519c3:frame:0\"]},{\"text\":\"持球人运球推进至内线弧顶区域，防守方贴身跟防，周围队员拉开站位准备支援。\",\"time\":9.54287,\"evidenceIds\":[\"38172313-7741-4c53-ba9b-e258af2519c3:frame:2\",\"38172313-7741-4c53-ba9b-e258af2519c3:frame:3\"]},{\"text\":\"持球人在弧顶急停跳起出手投篮，防守队员伸手上跳封盖，其余球员就位等待篮板。\",\"time\":18.0514,\"evidenceIds\":[\"38172313-7741-4c53-ba9b-e258af2519c3:frame:4\",\"38172313-7741-4c53-ba9b-e258af2519c3:frame:5\"]}]}",
+    "rawTextTruncated": false,
+    "usage": {
+      "inputTokens": 5860,
+      "outputTokens": 319,
+      "modelCalls": 1,
+      "estimatedUsd": 0.022365
+    }
+  },
+  "result": {
+    "schemaVersion": "courtside.agent.result.v1",
+    "clipId": "38172313-7741-4c53-ba9b-e258af2519c3",
+    "provider": "bedrock",
+    "modelId": "global.anthropic.claude-sonnet-4-6",
+    "reviewStatus": "needs_review",
+    "observation": {
+      "text": "进攻方在中场附近控球推进，防守方低重心展开防守站位，双方球员分散于半场各处。",
+      "time": 1.93527,
+      "evidenceIds": [
+        "38172313-7741-4c53-ba9b-e258af2519c3:frame:0"
+      ]
+    },
+    "interpretation": null,
+    "official": null,
+    "media": {
+      "originalSha256": "532683792345c3398da1cdd7069edeeace874919fab33104c352f880b2411411",
+      "previewSha256": "532683792345c3398da1cdd7069edeeace874919fab33104c352f880b2411411",
+      "analyzedAsset": "upload"
+    },
+    "frames": [
+      {
+        "id": "38172313-7741-4c53-ba9b-e258af2519c3:frame:0",
+        "requestedTime": 1.9075,
+        "time": 1.93527,
+        "sha256": "ad2ad66607ac3022965a4802ddff2cf9c774be198a01cde8bee7ab94c7a93caa",
+        "image": "/api/jobs/4cd247e2-6a4f-4b2c-aae1-151f69e41d63/frames/0.jpg"
+      },
+      {
+        "id": "38172313-7741-4c53-ba9b-e258af2519c3:frame:1",
+        "requestedTime": 4.9595,
+        "time": 4.97163,
+        "sha256": "c90d4d17d14139b20a3f034edf5d3ae39fffdced5d06073799b291b92fa4e7e2",
+        "image": "/api/jobs/4cd247e2-6a4f-4b2c-aae1-151f69e41d63/frames/1.jpg"
+      },
+      {
+        "id": "38172313-7741-4c53-ba9b-e258af2519c3:frame:2",
+        "requestedTime": 9.5375,
+        "time": 9.54287,
+        "sha256": "6432e768a257d24970e7c5edcf78e222979080df67c7bf7a2ab97537bd35b881",
+        "image": "/api/jobs/4cd247e2-6a4f-4b2c-aae1-151f69e41d63/frames/2.jpg"
+      },
+      {
+        "id": "38172313-7741-4c53-ba9b-e258af2519c3:frame:3",
+        "requestedTime": 12.5895,
+        "time": 12.6126,
+        "sha256": "ea34932ec670ee4686abb02f0eb75f189e99b3af3d1fb7082393d7c90b34b223",
+        "image": "/api/jobs/4cd247e2-6a4f-4b2c-aae1-151f69e41d63/frames/3.jpg"
+      },
+      {
+        "id": "38172313-7741-4c53-ba9b-e258af2519c3:frame:4",
+        "requestedTime": 17.1675,
+        "time": 17.1838,
+        "sha256": "0b9295a8e9d4c915befb6fc578c72823c028ab75ebeb305d08b86484eddd7a27",
+        "image": "/api/jobs/4cd247e2-6a4f-4b2c-aae1-151f69e41d63/frames/4.jpg"
+      },
+      {
+        "id": "38172313-7741-4c53-ba9b-e258af2519c3:frame:5",
+        "requestedTime": 18.0347,
+        "time": 18.0514,
+        "sha256": "f71ed6cc243853b4fe3ea72cd1c43ef3cbc99fb3f1ca9343537d39b8bf2d7278",
+        "image": "/api/jobs/4cd247e2-6a4f-4b2c-aae1-151f69e41d63/frames/5.jpg"
+      },
+      {
+        "id": "38172313-7741-4c53-ba9b-e258af2519c3:frame:6",
+        "requestedTime": 20.2195,
+        "time": 20.2202,
+        "sha256": "73ddb42ae90e2f3f692cac3ce5dc7f26bee1c6615baa74b8cc591176d794b3a8",
+        "image": "/api/jobs/4cd247e2-6a4f-4b2c-aae1-151f69e41d63/frames/6.jpg"
+      }
+    ],
+    "usage": {
+      "inputTokens": 5860,
+      "outputTokens": 319,
+      "modelCalls": 1,
+      "estimatedUsd": 0.022365
+    },
+    "film": {
+      "title": "amen.mp4",
+      "duration": 22.89,
+      "video": "/api/jobs/4cd247e2-6a4f-4b2c-aae1-151f69e41d63/artifacts/film.mp4",
+      "captions": "/api/jobs/4cd247e2-6a4f-4b2c-aae1-151f69e41d63/artifacts/captions.vtt",
+      "timeline": "/api/jobs/4cd247e2-6a4f-4b2c-aae1-151f69e41d63/artifacts/timeline.json",
+      "sha256": "5a3c5cccd30ca7f2db1387112b32146a7cf36e20e85ef18e090918ee7ccaf749",
+      "bytes": 14312541,
+      "voice": "Microsoft Huihui Desktop",
+      "cues": [
+        {
+          "text": "进攻方在中场附近控球推进，防守方低重心展开防守站位，双方球员分散于半场各处。",
+          "time": 1.93527,
+          "evidenceIds": [
+            "38172313-7741-4c53-ba9b-e258af2519c3:frame:0"
+          ],
+          "start": 0,
+          "end": 7.63,
+          "narration": "进攻方在中场附近控球推进，防守方低重心展开防守站位，双方球员分散于半场各处。",
+          "dataEventIds": []
+        },
+        {
+          "text": "持球人运球推进至内线弧顶区域，防守方贴身跟防，周围队员拉开站位准备支援。",
+          "time": 9.54287,
+          "evidenceIds": [
+            "38172313-7741-4c53-ba9b-e258af2519c3:frame:2",
+            "38172313-7741-4c53-ba9b-e258af2519c3:frame:3"
+          ],
+          "start": 7.63,
+          "end": 15.26,
+          "narration": "持球人运球推进至内线弧顶区域，防守方贴身跟防，周围队员拉开站位准备支援。",
+          "dataEventIds": []
+        },
+        {
+          "text": "持球人在弧顶急停跳起出手投篮，防守队员伸手上跳封盖，其余球员就位等待篮板。",
+          "time": 18.0514,
+          "evidenceIds": [
+            "38172313-7741-4c53-ba9b-e258af2519c3:frame:4",
+            "38172313-7741-4c53-ba9b-e258af2519c3:frame:5"
+          ],
+          "start": 15.26,
+          "end": 22.89,
+          "narration": "持球人在弧顶急停跳起出手投篮，防守队员伸手上跳封盖，其余球员就位等待篮板。数据记录给出的预期命中率约为百分之44.5。",
+          "dataEventIds": [
+            "amen-shot-396"
+          ]
+        }
+      ],
+      "data": {
+        "schemaVersion": "courtside.match-data.v1",
+        "source": "uploaded",
+        "events": [
+          {
+            "id": "amen-shot-396",
+            "recordId": "0022500491-396",
+            "videoTimeSeconds": 18.0347,
+            "playerName": "阿门·汤普森",
+            "description": "急停跳投",
+            "xfgPercent": 44.5,
+            "sourceUrl": "https://china.nba.cn/inside-the-game"
+          },
+          {
+            "id": "unlinked-test",
+            "recordId": "unlinked-test",
+            "videoTimeSeconds": null,
+            "playerName": "",
+            "description": "未对齐记录",
+            "xfgPercent": 97,
+            "sourceUrl": null
+          }
+        ],
+        "warnings": [
+          "上传数据的真实性尚未独立核验。",
+          "1 条记录未对齐，不叠加到画面。"
+        ]
+      }
+    },
+    "boundaries": [
+      "AI 解说已生成，语义仍待人工复核；证据帧为稀疏采样。",
+      "数据图形数值直接来自输入记录，模型不生成命中率；时间关系不等于因果关系。",
+      "上传数据的真实性尚未独立核验。",
+      "1 条记录未对齐，不叠加到画面。",
+      "成片包含本机中文语音、烧录字幕和事件数据图形；没有球员追踪或场地坐标标注。",
+      "本地 Web 已提供播放和下载，尚未部署公网；当前内部协议不是官方赛事提交包。"
+    ]
+  }
+}

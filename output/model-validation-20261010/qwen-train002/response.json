@@ -1,0 +1,21 @@
+{
+    "output": {
+        "message": {
+            "role": "assistant",
+            "content": [
+                {
+                    "text": "{\n  \"text\": \"一名穿白色球衣的球员跳起投篮，球随后入网，比分牌显示分数变化。\",\n  \"time\": 18.0514,\n  \"evidenceIds\": [\"train_002:frame:0\", \"train_002:frame:1\", \"train_002:frame:2\"]\n}"
+                }
+            ]
+        }
+    },
+    "stopReason": "end_turn",
+    "usage": {
+        "inputTokens": 1710,
+        "outputTokens": 80,
+        "totalTokens": 1790
+    },
+    "metrics": {
+        "latencyMs": 5032
+    }
+}

@@ -1,6 +1,6 @@
 # 本地 Agent 骨架与 AWS 接入清单
 
-更新：2026-10-09。当前交付是可以实际运行的本地工作流，默认 `fixture` 离线适配器。素材哈希核验、FFmpeg 抽帧、输入/输出校验、任务持久化、HTTP 接口和前端展示均有实现；离线观察来自已有目录，不是本次模型生成。
+更新：2026-10-10。当前交付是可运行的本地工作流，支持 `fixture` 和已核验的赛事 Bedrock 模型。本机已启用 Sonnet 4.6 并完成真实网页 SDK 验证；启动、用量和凭据区域说明见 [BEDROCK_INTEGRATION.md](BEDROCK_INTEGRATION.md)。仓库无 `.env` 时默认 fixture。
 
 ## 启动
 
@@ -17,7 +17,7 @@ npm run agent
 npm run dev
 ```
 
-打开前端的“数据档案”，使用“运行离线流程”。开发服务器和预览服务器将 `/api` 转发到本机 `127.0.0.1:8080`。Agent 默认监听回环地址，无需 AWS 登录。默认不需要 `.env`；修改时参考 `.env.example`。任务与抽帧保存在 `.local/agent`，不会进 Git。
+打开前端默认的「AI 作品」；选择样片或上传视频与数据，点击「生成解说作品」。离线模式按钮明确显示工程演示。开发和预览将 `/api` 转发到 `127.0.0.1:8080`。fixture 无需 AWS；Bedrock 在创建作品前检查 nba SDK 凭据，确认赛事项目并只在内存复用临时凭据。操作、数据格式、成片与实测见 [AI_FILM_GUIDE.md](AI_FILM_GUIDE.md)。
 
 FFmpeg 为项目内 `ffmpeg-static@5.3.0` 依赖，首次安装会从其发布页获取平台二进制；npm 12 的安装脚本许可只开放这个固定版本。也可配置已有 `FFMPEG_PATH`，无需改系统 PATH。二进制遵循上游 FFmpeg/ffmpeg-static 许可，未提交到仓库。
 
@@ -29,7 +29,7 @@ flowchart LR
   B --> C[重新解码三个证据帧]
   C --> D{分析适配器}
   D --> E[fixture: 回放既有观察]
-  D --> F[Bedrock Converse: 默认关闭]
+  D --> F[Bedrock Converse: 显式配置启用]
   E --> G[字段/时间/证据引用校验]
   F --> G
   G --> H[已有官方指标单独关联]
@@ -37,11 +37,13 @@ flowchart LR
   I --> J[前端证据帧与视频定位]
 ```
 
-- 当前只接受 `train_001`、`train_002` 两个已收录素材 ID；拒绝任意文件路径、远程 URL、未知字段和未知协议。
+- 接受已收录样片与服务器注册的上传素材 UUID，拒绝请求传入任意路径或远程 URL。视频流式上传和四种 JSON 数据格式已有；未对齐记录不叠加到画面。
 - 每次对预览 MP4 重新计算 SHA-256，对照台账；从视频实际解码三个 JPEG，保存实际帧 PTS、请求时间和图像哈希。帧位置来自既有关键时刻标注，**尚不是自动事件定位**。
 - 素材原件哈希与预览哈希分开保存。本次处理的是约 29.97 fps 预览副本，不宣称原始视频逐帧精度。
 - 默认 fixture 只回放既有 AI 观察，模型调用数与 token 使用均为 0；没有伪造推理进度、云调用或分析结果。进度来自真实阶段状态。
-- Bedrock 适配器支持 JPEG 多帧输入、显式 `maxTokens: 1000`、60 秒超时、最多一次请求。模型只能返回观察文本、时间和证据 ID；官方 xFG 不经过模型生成。
+- 旧 analysis 模式保留 3 帧、1,000 输出 tokens。Web 使用 film 模式：最多 20 张 JPEG、1–6 段中文解说、2,400 输出 tokens，180 秒超时、单次请求。Sonnet 固定 JSON Schema，Qwen 严格解析，均检查真实时间/引用；数据数值由输入适配器独立提供。
+- render 阶段已使用本机中文 TTS、ASS 字幕/xFG 图形、FFmpeg H.264/AAC 输出完整 MP4。Web、字幕和烧录数据卡共用时间轴，视频支持 Range 播放/下载；云端语音未实现。
+- 调用尝试及响应原文/usage 在解析之前存盘；格式或字段失败也保留实际用量，未返回用量时记为未知。网页可查看原文、费用估算并导出记录；费用价格日期固定注明。
 - 结构校验不能证明模型文本真实，真实模型结果始终标 `needs_review`。没有凭三帧推导球员引力、速度、距离或因果结论。
 - 任务串行执行，最多 4 个待处理/运行任务；本地保存上限 200 条，列表展示最近 20 条。失败保留错误码，不自动重复调用；服务重启将未完成任务标为中断，防止隐式重收费。
 - 浏览器展示接口错误、失败阶段、历史任务、证据帧、结果下载和对应视频定位。刷新页面可从后端恢复记录。
@@ -50,7 +52,7 @@ flowchart LR
 
 | 接口                                  | 行为                                                         |
 | ------------------------------------- | ------------------------------------------------------------ |
-| `GET /ping` / `GET /api/health`       | `Healthy` / `HealthyBusy`，适配器、区域及付费开关状态        |
+| `GET /ping` / `GET /api/health`       | `Healthy` / `HealthyBusy`，适配器、模型 ID、区域及付费开关   |
 | `POST /api/jobs`                      | 校验后返回 202 和任务；后端继续处理                          |
 | `GET /api/jobs`                       | 最近 20 个任务                                               |
 | `GET /api/jobs/:id`                   | 任务状态与阶段                                               |
@@ -65,15 +67,17 @@ flowchart LR
 { "schemaVersion": "courtside.agent.request.v1", "clipId": "train_002" }
 ```
 
-接口请求体上限 16 KB；只接受 JSON。浏览器来源限定本机开发/预览站点；本地服务校验 Host，防止外部网站利用本机接口。当前不是公网多用户服务，也不提供账号体系。
+上例兼容 fixture。Bedrock 请求必须显式加 `"executionMode":"bedrock"`，否则后端拒绝，防止旧页面状态误触收费。模型选择在服务端配置，不接受请求任意指定模型。
+
+任务请求上限 16 KB，数据 JSON 上限 2 MB，视频二进制上限 512 MiB。新上传/连接/作品接口见 [AI_FILM_GUIDE.md](AI_FILM_GUIDE.md)。来源限定本机开发/预览，校验 Host；FFmpeg 对输入限制 demuxer 和 file/pipe 协议，不从上传文件里的播放列表访问网络。当前不是公网多用户服务。
 
 ## AWS 接入边界
 
-`aws-personal` / `us-east-2` 固定校验；禁止 `default`、Team11、其他区域及跨区域 inference profile。Bedrock 使用显式 `fromIni`，不通过默认凭据链回退。SDK 尚未在本项目运行真实模型推理。
+当前固定赛事 `nba / us-east-1`，禁止 default、个人项目和任意未核验模型/路由回退。两款白名单为 `global.anthropic.claude-sonnet-4-6` 与 `qwen.qwen3-vl-235b-a22b`，前者是赛事指南明确提供且已实测的 Global 路由；请求入口区域不等于实际推理单一区域。
 
-真实模型运行必须同时配置 `AGENT_PROVIDER=bedrock`、明确区域内模型 ID 和 `ALLOW_PAID_MODEL_CALLS=true`。**这些条件只是代码开关，不代表已取得授权、权限或额度**。本次没有打开开关，也没有设置默认可收费模型。网页入口仅运行离线流程。模型可用性及额度仍需拿到资源后实测；已有个人项目的历史零配额不能按“已接通”处理。
+模型运行需要 `AGENT_PROVIDER=bedrock` 和 `ALLOW_PAID_MODEL_CALLS=true`；本机按用户明确授权已配置。Sonnet 默认为 Bedrock 候选，网页真实 SDK 任务已完成，并保留 `needs_review`。fixture 配置仍可使用，完整启动与切换见 [BEDROCK_INTEGRATION.md](BEDROCK_INTEGRATION.md)。
 
-官方赛事环境若使用不同 profile/区域，要先明确授权并核验后增加独立环境配置，不能直接把本项目切到 `us-east-1`。当前适配器只实现本机个人 profile；运行时 IAM role 凭据模式在云接入阶段实现，不把本地凭据复制进容器。
+凭据显式来自 `fromIni({profile:"nba"})`，SSO 使用自身登录区域 us-west-2，工作角色和 Bedrock 使用 us-east-1；不把登录缓存或临时密钥复制到项目或容器。云端执行角色凭据模式仍待实现。
 
 ## 基础设施骨架
 
@@ -81,8 +85,8 @@ flowchart LR
 
 - 两个私有 S3 bucket（前端文件 / 结果储备），强制 TLS、版本控制、保留删除策略。
 - CloudFront + S3 Origin Access Control，HTTP 重定向 HTTPS。
-- HTTP AgentCore Runtime，使用外部已核验执行角色 ARN 和 Ohio ARM64 ECR 镜像 digest 两个必填参数；模型调用仍禁用。
-- 区域固定 Ohio，无 Lambda@Edge、跨区域推理或自动 bootstrap。
+- HTTP AgentCore Runtime，使用外部已核验执行角色 ARN 和 us-east-1 ARM64 ECR 镜像 digest 两个必填参数；模板内模型调用仍禁用。
+- 模板区域固定 us-east-1，无 Lambda@Edge 或自动 bootstrap。
 
 这是可合成的资源定义，**没有部署**。静态前端资源上传、CloudFront 到鉴权 API 的连接、云端任务持久化与 S3 读写、角色最小权限/赛事 boundary 都待接入。不能把直接上传 `dist` 视为完整云上线。容器配方在 `agent/Dockerfile`，使用系统 FFmpeg、普通 `node` 用户、8080 端口；本轮未执行 Docker 构建。
 
@@ -90,12 +94,12 @@ flowchart LR
 
 1. 核对实际项目、profile、区域、赛事 Portal 绑定仓库，以及模型访问权限/非零配额；维持本地 fixture 可运行。
 2. 获取**官方输入 JSON、输出 JSON、超时与重跑要求**；只修改 `agent/official-adapter.ts` 与相关契约测试。
-3. 获得付费调用授权后，使用一段短视频做单次高质量视觉模型实测；保存实际 usage、耗时、错误和人工复核。模型选择按实测质量与所在区域权限决定，不自动降级到弱模型。
-4. 接入自动关键帧/事件发现，扩大素材入口；保留三种时钟和事实来源边界。
-5. 实现标注渲染和成片下载；补齐端到端样例、正式返回包。
+3. 两模型 CLI 和 Sonnet 网页实测已完成；继续第二片、密集帧与质量扩样，保留 usage、时延、错例及待复核状态。单片实测不宣布模型排名，不自动降级。
+4. 上传入口已扩大；下一步接入可靠的事件时间发现，保留三种时钟和事实来源边界。
+5. 本地解说/标注成片和下载已完成；补齐语义复核、正式考试片和官方返回包。
 6. 明确部署授权后，核验执行角色/权限边界，补齐云端存储与鉴权 API，再评审 CDK 差异、部署并验证。最终提交平台另按授权执行。
 
-两段离线流程已完成验收，首次使用者可按上述步骤复现。当前下一项工程任务为[执行方案 P01](PROJECT_PLAN.md)的本地标注成片；拿到资源后的第一个任务仍是**只读核对项目/区域/模型非零配额与官方协议样例**。
+此前两段离线观察和单帧网页模型流程保留；新增真实上传→Sonnet→中文解说/数据成片→Web 播放/定位/下载已完成，31 项测试通过。官方协议、预置资源、运行时凭据/跨平台语音与云部署仍待完成。当前任务见[执行方案](PROJECT_PLAN.md)。
 
 ## 验证与资料
 

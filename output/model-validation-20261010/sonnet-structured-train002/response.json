@@ -1,0 +1,23 @@
+{
+    "output": {
+        "message": {
+            "role": "assistant",
+            "content": [
+                {
+                    "text": "{\"text\":\"身穿白色球衣的进攻球员在三分线外侧起跳出手，双臂高举持球上扬，球已离手位于头顶上方；防守方一名深色球衣球员同步跳起，单臂高举试图封盖，另有多名防守球员在油漆区附近站立观望。\",\"time\":18.0514,\"evidenceIds\":[\"train_002:frame:1\"]}"
+                }
+            ]
+        }
+    },
+    "stopReason": "end_turn",
+    "usage": {
+        "inputTokens": 2606,
+        "outputTokens": 127,
+        "totalTokens": 2733,
+        "cacheReadInputTokens": 0,
+        "cacheWriteInputTokens": 0
+    },
+    "metrics": {
+        "latencyMs": 5882
+    }
+}

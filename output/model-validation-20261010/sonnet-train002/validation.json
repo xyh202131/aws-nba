@@ -1,0 +1,14 @@
+{
+  "schemaValid": false,
+  "error": "SyntaxError",
+  "message": "Unexpected token '`', \"```json\n[\n\"... is not valid JSON",
+  "inputHashesValid": true,
+  "reviewMethod": "Codex visual inspection; not independent human ground truth",
+  "status": "rejected",
+  "findings": [
+    "返回 Markdown 代码块中的数组，不符合单对象协议。",
+    "目标投篮实际在三分线内，描述为弧顶附近不准确。",
+    "末帧底线附近仍可见篮球；球已离开可见区域不成立。"
+  ],
+  "publishable": false
+}

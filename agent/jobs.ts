@@ -18,6 +18,7 @@ export const STAGES: StageId[] = [
   "frames",
   "analysis",
   "validation",
+  "render",
   "package",
 ];
 export class JobManager {
@@ -172,6 +173,10 @@ export class JobManager {
             if (s.status === "running") s.status = "completed";
             if (s.id === id) s.status = "running";
           });
+          await this.save(job);
+        },
+        async (invocation) => {
+          job.invocation = invocation;
           await this.save(job);
         },
       );

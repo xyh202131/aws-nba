@@ -1,0 +1,104 @@
+{
+  "verifiedAt": "2026-10-10T00:34:32.648Z",
+  "profile": "nba",
+  "region": "us-east-1",
+  "account": "414702114718",
+  "role": "NBAHackathonParticipantRole",
+  "limits": {
+    "callsExecuted": 3,
+    "maxAttemptsPerCall": 1,
+    "maxOutputTokensPerCall": 1000,
+    "projectBudgetHardLimit": false
+  },
+  "records": [
+    {
+      "name": "qwen-train002",
+      "modelId": "qwen.qwen3-vl-235b-a22b",
+      "clipId": "train_002",
+      "apiSucceeded": true,
+      "stopReason": "end_turn",
+      "usage": {
+        "inputTokens": 1710,
+        "outputTokens": 80,
+        "totalTokens": 1790
+      },
+      "clientElapsedMs": 10861,
+      "modelLatencyMs": 5032,
+      "schemaValid": true,
+      "contentStatus": "needs_review",
+      "publishable": false,
+      "estimatedUsd": 0.0011191,
+      "costHundredMillionths": "111910"
+    },
+    {
+      "name": "sonnet-train002",
+      "modelId": "global.anthropic.claude-sonnet-4-6",
+      "clipId": "train_002",
+      "apiSucceeded": true,
+      "stopReason": "end_turn",
+      "usage": {
+        "inputTokens": 2337,
+        "outputTokens": 296,
+        "totalTokens": 2633,
+        "cacheReadInputTokens": 0,
+        "cacheWriteInputTokens": 0
+      },
+      "clientElapsedMs": 12282,
+      "modelLatencyMs": 6180,
+      "schemaValid": false,
+      "contentStatus": "rejected",
+      "publishable": false,
+      "estimatedUsd": 0.011451,
+      "costHundredMillionths": "1145100"
+    },
+    {
+      "name": "sonnet-structured-train002",
+      "modelId": "global.anthropic.claude-sonnet-4-6",
+      "clipId": "train_002",
+      "apiSucceeded": true,
+      "stopReason": "end_turn",
+      "usage": {
+        "inputTokens": 2606,
+        "outputTokens": 127,
+        "totalTokens": 2733,
+        "cacheReadInputTokens": 0,
+        "cacheWriteInputTokens": 0
+      },
+      "clientElapsedMs": 13189,
+      "modelLatencyMs": 5882,
+      "schemaValid": true,
+      "contentStatus": "rejected",
+      "publishable": false,
+      "estimatedUsd": 0.009723,
+      "costHundredMillionths": "972300"
+    }
+  ],
+  "totals": {
+    "inputTokens": 6653,
+    "outputTokens": 503,
+    "paidCalls": 3,
+    "estimatedUsd": 0.0222931
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "per million tokens",
+    "qwen": {
+      "input": 0.53,
+      "output": 2.66,
+      "source": "qwen-pricing-api.json",
+      "inputSku": "D9D96UXFCF7QXH85",
+      "outputSku": "NUXD7XSNNSEZMXDG",
+      "effectiveDate": "2026-10-01"
+    },
+    "sonnet": {
+      "input": 3,
+      "output": 15,
+      "source": "https://www-cdn.anthropic.com/files/4zrzovbb/website/3684c2faafb97418665782cea0001f439f74b1d2.pdf",
+      "page": 5,
+      "scope": "Standard Global Cross Region",
+      "effectiveDate": "2026-05-27"
+    }
+  },
+  "costStatus": "Public-list-price estimate from actual response usage, not an AWS invoice; includes schema-invalid responses; excludes tax, credits and negotiated discounts",
+  "scope": "One clip, three 960x540 JPEG frames. Calls are CLI smoke tests, not the app HTTP pipeline or a model ranking benchmark."
+}

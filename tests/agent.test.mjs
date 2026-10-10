@@ -28,12 +28,20 @@ const tempConfig = async (t) => {
   });
   return loadConfig({ AGENT_DATA_DIR: directory });
 };
-test("personal region/profile and paid-call gates reject unsafe configuration", () => {
+test("contest region/profile and paid-call gates reject unsafe configuration", () => {
   assert.equal(loadConfig({}).provider, "fixture");
+  assert.equal(loadConfig({}).profile, "nba");
+  assert.equal(loadConfig({}).region, "us-east-1");
+  assert.equal(
+    loadConfig({ AGENT_PROVIDER: "bedrock", ALLOW_PAID_MODEL_CALLS: "true" })
+      .modelId,
+    "global.anthropic.claude-sonnet-4-6",
+  );
   for (const env of [
     { AWS_PROFILE: "default" },
     { AWS_PROFILE: "Team11" },
-    { AWS_REGION: "us-east-1" },
+    { AWS_REGION: "us-east-2" },
+    { AWS_PROFILE: "aws-personal" },
     { AGENT_PROVIDER: "bedrock" },
     {
       AGENT_PROVIDER: "bedrock",
@@ -168,7 +176,7 @@ test("concurrent submissions cannot bypass queue cap and jobs run serially", asy
   assert.ok(manager.list().every((job) => job.status === "failed"));
 });
 
-test("browser endpoint cannot invoke a paid provider, even with stale health state", async (t) => {
+test("stale offline browser request cannot invoke a paid provider", async (t) => {
   const config = {
     ...(await tempConfig(t)),
     provider: "bedrock",
@@ -193,6 +201,37 @@ test("browser endpoint cannot invoke a paid provider, even with stale health sta
   assert.equal(response.status, 403);
   assert.equal(calls, 0);
   assert.equal(manager.list().length, 0);
+});
+test("explicit Bedrock browser request is accepted only by enabled paid backend", async (t) => {
+  const config = {
+    ...(await tempConfig(t)),
+    provider: "bedrock",
+    paidCallsEnabled: true,
+  };
+  let calls = 0;
+  const manager = new JobManager(config, async () => {
+    calls++;
+    throw new AgentError("TEST_FAILURE", "测试调用", 500);
+  });
+  const { server } = await createAgentServer(config, manager);
+  await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+  t.after(async () => {
+    await manager.settled();
+    await new Promise((resolve) => server.close(resolve));
+  });
+  const base = `http://127.0.0.1:${server.address().port}`;
+  const response = await fetch(`${base}/api/jobs`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ ...req(), executionMode: "bedrock" }),
+  });
+  assert.equal(response.status, 202);
+  await manager.settled();
+  assert.equal(calls, 1);
+  assert.equal(
+    (await (await fetch(`${base}/api/health`)).json()).modelId,
+    config.modelId,
+  );
 });
 test("HTTP health, validation, origin protection, official guard and async job APIs", async (t) => {
   const config = await tempConfig(t);

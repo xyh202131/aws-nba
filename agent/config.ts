@@ -3,23 +3,38 @@ import { resolve } from "node:path";
 import { AgentError } from "./errors.ts";
 
 export const ROOT = fileURLToPath(new URL("../", import.meta.url));
+export const MODELS = {
+  "global.anthropic.claude-sonnet-4-6": {
+    name: "Claude Sonnet 4.6",
+    structuredOutput: true,
+    inputPerMillion: 3,
+    outputPerMillion: 15,
+  },
+  "qwen.qwen3-vl-235b-a22b": {
+    name: "Qwen3-VL 235B",
+    structuredOutput: false,
+    inputPerMillion: 0.53,
+    outputPerMillion: 2.66,
+  },
+} as const;
+export type ModelId = keyof typeof MODELS;
 export type Config = ReturnType<typeof loadConfig>;
 export function loadConfig(env: NodeJS.ProcessEnv = process.env) {
   const provider = env.AGENT_PROVIDER ?? "fixture";
   if (provider !== "fixture" && provider !== "bedrock")
     throw new AgentError("CONFIG", "不支持的模型适配器。");
-  const region = env.AWS_REGION ?? "us-east-2";
-  const profile = env.AWS_PROFILE ?? "aws-personal";
-  if (region !== "us-east-2" || profile !== "aws-personal") {
+  const region = env.AWS_REGION ?? "us-east-1";
+  const profile = env.AWS_PROFILE ?? "nba";
+  if (region !== "us-east-1" || profile !== "nba") {
     throw new AgentError(
       "PROJECT_BOUNDARY",
-      "当前骨架仅允许 aws-personal / us-east-2；赛事环境须单独核验后适配。",
+      "当前 Agent 仅允许已核验的赛事 nba / us-east-1。",
     );
   }
   const port = Number(env.AGENT_PORT ?? 8080);
   if (!Number.isInteger(port) || port < 1 || port > 65535)
     throw new AgentError("CONFIG", "无效端口。");
-  const modelId = env.BEDROCK_MODEL_ID ?? "";
+  const modelId = env.BEDROCK_MODEL_ID ?? "global.anthropic.claude-sonnet-4-6";
   const paidCallsEnabled = env.ALLOW_PAID_MODEL_CALLS === "true";
   if (provider === "bedrock") {
     if (!paidCallsEnabled)
@@ -28,15 +43,11 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env) {
         "付费模型调用尚未启用。",
         403,
       );
-    // Only direct foundation-model IDs are accepted. Inference profiles/ARNs may route across Regions.
-    if (
-      !/^(qwen|amazon|anthropic|meta|mistral|google|openai|deepseek|nvidia|cohere)\.[a-z0-9][a-z0-9.:-]+$/.test(
-        modelId,
-      )
-    ) {
+    // Only the two models verified in the contest project are accepted.
+    if (!Object.hasOwn(MODELS, modelId)) {
       throw new AgentError(
         "MODEL_NOT_CONFIGURED",
-        "需配置已核验、区域内可调用的直接模型 ID，禁止跨区域 inference profile。",
+        "仅支持已核验的 Qwen3-VL 235B 或 Global Sonnet 4.6，禁止任意模型/路由回退。",
       );
     }
   }
@@ -51,7 +62,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env) {
     profile,
     port,
     host,
-    modelId,
+    modelId: modelId as ModelId,
     paidCallsEnabled,
     dataDir: resolve(ROOT, env.AGENT_DATA_DIR ?? ".local/agent"),
     ffmpegPath: env.FFMPEG_PATH || undefined,

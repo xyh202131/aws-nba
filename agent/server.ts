@@ -3,7 +3,8 @@ import {
   type IncomingMessage,
   type ServerResponse,
 } from "node:http";
-import { readFile } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
+import { createReadStream } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { AgentHealth } from "../shared/agent.ts";
@@ -12,6 +13,9 @@ import { AgentError, publicError } from "./errors.ts";
 import { parseRequest } from "./contracts.ts";
 import { JobManager } from "./jobs.ts";
 import { adaptOfficialRequest } from "./official-adapter.ts";
+import { receiveVideo, registerMaterial } from "./media.ts";
+import { DATA_TEMPLATE, normalizeMatchData } from "./match-data.ts";
+import { checkContestConnection } from "./credentials.ts";
 
 const ORIGINS = new Set([
   "http://127.0.0.1:5173",
@@ -27,15 +31,19 @@ function json(res: ServerResponse, status: number, value: unknown) {
   });
   res.end(JSON.stringify(value));
 }
-async function body(req: IncomingMessage): Promise<unknown> {
+async function body(req: IncomingMessage, limit = 16_384): Promise<unknown> {
   if (req.headers["content-type"]?.split(";")[0] !== "application/json")
     throw new AgentError("CONTENT_TYPE", "仅接受 application/json。", 415);
   let length = 0;
   const chunks: Buffer[] = [];
   for await (const chunk of req) {
     length += chunk.length;
-    if (length > 16_384)
-      throw new AgentError("BODY_TOO_LARGE", "请求超过 16 KB。", 413);
+    if (length > limit)
+      throw new AgentError(
+        "BODY_TOO_LARGE",
+        "JSON 请求超过接口大小限制。",
+        413,
+      );
     chunks.push(chunk);
   }
   try {
@@ -76,6 +84,36 @@ export async function createAgentServer(
         return;
       }
       const path = new URL(req.url ?? "/", "http://localhost").pathname;
+      if (req.method === "GET" && path === "/api/connection") {
+        if (config.provider !== "bedrock")
+          throw new AgentError(
+            "OFFLINE_MODE",
+            "离线模式不检查 AWS 凭据。",
+            409,
+          );
+        json(res, 200, await checkContestConnection());
+        return;
+      }
+      if (req.method === "GET" && path === "/api/data/template") {
+        json(res, 200, DATA_TEMPLATE);
+        return;
+      }
+      if (req.method === "POST" && path === "/api/data/preview") {
+        json(res, 200, normalizeMatchData(await body(req, 2_000_000)));
+        return;
+      }
+      if (req.method === "POST" && path === "/api/media") {
+        json(res, 201, await receiveVideo(req, config));
+        return;
+      }
+      if (req.method === "POST" && path === "/api/materials") {
+        json(
+          res,
+          201,
+          await registerMaterial(await body(req, 2_000_000), config),
+        );
+        return;
+      }
       if (
         req.method === "GET" &&
         (path === "/ping" || path === "/api/health")
@@ -86,6 +124,7 @@ export async function createAgentServer(
           paidCallsEnabled:
             config.provider === "bedrock" && config.paidCallsEnabled,
           region: config.region,
+          modelId: config.provider === "bedrock" ? config.modelId : null,
           officialProtocol: "not_configured",
         };
         json(res, 200, health);
@@ -102,14 +141,29 @@ export async function createAgentServer(
         req.method === "POST" &&
         (path === "/api/jobs" || path === "/invocations")
       ) {
-        if (path === "/api/jobs" && config.provider !== "fixture") {
+        const request = parseRequest(await body(req));
+        if ((request.executionMode ?? "fixture") !== config.provider) {
           throw new AgentError(
-            "INTERACTIVE_PAID_CALLS_DISABLED",
-            "网页任务入口只允许运行离线流程。",
+            "EXECUTION_MODE_MISMATCH",
+            "页面运行模式与 Agent 配置不同，请刷新连接后再创建任务。",
             403,
           );
         }
-        const job = await manager.create(parseRequest(await body(req)));
+        if (config.provider === "bedrock" && !config.paidCallsEnabled)
+          throw new AgentError(
+            "PAID_CALLS_DISABLED",
+            "付费模型调用未启用。",
+            403,
+          );
+        if (
+          !request.clipId.startsWith("train_") &&
+          request.outputMode !== "film"
+        )
+          throw new AgentError(
+            "OUTPUT_MODE_REQUIRED",
+            "上传素材使用 film 输出模式。",
+          );
+        const job = await manager.create(request);
         if (path === "/api/jobs") {
           json(res, 202, job);
           return;
@@ -122,12 +176,67 @@ export async function createAgentServer(
         );
         return;
       }
+      const artifactMatch = path.match(
+        /^\/api\/jobs\/([a-f0-9-]{36})\/artifacts\/(film\.mp4|captions\.vtt|timeline\.json)$/,
+      );
+      if (req.method === "GET" && artifactMatch) {
+        const job = manager.get(artifactMatch[1]!);
+        if (job.status !== "completed" || !job.result?.film)
+          throw new AgentError("RESULT_NOT_READY", "作品尚未完成。", 409);
+        const filename = artifactMatch[2]!;
+        const file = resolve(config.dataDir, "artifacts", job.id, filename);
+        const size = (await stat(file)).size;
+        const range = req.headers.range;
+        let start = 0,
+          end = size - 1;
+        if (range) {
+          const m = range.match(/^bytes=(\d*)-(\d*)$/);
+          if (!m || (!m[1] && !m[2])) {
+            res.writeHead(416, { "Content-Range": `bytes */${size}` });
+            res.end();
+            return;
+          }
+          start = m[1] ? Number(m[1]) : Math.max(0, size - Number(m[2]));
+          end = m[1] && m[2] ? Math.min(Number(m[2]), size - 1) : size - 1;
+          if (
+            !Number.isSafeInteger(start) ||
+            !Number.isSafeInteger(end) ||
+            start > end ||
+            start >= size
+          ) {
+            res.writeHead(416, { "Content-Range": `bytes */${size}` });
+            res.end();
+            return;
+          }
+        }
+        res.writeHead(range ? 206 : 200, {
+          "Content-Type": filename.endsWith("mp4")
+            ? "video/mp4"
+            : filename.endsWith("vtt")
+              ? "text/vtt; charset=utf-8"
+              : "application/json; charset=utf-8",
+          "Accept-Ranges": "bytes",
+          "Content-Length": end - start + 1,
+          "Cache-Control": "no-store",
+          "X-Content-Type-Options": "nosniff",
+          ...(range
+            ? { "Content-Range": `bytes ${start}-${end}/${size}` }
+            : {}),
+        });
+        const stream = createReadStream(file, { start, end });
+        stream.on("error", () => res.destroy());
+        res.on("close", () => stream.destroy());
+        stream.pipe(res);
+        return;
+      }
       const match = path.match(
-        /^\/api\/jobs\/([a-f0-9-]{36})(?:\/(result|frames\/([012])\.jpg))?$/,
+        /^\/api\/jobs\/([a-f0-9-]{36})(?:\/(result|frames\/(\d{1,2})\.jpg))?$/,
       );
       if (req.method === "GET" && match) {
         const job = manager.get(match[1]!);
         if (match[3] !== undefined) {
+          if (Number(match[3]) >= (job.result?.frames.length ?? 0))
+            throw new AgentError("NOT_FOUND", "证据帧不存在。", 404);
           if (job.status !== "completed")
             throw new AgentError(
               "RESULT_NOT_READY",
@@ -162,9 +271,9 @@ export async function createAgentServer(
         });
     }
   });
-  server.requestTimeout = 90_000;
+  server.requestTimeout = 300_000;
   server.headersTimeout = 10_000;
-  server.setTimeout(90_000, (socket) => socket.destroy());
+  server.setTimeout(210_000, (socket) => socket.destroy());
   return { server, manager };
 }
 

@@ -16,19 +16,29 @@ import {
   type AgentHealth,
   type Job,
   type StageId,
+  type MatchData,
 } from "../shared/agent";
+import { FilmPlayer } from "./FilmPlayer";
 
 const labels: Record<StageId, string> = {
   material: "核对素材",
   frames: "提取证据帧",
-  analysis: "分析适配器",
+  analysis: "多模态分析",
   validation: "校验结果",
+  render: "生成解说成片",
   package: "整理结果",
 };
-async function request<T>(url: string, init?: RequestInit): Promise<T> {
+async function request<T>(
+  url: string,
+  init?: RequestInit,
+  timeout = 6000,
+): Promise<T> {
   let response: Response;
   try {
-    response = await fetch(url, { ...init, signal: AbortSignal.timeout(6000) });
+    response = await fetch(url, {
+      ...init,
+      signal: AbortSignal.timeout(timeout),
+    });
   } catch {
     throw new Error(
       "本地 Agent 尚未连接。请在项目目录运行 npm run agent，再点击刷新连接。",
@@ -55,9 +65,20 @@ export function AgentPanel({
   const [jobs, setJobs] = useState<Job[]>([]);
   const [selected, setSelected] = useState<string | null>(null);
   const [clipId, setClipId] = useState(clips[0]!.id);
+  const [inputMode, setInputMode] = useState<"sample" | "upload">("sample");
+  const [videoFile, setVideoFile] = useState<File | null>(null);
+  const [dataText, setDataText] = useState("");
+  const [preview, setPreview] = useState<MatchData | null>(null);
+  const [alignments, setAlignments] = useState<Record<string, string>>({});
+  const [uploadStatus, setUploadStatus] = useState("");
+  const dataInput = useRef("");
+  const dataReadGate = useRef(false);
+  const uploaded = useRef<{ file: File; id: string } | null>(null);
+  const filmVideo = useRef<HTMLVideoElement>(null);
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const mounted = useRef(false);
+  const submitGate = useRef(false);
   const current = jobs.find((j) => j.id === selected) ?? jobs[0];
   const refresh = useCallback(async () => {
     try {
@@ -93,14 +114,62 @@ export function AgentPanel({
     return () => window.clearTimeout(timer);
   }, [busy, health, jobs, refresh]);
   async function start() {
-    if (submitting) return;
+    if (submitGate.current || !health || busy) return;
+    submitGate.current = true;
     setSubmitting(true);
     setError("");
     try {
+      let materialId = clipId;
+      if (inputMode === "upload") {
+        if (!videoFile || !dataText.trim())
+          throw new Error("请选择比赛视频并提供数据 JSON。");
+        const data: unknown = JSON.parse(dataText);
+        const mapping = Object.entries(alignments)
+          .filter(([, v]) => v !== "")
+          .map(([eventId, v]) => ({ eventId, videoTimeSeconds: Number(v) }));
+        if (!uploaded.current || uploaded.current.file !== videoFile) {
+          setUploadStatus("正在上传并核验视频…");
+          const media = await request<{ id: string }>(
+            "/api/media",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": videoFile.type || "application/octet-stream",
+              },
+              body: videoFile,
+            },
+            300_000,
+          );
+          uploaded.current = { file: videoFile, id: media.id };
+        }
+        setUploadStatus("正在关联数据与视频时间…");
+        const material = await request<{ id: string }>("/api/materials", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            uploadId: uploaded.current.id,
+            title: videoFile.name,
+            data,
+            alignments: mapping,
+          }),
+        });
+        materialId = material.id;
+      }
+      setUploadStatus("正在创建成片任务…");
+      if (health.provider === "bedrock") {
+        setUploadStatus("正在核验赛事 SDK 连接…");
+        await request("/api/connection", undefined, 180_000);
+        setUploadStatus("连接成功，正在创建成片任务…");
+      }
       const job = await request<Job>("/api/jobs", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ schemaVersion: REQUEST_SCHEMA, clipId }),
+        body: JSON.stringify({
+          schemaVersion: REQUEST_SCHEMA,
+          clipId: materialId,
+          executionMode: health.provider,
+          outputMode: "film",
+        }),
       });
       if (mounted.current) {
         setSelected(job.id);
@@ -113,10 +182,59 @@ export function AgentPanel({
       if (mounted.current)
         setError(reason instanceof Error ? reason.message : "任务创建失败。");
     } finally {
-      if (mounted.current) setSubmitting(false);
+      submitGate.current = false;
+      if (mounted.current) {
+        setSubmitting(false);
+        setUploadStatus("");
+      }
     }
   }
+  async function previewData() {
+    if (dataReadGate.current) return;
+    dataReadGate.current = true;
+    const raw = dataText;
+    setError("");
+    try {
+      const result = await request<MatchData>("/api/data/preview", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: raw,
+      });
+      if (!mounted.current || dataInput.current !== raw) return;
+      setPreview(result);
+      setAlignments(
+        Object.fromEntries(
+          result.events.map((e) => [
+            e.id,
+            e.videoTimeSeconds === null ? "" : String(e.videoTimeSeconds),
+          ]),
+        ),
+      );
+    } catch (reason) {
+      if (mounted.current && dataInput.current === raw)
+        setError(reason instanceof Error ? reason.message : "数据读取失败。");
+    } finally {
+      dataReadGate.current = false;
+    }
+  }
+  function changeData(raw: string) {
+    dataInput.current = raw;
+    setDataText(raw);
+    setPreview(null);
+    setAlignments({});
+  }
+  function openEvidence(time: number) {
+    if (current?.result?.film && filmVideo.current) {
+      filmVideo.current.currentTime = time;
+      filmVideo.current.focus();
+    } else if (current) onOpenClip(current.request.clipId, time);
+  }
   const result = current?.result;
+  const invocation = current?.invocation;
+  const paid = health?.provider === "bedrock";
+  const modelName = health?.modelId?.startsWith("qwen.")
+    ? "Qwen3-VL 235B"
+    : "Claude Sonnet 4.6";
   return (
     <section className="agent-panel" aria-labelledby="agent-heading">
       <div className="agent-heading">
@@ -125,8 +243,8 @@ export function AgentPanel({
             <Workflow size={22} />
           </span>
           <div>
-            <span className="eyebrow">LOCAL AGENT / 01</span>
-            <h2 id="agent-heading">从素材，到有据可查。</h2>
+            <span className="eyebrow">AI FILM STUDIO</span>
+            <h2 id="agent-heading">数据进去，比赛作品出来。</h2>
           </div>
         </div>
         <button className="agent-refresh" onClick={() => void refresh()}>
@@ -139,31 +257,156 @@ export function AgentPanel({
         {health
           ? health.provider === "fixture"
             ? "离线适配器已连接 · 本次模型费用 $0"
-            : "Bedrock 已配置 · 调用将产生费用"
+            : `${modelName} 已配置 · 按次付费`
           : "等待本地 Agent"}
         <span>官方赛事协议待接入</span>
       </div>
       <p className="agent-description">
-        先验证一条完整流程。重新抽取视频证据帧，回放已有观察，再校验时间、引用与来源。
+        上传真实比赛视频和数据，生成带数据图形、中文字幕与语音解说的
+        MP4。先建立事件与视频时间的对应关系，再生成可播放的作品。
       </p>
+      <fieldset className="agent-inputs" disabled={submitting || busy}>
+        <legend>作品输入</legend>
+        <div className="agent-input-mode">
+          <label>
+            <input
+              type="radio"
+              name="input-mode"
+              checked={inputMode === "sample"}
+              onChange={() => setInputMode("sample")}
+            />{" "}
+            使用已核验样片
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="input-mode"
+              checked={inputMode === "upload"}
+              onChange={() => setInputMode("upload")}
+            />{" "}
+            上传视频 + 数据
+          </label>
+        </div>
+        {inputMode === "upload" && (
+          <div className="agent-upload-form">
+            <label>
+              真实比赛视频
+              <input
+                type="file"
+                accept="video/*,.mp4,.mov,.mkv,.webm"
+                onChange={(e) => {
+                  setVideoFile(e.target.files?.[0] ?? null);
+                  uploaded.current = null;
+                }}
+              />
+            </label>
+            <p>
+              5–900 秒 · 最大 512
+              MB。长视频按稀疏证据帧生成解说，建议先使用一个完整回合。
+            </p>
+            <label>
+              深度赛场数据 JSON
+              <input
+                type="file"
+                accept=".json,application/json"
+                onChange={async (e) => {
+                  const file = e.target.files?.[0];
+                  if (!file) return;
+                  if (file.size > 2_000_000) {
+                    setError("数据文件超过 2 MB。");
+                    return;
+                  }
+                  try {
+                    changeData(await file.text());
+                  } catch {
+                    setError("无法读取数据文件。");
+                  }
+                }}
+              />
+            </label>
+            <label>
+              或粘贴 JSON
+              <textarea
+                value={dataText}
+                rows={5}
+                maxLength={2_000_000}
+                spellCheck={false}
+                onChange={(e) => changeData(e.target.value)}
+                placeholder={
+                  '{"schemaVersion":"courtside.match-data.v1","events":[…]}'
+                }
+              />
+            </label>
+            <div className="agent-result-actions">
+              <button
+                type="button"
+                onClick={() => void previewData()}
+                disabled={!dataText.trim()}
+              >
+                读取数据与时间关系
+              </button>
+              <a href="/api/data/template" download="courtside-match-data.json">
+                下载数据模板
+              </a>
+            </div>
+            {preview && (
+              <div className="agent-data-preview">
+                <p>
+                  已识别 {preview.events.length}{" "}
+                  条记录。填写视频播放器中的秒数，比赛节次计时不等于视频时间。
+                </p>
+                {preview.events.map((event) => (
+                  <label key={event.id}>
+                    <span>
+                      {event.playerName || event.id} · {event.description}{" "}
+                      {event.xfgPercent !== null &&
+                        `· xFG ${event.xfgPercent}%`}
+                    </span>
+                    <input
+                      aria-label={`视频秒数 ${event.id}`}
+                      type="number"
+                      min="0"
+                      max="900"
+                      step="0.001"
+                      value={alignments[event.id] ?? ""}
+                      onChange={(e) =>
+                        setAlignments((p) => ({
+                          ...p,
+                          [event.id]: e.target.value,
+                        }))
+                      }
+                      placeholder="未对齐"
+                    />
+                  </label>
+                ))}
+                <small>
+                  未填写时间的记录会保留在数据档案中，不叠加到比赛画面。
+                </small>
+              </div>
+            )}
+          </div>
+        )}
+      </fieldset>
       <div className="agent-controls">
-        <label>
-          选择训练素材
-          <select
-            value={clipId}
-            onChange={(event) => setClipId(event.target.value)}
-          >
-            {clips.map((clip) => (
-              <option key={clip.id} value={clip.id}>
-                {clip.player} · {clip.shotDescription}
-              </option>
-            ))}
-          </select>
-        </label>
+        {inputMode === "sample" && (
+          <label>
+            选择训练素材
+            <select
+              value={clipId}
+              onChange={(event) => setClipId(event.target.value)}
+            >
+              {clips.map((clip) => (
+                <option key={clip.id} value={clip.id}>
+                  {clip.player} · {clip.shotDescription}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
         <button
           className="agent-run"
           disabled={
-            !health || submitting || busy || health.provider !== "fixture"
+            !health || submitting || busy || (paid && !health.paidCallsEnabled)
           }
           onClick={() => void start()}
         >
@@ -172,14 +415,22 @@ export function AgentPanel({
           ) : (
             <Play size={16} />
           )}
-          {busy ? "正在处理" : "运行离线流程"}
+          {busy
+            ? "正在生成作品"
+            : submitting
+              ? "准备素材中"
+              : paid
+                ? "生成解说作品"
+                : "生成离线演示作品"}
         </button>
       </div>
       {health?.provider === "bedrock" && (
         <p className="agent-notice">
-          当前网页只开放离线演练。真实模型调用须完成权限、额度与费用确认后通过受控后端接入。
+          每次创建作品执行一次模型分析，最多输出 2,400
+          tokens；费用随输入和输出用量计。结果需结合画面复核。
         </p>
       )}
+      {uploadStatus && <p role="status">{uploadStatus}</p>}
       {error && (
         <p className="agent-error" role="alert">
           {error}
@@ -213,8 +464,11 @@ export function AgentPanel({
       {current && (
         <div className="agent-run-info" role="status">
           <span>
-            {clips.find((clip) => clip.id === current.request.clipId)?.player} ·
-            任务 {current.id.slice(0, 8)} ·{" "}
+            {current.result?.film?.title ??
+              clips.find((clip) => clip.id === current.request.clipId)
+                ?.player ??
+              "上传素材"}{" "}
+            · 任务 {current.id.slice(0, 8)} ·{" "}
             {new Date(current.createdAt).toLocaleString("zh-CN", {
               hour12: false,
             })}
@@ -236,8 +490,78 @@ export function AgentPanel({
           {current.error.message} <code>{current.error.code}</code>
         </p>
       )}
+      {invocation && (
+        <div className="agent-invocation">
+          <div className="agent-invocation-heading">
+            <span className="eyebrow">本次模型调用</span>
+            <span>
+              {invocation.status === "received"
+                ? "已收到响应"
+                : invocation.status === "failed"
+                  ? "调用失败"
+                  : "等待响应"}
+            </span>
+          </div>
+          <div className="agent-usage-grid">
+            <div>
+              <small>输入 / 输出 tokens</small>
+              <strong>
+                {invocation.usage.inputTokens ?? "未知"} /{" "}
+                {invocation.usage.outputTokens ?? "未知"}
+              </strong>
+            </div>
+            <div>
+              <small>估算模型费用</small>
+              <strong>
+                {invocation.usage.estimatedUsd === null
+                  ? "待确认"
+                  : `$${invocation.usage.estimatedUsd.toFixed(5)}`}
+              </strong>
+            </div>
+            <div>
+              <small>调用耗时</small>
+              <strong>
+                {invocation.elapsedMs === null
+                  ? "处理中"
+                  : `${(invocation.elapsedMs / 1000).toFixed(1)} 秒`}
+              </strong>
+            </div>
+          </div>
+          <details className="agent-boundaries">
+            <summary>调用原文与记录</summary>
+            <p>
+              {invocation.modelId} ·{" "}
+              {invocation.stopReason ?? invocation.errorCode ?? "等待结束"}
+            </p>
+            <p>
+              费用按 2026-10-10
+              公开普通按需价格估算；失败且未返回用量时记为未知。
+            </p>
+            {invocation.rawText && <pre>{invocation.rawText}</pre>}
+            {invocation.rawTextTruncated && (
+              <p>原文超过存储上限，已截断保留。</p>
+            )}
+            <button
+              className="agent-refresh"
+              onClick={() =>
+                downloadJson(current, `courtside-call-${current.id}.json`)
+              }
+            >
+              <Download size={14} />
+              导出调用记录
+            </button>
+          </details>
+        </div>
+      )}
       {result ? (
         <div className="agent-result">
+          {result.film && (
+            <FilmPlayer
+              key={current.id}
+              film={result.film}
+              videoRef={filmVideo}
+            />
+          )}
           <div className="agent-result-copy">
             <span className="eyebrow">
               {result.provider === "fixture"
@@ -245,16 +569,14 @@ export function AgentPanel({
                 : "模型观察 · 待复核"}
             </span>
             <h3>{result.observation.text}</h3>
-            <p>
-              官方 xFG <strong>{result.official.xfgPercent}%</strong> ·
-              来自已有数据目录
-            </p>
+            {result.official && (
+              <p>
+                官方 xFG <strong>{result.official.xfgPercent}%</strong> ·
+                来自已有数据目录
+              </p>
+            )}
             <div className="agent-result-actions">
-              <button
-                onClick={() =>
-                  onOpenClip(result.clipId, result.observation.time)
-                }
-              >
+              <button onClick={() => openEvidence(result.observation.time)}>
                 定位视频证据 <ArrowUpRight size={15} />
               </button>
               <button
@@ -271,7 +593,7 @@ export function AgentPanel({
             {result.frames.map((frame, index) => (
               <button
                 key={frame.id}
-                onClick={() => onOpenClip(result.clipId, frame.time)}
+                onClick={() => openEvidence(frame.time)}
                 aria-label={`查看第 ${index + 1} 帧，${frame.time.toFixed(3)} 秒`}
               >
                 <img
@@ -305,7 +627,8 @@ export function AgentPanel({
         <div className="agent-empty">
           <Workflow size={20} />
           <span>
-            任务结果会保留在本机。完成后可查看证据帧、定位回合并导出 JSON。
+            作品完成后，可在此播放带解说与数据可视化的视频，下载
+            MP4、字幕和时间轴。
           </span>
         </div>
       )}
@@ -318,8 +641,11 @@ export function AgentPanel({
           >
             {jobs.map((job) => (
               <option value={job.id} key={job.id}>
-                {clips.find((clip) => clip.id === job.request.clipId)?.player} ·{" "}
-                {job.id.slice(0, 8)} ·{" "}
+                {job.result?.film?.title ??
+                  clips.find((clip) => clip.id === job.request.clipId)
+                    ?.player ??
+                  "上传素材"}{" "}
+                · {job.id.slice(0, 8)} ·{" "}
                 {
                   {
                     queued: "等待处理",

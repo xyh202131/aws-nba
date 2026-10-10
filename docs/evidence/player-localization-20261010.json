@@ -1,0 +1,83 @@
+{
+  "verifiedAt": "2026-10-10T01:29:17.621Z",
+  "profile": "nba",
+  "region": "us-east-1",
+  "account": "414702114718",
+  "role": "NBAHackathonParticipantRole",
+  "operations": "read_only",
+  "paidModelCalls": 0,
+  "resourceMutations": 0,
+  "observations": [
+    {
+      "service": "s3",
+      "output": "[\r\n    \"cdk-hnb659fds-assets-414702114718-us-east-1\",\r\n    \"nba-hackathon-414702114718-team11\"\r\n]\r\n",
+      "exit_code": 0
+    },
+    {
+      "service": "ec2",
+      "output": "[]\r\n",
+      "exit_code": 0
+    },
+    {
+      "service": "ecr",
+      "output": "[\r\n    {\r\n        \"Name\": \"cdk-hnb659fds-container-assets-414702114718-us-east-1\",\r\n        \"Uri\": \"414702114718.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-414702114718-us-east-1\"\r\n    }\r\n]\r\n",
+      "exit_code": 0
+    },
+    {
+      "service": "cloudformation",
+      "output": "[\r\n    {\r\n        \"Name\": \"CDKToolkit\",\r\n        \"Status\": \"CREATE_COMPLETE\"\r\n    },\r\n    {\r\n        \"Name\": \"risk-health-probe\",\r\n        \"Status\": \"CREATE_COMPLETE\"\r\n    },\r\n    {\r\n        \"Name\": \"team-access\",\r\n        \"Status\": \"CREATE_COMPLETE\"\r\n    }\r\n]\r\n",
+      "exit_code": 0
+    },
+    {
+      "service": "agentcore",
+      "output": "[]\r\n",
+      "exit_code": 0
+    },
+    {
+      "service": "cloudfront",
+      "output": "null\r\n",
+      "exit_code": 0
+    },
+    {
+      "service": "sonnet",
+      "exit_code": 0,
+      "output": "{\r\n    \"Name\": \"Global Anthropic Claude Sonnet 4.6\",\r\n    \"Status\": \"ACTIVE\",\r\n    \"Type\": \"SYSTEM_DEFINED\"\r\n}\r\n"
+    },
+    {
+      "service": "qwen",
+      "exit_code": 0,
+      "output": "{\r\n    \"modelId\": \"qwen.qwen3-vl-235b-a22b\",\r\n    \"agreementAvailability\": {\r\n        \"status\": \"AVAILABLE\"\r\n    },\r\n    \"authorizationStatus\": \"AUTHORIZED\",\r\n    \"entitlementAvailability\": \"AVAILABLE\",\r\n    \"regionAvailability\": \"AVAILABLE\"\r\n}\r\n"
+    },
+    {
+      "service": "s3-region",
+      "exit_code": 0,
+      "output": "{\r\n    \"LocationConstraint\": null\r\n}\r\n"
+    },
+    {
+      "service": "participant-boundary",
+      "exit_code": 0,
+      "output": "{\r\n    \"Arn\": \"arn:aws:iam::414702114718:role/NBAHackathonParticipantRole\",\r\n    \"Boundary\": null\r\n}\r\n"
+    },
+    {
+      "service": "sagemaker-endpoints",
+      "exit_code": 0,
+      "output": "[]\r\n"
+    },
+    {
+      "service": "sagemaker-processing",
+      "exit_code": 0,
+      "output": "[]\r\n"
+    },
+    {
+      "service": "polly-voices",
+      "exit_code": 1,
+      "status": "network_error",
+      "error": "SSL validation failed: unexpected EOF. No voice synthesis attempted."
+    }
+  ],
+  "limitations": [
+    "List/get success does not establish deploy, write or invoke permissions.",
+    "EC2 GPU quota=0 comes from the organizer guide; live quota was not queried.",
+    "Context7 transport failed for AWS CLI; official AWS documentation used instead."
+  ]
+}

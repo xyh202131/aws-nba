@@ -1,6 +1,17 @@
 # NBA 项目协作约定
 
-## 当前 AWS 配置
+## 当前 AWS 配置（2026-10-10 用户更新）
+
+- 当前产品是视频＋NBA 数据→带数据图形和中文语音解说的 MP4→Web 播放/下载。新输入通过注册素材 ID 接入，不限定两段样片；接口与真实验证见 `docs/AI_FILM_GUIDE.md`。
+- 当前验证只检查功能、数据、时间和产物，按用户指令不做布局优化或手机端检查。解说语义仍待独立人工复核。
+
+- 当前赛事工作使用 `nba` / `us-east-1`；所有区域 API 显式指定 `--profile nba --region us-east-1`。`nba-sso` 仅用于登录和承担 source_profile，不用于业务操作。
+- 目标项目 `414702114718`，工作角色 `NBAHackathonParticipantRole`；已通过 STS 核验。禁止回退到 `default` 或未经明确切换使用个人项目。
+- 用户已授权开始付费模型调用；采用小样本、显式输出上限、无自动重试并记录实际 usage/费用。该授权不扩大为云部署、训练或平台评测。
+- 赛事指南指定的 `global.anthropic.claude-sonnet-4-6` 已通过真实调用核验；它从 us-east-1 入口进行 Global 路由，不代表推理完全位于单一区域。
+- 现有应用已接入赛事 Bedrock，默认候选 Sonnet 4.6、可配置 Qwen3-VL；已通过一次真实网页 SDK 调用。接入说明见 `docs/BEDROCK_INTEGRATION.md`。MCP 配置仍未迁移，不得将网页接入当作 AWS MCP 已接入。
+
+## 历史个人项目配置（保留，不适用于当前赛事调用）
 
 - 本项目使用用户个人 AWS 项目，AWS Experience 为全新 AWS Experience。
 - AWS CLI profile 固定为 `aws-personal`；普通 AWS CLI 操作显式传入 `--profile aws-personal --region us-east-2`。
@@ -10,7 +21,7 @@
 - 遵循用户提供的全局协作规则；部署、发布、删除和产生云资源的操作需要对应的明确授权。Toolkit 设置本身不授权部署示例应用。
 - 官方规则与本项目约定冲突时，以本项目约定和用户当前明确指令为准。
 
-## AWS 官方全新 Experience 规则
+## AWS 官方全新 Experience 规则（仅个人项目适用）
 
 来源：https://raw.githubusercontent.com/aws/agent-toolkit-for-aws/refs/heads/main/rules/aws-starter-rules.md
 读取日期：2026-10-08

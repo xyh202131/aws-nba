@@ -1,0 +1,23 @@
+{
+    "output": {
+        "message": {
+            "role": "assistant",
+            "content": [
+                {
+                    "text": "```json\n[\n  {\n    \"text\": \"白队球员在三分线附近持球，对面深色球衣防守球员上前施压，双方形成对峙态势，其余球员分散站位于半场各处。\",\n    \"time\": 15.0817,\n    \"evidenceIds\": [\"train_002:frame:0\"]\n  },\n  {\n    \"text\": \"白队1号球员在左侧弧顶附近起跳出手投篮，深色球衣防守球员伸手试图干扰，其余球员在油漆区附近等待。\",\n    \"time\": 18.0514,\n    \"evidenceIds\": [\"train_002:frame:1\"]\n  },\n  {\n    \"text\": \"比分从60变为62，画面显示白队得分增加，多名球员正向篮下方向移动，球已离开可见区域，无法从画面确认具体得分方式。\",\n    \"time\": 21.021,\n    \"evidenceIds\": [\"train_002:frame:2\"]\n  }\n]\n```"
+                }
+            ]
+        }
+    },
+    "stopReason": "end_turn",
+    "usage": {
+        "inputTokens": 2337,
+        "outputTokens": 296,
+        "totalTokens": 2633,
+        "cacheReadInputTokens": 0,
+        "cacheWriteInputTokens": 0
+    },
+    "metrics": {
+        "latencyMs": 6180
+    }
+}

@@ -7,6 +7,163 @@
   box-shadow: 0 6px 24px #153d5010;
   color: #163448;
 }
+.app-body.agent-body {
+  grid-template-columns: minmax(0, 1fr);
+}
+.agent-inputs {
+  border: 1px solid #cfdee5;
+  border-radius: 12px;
+  padding: 18px;
+  margin: 20px 0;
+}
+.agent-inputs legend {
+  font-size: 13px;
+  padding: 0 8px;
+}
+.agent-input-mode {
+  display: flex;
+  gap: 24px;
+}
+.agent-input-mode label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.agent-upload-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 22px;
+}
+.agent-upload-form > label {
+  display: grid;
+  gap: 8px;
+}
+.agent-upload-form p,
+.agent-data-preview small {
+  font-size: 12px;
+  color: #507182;
+}
+.agent-upload-form textarea {
+  width: 100%;
+  resize: vertical;
+  font: 12px/1.6 monospace;
+  padding: 12px;
+  border: 1px solid #cfdee5;
+  border-radius: 8px;
+  background: #f7fbfc;
+  color: #163448;
+}
+.agent-data-preview {
+  max-height: 300px;
+  overflow: auto;
+  padding: 14px;
+  background: #edf7f5;
+  border-radius: 8px;
+}
+.agent-data-preview label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 8px 0;
+  font-size: 12px;
+}
+.agent-data-preview input {
+  width: 110px;
+  padding: 7px;
+  border: 1px solid #abcacb;
+  border-radius: 6px;
+}
+.agent-film {
+  margin-bottom: 24px;
+}
+.agent-film-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.agent-film-heading span {
+  font-size: 12px;
+  color: #557481;
+}
+.agent-film video {
+  width: 100%;
+  max-height: 620px;
+  background: #07131c;
+  border-radius: 10px;
+  display: block;
+}
+.agent-result-actions a {
+  color: #156a76;
+  font-size: 13px;
+  border: 1px solid #b8d4d6;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.agent-live-narration {
+  padding: 18px;
+  background: #edf7f5;
+  border-radius: 10px;
+  margin-top: 16px;
+}
+.agent-live-narration p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 8px 0 0;
+}
+.agent-transcript {
+  margin: 18px 0;
+}
+.agent-transcript summary {
+  cursor: pointer;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.agent-transcript button {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px;
+  background: #f7fbfc;
+  color: #365a69;
+  border: 1px solid #d4e3e8;
+  border-radius: 8px;
+  margin: 6px 0;
+  line-height: 1.7;
+}
+.agent-transcript button.active {
+  border-color: #65afa4;
+  background: #e4f4ee;
+}
+.agent-transcript time {
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+.agent-film-metrics {
+  display: flex;
+  gap: 14px;
+  margin-top: 16px;
+}
+.agent-film-metrics > div {
+  padding: 14px;
+  display: grid;
+  gap: 8px;
+  border: 1px solid #b4d6d1;
+  border-radius: 8px;
+}
+.agent-film-metrics meter {
+  width: 100%;
+}
+.agent-film-metrics small,
+.agent-film > small {
+  color: #617b8a;
+  font-size: 12px;
+}
 .agent-heading,
 .agent-title,
 .agent-status-line,
@@ -300,6 +457,57 @@
 .agent-boundaries code {
   overflow-wrap: anywhere;
   font-size: 10px;
+}
+.agent-invocation {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid #cce3df;
+  border-radius: 12px;
+  background: #f2faf8;
+}
+.agent-invocation-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #247c71;
+  font-size: 12px;
+}
+.agent-usage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  padding: 18px 0;
+}
+.agent-usage-grid div {
+  display: grid;
+  gap: 6px;
+}
+.agent-usage-grid small {
+  color: #617b8a;
+  font-size: 11px;
+}
+.agent-usage-grid strong {
+  color: #163448;
+  font-size: 17px;
+  font-variant-numeric: tabular-nums;
+}
+.agent-invocation pre {
+  padding: 12px;
+  background: #e7f1ef;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 240px;
+  overflow: auto;
+}
+.agent-invocation p {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 520px) {
+  .agent-usage-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
 .agent-history {
   margin-top: 18px;
