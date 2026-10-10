@@ -1,0 +1,4 @@
+# Local 2D metric tooling only. Existing vision environment supplies numpy/scipy/matplotlib.
+# Install TrackEval with --no-deps to avoid upgrading the pinned inference environment.
+# Optional BURST/segmentation dependencies are intentionally not used by this adapter.
+trackeval==1.3.0

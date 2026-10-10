@@ -42,11 +42,23 @@ export function FilmPlayer({
         {film.tracking && (
           <>
             <p>
-              {film.tracking.model} · BoT-SORT · {film.tracking.processedFrames}{" "}
-              个处理帧，{film.tracking.framesWithTracks} 帧有合格人物框，
+              {film.tracking.model} · {film.tracking.trackerName ?? "BoT-SORT"}{" "}
+              · {film.tracking.processedFrames} 个处理帧，
+              {film.tracking.framesWithTracks} 帧有合格人物框，
               {film.tracking.segmentCount} 个镜头。{film.tracking.uniqueTracks}{" "}
               个镜头内轨迹不等于同等数量球员；覆盖数量不是准确率。
             </p>
+            {film.tracking.playerScope && (
+              <p>
+                球员范围依据用户粗标筛选，尚未完成独立验收。匿名编号仍不代表球员身份。
+              </p>
+            )}
+            {film.tracking.roleFilter && (
+              <p>
+                已启用通用球员角色筛选，依据视频判断球员、裁判与场边人员，不使用人工名单。
+                判断不确定时保留候选；匿名编号仍不代表球员身份。
+              </p>
+            )}
             <p>
               人物框与短轨迹已烧录到下载作品。匿名 ID
               不代表球员身份，事件数据卡独立显示；未推断米制距离、速度或个人引力。
@@ -67,6 +79,11 @@ export function FilmPlayer({
               {film.tracking.detections && (
                 <a href={film.tracking.detections} download="detections.jsonl">
                   下载原始人物检测
+                </a>
+              )}
+              {film.tracking.roleEvidence && (
+                <a href={film.tracking.roleEvidence} download="person-role-evidence.jsonl">
+                  下载人物角色判断依据
                 </a>
               )}
               {film.tracking.exclusions && (

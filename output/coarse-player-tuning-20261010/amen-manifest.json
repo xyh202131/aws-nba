@@ -1,0 +1,131 @@
+{
+  "schema_version": "courtside.tracking-manifest.v1",
+  "source": "pretrained_inference",
+  "video_sha256": "532683792345c3398da1cdd7069edeeace874919fab33104c352f880b2411411",
+  "width": 1280,
+  "height": 720,
+  "duration": 22.89,
+  "source_fps": 29.97002997002997,
+  "processing_fps": 29.97002997002997,
+  "time_origin_seconds": 0,
+  "transform": {
+    "rotation": 0,
+    "sar": 1,
+    "encoded_width": 1280,
+    "encoded_height": 720
+  },
+  "model": {
+    "name": "YOLO11m",
+    "sha256": "d5ffc1a674953a08e11a8d21e022781b1b23a19b730afc309290bd9fb5305b95",
+    "license": "AGPL-3.0"
+  },
+  "config_sha256": "a523e6f3e4634e7dbc52c14b2b60aa563ccf135c7aadfecdc214040f7d6a9a1e",
+  "dependencies": {
+    "python": "3.14.7",
+    "ultralytics": "8.4.174",
+    "torch": "2.12.0+cpu",
+    "pyav": "18.0.0",
+    "opencv": "5.0.0",
+    "numpy": "2.4.4",
+    "tool_sha256": "6fd352c817862be3aa8f26320c6cc4cb5a95ef933622b39f5e48ac333ebf5c4b",
+    "inference_threads": "2"
+  },
+  "render_policy": {
+    "trail_seconds": 0.8,
+    "position_source": "detector_measurement",
+    "interpolation": false
+  },
+  "tracker": {
+    "name": "BoT-SORT",
+    "gmc_method": "sparseOptFlow",
+    "reid": false,
+    "buffer_seconds": 0.5,
+    "fuse_score": false,
+    "association_scope": "size_qualified"
+  },
+  "detection_cache": {
+    "state": "hit",
+    "key": "b64e52f3d325badd99088da75e517dacb31d68eb9b8adef9c7084634321437bd",
+    "sha256": "de03003f7a80843e9ee4d22e1a8b4c45f5e1294709b698761b928dfdefe135c3",
+    "bytes": 1997494,
+    "frames": 686,
+    "detections": 20776
+  },
+  "appearance": null,
+  "player_scope": {
+    "source": "user_provided_coarse_player_boxes",
+    "review_status": "provisional",
+    "annotations_sha256": "cc52ba3140f01c91b1d8cc4e1cbd0c5d0c96be2d420c07a22be83f3393668f9d",
+    "reference_frames": 30,
+    "reference_boxes": 244,
+    "matched_reference_frames": 30,
+    "seed_tracks": 34,
+    "suppressed_observations": 2726,
+    "shorts_policy": "positive_cue_not_required_3_observations_100ms",
+    "reference_policy": "same_segment_nearby_450ms",
+    "leg_policy": "skin_contrast_excludes_adjacent_court",
+    "unreferenced_policy": "hide_without_strong_shorts_and_court_evidence",
+    "identity_status": "unconfirmed"
+  },
+  "segments": [
+    {
+      "id": "S001",
+      "start": 0,
+      "end": 21.287933333333335,
+      "reason": "start"
+    },
+    {
+      "id": "S002",
+      "start": 21.287933333333335,
+      "end": 22.89,
+      "reason": "scene_cut"
+    }
+  ],
+  "stats": {
+    "processed_frames": 686,
+    "frames_with_tracks": 638,
+    "observations": 14161,
+    "included_observations": 4954,
+    "unique_tracks": 29,
+    "excluded_observations": 12311
+  },
+  "resources": {
+    "wall_seconds": 13.442,
+    "cpu_seconds": 16.016,
+    "peak_rss_bytes": 282103808,
+    "output_bytes": 14153467,
+    "peak_working_bytes": 73077617,
+    "phase_seconds": {
+      "decode": 1.760548,
+      "display_transform": 1.385992,
+      "detection_or_cache": 0.109406,
+      "floor_filter": 0.70987,
+      "association": 4.86844,
+      "observation_output": 4.215393,
+      "finalization": 0.196829,
+      "player_scope": 0.194463
+    }
+  },
+  "files": {
+    "tracks": {
+      "name": "tracks.jsonl",
+      "sha256": "d52bc27e4796ea2c58e07f5f296f7be86aa9db25b02192234fec611b40f29913",
+      "bytes": 9552256
+    },
+    "exclusions": {
+      "name": "excluded-detections.jsonl",
+      "sha256": "ea08b904d674342c8d52c3f469204d11ad58fd1c0ec1f86990f876edecacfb32",
+      "bytes": 2412230
+    },
+    "floor_regions": {
+      "name": "floor-regions.jsonl",
+      "sha256": "d2606499cede9d7226e83613bbca3f13eee112f5063f4473e26c3f14c0b8ffbc",
+      "bytes": 191487
+    },
+    "detections": {
+      "name": "detections.jsonl",
+      "sha256": "de03003f7a80843e9ee4d22e1a8b4c45f5e1294709b698761b928dfdefe135c3",
+      "bytes": 1997494
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "courtside.coarse-player-tuning.v1",
+  "status": "provisional_calibration_on_same_two_clips",
+  "metricKind": "coarse_box_overlap_proxy_not_accuracy",
+  "iouThreshold": 0.5,
+  "records": [
+    {
+      "clip": "amen",
+      "annotationsSha256": "cc52ba3140f01c91b1d8cc4e1cbd0c5d0c96be2d420c07a22be83f3393668f9d",
+      "videoSha256": "532683792345c3398da1cdd7069edeeace874919fab33104c352f880b2411411",
+      "reviewFlags": {
+        "reviewedFrames": 0,
+        "hasAnnotator": false,
+        "annotationSource": "human_required"
+      },
+      "referenceFrames": 30,
+      "referenceBoxes": 244,
+      "baseline": {
+        "reference_boxes": 244,
+        "raw_matches": 213,
+        "tracked_matches": 212,
+        "included_matches": 194,
+        "unmatched_included_predictions": 118,
+        "unmatched_reference_reasons": {
+          "detector_unmatched": 31,
+          "outside_estimated_floor": 9,
+          "near_estimated_floor_boundary": 3,
+          "association_unmatched": 1,
+          "floor_region_unavailable": 6
+        }
+      },
+      "optimized": {
+        "reference_boxes": 244,
+        "raw_matches": 213,
+        "tracked_matches": 212,
+        "included_matches": 194,
+        "unmatched_included_predictions": 13,
+        "unmatched_reference_reasons": {
+          "detector_unmatched": 31,
+          "outside_estimated_floor": 9,
+          "near_estimated_floor_boundary": 3,
+          "association_unmatched": 1,
+          "floor_region_unavailable": 6
+        }
+      },
+      "playerScope": {
+        "source": "user_provided_coarse_player_boxes",
+        "review_status": "provisional",
+        "annotations_sha256": "cc52ba3140f01c91b1d8cc4e1cbd0c5d0c96be2d420c07a22be83f3393668f9d",
+        "reference_frames": 30,
+        "reference_boxes": 244,
+        "matched_reference_frames": 30,
+        "seed_tracks": 34,
+        "suppressed_observations": 2726,
+        "shorts_policy": "positive_cue_not_required_3_observations_100ms",
+        "reference_policy": "same_segment_nearby_450ms",
+        "leg_policy": "skin_contrast_excludes_adjacent_court",
+        "unreferenced_policy": "hide_without_strong_shorts_and_court_evidence",
+        "identity_status": "unconfirmed"
+      },
+      "trackingStats": {
+        "processed_frames": 686,
+        "frames_with_tracks": 638,
+        "observations": 14161,
+        "included_observations": 4954,
+        "unique_tracks": 29,
+        "excluded_observations": 12311
+      },
+      "previewId": "670e0d40-b6db-4960-b74b-82316027879b",
+      "previewSha256": "06d1d055781bae440b43c5e357cb1b7737de1bcdd8fad235bc46723ee5784d6d",
+      "exampleFrame": {
+        "sourceFrameIndex": 13,
+        "sourcePts": 0.433767,
+        "decodedPreviewPts": [
+          0.4337666666666667,
+          0.4337666666666667
+        ],
+        "baselineBoxes": 19,
+        "optimizedBoxes": 9,
+        "coarseMatches": 9
+      }
+    },
+    {
+      "clip": "flagg",
+      "annotationsSha256": "c2620301c77abdfa0ea97018f94aefcb14086d838fee81dd93ee2f4603ec9107",
+      "videoSha256": "11e304f9e82917455971cd284e824c2097bf36e5c65f1757434f424594460bda",
+      "reviewFlags": {
+        "reviewedFrames": 0,
+        "hasAnnotator": false,
+        "annotationSource": "human_required"
+      },
+      "referenceFrames": 30,
+      "referenceBoxes": 261,
+      "baseline": {
+        "reference_boxes": 261,
+        "raw_matches": 192,
+        "tracked_matches": 191,
+        "included_matches": 184,
+        "unmatched_included_predictions": 209,
+        "unmatched_reference_reasons": {
+          "detector_unmatched": 69,
+          "outside_estimated_floor": 7,
+          "association_unmatched": 1
+        }
+      },
+      "optimized": {
+        "reference_boxes": 261,
+        "raw_matches": 192,
+        "tracked_matches": 191,
+        "included_matches": 184,
+        "unmatched_included_predictions": 71,
+        "unmatched_reference_reasons": {
+          "detector_unmatched": 69,
+          "outside_estimated_floor": 7,
+          "association_unmatched": 1
+        }
+      },
+      "playerScope": {
+        "source": "user_provided_coarse_player_boxes",
+        "review_status": "provisional",
+        "annotations_sha256": "c2620301c77abdfa0ea97018f94aefcb14086d838fee81dd93ee2f4603ec9107",
+        "reference_frames": 30,
+        "reference_boxes": 261,
+        "matched_reference_frames": 30,
+        "seed_tracks": 23,
+        "suppressed_observations": 3315,
+        "shorts_policy": "positive_cue_not_required_3_observations_100ms",
+        "reference_policy": "same_segment_nearby_450ms",
+        "leg_policy": "skin_contrast_excludes_adjacent_court",
+        "unreferenced_policy": "hide_without_strong_shorts_and_court_evidence",
+        "identity_status": "unconfirmed"
+      },
+      "trackingStats": {
+        "processed_frames": 646,
+        "frames_with_tracks": 644,
+        "observations": 10818,
+        "included_observations": 5854,
+        "unique_tracks": 36,
+        "excluded_observations": 5647
+      },
+      "previewId": "efd0d8a5-70c4-4613-ba48-007bb943f945",
+      "previewSha256": "c9c0153ba3d36e6e46735bbe72ea174fb3d810ee0539cd0329d82797588b08c4",
+      "exampleFrame": {
+        "sourceFrameIndex": 587,
+        "sourcePts": 19.586233,
+        "decodedPreviewPts": [
+          19.586233333333332,
+          19.586233333333332
+        ],
+        "baselineBoxes": 17,
+        "optimizedBoxes": 7,
+        "coarseMatches": 4
+      }
+    }
+  ],
+  "limitations": [
+    "Same clips used for calibration and checking, not independent validation.",
+    "Unmatched boxes may be incomplete references or partial-body misalignment, not necessarily non-players.",
+    "No confirmed continuous human IDs: HOTA, IDF1 and identity accuracy not evaluated."
+  ]
+}

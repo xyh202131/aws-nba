@@ -49,6 +49,8 @@ import {
 } from "./EvidenceStudio";
 import { momentAt, reviewPayload } from "./review";
 import { AgentPanel } from "./AgentPanel";
+import { FeaturedDemo } from "./FeaturedDemo";
+import { NavHighlight, StudioAtmosphere } from "./motion/StudioMotion";
 
 type View = "agent" | "review" | "analytics" | "archive" | "notes";
 type DialogState =
@@ -58,12 +60,14 @@ type DialogState =
   | { kind: "note"; draft: NoteDraft; note?: ReviewNote }
   | null;
 type Layers = { player: boolean; metric: boolean; caption: boolean };
-const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+const asset = (path: string) =>
+  path.startsWith("https://") ? path : `${import.meta.env.BASE_URL}${path}`;
 
 function Brand() {
   return (
     <span className="brand">
-      <img src={asset("court.svg")} alt="" width="36" height="36" />
+      <span className="team-badge">Team11</span>
+      <img src={asset("court-blue.svg")} alt="" width="36" height="36" />
       <span>
         <b>
           COURTSIDE<span className="brand-dot">.</span>
@@ -176,13 +180,13 @@ function SourceContent({ clip, shot }: { clip: Clip; shot?: Shot }) {
             : `本片出手约在 ${clip.release.toFixed(3)} 秒。画面出手附近记分牌为 ${clip.observedClock}，官方记账为 ${clip.officialClock}；二者独立记录，不用于换算视频时间。`}
         </p>
         <p>
-          2 次视频事件经过 AI
-          视觉核对与官方记录交叉检查，尚未经独立人工复核。未提供本回合引力、关键度和精确球员轨迹，不生成替代数值。
+          本片依据配套文件中的画面锚点、官方事件 #88 与犯规事件 #89 交叉核对。
+          比分取自片内记分牌，配套包提供解说、字幕、来源快照和验证记录。
         </p>
       </section>
       <a
         className="source-link"
-        href={`https://china.nba.cn/game/${gameId}`}
+        href={clip.sourceUrl}
         target="_blank"
         rel="noreferrer"
       >
@@ -197,8 +201,7 @@ function SourceContent({ clip, shot }: { clip: Clip; shot?: Shot }) {
         Inside the Game 指标来源 <ExternalLink size={16} />
       </a>
       <p className="fine-print">
-        数据快照：2026.10.09 ·
-        原场次汇总存在字段语义冲突，已隔离；本页只使用逐次出手记录。
+        数据快照：2026.10.10 · 来自内置成片的配套文件，按官方逐次出手记录呈现。
       </p>
     </div>
   );
@@ -217,7 +220,7 @@ function ClipRail({
     <aside className="clip-rail" aria-label="比赛片段">
       <div className="rail-title">
         <span>回合档案</span>
-        <span className="count">02</span>
+        <span className="count">{String(clips.length).padStart(2, "0")}</span>
       </div>
       <div className="clip-list">
         {clips.map((clip, i) => (
@@ -442,14 +445,13 @@ function Player({
             onError={() => {
               setReady(false);
               setBuffering(false);
-              setError("视频加载失败。请检查本地素材后重试。");
+              setError("成片加载失败。请检查网络连接后重试。");
             }}
           />
           <div className="video-topline">
             <span className="video-context">
               <span className="signal-dot" />
-              回合 0{clip.id === "train_002" ? 1 : 2} <i />Q{clip.period} ·{" "}
-              {clip.officialClock}
+              内置成片 <i />Q{clip.period} · {clip.officialClock}
               <small>官方时钟</small>
             </span>
             <span className="video-format">HD · 赛事回看</span>
@@ -568,7 +570,7 @@ function Player({
           <button
             className="icon-button sound-button"
             onClick={() => setMuted((m) => !m)}
-            aria-label={muted ? "开启原声" : "静音"}
+            aria-label={muted ? "开启解说与比赛声音" : "静音"}
           >
             {muted ? <VolumeX size={18} /> : <Volume2 size={18} />}
           </button>
@@ -713,10 +715,10 @@ function Archive({
           <h2>
             每一次出手，<span>都有据可查。</span>
           </h2>
-          <p>两名球员 · 两场比赛 · 官方逐次投篮记录</p>
+          <p>杜兰特成片配套数据 · 官方逐次投篮记录</p>
         </div>
         <div className="archive-count">
-          <b>41</b>
+          <b>{shots.length}</b>
           <span>条官方记录</span>
         </div>
       </div>
@@ -751,8 +753,13 @@ function Archive({
           <span className="sr-only">球员筛选</span>
           <select value={player} onChange={(e) => setPlayer(e.target.value)}>
             <option value="all">全部球员</option>
-            <option value="1641708">阿门·汤普森</option>
-            <option value="1642843">库珀·弗拉格</option>
+            {Array.from(
+              new Map(shots.map((s) => [s.player_id, s.player_name])),
+            ).map(([id, name]) => (
+              <option key={id} value={id}>
+                {name}
+              </option>
+            ))}
           </select>
         </label>
         <label>
@@ -905,14 +912,18 @@ function Archive({
         </div>
       )}
       <p className="archive-note">
-        <Info size={14} />2 条记录已关联本地视频。其余 39
-        条仅用于比赛检索，不代表视频识别结果。
+        <Info size={14} />
+        {shots.filter((s) => s.clip_id).length}{" "}
+        条官方出手记录已关联内置成片；来源和解说收录于配套文件。
       </p>
     </section>
   );
 }
 
 export default function App() {
+  const navRef = useRef<HTMLElement>(null);
+  const [motionEnabled, setMotionEnabled] = useState(true);
+  const [studioOpen, setStudioOpen] = useState(false);
   const [clip, setClip] = useState(clips[0]);
   const [view, setView] = useState<View>("agent");
   const [dialog, setDialog] = useState<DialogState>(null);
@@ -924,15 +935,15 @@ export default function App() {
   const [removedNote, setRemovedNote] = useState<ReviewNote | null>(null);
   const noteDraft = { clipId: clip.id, time: clip.release };
   const titles: Record<View, string> = {
-    agent: "让比赛数据，走进画面。",
+    agent: "看见比赛，也听懂这一球。",
     review: "把这一球，看明白。",
     analytics: "每次出手，都有线索。",
     archive: "数据，让细节有据。",
     notes: "你的视角，值得留下。",
   };
   const viewLabels: Record<View, string> = {
-    agent: "AI 作品工作室",
-    review: "比赛回看",
+    agent: "视频创作",
+    review: "回合复盘",
     analytics: "投篮分析",
     archive: "公开数据",
     notes: "复盘笔记",
@@ -992,7 +1003,7 @@ export default function App() {
       view === "archive" || view === "analytics"
         ? {
             schema_status: "internal_public_shot_index_not_contest_schema",
-            snapshot: "2026-10-09",
+            snapshot: "2026-10-10",
             shots,
           }
         : reviewPayload(clip);
@@ -1004,16 +1015,16 @@ export default function App() {
     );
     setToast(
       view === "archive" || view === "analytics"
-        ? "已请求下载全部 41 条投篮记录"
+        ? `已请求下载全部 ${shots.length} 条投篮记录`
         : "已请求下载当前回合 JSON 数据",
     );
   }
   return (
-    <>
+    <div className="studio-shell" data-motion-paused={!motionEnabled}>
       <a className="skip-link" href="#workspace">
         跳至主要内容
       </a>
-      <header className="app-header">
+      <header className="app-header" data-motion-paused={!motionEnabled}>
         <a
           className="brand-link"
           href="#"
@@ -1025,14 +1036,15 @@ export default function App() {
         >
           <Brand />
         </a>
-        <nav aria-label="主导航">
+        <nav ref={navRef} aria-label="主导航">
+          <NavHighlight navRef={navRef} motionKey={view} />
           <button
             aria-current={view === "agent" ? "page" : undefined}
             className={view === "agent" ? "active" : ""}
             onClick={() => setView("agent")}
           >
             <Film size={15} />
-            AI 作品
+            视频创作
           </button>
           <button
             aria-current={view === "review" ? "page" : undefined}
@@ -1040,7 +1052,7 @@ export default function App() {
             onClick={() => setView("review")}
           >
             <Film size={15} />
-            回合工作台
+            回合复盘
           </button>
           <button
             aria-current={view === "analytics" ? "page" : undefined}
@@ -1056,7 +1068,7 @@ export default function App() {
             onClick={() => setView("archive")}
           >
             <Layers2 size={15} />
-            数据档案<span className="nav-count">41</span>
+            数据档案<span className="nav-count">{shots.length}</span>
           </button>
           <button
             aria-current={view === "notes" ? "page" : undefined}
@@ -1071,9 +1083,22 @@ export default function App() {
           </button>
         </nav>
         <div className="header-actions">
+          <a className="readme-link" href="/readme">
+            作品说明
+          </a>
+          <button
+            className="studio-motion-toggle"
+            type="button"
+            aria-pressed={!motionEnabled}
+            aria-label={motionEnabled ? "暂停界面动效" : "恢复界面动效"}
+            onClick={() => setMotionEnabled((value) => !value)}
+          >
+            {motionEnabled ? <Pause size={13} /> : <Play size={13} />}
+            <span>动效</span>
+          </button>
           <span className="local-status">
             <span />
-            本地演示
+            比赛工作室
           </span>
           {view !== "agent" && (
             <button className="export-button" onClick={exportData}>
@@ -1083,7 +1108,10 @@ export default function App() {
           )}
         </div>
       </header>
-      <div className={`app-body${view === "agent" ? " agent-body" : ""}`}>
+      <div
+        data-motion-paused={!motionEnabled}
+        className={`app-body${view === "agent" ? " agent-body view-agent" : ` view-${view}`}`}
+      >
         {view !== "agent" && (
           <ClipRail
             selected={clip}
@@ -1093,6 +1121,7 @@ export default function App() {
         )}
         <main id="workspace" className="workspace" tabIndex={-1}>
           <div className="workspace-heading">
+            <StudioAtmosphere paused={!motionEnabled} />
             <div>
               <div className="breadcrumb">
                 <span>深度赛场</span>
@@ -1127,92 +1156,109 @@ export default function App() {
                 </strong>
                 <small>
                   {view === "review"
-                    ? `${clip.date} · 训练片段`
+                    ? `${clip.date} · 内置成片`
                     : view === "agent"
                       ? "可播放 · 有解说 · 可下载"
                       : view === "notes"
                         ? `${noteState.notes.length} 条个人观察 · 本地保存`
-                        : "官方公开数据 · 2026.10.09 快照"}
+                        : "成片配套数据 · 2026.10.10 快照"}
                 </small>
               </span>
             </div>
           </div>
-          {view === "agent" ? (
-            <AgentPanel onOpenClip={openClip} />
-          ) : view === "review" ? (
-            <>
-              <MatchStrip clip={clip} onAnalyze={() => setView("analytics")} />
-              <div className="review-layout">
-                <Player
-                  key={clip.id}
+          <div key={view} className="studio-view" data-direction="lateral">
+            {view === "agent" ? (
+              <>
+                <FeaturedDemo />
+                <details
+                  className="creation-workspace"
+                  onToggle={(event) => setStudioOpen(event.currentTarget.open)}
+                >
+                  <summary>
+                    打开视频创作工作区{" "}
+                    <span>导入素材 · 关联数据 · 查看生成任务</span>
+                  </summary>
+                  {studioOpen && <AgentPanel onOpenClip={openClip} />}
+                </details>
+              </>
+            ) : view === "review" ? (
+              <>
+                <MatchStrip
                   clip={clip}
-                  jumpSignal={jumpSignal}
-                  jumpTime={jumpTime}
-                  activeMoment={activeMoment}
-                  onMomentChange={setActiveMoment}
-                  onSource={() => setDialog({ kind: "source" })}
-                  onMark={(time) =>
-                    setDialog({
-                      kind: "note",
-                      draft: { clipId: clip.id, time },
-                    })
-                  }
+                  onAnalyze={() => setView("analytics")}
                 />
-                <EvidenceInspector
-                  key={clip.id + "-inspector"}
+                <div className="review-layout">
+                  <Player
+                    key={clip.id}
+                    clip={clip}
+                    jumpSignal={jumpSignal}
+                    jumpTime={jumpTime}
+                    activeMoment={activeMoment}
+                    onMomentChange={setActiveMoment}
+                    onSource={() => setDialog({ kind: "source" })}
+                    onMark={(time) =>
+                      setDialog({
+                        kind: "note",
+                        draft: { clipId: clip.id, time },
+                      })
+                    }
+                  />
+                  <EvidenceInspector
+                    key={clip.id + "-inspector"}
+                    clip={clip}
+                    active={activeMoment}
+                    onSeek={(time) => {
+                      setJumpTime(time);
+                      setActiveMoment(momentAt(clip, time));
+                      setJumpSignal((n) => n + 1);
+                    }}
+                    onSource={() => setDialog({ kind: "source" })}
+                  />
+                </div>
+                <Interpretation
+                  key={clip.id + "-interpretation"}
                   clip={clip}
-                  active={activeMoment}
                   onSeek={(time) => {
                     setJumpTime(time);
                     setActiveMoment(momentAt(clip, time));
                     setJumpSignal((n) => n + 1);
                   }}
-                  onSource={() => setDialog({ kind: "source" })}
+                  onNote={() => setDialog({ kind: "note", draft: noteDraft })}
                 />
-              </div>
-              <Interpretation
-                key={clip.id + "-interpretation"}
-                clip={clip}
-                onSeek={(time) => {
-                  setJumpTime(time);
-                  setActiveMoment(momentAt(clip, time));
-                  setJumpSignal((n) => n + 1);
-                }}
-                onNote={() => setDialog({ kind: "note", draft: noteDraft })}
+              </>
+            ) : view === "analytics" ? (
+              <Analytics
+                initialClip={clip}
+                onSource={(shot) => setDialog({ kind: "source", shot })}
+                onOpenClip={openClip}
               />
-            </>
-          ) : view === "analytics" ? (
-            <Analytics
-              initialClip={clip}
-              onSource={(shot) => setDialog({ kind: "source", shot })}
-              onOpenClip={openClip}
-            />
-          ) : view === "notes" ? (
-            <NotesLibrary
-              notes={noteState.notes}
-              warning={noteState.warning}
-              onCreate={() => setDialog({ kind: "note", draft: noteDraft })}
-              onEdit={(note) =>
-                setDialog({
-                  kind: "note",
-                  draft: { clipId: note.clipId, time: note.time },
-                  note,
-                })
-              }
-              onRemove={(note) => {
-                saveNotes(noteState.notes.filter((n) => n.id !== note.id));
-                setRemovedNote(note);
-                setToast("笔记已移除，可撤销");
-              }}
-              onJump={(note) => openClip(note.clipId, note.time)}
-            />
-          ) : (
-            <Archive
-              onOpenClip={openClip}
-              onSource={(shot) => setDialog({ kind: "source", shot })}
-              onImport={() => setDialog({ kind: "intake" })}
-            />
-          )}
+            ) : view === "notes" ? (
+              <NotesLibrary
+                notes={noteState.notes}
+                warning={noteState.warning}
+                onCreate={() => setDialog({ kind: "note", draft: noteDraft })}
+                onEdit={(note) =>
+                  setDialog({
+                    kind: "note",
+                    draft: { clipId: note.clipId, time: note.time },
+                    note,
+                  })
+                }
+                onRemove={(note) => {
+                  saveNotes(noteState.notes.filter((n) => n.id !== note.id));
+                  setRemovedNote(note);
+                  setToast("笔记已移除，可撤销");
+                }}
+                onJump={(note) => openClip(note.clipId, note.time)}
+              />
+            ) : (
+              <Archive
+                onOpenClip={openClip}
+                onSource={(shot) => setDialog({ kind: "source", shot })}
+                onImport={() => setDialog({ kind: "intake" })}
+              />
+            )}
+          </div>
           <footer className="workspace-footer">
             <span>
               <span className="footer-dot" />
@@ -1299,7 +1345,7 @@ export default function App() {
                   </dd>
                 </div>
                 <div>
-                  <dt>静音 / 开启原声</dt>
+                  <dt>静音 / 开启解说与比赛声音</dt>
                   <dd>
                     <kbd>M</kbd>
                   </dd>
@@ -1356,6 +1402,6 @@ export default function App() {
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 }

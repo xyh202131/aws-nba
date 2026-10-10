@@ -1,0 +1,26 @@
+FROM --platform=linux/arm64 node:24.19.0-bookworm-slim AS node_dependencies
+WORKDIR /build
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev --ignore-scripts
+
+FROM --platform=linux/arm64 python:3.12.12-slim-bookworm AS runtime
+RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk ca-certificates libglib2.0-0 libgl1 libgomp1 && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY vision/requirements.txt /tmp/requirements.txt
+RUN python -m pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu torch==2.12.0 torchvision==0.27.0
+RUN python -m pip install --no-cache-dir -r /tmp/requirements.txt
+COPY --from=node_dependencies /usr/local/bin/node /usr/local/bin/node
+COPY --from=node_dependencies /build/node_modules ./node_modules
+COPY package.json ./package.json
+COPY agent ./agent
+COPY shared ./shared
+COPY vision ./vision
+COPY src/data ./src/data
+COPY docs/media-manifest.json ./docs/media-manifest.json
+COPY public/media ./public/media
+COPY --chown=1001:1001 models ./.local/vision-models
+RUN useradd --create-home --uid 1001 courtside && mkdir -p /app/.local/vision-cache /tmp/courtside && chown courtside:courtside /app/.local/vision-cache /tmp/courtside
+ENV AGENT_HOST=0.0.0.0 AGENT_PORT=8080 AGENT_RUNTIME_CONTAINER=true AGENT_PROVIDER=bedrock ALLOW_PAID_MODEL_CALLS=true AWS_AUTH_MODE=execution_role AWS_REGION=us-east-1 AWS_PROFILE=nba AGENT_DATA_DIR=/tmp/courtside FFMPEG_PATH=/usr/bin/ffmpeg VISION_PYTHON=/usr/local/bin/python TTS_PROVIDER=polly FILM_FONT_PATH=/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 ULTRALYTICS_AUTOINSTALL=false YOLO_OFFLINE=true
+USER courtside
+EXPOSE 8080
+CMD ["node", "--experimental-strip-types", "agent/server.ts"]

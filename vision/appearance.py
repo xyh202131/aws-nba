@@ -32,22 +32,25 @@ class AppearanceEncoder:
         self.session=ort.InferenceSession(str(path),options,providers=["CPUExecutionProvider"])
         self.input=self.session.get_inputs()[0].name;self.output=self.session.get_outputs()[0].name
         self.size=448;self.lock=lock;self.stamp=0;self.refresh_seconds=refresh_seconds
-        self.previous=[];self.inferred_crops=self.reused_crops=0
+        self.reset();self.inferred_crops=self.reused_crops=0
 
-    def reset(self):self.previous=[]
+    def reset(self):
+        self.previous=[];self.current=[];self.frame_stamp=None;self.used=set()
 
     def __call__(self,image,detections):
         from ultralytics.trackers.utils.reid import ReID
         from ultralytics.utils.ops import xywh2xyxy
+        if self.frame_stamp!=self.stamp:
+            self.previous=self.current;self.current=[];self.used=set();self.frame_stamp=self.stamp
         boxes=xywh2xyxy(np.asarray(detections[:,:4])).tolist()
         crops=ReID._crop_detections(image,detections)
-        features=[None]*len(boxes);times=[self.stamp]*len(boxes);used=set()
+        features=[None]*len(boxes);times=[self.stamp]*len(boxes)
         for i,box in enumerate(boxes):
-            candidates=[(box_iou(box,p["box"]),j) for j,p in enumerate(self.previous) if j not in used and 0<=self.stamp-p["time"]<self.refresh_seconds]
+            candidates=[(box_iou(box,p["box"]),j) for j,p in enumerate(self.previous) if j not in self.used and 0<=self.stamp-p["time"]<self.refresh_seconds]
             if candidates:
                 similarity,j=max(candidates)
                 if similarity>=.75:
-                    features[i]=self.previous[j]["feature"];times[i]=self.previous[j]["time"];used.add(j);self.reused_crops+=1
+                    features[i]=self.previous[j]["feature"];times[i]=self.previous[j]["time"];self.used.add(j);self.reused_crops+=1
         missing=[i for i,f in enumerate(features) if f is None]
         for start in range(0,len(missing),8):
             indices=missing[start:start+8]
@@ -58,5 +61,7 @@ class AppearanceEncoder:
                 raise ValueError("Invalid appearance embeddings")
             output/=np.maximum(np.linalg.norm(output,axis=1,keepdims=True),1e-12)
             for i,feature in zip(indices,output):features[i]=feature;self.inferred_crops+=1
-        self.previous=[{"box":box,"feature":feature,"time":stamp} for box,feature,stamp in zip(boxes,features,times)]
+        # BoT-SORT calls its encoder separately for high- and low-score detections.
+        # Preserve both sets, without allowing one prior crop to serve two people.
+        self.current.extend({"box":box,"feature":feature,"time":stamp} for box,feature,stamp in zip(boxes,features,times))
         return features

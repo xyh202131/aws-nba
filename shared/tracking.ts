@@ -24,6 +24,8 @@ export type TrackObservation = {
 };
 
 export type TrackingManifest = {
+  player_scope?: PlayerScopeEvidence | null;
+  role_filter?: SemanticRoleEvidence | null;
   schema_version: "courtside.tracking-manifest.v1";
   source: "pretrained_inference";
   video_sha256: string;
@@ -48,8 +50,8 @@ export type TrackingManifest = {
   };
   dependencies: Record<string, string>;
   tracker: {
-    name: "BoT-SORT";
-    gmc_method: "sparseOptFlow";
+    name: "BoT-SORT" | "ByteTrack";
+    gmc_method: "sparseOptFlow" | null;
     reid: boolean;
     buffer_seconds: number;
     fuse_score?: boolean;
@@ -91,6 +93,7 @@ export type TrackingManifest = {
     peak_rss_bytes: number;
     output_bytes: number;
     peak_working_bytes?: number;
+    phase_seconds?: Record<string, number>;
   };
   files: {
     tracks: { name: "tracks.jsonl"; sha256: string; bytes: number };
@@ -105,6 +108,7 @@ export type TrackingManifest = {
       bytes: number;
     };
     detections?: { name: "detections.jsonl"; sha256: string; bytes: number };
+    role_evidence?: { name: "person-role-evidence.jsonl"; sha256: string; bytes: number };
   };
 };
 
@@ -128,6 +132,10 @@ export type OverlayTimeline = {
 };
 
 export type TrackingArtifact = {
+  playerScope?: PlayerScopeEvidence;
+  roleFilter?: SemanticRoleEvidence;
+  roleEvidence?: string;
+  trackerName?: "BoT-SORT" | "ByteTrack";
   status: "completed";
   source: "pretrained_inference";
   model: string;
@@ -149,6 +157,43 @@ export type TrackingArtifact = {
   trackIndex?: string;
   detectionCache?: TrackingManifest["detection_cache"];
   resources: TrackingManifest["resources"];
+};
+
+export type SemanticRoleEvidence = {
+  source: "pretrained_semantic_roles";
+  name: "CLIP-ViT-B-32";
+  sha256: string;
+  license: "MIT";
+  prompts_sha256: string;
+  crop_transform: "full_box_gray_pad224_v1";
+  annotations_used: false;
+  identity_status: "unconfirmed";
+  score_kind: "uncalibrated_cosine_similarity";
+  margin: number;
+  negative_samples: 2;
+  refresh_seconds: number;
+  ttl_seconds: number;
+  inferred_crops: number;
+  suppressed_observations: number;
+  restored_observations: number;
+  uncertain_policy: "preserve_floor_gate";
+  shorts_required: false;
+};
+
+export type PlayerScopeEvidence = {
+  source: "user_provided_coarse_player_boxes";
+  review_status: "provisional";
+  annotations_sha256: string;
+  reference_frames: number;
+  reference_boxes: number;
+  matched_reference_frames: number;
+  seed_tracks: number;
+  suppressed_observations: number;
+  shorts_policy: "positive_cue_not_required_3_observations_100ms";
+  reference_policy?: "same_segment_nearby_450ms";
+  leg_policy?: "skin_contrast_excludes_adjacent_court";
+  unreferenced_policy: "hide_without_strong_shorts_and_court_evidence";
+  identity_status: "unconfirmed";
 };
 
 export type TrackIndex = {
@@ -217,12 +262,10 @@ export function compileTrackIndex(
     tracksSha256: manifest.files.tracks.sha256,
     identityStatus: "unconfirmed",
     omittedTracks: Math.max(0, sorted.length - 2000),
-    tracks: sorted
-      .slice(0, 2000)
-      .map(({ sampleArea: _, ...entry }) => ({
-        ...entry,
-        visibleSeconds: Number(entry.visibleSeconds.toFixed(6)),
-      })),
+    tracks: sorted.slice(0, 2000).map(({ sampleArea: _, ...entry }) => ({
+      ...entry,
+      visibleSeconds: Number(entry.visibleSeconds.toFixed(6)),
+    })),
   };
 }
 

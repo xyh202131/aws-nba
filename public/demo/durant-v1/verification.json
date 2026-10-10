@@ -1,0 +1,30 @@
+{
+  "durationSeconds": 28.0,
+  "width": 1920,
+  "height": 1080,
+  "fps": "60",
+  "frames": 1680,
+  "videoCodec": "h264",
+  "audioCodec": "aac",
+  "audioSampleRate": 48000,
+  "channels": 2,
+  "sizeBytes": 80205184,
+  "sha256": "ab23aa2a1e99109167ad5c20fbf9b6f1260c517f70f64a7a33a053449493a992",
+  "verifiedAt": "2026-10-10T11:05:06.535587+00:00",
+  "fullDecode": {
+    "passed": true,
+    "log": "decode-check.log"
+  },
+  "audioLevels": {
+    "meanDb": -21.9,
+    "peakDb": -1.8
+  },
+  "visualChecks": {
+    "sourceIdentityAndClock": true,
+    "originalScoreboardUnobscured": true,
+    "xfgMatchesEvent88": true,
+    "endCardAt24Point5Seconds": true,
+    "captionAndFooterDoNotOverlap": true
+  },
+  "voiceReview": "Synthesized speech text, durations and electrical audio levels checked; subjective listening not independently reviewed."
+}

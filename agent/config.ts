@@ -56,6 +56,9 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env) {
     throw new AgentError("CONFIG", "无效监听地址。");
   if (host !== "127.0.0.1" && env.AGENT_RUNTIME_CONTAINER !== "true")
     throw new AgentError("CONFIG", "本地服务只监听回环地址。");
+  const filmResolution = env.FILM_RESOLUTION ?? "720p";
+  if (filmResolution !== "720p" && filmResolution !== "source")
+    throw new AgentError("CONFIG", "不支持的成片分辨率策略。");
   return {
     provider: provider as "fixture" | "bedrock",
     region,
@@ -64,6 +67,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env) {
     host,
     modelId: modelId as ModelId,
     paidCallsEnabled,
+    filmResolution: filmResolution as "720p" | "source",
     dataDir: resolve(ROOT, env.AGENT_DATA_DIR ?? ".local/agent"),
     ffmpegPath: env.FFMPEG_PATH || undefined,
     visionPython: resolve(

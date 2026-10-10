@@ -153,8 +153,13 @@ export function validateTrackingManifest(
     invalid();
   if (
     !m.tracker ||
-    m.tracker.name !== "BoT-SORT" ||
-    m.tracker.gmc_method !== "sparseOptFlow" ||
+    !(
+      (m.tracker.name === "BoT-SORT" &&
+        m.tracker.gmc_method === "sparseOptFlow") ||
+      (m.tracker.name === "ByteTrack" &&
+        m.tracker.gmc_method === null &&
+        m.tracker.reid === false)
+    ) ||
     typeof m.tracker.reid !== "boolean" ||
     !finite(m.tracker.buffer_seconds) ||
     m.tracker.buffer_seconds <= 0 ||
@@ -206,6 +211,54 @@ export function validateTrackingManifest(
     )
       invalid();
   } else if (m.appearance) invalid();
+  if (m.player_scope) {
+    const s = m.player_scope;
+    if (
+      s.source !== "user_provided_coarse_player_boxes" ||
+      s.review_status !== "provisional" ||
+      !hashPattern.test(s.annotations_sha256) ||
+      s.identity_status !== "unconfirmed" ||
+      s.shorts_policy !== "positive_cue_not_required_3_observations_100ms" ||
+      (s.reference_policy !== undefined &&
+        s.reference_policy !== "same_segment_nearby_450ms") ||
+      (s.leg_policy !== undefined &&
+        s.leg_policy !== "skin_contrast_excludes_adjacent_court") ||
+      s.unreferenced_policy !==
+        "hide_without_strong_shorts_and_court_evidence" ||
+      ![
+        s.reference_frames,
+        s.reference_boxes,
+        s.matched_reference_frames,
+        s.seed_tracks,
+        s.suppressed_observations,
+      ].every((v) => Number.isSafeInteger(v) && v >= 0) ||
+      s.reference_frames < 1 ||
+      s.reference_frames > 1000 ||
+      s.reference_boxes < 1 ||
+      s.reference_boxes > 100000 ||
+      s.matched_reference_frames > s.reference_frames ||
+      s.seed_tracks < 1 ||
+      s.seed_tracks > 150000 ||
+      s.suppressed_observations > m.stats.observations
+    )
+      invalid();
+  }
+  if (m.role_filter || m.files.role_evidence) {
+    const r = m.role_filter, f = m.files.role_evidence;
+    if (!r || !f || m.player_scope ||
+      r.source !== "pretrained_semantic_roles" || r.name !== "CLIP-ViT-B-32" ||
+      !hashPattern.test(r.sha256) || r.license !== "MIT" || !hashPattern.test(r.prompts_sha256) ||
+      r.crop_transform !== "full_box_gray_pad224_v1" || r.annotations_used !== false ||
+      r.identity_status !== "unconfirmed" || r.score_kind !== "uncalibrated_cosine_similarity" ||
+      !finite(r.margin) || r.margin <= 0 || r.margin > .2 || r.negative_samples !== 2 ||
+      !finite(r.refresh_seconds) || r.refresh_seconds <= 0 || r.refresh_seconds > 1 ||
+      !finite(r.ttl_seconds) || r.ttl_seconds < r.refresh_seconds || r.ttl_seconds > 1 ||
+      r.uncertain_policy !== "preserve_floor_gate" || r.shorts_required !== false ||
+      ![r.inferred_crops, r.suppressed_observations, r.restored_observations].every(v => Number.isSafeInteger(v) && v >= 0 && v <= m.stats.observations) ||
+      r.inferred_crops < 1 || f.name !== "person-role-evidence.jsonl" || !hashPattern.test(f.sha256) ||
+      !Number.isSafeInteger(f.bytes) || f.bytes < 1 || f.bytes > 100_000_000)
+      invalid();
+  }
   return m;
 }
 
@@ -321,7 +374,7 @@ export async function runTracking(
   const profilePath = resolve(ROOT, "vision/profile.json"),
     trackerPath = resolve(ROOT, "vision/tracker.yaml");
   let lock: { filename: string; sha256: string };
-  let profile: { modelName: string; weightsFile: string };
+  let profile: { modelName: string; weightsFile: string; playerFilter?: string };
   try {
     lock = JSON.parse(
       await readFile(resolve(ROOT, "vision/model-lock.json"), "utf8"),
@@ -354,7 +407,17 @@ export async function runTracking(
     .update(await readFile(trackerPath))
     .digest("hex");
   const toolDigest = createHash("sha256");
-  for (const name of ["track.py", "core.py", "detections.py", "appearance.py"])
+  for (const name of [
+    "track.py",
+    "core.py",
+    "detections.py",
+    "appearance.py",
+    "detector.py",
+    "player_filter.py",
+    "player_scope.py",
+    "semantic_roles.py",
+    "role_filter.py",
+  ])
     toolDigest.update(await readFile(resolve(ROOT, "vision", name)));
   const toolHash = toolDigest.digest("hex");
   try {
@@ -421,6 +484,14 @@ export async function runTracking(
     manifest.dependencies?.tool_sha256 !== toolHash
   )
     invalid();
+  if (profile.playerFilter === "semantic_role_v1" && !manifest.role_filter) invalid();
+  if (manifest.role_filter) {
+    const roleLock = JSON.parse(await readFile(resolve(ROOT, "vision/player-role-model-lock.json"), "utf8"));
+    const roleFile = manifest.files.role_evidence!;
+    if (roleLock.name !== manifest.role_filter.name || roleLock.sha256 !== manifest.role_filter.sha256 ||
+      (await stat(resolve(folder, roleFile.name))).size !== roleFile.bytes ||
+      (await fileHash(resolve(folder, roleFile.name))) !== roleFile.sha256) invalid();
+  }
   const trackFile = resolve(folder, "tracks.jsonl");
   if (
     (await stat(trackFile)).size !== manifest.files.tracks.bytes ||
@@ -485,6 +556,13 @@ export async function runTracking(
     );
     if (manifest.appearance.sha256 !== aux.appearance.sha256) invalid();
   }
+  if (
+    manifest.player_scope &&
+    (await fileHash(
+      resolve(ROOT, ".local/player-references", `${videoHash}.json`),
+    )) !== manifest.player_scope.annotations_sha256
+  )
+    invalid();
   await writeFile(
     resolve(folder, "track-index.json"),
     JSON.stringify(compileTrackIndex(timeline, manifest)),
@@ -516,6 +594,7 @@ export async function runTracking(
     status: "completed",
     source: "pretrained_inference",
     model: manifest.model.name,
+    trackerName: manifest.tracker.name,
     modelSha256: manifest.model.sha256,
     configSha256: configHash,
     processedFrames: manifest.stats.processed_frames,
@@ -532,6 +611,8 @@ export async function runTracking(
     detections: base + "detections.jsonl",
     trackIndex: base + "track-index.json",
     detectionCache: manifest.detection_cache,
+    ...(manifest.player_scope ? { playerScope: manifest.player_scope } : {}),
+    ...(manifest.role_filter ? { roleFilter: manifest.role_filter, roleEvidence: base + "person-role-evidence.jsonl" } : {}),
     ...(exclusions ? { exclusions: base + "excluded-detections.jsonl" } : {}),
     ...(regions ? { floorRegions: base + "floor-regions.jsonl" } : {}),
   };

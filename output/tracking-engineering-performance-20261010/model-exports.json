@@ -1,0 +1,78 @@
+{
+  "source": {
+    "filename": "yolo11m.pt",
+    "sha256": "d5ffc1a674953a08e11a8d21e022781b1b23a19b730afc309290bd9fb5305b95",
+    "bytes": 40684120,
+    "publisherRepository": "Ultralytics/YOLO11",
+    "publisherMirrorUrl": "https://huggingface.co/Ultralytics/YOLO11/resolve/main/yolo11m.pt",
+    "upstreamUrl": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11m.pt",
+    "license": "AGPL-3.0"
+  },
+  "initial960": {
+    "schema_version": "courtside.onnx-export.v1",
+    "source_sha256": "d5ffc1a674953a08e11a8d21e022781b1b23a19b730afc309290bd9fb5305b95",
+    "sha256": "74884936972a4a10ed0b0a721495ec7ac2d2e02ac352d7c7283b1033cfcd9bda",
+    "bytes": 80668492,
+    "input_shape": [
+      1,
+      3,
+      544,
+      960
+    ],
+    "precision": "FP32",
+    "opset": 17,
+    "nms": false,
+    "license": "AGPL-3.0",
+    "dependencies": {
+      "ultralytics": "8.4.174",
+      "torch": "2.12.0+cpu",
+      "onnx": "1.23.2"
+    },
+    "export_wall_seconds": 2.786
+  },
+  "current960": {
+    "schema_version": "courtside.onnx-export.v1",
+    "source_sha256": "d5ffc1a674953a08e11a8d21e022781b1b23a19b730afc309290bd9fb5305b95",
+    "sha256": "af3981c0b128bf6ae7aa201926cd583bc581e24b13d9aa2c53bf09295afbc376",
+    "bytes": 80668492,
+    "input_shape": [
+      1,
+      3,
+      544,
+      960
+    ],
+    "precision": "FP32",
+    "opset": 17,
+    "nms": false,
+    "license": "AGPL-3.0",
+    "dependencies": {
+      "ultralytics": "8.4.174",
+      "torch": "2.12.0+cpu",
+      "onnx": "1.23.2"
+    },
+    "export_wall_seconds": 1.8
+  },
+  "current640": {
+    "schema_version": "courtside.onnx-export.v1",
+    "source_sha256": "d5ffc1a674953a08e11a8d21e022781b1b23a19b730afc309290bd9fb5305b95",
+    "sha256": "dab59e2a497cb936e77e7d2e93f743e4f109b9d54dc56a33b0fa46e09cbbc674",
+    "bytes": 80555092,
+    "input_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "precision": "FP32",
+    "opset": 17,
+    "nms": false,
+    "license": "AGPL-3.0",
+    "dependencies": {
+      "ultralytics": "8.4.174",
+      "torch": "2.12.0+cpu",
+      "onnx": "1.23.2"
+    },
+    "export_wall_seconds": 1.913
+  },
+  "note": "Initial export path collision corrected; exports now use isolated unique directories; original PT and videos unchanged."
+}

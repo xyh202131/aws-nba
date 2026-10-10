@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "continuousReviewDrawIdConfirmUndoNavigateAndPendingExport": true,
+    "nativeHdPlaybackAndAudio": {
+      "width": 1920,
+      "height": 1080,
+      "time": 0.507392,
+      "paused": false,
+      "audioBytes": 15986,
+      "error": null
+    }
+  },
+  "errors": []
+}

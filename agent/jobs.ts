@@ -172,6 +172,7 @@ export class JobManager {
         job.id,
         this.config,
         async (id) => {
+          if (process.env.AGENT_RUNTIME_CONTAINER === "true") console.log(JSON.stringify({ event: "job_stage", jobId: job.id, stage: id }));
           job.stages.forEach((s) => {
             if (s.status === "running") s.status = "completed";
             if (s.id === id) s.status = "running";
@@ -179,6 +180,7 @@ export class JobManager {
           await this.save(job);
         },
         async (invocation) => {
+          if (process.env.AGENT_RUNTIME_CONTAINER === "true") console.log(JSON.stringify({ event: "model_invocation_recorded", jobId: job.id, status: invocation.status }));
           job.invocation = invocation;
           await this.save(job);
         },

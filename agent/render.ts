@@ -10,9 +10,46 @@ import { fileHash, VIDEO_INPUT_OPTIONS } from "./media.ts";
 import { AgentError } from "./errors.ts";
 import { dataOverlays } from "../shared/film.ts";
 import type { OverlayTimeline, TrackingArtifact } from "../shared/tracking.ts";
+import { synthesizePolly } from "./polly.ts";
 
 const execute = promisify(execFile);
 const VOICE = "Microsoft Huihui Desktop" as const;
+export function videoRenderSettings(
+  info: MediaInfo,
+  tracking: OverlayTimeline | undefined,
+  resolution: "720p" | "source" = "720p",
+) {
+  let width = 1280,
+    height = 720;
+  // The current ASS design uses a 16:9 coordinate canvas. Only promote a verified
+  // display plane with that aspect ratio; encoded dimensions alone omit SAR/rotation.
+  if (
+    resolution === "source" &&
+    tracking &&
+    Number.isSafeInteger(tracking.sourceWidth) &&
+    Number.isSafeInteger(tracking.sourceHeight) &&
+    tracking.sourceWidth >= 32 &&
+    tracking.sourceHeight >= 32 &&
+    Math.abs(tracking.sourceWidth / tracking.sourceHeight - 16 / 9) < 0.001
+  ) {
+    const factor = Math.min(
+      1,
+      1920 / tracking.sourceWidth,
+      1080 / tracking.sourceHeight,
+    );
+    width = 2 * Math.floor((tracking.sourceWidth * factor) / 2);
+    height = 2 * Math.floor((tracking.sourceHeight * factor) / 2);
+  }
+  return {
+    width,
+    height,
+    mode: resolution,
+    encodedWidth: info.width,
+    encodedHeight: info.height,
+    filter: `scale=w=iw*sar:h=ih,setsar=1,scale=${width}:${height}:force_original_aspect_ratio=decrease,pad=${width}:${height}:(ow-iw)/2:(oh-ih)/2,setsar=1`,
+  };
+}
+
 export function assText(text: string) {
   return text
     .replace(/\\/g, "＼")
@@ -46,8 +83,8 @@ export function buildAss(
     "",
     "[V4+ Styles]",
     "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
-    "Style: Caption,Microsoft YaHei,25,&H00FFFFFF,&H00FFFFFF,&H00251A0D,&H90251A0D,0,0,0,0,100,100,0,0,3,8,0,2,64,64,38,1",
-    "Style: Label,Microsoft YaHei,20,&H00FFFFFF,&H00FFFFFF,&H00251A0D,&H00251A0D,0,0,0,0,100,100,0,0,1,1,0,7,20,20,20,1",
+    `Style: Caption,${process.platform === "win32" ? "Microsoft YaHei" : "Noto Sans CJK SC"},25,&H00FFFFFF,&H00FFFFFF,&H00251A0D,&H90251A0D,0,0,0,0,100,100,0,0,3,8,0,2,64,64,38,1`,
+    `Style: Label,${process.platform === "win32" ? "Microsoft YaHei" : "Noto Sans CJK SC"},20,&H00FFFFFF,&H00FFFFFF,&H00251A0D,&H00251A0D,0,0,0,0,100,100,0,0,1,1,0,7,20,20,20,1`,
     "",
     "[Events]",
     "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text",
@@ -229,6 +266,11 @@ function wavDuration(bytes: Buffer) {
   return size / rate;
 }
 async function synthesize(cues: NarrationCue[], folder: string) {
+  if (process.env.TTS_PROVIDER === "polly") {
+    if (process.env.AGENT_RUNTIME_CONTAINER !== "true" || process.env.AWS_AUTH_MODE !== "execution_role")
+      throw new AgentError("PROJECT_BOUNDARY", "Polly 仅允许授权的云端执行角色调用。", 403);
+    return synthesizePolly(cues, folder);
+  }
   if (process.platform !== "win32")
     throw new AgentError(
       "VOICE_UNAVAILABLE",
@@ -312,8 +354,8 @@ export async function renderFilm(
   await mkdir(resolve(folder, "fonts"), { recursive: true });
   try {
     await copyFile(
-      "C:/Windows/Fonts/msyh.ttc",
-      resolve(folder, "fonts", "msyh.ttc"),
+      process.env.FILM_FONT_PATH || "C:/Windows/Fonts/msyh.ttc",
+      resolve(folder, "fonts", "chinese.ttc"),
     );
   } catch {
     throw new AgentError(
@@ -391,11 +433,16 @@ export async function renderFilm(
     `[bg]${voices.map((_, i) => `[voice${i}]`).join("")}amix=inputs=${voices.length + 1}:duration=longest:normalize=0,alimiter=limit=0.95[audio]`,
   );
   const output = resolve(folder, "film.mp4");
+  const videoSettings = videoRenderSettings(
+    info,
+    tracking?.timeline,
+    config.filmResolution,
+  );
   args.push(
     "-filter_complex",
     filters.join(";"),
     "-vf",
-    "scale=w=iw*sar:h=ih,setsar=1,scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,setsar=1,ass=filename=captions.ass:fontsdir=fonts",
+    `${videoSettings.filter},ass=filename=captions.ass:fontsdir=fonts`,
     "-map",
     "0:v:0",
     "-map",
@@ -410,6 +457,10 @@ export async function renderFilm(
     "22",
     "-threads",
     "2",
+    "-fps_mode",
+    "passthrough",
+    "-enc_time_base:v",
+    "-1",
     "-pix_fmt",
     "yuv420p",
     "-c:a",
@@ -428,7 +479,15 @@ export async function renderFilm(
       maxBuffer: 500_000,
       windowsHide: true,
     });
-  } catch {
+  } catch (failure) {
+    const stderr = (failure as { stderr?: unknown })?.stderr;
+    await writeFile(
+      resolve(folder, "render-error.json"),
+      JSON.stringify({
+        code: "RENDER_FAILED",
+        stderr: typeof stderr === "string" ? stderr.slice(-8000) : null,
+      }),
+    );
     throw new AgentError(
       "RENDER_FAILED",
       "字幕、数据图形或音轨合成失败；模型记录已保留。",
@@ -443,10 +502,15 @@ export async function renderFilm(
     timeline: `/api/jobs/${jobId}/artifacts/timeline.json`,
     sha256: await fileHash(output),
     bytes: (await stat(output)).size,
-    voice: VOICE,
+    voice: process.env.TTS_PROVIDER === "polly" ? "Amazon Polly Zhiyu neural" : VOICE,
     cues,
     data,
     ...(tracking ? { tracking: tracking.artifact } : {}),
     narrationSource,
+    videoSettings: {
+      width: videoSettings.width,
+      height: videoSettings.height,
+      timing: "source_pts_passthrough",
+    },
   };
 }

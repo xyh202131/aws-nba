@@ -52,6 +52,11 @@ export type NarrationCue = AgentObservation & {
   dataEventIds: string[];
 };
 export type FilmArtifact = {
+  videoSettings?: {
+    width: number;
+    height: number;
+    timing: "source_pts_passthrough";
+  };
   title: string;
   duration: number;
   video: string;
@@ -59,7 +64,7 @@ export type FilmArtifact = {
   timeline: string;
   sha256: string;
   bytes: number;
-  voice: "Microsoft Huihui Desktop";
+  voice: "Microsoft Huihui Desktop" | "Amazon Polly Zhiyu neural";
   cues: NarrationCue[];
   data: MatchData;
   tracking?: TrackingArtifact;
@@ -125,7 +130,8 @@ export type Job = {
   error?: { code: string; message: string };
 };
 export type AgentHealth = {
-  status: "Healthy" | "HealthyBusy";
+  submissionMode?: "iam_only";
+  status: "Healthy" | "HealthyBusy" | "Deploying";
   provider: "fixture" | "bedrock";
   paidCallsEnabled: boolean;
   region: string;

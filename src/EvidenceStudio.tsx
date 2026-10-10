@@ -298,6 +298,7 @@ export function ClipComparison({
   onOpenClip: (id: string) => void;
 }) {
   const [phase, setPhase] = useState(1);
+  if (clips.length < 2) return null;
   const difference = Number((clips[1].xfg - clips[0].xfg).toFixed(1));
   return (
     <section className="comparison-view" aria-label="回合对照">
@@ -425,11 +426,12 @@ export function MaterialReadiness({ onImport }: { onImport: () => void }) {
       </div>
       <div className="material-statuses">
         <span>
-          <Check size={14} />2 条视频可回看
+          <Check size={14} />
+          {clips.length} 段成片可回看
         </span>
         <span>
           <Check size={14} />
-          41 条官方出手记录
+          {shots.length} 条官方出手记录
         </span>
         <span className="pending">
           <span>—</span>追踪坐标未提供

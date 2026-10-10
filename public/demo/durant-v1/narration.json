@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "start": 0.5,
+    "text": "杜兰特持球，卡佩拉上前掩护。",
+    "kind": "visual",
+    "evidence": [
+      "source-02.0"
+    ],
+    "duration": 3.326167800453515,
+    "end": 3.826,
+    "audio": "audio/voice-1.wav"
+  },
+  {
+    "id": 2,
+    "start": 6.7,
+    "text": "戴维斯继续对位，杜兰特寻找突破空间。",
+    "kind": "visual",
+    "evidence": [
+      "source-09.0"
+    ],
+    "duration": 3.9975056689342403,
+    "end": 10.698,
+    "audio": "audio/voice-2.wav"
+  },
+  {
+    "id": 3,
+    "start": 14.6,
+    "text": "启动突破，直取篮下！",
+    "kind": "visual",
+    "evidence": [
+      "source-16.0",
+      "source-16.5"
+    ],
+    "duration": 2.526575963718821,
+    "end": 17.127,
+    "audio": "audio/voice-3.wav"
+  },
+  {
+    "id": 4,
+    "start": 17.7,
+    "text": "打板命中！戴维斯犯规，还有加罚！",
+    "kind": "official_plus_visual",
+    "evidence": [
+      "event-88",
+      "event-89",
+      "source-21.0"
+    ],
+    "duration": 4.042630385487528,
+    "end": 21.743,
+    "audio": "audio/voice-4.wav"
+  },
+  {
+    "id": 5,
+    "start": 22.3,
+    "text": "这次出手的官方预期命中率，仅为百分之二十一点三。",
+    "kind": "official_metric",
+    "evidence": [
+      "nba-cn-event-88"
+    ],
+    "duration": 4.824081632653061,
+    "end": 27.124,
+    "audio": "audio/voice-5.wav"
+  }
+]

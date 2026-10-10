@@ -1,0 +1,6 @@
+{
+  "app": "node --experimental-strip-types infra/cloud.ts",
+  "context": {
+    "@aws-cdk/core:permissionsBoundary": { "name": "NBAHackathonParticipantBoundary" }
+  }
+}

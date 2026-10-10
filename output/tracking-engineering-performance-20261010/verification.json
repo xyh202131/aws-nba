@@ -1,0 +1,44 @@
+{
+  "pythonTests": {
+    "status": "PASS",
+    "count": 29
+  },
+  "nodeTests": {
+    "status": "PASS",
+    "count": 44
+  },
+  "typecheck": "PASS",
+  "viteBuild": "PASS",
+  "webRegression": "PASS",
+  "nativeHDDecodeAndPlayback": "PASS",
+  "continuousReviewUI": "PASS",
+  "humanMetrics": "NOT_EVALUATED",
+  "aws": {
+    "profile": "nba",
+    "region": "us-east-1",
+    "project": "414702114718",
+    "identityRole": "NBAHackathonParticipantRole",
+    "check": "STS read-only only this execution",
+    "newModelCalls": 0,
+    "resourcesCreated": 0,
+    "resourcesDeployed": 0
+  },
+  "gitCommit": "NOT_RUN",
+  "gitPush": "NOT_RUN",
+  "privateFiles": [
+    "MP4",
+    "weights",
+    "raw tracking outputs",
+    "review images and blank annotations",
+    "UI test export marked NOT GROUND TRUTH"
+  ],
+  "coarsePlayerWeb": "PASS",
+  "coarsePlayerJobId": "73ca2bde-cda9-4898-bc92-a23715eb747b",
+  "coarsePlayerMetrics": "EXPLORATORY_ONLY_NOT_INDEPENDENT",
+  "reviewer": "Local source self-review; no delegated agents this execution",
+  "documentationLinks": {
+    "status": "PASS",
+    "count": 67
+  },
+  "gitDiffCheck": "PASS"
+}

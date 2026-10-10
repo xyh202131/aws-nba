@@ -1,0 +1,316 @@
+[
+  {
+    "clip": "amen",
+    "variant": "A-botsort",
+    "qualityStatus": "not_evaluated_no_human_ground_truth",
+    "configSha256": "ab23da1ddbc9852390e24f94ad7dfa29e43a24e0276ed6a47c760f70388d43ea",
+    "producerToolSha256": "263b474f57c923560afd6bcdc87d33202ccacf812dbeed4b1aa540867c48aca9",
+    "videoSha256": "532683792345c3398da1cdd7069edeeace874919fab33104c352f880b2411411",
+    "tracksSha256": "c0730160f380471cf85680bd3756aa0ac09d1d77ece652f93d6373aff832d622",
+    "detectionCache": {
+      "state": "hit",
+      "key": "b64e52f3d325badd99088da75e517dacb31d68eb9b8adef9c7084634321437bd",
+      "sha256": "de03003f7a80843e9ee4d22e1a8b4c45f5e1294709b698761b928dfdefe135c3",
+      "bytes": 1997494,
+      "frames": 686,
+      "detections": 20776
+    },
+    "tracker": {
+      "name": "BoT-SORT",
+      "gmc_method": "sparseOptFlow",
+      "reid": false,
+      "buffer_seconds": 0.5,
+      "fuse_score": false,
+      "association_scope": "size_qualified"
+    },
+    "appearance": null,
+    "stats": {
+      "processed_frames": 686,
+      "frames_with_tracks": 638,
+      "observations": 14161,
+      "included_observations": 7680,
+      "unique_tracks": 79,
+      "excluded_observations": 12311
+    },
+    "resources": {
+      "wall_seconds": 9.455,
+      "cpu_seconds": 11.344,
+      "peak_rss_bytes": 271769600,
+      "output_bytes": 14088043,
+      "peak_working_bytes": 73077617,
+      "phase_seconds": {
+        "decode": 1.753425,
+        "display_transform": 1.429363,
+        "detection_or_cache": 0.109209,
+        "floor_filter": 0.703042,
+        "association": 4.870344,
+        "observation_output": 0.388091,
+        "finalization": 0.002435
+      }
+    }
+  },
+  {
+    "clip": "amen",
+    "variant": "B-bytetrack",
+    "qualityStatus": "not_evaluated_no_human_ground_truth",
+    "configSha256": "c5e6abe5eafc5504e3b40f5525506d33ba139f6a6ef9d4f3c1e26457f27c5e29",
+    "producerToolSha256": "263b474f57c923560afd6bcdc87d33202ccacf812dbeed4b1aa540867c48aca9",
+    "videoSha256": "532683792345c3398da1cdd7069edeeace874919fab33104c352f880b2411411",
+    "tracksSha256": "6d6225c20df5f45da89ac0df0808992f0b06e78d2b3ce1a54b97eeba212a1cd2",
+    "detectionCache": {
+      "state": "hit",
+      "key": "b64e52f3d325badd99088da75e517dacb31d68eb9b8adef9c7084634321437bd",
+      "sha256": "de03003f7a80843e9ee4d22e1a8b4c45f5e1294709b698761b928dfdefe135c3",
+      "bytes": 1997494,
+      "frames": 686,
+      "detections": 20776
+    },
+    "tracker": {
+      "name": "ByteTrack",
+      "gmc_method": null,
+      "reid": false,
+      "buffer_seconds": 0.5,
+      "fuse_score": false,
+      "association_scope": "size_qualified"
+    },
+    "appearance": null,
+    "stats": {
+      "processed_frames": 686,
+      "frames_with_tracks": 638,
+      "observations": 14129,
+      "included_observations": 7668,
+      "unique_tracks": 82,
+      "excluded_observations": 12311
+    },
+    "resources": {
+      "wall_seconds": 5.028,
+      "cpu_seconds": 8.141,
+      "peak_rss_bytes": 266383360,
+      "output_bytes": 14066281,
+      "peak_working_bytes": 73055855,
+      "phase_seconds": {
+        "decode": 1.623109,
+        "display_transform": 1.337544,
+        "detection_or_cache": 0.09764,
+        "floor_filter": 0.675071,
+        "association": 0.73185,
+        "observation_output": 0.377976,
+        "finalization": 0.002464
+      }
+    }
+  },
+  {
+    "clip": "amen",
+    "variant": "C-botsort-reid",
+    "qualityStatus": "not_evaluated_no_human_ground_truth",
+    "configSha256": "90c5c9e0af8296bd3ee1e803b381049eb8f1432ba73b1f7e60e38a43bcaaf14d",
+    "producerToolSha256": "263b474f57c923560afd6bcdc87d33202ccacf812dbeed4b1aa540867c48aca9",
+    "videoSha256": "532683792345c3398da1cdd7069edeeace874919fab33104c352f880b2411411",
+    "tracksSha256": "07b94791c9e4576fc8240557468a9486ff6e90b54ebf50f8ba7bf7c2a5250104",
+    "detectionCache": {
+      "state": "hit",
+      "key": "b64e52f3d325badd99088da75e517dacb31d68eb9b8adef9c7084634321437bd",
+      "sha256": "de03003f7a80843e9ee4d22e1a8b4c45f5e1294709b698761b928dfdefe135c3",
+      "bytes": 1997494,
+      "frames": 686,
+      "detections": 20776
+    },
+    "tracker": {
+      "name": "BoT-SORT",
+      "gmc_method": "sparseOptFlow",
+      "reid": true,
+      "buffer_seconds": 0.5,
+      "fuse_score": false,
+      "association_scope": "size_qualified"
+    },
+    "appearance": {
+      "name": "YOLO26n-ReID",
+      "sha256": "8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb",
+      "refresh_seconds": 0.25,
+      "inferred_crops": 3868,
+      "reused_crops": 13440,
+      "provider": "CPUExecutionProvider"
+    },
+    "stats": {
+      "processed_frames": 686,
+      "frames_with_tracks": 638,
+      "observations": 14164,
+      "included_observations": 7681,
+      "unique_tracks": 78,
+      "excluded_observations": 12311
+    },
+    "resources": {
+      "wall_seconds": 60.882,
+      "cpu_seconds": 123.266,
+      "peak_rss_bytes": 455069696,
+      "output_bytes": 14090086,
+      "peak_working_bytes": 82952905,
+      "phase_seconds": {
+        "decode": 2.114533,
+        "display_transform": 1.716289,
+        "detection_or_cache": 0.129228,
+        "floor_filter": 0.855033,
+        "association": 55.245149,
+        "observation_output": 0.465774,
+        "finalization": 0.002899
+      }
+    }
+  },
+  {
+    "clip": "flagg",
+    "variant": "A-botsort",
+    "qualityStatus": "not_evaluated_no_human_ground_truth",
+    "configSha256": "ab23da1ddbc9852390e24f94ad7dfa29e43a24e0276ed6a47c760f70388d43ea",
+    "producerToolSha256": "263b474f57c923560afd6bcdc87d33202ccacf812dbeed4b1aa540867c48aca9",
+    "videoSha256": "11e304f9e82917455971cd284e824c2097bf36e5c65f1757434f424594460bda",
+    "tracksSha256": "dd4974391350ae4f183edee7c2b05f75b61ad3c8ba10106e5cded68b2a91282c",
+    "detectionCache": {
+      "state": "hit",
+      "key": "1c836dae987e49f4b5cd911d9bd3842a200725cf2be01e97165950ed3ec07279",
+      "sha256": "f0e77557976640fa3c9d37afe4689fdb211dedb62d59aa9582b106c721189f7a",
+      "bytes": 1658751,
+      "frames": 646,
+      "detections": 16846
+    },
+    "tracker": {
+      "name": "BoT-SORT",
+      "gmc_method": "sparseOptFlow",
+      "reid": false,
+      "buffer_seconds": 0.5,
+      "fuse_score": false,
+      "association_scope": "size_qualified"
+    },
+    "appearance": null,
+    "stats": {
+      "processed_frames": 646,
+      "frames_with_tracks": 644,
+      "observations": 10818,
+      "included_observations": 9169,
+      "unique_tracks": 90,
+      "excluded_observations": 5647
+    },
+    "resources": {
+      "wall_seconds": 11.457,
+      "cpu_seconds": 13.312,
+      "peak_rss_bytes": 269504512,
+      "output_bytes": 10121417,
+      "peak_working_bytes": 63801141,
+      "phase_seconds": {
+        "decode": 2.006109,
+        "display_transform": 1.713802,
+        "detection_or_cache": 0.127762,
+        "floor_filter": 0.850409,
+        "association": 6.083283,
+        "observation_output": 0.439627,
+        "finalization": 0.004153
+      }
+    }
+  },
+  {
+    "clip": "flagg",
+    "variant": "B-bytetrack",
+    "qualityStatus": "not_evaluated_no_human_ground_truth",
+    "configSha256": "c5e6abe5eafc5504e3b40f5525506d33ba139f6a6ef9d4f3c1e26457f27c5e29",
+    "producerToolSha256": "263b474f57c923560afd6bcdc87d33202ccacf812dbeed4b1aa540867c48aca9",
+    "videoSha256": "11e304f9e82917455971cd284e824c2097bf36e5c65f1757434f424594460bda",
+    "tracksSha256": "5acb9b561ac9a1dc9f739e724a0fc3990d10055fc062ce084723ca0edfa909a3",
+    "detectionCache": {
+      "state": "hit",
+      "key": "1c836dae987e49f4b5cd911d9bd3842a200725cf2be01e97165950ed3ec07279",
+      "sha256": "f0e77557976640fa3c9d37afe4689fdb211dedb62d59aa9582b106c721189f7a",
+      "bytes": 1658751,
+      "frames": 646,
+      "detections": 16846
+    },
+    "tracker": {
+      "name": "ByteTrack",
+      "gmc_method": null,
+      "reid": false,
+      "buffer_seconds": 0.5,
+      "fuse_score": false,
+      "association_scope": "size_qualified"
+    },
+    "appearance": null,
+    "stats": {
+      "processed_frames": 646,
+      "frames_with_tracks": 644,
+      "observations": 10806,
+      "included_observations": 9159,
+      "unique_tracks": 91,
+      "excluded_observations": 5647
+    },
+    "resources": {
+      "wall_seconds": 6.704,
+      "cpu_seconds": 9.812,
+      "peak_rss_bytes": 265379840,
+      "output_bytes": 10113076,
+      "peak_working_bytes": 63792800,
+      "phase_seconds": {
+        "decode": 1.991938,
+        "display_transform": 1.85498,
+        "detection_or_cache": 0.12891,
+        "floor_filter": 0.904251,
+        "association": 1.133673,
+        "observation_output": 0.456174,
+        "finalization": 0.002447
+      }
+    }
+  },
+  {
+    "clip": "flagg",
+    "variant": "C-botsort-reid",
+    "qualityStatus": "not_evaluated_no_human_ground_truth",
+    "configSha256": "90c5c9e0af8296bd3ee1e803b381049eb8f1432ba73b1f7e60e38a43bcaaf14d",
+    "producerToolSha256": "263b474f57c923560afd6bcdc87d33202ccacf812dbeed4b1aa540867c48aca9",
+    "videoSha256": "11e304f9e82917455971cd284e824c2097bf36e5c65f1757434f424594460bda",
+    "tracksSha256": "dbfccc722bf3956ec1cf5d8457e99e8961304a65a006738e5a60476406deb40b",
+    "detectionCache": {
+      "state": "hit",
+      "key": "1c836dae987e49f4b5cd911d9bd3842a200725cf2be01e97165950ed3ec07279",
+      "sha256": "f0e77557976640fa3c9d37afe4689fdb211dedb62d59aa9582b106c721189f7a",
+      "bytes": 1658751,
+      "frames": 646,
+      "detections": 16846
+    },
+    "tracker": {
+      "name": "BoT-SORT",
+      "gmc_method": "sparseOptFlow",
+      "reid": true,
+      "buffer_seconds": 0.5,
+      "fuse_score": false,
+      "association_scope": "size_qualified"
+    },
+    "appearance": {
+      "name": "YOLO26n-ReID",
+      "sha256": "8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb",
+      "refresh_seconds": 0.25,
+      "inferred_crops": 2841,
+      "reused_crops": 10988,
+      "provider": "CPUExecutionProvider"
+    },
+    "stats": {
+      "processed_frames": 646,
+      "frames_with_tracks": 644,
+      "observations": 10819,
+      "included_observations": 9168,
+      "unique_tracks": 89,
+      "excluded_observations": 5647
+    },
+    "resources": {
+      "wall_seconds": 54.71,
+      "cpu_seconds": 109.484,
+      "peak_rss_bytes": 454844416,
+      "output_bytes": 10121857,
+      "peak_working_bytes": 73674826,
+      "phase_seconds": {
+        "decode": 2.132146,
+        "display_transform": 1.743712,
+        "detection_or_cache": 0.142107,
+        "floor_filter": 0.890261,
+        "association": 49.004706,
+        "observation_output": 0.441823,
+        "finalization": 0.002709
+      }
+    }
+  }
+]

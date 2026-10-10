@@ -1,0 +1,160 @@
+{
+  "gameId": "0022500491",
+  "dateBeijing": "2026-01-04",
+  "dateNBAUS": "2026-01-03",
+  "matchup": "火箭客场对独行侠",
+  "awayTeamId": 1610612745,
+  "homeTeamId": 1610612742,
+  "player": {
+    "id": "201142",
+    "name": "凯文·杜兰特",
+    "jersey": 7
+  },
+  "period": 1,
+  "gameClock": "05:38",
+  "eventId": 88,
+  "shot": {
+    "shotDesc": "突破漂移跳投打板",
+    "value": 0.213,
+    "newsId": null,
+    "gameId": "0022500491",
+    "eventId": 88,
+    "playerId": "201142",
+    "shotType": "2分投篮",
+    "success": 1,
+    "period": 1,
+    "gameClock": "",
+    "side": "right",
+    "locX": "91",
+    "locY": "38"
+  },
+  "xfgPercent": 21.3,
+  "scoreBefore": {
+    "HOU": 17,
+    "DAL": 9
+  },
+  "scoreAfterShot": {
+    "HOU": 19,
+    "DAL": 9
+  },
+  "foul": {
+    "eventId": 89,
+    "playerId": "203076",
+    "name": "安东尼·戴维斯",
+    "type": "shooting"
+  },
+  "freeThrowOutsideClip": {
+    "eventId": 91,
+    "made": true,
+    "scoreAfter": {
+      "HOU": 20,
+      "DAL": 9
+    },
+    "usedAsVisibleResult": false
+  },
+  "videoAnchors": [
+    {
+      "sourceSeconds": 2.002,
+      "clock": "Q1 05:53",
+      "score": "HOU 17-DAL 9",
+      "observed": "Durant #7, Capela #30"
+    },
+    {
+      "sourceSeconds": 9.009011,
+      "clock": "Q1 05:46",
+      "observed": "Durant facing Davis #3"
+    },
+    {
+      "sourceSeconds": 15.015011,
+      "clock": "Q1 05:40",
+      "observed": "drive underway"
+    },
+    {
+      "sourceSeconds": 17.000333,
+      "clock": "Q1 05:38",
+      "observed": "shot airborne"
+    },
+    {
+      "sourceSeconds": 17.751078,
+      "clock": "Q1 05:38",
+      "observed": "ball under rim, shooter on floor, referee signaling"
+    },
+    {
+      "sourceSeconds": 21.004333,
+      "clock": "Q1 05:38",
+      "score": "HOU 19-DAL 9",
+      "observed": "scoreboard confirms made field goal"
+    }
+  ],
+  "alignmentMethod": "Manual visual review + gameId/playerId/period/clock/score joined to official eventId",
+  "excludedFields": [
+    {
+      "field": "gpShot.data.matchup",
+      "reason": "Raw home/away direction reversed; use canonical game-list fields and video."
+    },
+    {
+      "field": "gpShot top-level summary statistics",
+      "reason": "Summary fields require independent validation; only matched per-shot record used."
+    },
+    {
+      "field": "real-time gravity / defender distance / player speed",
+      "reason": "No verified per-play data available; defense endpoint data=null."
+    },
+    {
+      "field": "season aggregates",
+      "reason": "Current full-season snapshot includes games after this clip; excluded to avoid future-data leakage."
+    },
+    {
+      "field": "shot locX/locY as meters or screen coordinates",
+      "reason": "Not calibrated to this video; no fabricated spatial overlays."
+    }
+  ],
+  "narration": {
+    "authoring": "assistant authored and visually verified",
+    "voice": "Microsoft Kangkang",
+    "cloudModelUsed": false
+  },
+  "sources": [
+    {
+      "name": "game-list",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/game?date=2026-01-04",
+      "status": 200,
+      "apiCode": 0,
+      "retrievedAt": "2026-10-10T10:55:05.661165+00:00",
+      "sha256": "5816910a32c5aae47688ced2af9e8a049b564b44ea4059c6d02ebc4a478d23b8"
+    },
+    {
+      "name": "durant-shots",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/gpShot?gameId=0022500491&playerId=201142",
+      "status": 200,
+      "apiCode": 0,
+      "retrievedAt": "2026-10-10T10:55:08.430230+00:00",
+      "sha256": "7f4d5f08c5ce2ebc2619c93d9d3647c1536a707d262a0c1a9dec72ea025e7324"
+    },
+    {
+      "name": "defense",
+      "url": "https://api.nba.cn/nba-web/api/web/inside/def?gameId=0022500491",
+      "status": 200,
+      "apiCode": 0,
+      "retrievedAt": "2026-10-10T10:55:08.659779+00:00",
+      "sha256": "32de289b6b32ddafc0f7590cabcb3b7586b08e53feed14289f38db9761388ab1"
+    },
+    {
+      "name": "NBA official play-by-play",
+      "url": "https://www.nba.com/game/hou-vs-dal-0022500491/play-by-play",
+      "retrievedAt": "2026-10-10T10:59:43.142657+00:00",
+      "savedFile": "sources/nba-official-play-by-play.md",
+      "sha256": "5b22fb1a84a09cce8265814364ea194effead47265e3dab93cb85bfa336e5cde",
+      "tool": "Firecrawl",
+      "scrapeId": "01a12574-1b93-70b9-b67f-51907cc0ebbb"
+    },
+    {
+      "name": "NBA China official metric definition and frontend mapping",
+      "url": "https://res.nba.cn/static/webmaster/assets/js/index-8848e9f0.js",
+      "retrievedAt": "2026-10-10T11:04:31.294281+00:00",
+      "sha256": "d76a33b9b81c145bcc2eaea6a21d11abf4875815aadb381db01fffc8c82a7698",
+      "savedFile": "sources/nba-cn-frontend-evidence.json"
+    }
+  ],
+  "xfgDefinition": "定义：基于球员追踪数据，每次投篮情况下，NBA 普通球员的预期投篮命中率。"
+}

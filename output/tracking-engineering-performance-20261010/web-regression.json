@@ -1,0 +1,34 @@
+{
+  "startedAt": "2026-10-10T07:01:02.032Z",
+  "completedAt": "2026-10-10T07:01:04.583Z",
+  "parentId": "4cd247e2-6a4f-4b2c-aae1-151f69e41d63",
+  "checks": {
+    "legacyFilm": true,
+    "zeroAdditionalModelCall": true,
+    "playbackAndAudio": {
+      "time": 0.401145,
+      "duration": 22.89,
+      "paused": false,
+      "muted": false,
+      "volume": 1,
+      "width": 1280,
+      "height": 720,
+      "audioDecodedBytes": 13649,
+      "error": null
+    },
+    "transcriptSeek": true,
+    "independentDataCard": true,
+    "tracksDownloadAndHash": true,
+    "personSearchAndSeek": {
+      "track": "S001/T005",
+      "time": 20.4204,
+      "tracks": 79
+    },
+    "indexRetryWithoutModelCall": true,
+    "cachedDetectionsProvenance": true,
+    "artifactBoundary": true,
+    "videoRange": true,
+    "restoreWithoutRerun": true
+  },
+  "errors": []
+}

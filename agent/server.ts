@@ -14,6 +14,7 @@ import { parseRequest } from "./contracts.ts";
 import { JobManager } from "./jobs.ts";
 import { adaptOfficialRequest } from "./official-adapter.ts";
 import { receiveVideo, registerMaterial } from "./media.ts";
+import { cloudEnabled, stageCloudMaterial, publishCloudJob } from "./cloud-store.ts";
 import { DATA_TEMPLATE, normalizeMatchData } from "./match-data.ts";
 import { checkContestConnection } from "./credentials.ts";
 
@@ -163,12 +164,14 @@ export async function createAgentServer(
             "OUTPUT_MODE_REQUIRED",
             "上传素材使用 film 输出模式。",
           );
+        if (cloudEnabled()) await stageCloudMaterial(request.clipId, config);
         const job = await manager.create(request);
         if (path === "/api/jobs") {
           json(res, 202, job);
           return;
         }
         await manager.settled();
+        if (cloudEnabled()) await publishCloudJob(job, config);
         json(
           res,
           job.status === "completed" ? 200 : 500,
@@ -177,7 +180,7 @@ export async function createAgentServer(
         return;
       }
       const artifactMatch = path.match(
-        /^\/api\/jobs\/([a-f0-9-]{36})\/artifacts\/(film\.mp4|captions\.vtt|timeline\.json|tracks\.jsonl|detections\.jsonl|track-index\.json|excluded-detections\.jsonl|floor-regions\.jsonl|tracking-manifest\.json|identity-links\.json|event-track-links\.json|overlay-timeline\.json)$/,
+        /^\/api\/jobs\/([a-f0-9-]{36})\/artifacts\/(film\.mp4|captions\.vtt|timeline\.json|tracks\.jsonl|detections\.jsonl|track-index\.json|excluded-detections\.jsonl|floor-regions\.jsonl|person-role-evidence\.jsonl|tracking-manifest\.json|identity-links\.json|event-track-links\.json|overlay-timeline\.json)$/,
       );
       if (req.method === "GET" && artifactMatch) {
         const job = manager.get(artifactMatch[1]!);
@@ -187,7 +190,8 @@ export async function createAgentServer(
         if (
           (filename === "track-index.json" &&
             !job.result.tracking?.trackIndex) ||
-          (filename === "detections.jsonl" && !job.result.tracking?.detections)
+          (filename === "detections.jsonl" && !job.result.tracking?.detections) ||
+          (filename === "person-role-evidence.jsonl" && !job.result.tracking?.roleEvidence)
         )
           throw new AgentError("NOT_FOUND", "该旧作品没有此追踪文件。", 404);
         if (
@@ -286,7 +290,7 @@ export async function createAgentServer(
   });
   server.requestTimeout = 300_000;
   server.headersTimeout = 10_000;
-  server.setTimeout(210_000, (socket) => socket.destroy());
+  server.setTimeout(cloudEnabled() ? 900_000 : 210_000, (socket) => socket.destroy());
   return { server, manager };
 }
 

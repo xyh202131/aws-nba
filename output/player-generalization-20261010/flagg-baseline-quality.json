@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "courtside.tracking-quality.v1",
+  "videoSha256": "11e304f9e82917455971cd284e824c2097bf36e5c65f1757434f424594460bda",
+  "annotator": "X",
+  "reviewedFrames": 30,
+  "iouThreshold": 0.5,
+  "clearSample": {
+    "truePositive": 185,
+    "falsePositive": 204,
+    "missed": 43,
+    "precision": 0.4755784061696658,
+    "recall": 0.8114035087719298
+  },
+  "occludedSample": {
+    "matched": 4,
+    "missed": 28,
+    "recall": 0.125
+  },
+  "detectionTargetMet": false,
+  "limitations": [
+    "Clear precision counts unmatched predictions; matched occluded boxes are excluded from that denominator.",
+    "Detection metrics alone do not certify identity continuity or zero ID switches."
+  ]
+}

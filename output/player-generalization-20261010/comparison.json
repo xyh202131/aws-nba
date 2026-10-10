@@ -1,0 +1,212 @@
+{
+  "schemaVersion": "courtside.player-generalization-comparison.v1",
+  "date": "2026-10-10",
+  "runtimeAnnotationsUsed": false,
+  "independentUnseenVideoTested": false,
+  "clips": [
+    {
+      "clip": "amen",
+      "videoSha256": "532683792345c3398da1cdd7069edeeace874919fab33104c352f880b2411411",
+      "annotationsSha256": "7d4629d06eb5dd71782a9a646f6f9af2a58463c648927d351ee86ac3d7448cb0",
+      "reviewedFrames": 30,
+      "boxes": 246,
+      "rawObservationFieldsIdentical": true,
+      "framesWithIdenticalMatchedTruthSets": 30,
+      "baselineTracksSha256": "c0730160f380471cf85680bd3756aa0ac09d1d77ece652f93d6373aff832d622",
+      "candidateTracksSha256": "c636e41bd269fedc3d8692781c602fc93a91fa7a915ecaa3c3ca1c7015213996",
+      "candidateManifestSha256": "75d88572f5d55e4236fff37fac75a9ff1b8df9fe8faab2dd2abc04ab8df6f484",
+      "roleEvidenceSha256": "20727979ea20af08c5d26c41aa7daf2d714fc77057b6de4ee11e1361db94d43d",
+      "detectionsSha256": "de03003f7a80843e9ee4d22e1a8b4c45f5e1294709b698761b928dfdefe135c3",
+      "before": {
+        "schemaVersion": "courtside.tracking-quality.v1",
+        "videoSha256": "532683792345c3398da1cdd7069edeeace874919fab33104c352f880b2411411",
+        "annotator": "X",
+        "reviewedFrames": 30,
+        "iouThreshold": 0.5,
+        "clearSample": {
+          "truePositive": 183,
+          "falsePositive": 114,
+          "missed": 32,
+          "precision": 0.6161616161616161,
+          "recall": 0.8511627906976744
+        },
+        "occludedSample": {
+          "matched": 15,
+          "missed": 16,
+          "recall": 0.4838709677419355
+        },
+        "detectionTargetMet": false,
+        "limitations": [
+          "Clear precision counts unmatched predictions; matched occluded boxes are excluded from that denominator.",
+          "Detection metrics alone do not certify identity continuity or zero ID switches."
+        ]
+      },
+      "after": {
+        "schemaVersion": "courtside.tracking-quality.v1",
+        "videoSha256": "532683792345c3398da1cdd7069edeeace874919fab33104c352f880b2411411",
+        "annotator": "X",
+        "reviewedFrames": 30,
+        "iouThreshold": 0.5,
+        "clearSample": {
+          "truePositive": 183,
+          "falsePositive": 67,
+          "missed": 32,
+          "precision": 0.732,
+          "recall": 0.8511627906976744
+        },
+        "occludedSample": {
+          "matched": 15,
+          "missed": 16,
+          "recall": 0.4838709677419355
+        },
+        "detectionTargetMet": false,
+        "limitations": [
+          "Clear precision counts unmatched predictions; matched occluded boxes are excluded from that denominator.",
+          "Detection metrics alone do not certify identity continuity or zero ID switches."
+        ]
+      },
+      "roleFilter": {
+        "source": "pretrained_semantic_roles",
+        "name": "CLIP-ViT-B-32",
+        "sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+        "license": "MIT",
+        "prompts_sha256": "2671b5adb788fc2a7519d1bf8cc5a7ae489179df478886fdd61f5947a574ca5b",
+        "crop_transform": "full_box_gray_pad224_v1",
+        "annotations_used": false,
+        "identity_status": "unconfirmed",
+        "score_kind": "uncalibrated_cosine_similarity",
+        "margin": 0.02,
+        "negative_samples": 2,
+        "refresh_seconds": 0.33,
+        "ttl_seconds": 0.6,
+        "inferred_crops": 1559,
+        "suppressed_observations": 1036,
+        "restored_observations": 0,
+        "uncertain_policy": "preserve_floor_gate",
+        "shorts_required": false
+      },
+      "resources": {
+        "wall_seconds": 86.099,
+        "cpu_seconds": 169.859,
+        "peak_rss_bytes": 1310547968,
+        "output_bytes": 15092749,
+        "peak_working_bytes": 428058845,
+        "phase_seconds": {
+          "decode": 2.090796,
+          "display_transform": 1.719042,
+          "detection_or_cache": 0.123762,
+          "floor_filter": 0.803691,
+          "association": 5.50182,
+          "observation_output": 0.424929,
+          "finalization": 0.003113,
+          "role_initialization": 3.779252,
+          "semantic_roles": 71.398004
+        }
+      },
+      "comparisonFrame": 445,
+      "comparisonImageSha256": "0fea82d1b2a4e118fefba0248570a0130ce383314e94290111e04e5543d10a77"
+    },
+    {
+      "clip": "flagg",
+      "videoSha256": "11e304f9e82917455971cd284e824c2097bf36e5c65f1757434f424594460bda",
+      "annotationsSha256": "8fbbbcace786aa981bdbd905fb34e874fb9c889a136613a4a95cb982c1aacf26",
+      "reviewedFrames": 30,
+      "boxes": 260,
+      "rawObservationFieldsIdentical": true,
+      "framesWithIdenticalMatchedTruthSets": 30,
+      "baselineTracksSha256": "dd4974391350ae4f183edee7c2b05f75b61ad3c8ba10106e5cded68b2a91282c",
+      "candidateTracksSha256": "91773ac14283aa65790b683ce8e4ac71a00a973291fb609068fbe165e84de5b9",
+      "candidateManifestSha256": "4830113677e45699b7db0aa0e6bbf82264842ddeec7d1db816f3f1bb23fd188d",
+      "roleEvidenceSha256": "94e398ec1fec0052099773ea05a9a43cb1b5e83e22f0023a55b4ae1621435695",
+      "detectionsSha256": "f0e77557976640fa3c9d37afe4689fdb211dedb62d59aa9582b106c721189f7a",
+      "before": {
+        "schemaVersion": "courtside.tracking-quality.v1",
+        "videoSha256": "11e304f9e82917455971cd284e824c2097bf36e5c65f1757434f424594460bda",
+        "annotator": "X",
+        "reviewedFrames": 30,
+        "iouThreshold": 0.5,
+        "clearSample": {
+          "truePositive": 185,
+          "falsePositive": 204,
+          "missed": 43,
+          "precision": 0.4755784061696658,
+          "recall": 0.8114035087719298
+        },
+        "occludedSample": {
+          "matched": 4,
+          "missed": 28,
+          "recall": 0.125
+        },
+        "detectionTargetMet": false,
+        "limitations": [
+          "Clear precision counts unmatched predictions; matched occluded boxes are excluded from that denominator.",
+          "Detection metrics alone do not certify identity continuity or zero ID switches."
+        ]
+      },
+      "after": {
+        "schemaVersion": "courtside.tracking-quality.v1",
+        "videoSha256": "11e304f9e82917455971cd284e824c2097bf36e5c65f1757434f424594460bda",
+        "annotator": "X",
+        "reviewedFrames": 30,
+        "iouThreshold": 0.5,
+        "clearSample": {
+          "truePositive": 185,
+          "falsePositive": 158,
+          "missed": 43,
+          "precision": 0.5393586005830904,
+          "recall": 0.8114035087719298
+        },
+        "occludedSample": {
+          "matched": 4,
+          "missed": 28,
+          "recall": 0.125
+        },
+        "detectionTargetMet": false,
+        "limitations": [
+          "Clear precision counts unmatched predictions; matched occluded boxes are excluded from that denominator.",
+          "Detection metrics alone do not certify identity continuity or zero ID switches."
+        ]
+      },
+      "roleFilter": {
+        "source": "pretrained_semantic_roles",
+        "name": "CLIP-ViT-B-32",
+        "sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+        "license": "MIT",
+        "prompts_sha256": "2671b5adb788fc2a7519d1bf8cc5a7ae489179df478886fdd61f5947a574ca5b",
+        "crop_transform": "full_box_gray_pad224_v1",
+        "annotations_used": false,
+        "identity_status": "unconfirmed",
+        "score_kind": "uncalibrated_cosine_similarity",
+        "margin": 0.02,
+        "negative_samples": 2,
+        "refresh_seconds": 0.33,
+        "ttl_seconds": 0.6,
+        "inferred_crops": 1195,
+        "suppressed_observations": 1173,
+        "restored_observations": 0,
+        "uncertain_policy": "preserve_floor_gate",
+        "shorts_required": false
+      },
+      "resources": {
+        "wall_seconds": 69.965,
+        "cpu_seconds": 136.609,
+        "peak_rss_bytes": 1301188608,
+        "output_bytes": 10894554,
+        "peak_working_bytes": 418550800,
+        "phase_seconds": {
+          "decode": 1.744189,
+          "display_transform": 1.57248,
+          "detection_or_cache": 0.10864,
+          "floor_filter": 0.655715,
+          "association": 5.017981,
+          "observation_output": 0.473834,
+          "finalization": 0.002754,
+          "role_initialization": 4.582613,
+          "semantic_roles": 55.586742
+        }
+      },
+      "comparisonFrame": 587,
+      "comparisonImageSha256": "aa4f11a4e2c29e7e925d527e508d93152b5d779c8fcd5b8e4415fa4a5585bc78"
+    }
+  ]
+}

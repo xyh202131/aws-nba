@@ -1,5 +1,17 @@
 """Image-plane geometry only; these rules do not infer identity or court metrics."""
 import cv2
+import math
+
+
+def sampling_step(stamp,next_sample,process_fps,source_fps,policy="pts-greedy-v1"):
+    if policy=="pts-greedy-v1":
+        return (True,stamp+1/process_fps) if stamp+1e-6>=next_sample else (False,next_sample)
+    if policy!="pts-grid-v2":raise ValueError("Unsupported sampling policy")
+    # Average source FPS is not an exact bound on individual quantized PTS deltas.
+    # When no downsampling is requested, preserve every decoded frame.
+    if process_fps>=source_fps:return True,next_sample
+    if stamp+1e-6<next_sample:return False,next_sample
+    return True,(math.floor((stamp+1e-6)*process_fps)+1)/process_fps
 
 
 def normalize_display(image, sar, rotation):

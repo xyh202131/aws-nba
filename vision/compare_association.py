@@ -21,14 +21,20 @@ def run(args):
     weights=ROOT/".local/vision-models"/lock["filename"]
     if digest(weights)!=lock["sha256"]:raise ValueError("Weights hash mismatch")
     video_hash=digest(source)
-    variants=[("baseline",True,"floor_qualified",False),("motion",False,"floor_qualified",False),
-              ("late-floor-score",True,"size_qualified",False),("late-floor-motion",False,"size_qualified",False)]
-    if args.experimental_reid:variants.append(("appearance",False,"floor_qualified",True))
+    if args.candidates:
+        variants=[("A-botsort",False,"size_qualified",False,"botsort"),
+                  ("B-bytetrack",False,"size_qualified",False,"bytetrack"),
+                  ("C-botsort-reid",False,"size_qualified",True,"botsort")]
+    else:
+        variants=[("baseline",True,"floor_qualified",False,"botsort"),("motion",False,"floor_qualified",False,"botsort"),
+                  ("late-floor-score",True,"size_qualified",False,"botsort"),("late-floor-motion",False,"size_qualified",False,"botsort")]
+        if args.experimental_reid:variants.append(("appearance",False,"floor_qualified",True,"botsort"))
     records=[]
-    for name,fuse,scope,appearance in variants:
+    for name,fuse,scope,appearance,algorithm in variants:
         folder=directory/name;folder.mkdir()
         p={**profile,"associationScope":scope,"appearance":appearance,"appearanceRefreshSeconds":.25}
-        t={**tracker,"fuse_score":fuse,"with_reid":False,"model":"auto"}
+        if args.candidates:p.update(requireCacheHit=True,ignorePlayerReferences=True,playerFilter="none")
+        t={**tracker,"tracker_type":algorithm,"fuse_score":fuse,"with_reid":False,"model":"auto"}
         profile_path=folder/"profile.json";tracker_path=folder/"tracker.yaml"
         profile_path.write_text(json.dumps(p,indent=2),encoding="utf8")
         tracker_path.write_text(yaml.safe_dump(t),encoding="utf8")
@@ -39,7 +45,7 @@ def run(args):
         (folder/"process.log").write_text(result.stdout+result.stderr,encoding="utf8")
         if result.returncode:raise RuntimeError(f"{name} failed, inspect {folder}")
         manifest=json.loads((folder/"tracking-manifest.json").read_text(encoding="utf8"))
-        records.append({"variant":name,"manifest":manifest})
+        records.append({"variant":name,"quality_status":"not_evaluated_no_human_ground_truth","manifest":manifest})
         print(json.dumps({"variant":name,"stats":manifest["stats"],"resources":manifest["resources"]}),flush=True)
     hashes={r["manifest"]["detection_cache"]["sha256"] for r in records}
     if len(hashes)!=1:raise ValueError("The variants did not use identical measured detections")
@@ -50,4 +56,5 @@ def run(args):
 if __name__=="__main__":
     parser=argparse.ArgumentParser();parser.add_argument("video");parser.add_argument("--duration",required=True,type=float)
     parser.add_argument("--output",default=str(ROOT/".local/association-comparisons"));parser.add_argument("--experimental-reid",action="store_true")
+    parser.add_argument("--candidates",action="store_true",help="Fair A/B/C comparison on the current late floor gate")
     run(parser.parse_args())

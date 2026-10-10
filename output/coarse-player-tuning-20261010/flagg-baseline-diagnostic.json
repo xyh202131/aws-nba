@@ -1,0 +1,1266 @@
+{
+  "schemaVersion": "courtside.coarse-review-diagnostic.v1",
+  "annotationStatus": "user_supplied_provisional_not_confirmed",
+  "annotationsSha256": "c2620301c77abdfa0ea97018f94aefcb14086d838fee81dd93ee2f4603ec9107",
+  "videoSha256": "11e304f9e82917455971cd284e824c2097bf36e5c65f1757434f424594460bda",
+  "manifestSha256": "92c3cff60531f467010f857208c3b43c7ad1e86dee4b7d2eae6a9adf6eb8cc5e",
+  "reviewFlags": {
+    "reviewedFrames": 0,
+    "hasAnnotator": false,
+    "annotationSource": "human_required"
+  },
+  "frames": [
+    {
+      "frame_index": 0,
+      "time": 0,
+      "references": 2,
+      "raw_matches": 0,
+      "tracked_matches": 0,
+      "included_matches": 0,
+      "included_predictions": 0,
+      "unmatched_included_predictions": 0,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 0,
+          "bbox": [
+            589,
+            62,
+            720,
+            301
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.15379852020811183
+        },
+        {
+          "reference_index": 1,
+          "bbox": [
+            708,
+            308,
+            881,
+            629
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.34774997794696794
+        }
+      ]
+    },
+    {
+      "frame_index": 2,
+      "time": 0.066733,
+      "references": 8,
+      "raw_matches": 7,
+      "tracked_matches": 7,
+      "included_matches": 5,
+      "included_predictions": 9,
+      "unmatched_included_predictions": 4,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 0,
+          "bbox": [
+            94,
+            236,
+            146,
+            383
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.4684418477023015
+        },
+        {
+          "reference_index": 1,
+          "bbox": [
+            2,
+            281,
+            33,
+            407
+          ],
+          "reason": "outside_estimated_floor",
+          "best_tracked_iou": 0.5679650565729633
+        },
+        {
+          "reference_index": 2,
+          "bbox": [
+            19,
+            421,
+            100,
+            575
+          ],
+          "reason": "outside_estimated_floor",
+          "best_tracked_iou": 0.6584872093167311
+        }
+      ]
+    },
+    {
+      "frame_index": 5,
+      "time": 0.166833,
+      "references": 8,
+      "raw_matches": 7,
+      "tracked_matches": 7,
+      "included_matches": 6,
+      "included_predictions": 11,
+      "unmatched_included_predictions": 5,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 0,
+          "bbox": [
+            117,
+            236,
+            148,
+            381
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.30290189489950214
+        },
+        {
+          "reference_index": 1,
+          "bbox": [
+            16,
+            279,
+            67,
+            422
+          ],
+          "reason": "outside_estimated_floor",
+          "best_tracked_iou": 0.6323756390312884
+        }
+      ]
+    },
+    {
+      "frame_index": 12,
+      "time": 0.4004,
+      "references": 8,
+      "raw_matches": 7,
+      "tracked_matches": 7,
+      "included_matches": 7,
+      "included_predictions": 11,
+      "unmatched_included_predictions": 4,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 2,
+          "bbox": [
+            141,
+            236,
+            182,
+            385
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.4759928534056934
+        }
+      ]
+    },
+    {
+      "frame_index": 36,
+      "time": 1.2012,
+      "references": 8,
+      "raw_matches": 7,
+      "tracked_matches": 7,
+      "included_matches": 7,
+      "included_predictions": 13,
+      "unmatched_included_predictions": 6,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 2,
+          "bbox": [
+            242,
+            198,
+            277,
+            335
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.39690863837576384
+        }
+      ]
+    },
+    {
+      "frame_index": 60,
+      "time": 2.002,
+      "references": 8,
+      "raw_matches": 1,
+      "tracked_matches": 1,
+      "included_matches": 1,
+      "included_predictions": 11,
+      "unmatched_included_predictions": 10,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 0,
+          "bbox": [
+            287,
+            217,
+            308,
+            309
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.3026193766818384
+        },
+        {
+          "reference_index": 1,
+          "bbox": [
+            318,
+            188,
+            342,
+            241
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.13714868382136508
+        },
+        {
+          "reference_index": 2,
+          "bbox": [
+            372,
+            208,
+            395,
+            253
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.13785289781531965
+        },
+        {
+          "reference_index": 3,
+          "bbox": [
+            366,
+            176,
+            383,
+            194
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.004236709425200665
+        },
+        {
+          "reference_index": 4,
+          "bbox": [
+            358,
+            265,
+            383,
+            400
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.4607841000663343
+        },
+        {
+          "reference_index": 5,
+          "bbox": [
+            653,
+            247,
+            680,
+            319
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.19611818389701074
+        },
+        {
+          "reference_index": 6,
+          "bbox": [
+            639,
+            327,
+            665,
+            478
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.44063584152347013
+        }
+      ]
+    },
+    {
+      "frame_index": 84,
+      "time": 2.8028,
+      "references": 9,
+      "raw_matches": 8,
+      "tracked_matches": 8,
+      "included_matches": 8,
+      "included_predictions": 13,
+      "unmatched_included_predictions": 5,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 0,
+          "bbox": [
+            256,
+            186,
+            307,
+            263
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.05123477017966837
+        }
+      ]
+    },
+    {
+      "frame_index": 108,
+      "time": 3.6036,
+      "references": 10,
+      "raw_matches": 8,
+      "tracked_matches": 7,
+      "included_matches": 6,
+      "included_predictions": 11,
+      "unmatched_included_predictions": 5,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 0,
+          "bbox": [
+            139,
+            206,
+            223,
+            331
+          ],
+          "reason": "outside_estimated_floor",
+          "best_tracked_iou": 0.9521931749708631
+        },
+        {
+          "reference_index": 2,
+          "bbox": [
+            435,
+            187,
+            458,
+            303
+          ],
+          "reason": "association_unmatched",
+          "best_tracked_iou": 0.1159699832042302
+        },
+        {
+          "reference_index": 8,
+          "bbox": [
+            97,
+            381,
+            137,
+            429
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.03876977513379075
+        },
+        {
+          "reference_index": 9,
+          "bbox": [
+            139,
+            403,
+            181,
+            566
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.2485886956053032
+        }
+      ]
+    },
+    {
+      "frame_index": 132,
+      "time": 4.4044,
+      "references": 10,
+      "raw_matches": 8,
+      "tracked_matches": 8,
+      "included_matches": 8,
+      "included_predictions": 17,
+      "unmatched_included_predictions": 9,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 2,
+          "bbox": [
+            459,
+            159,
+            489,
+            286
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.06895047353400895
+        },
+        {
+          "reference_index": 8,
+          "bbox": [
+            343,
+            379,
+            384,
+            448
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.45105594892222606
+        }
+      ]
+    },
+    {
+      "frame_index": 156,
+      "time": 5.2052,
+      "references": 10,
+      "raw_matches": 9,
+      "tracked_matches": 9,
+      "included_matches": 9,
+      "included_predictions": 16,
+      "unmatched_included_predictions": 7,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 6,
+          "bbox": [
+            493,
+            148,
+            509,
+            275
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.06983172052554333
+        }
+      ]
+    },
+    {
+      "frame_index": 180,
+      "time": 6.006,
+      "references": 10,
+      "raw_matches": 9,
+      "tracked_matches": 9,
+      "included_matches": 9,
+      "included_predictions": 16,
+      "unmatched_included_predictions": 7,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 5,
+          "bbox": [
+            540,
+            136,
+            568,
+            160
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.0
+        }
+      ]
+    },
+    {
+      "frame_index": 204,
+      "time": 6.8068,
+      "references": 10,
+      "raw_matches": 5,
+      "tracked_matches": 5,
+      "included_matches": 5,
+      "included_predictions": 14,
+      "unmatched_included_predictions": 9,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 3,
+          "bbox": [
+            593,
+            135,
+            607,
+            254
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.00736773457012564
+        },
+        {
+          "reference_index": 5,
+          "bbox": [
+            454,
+            400,
+            479,
+            550
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.37655522075915704
+        },
+        {
+          "reference_index": 6,
+          "bbox": [
+            499,
+            361,
+            545,
+            448
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.3333924067069976
+        },
+        {
+          "reference_index": 7,
+          "bbox": [
+            940,
+            297,
+            984,
+            450
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.37580974194784034
+        },
+        {
+          "reference_index": 8,
+          "bbox": [
+            987,
+            283,
+            1009,
+            371
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.21044421300082874
+        }
+      ]
+    },
+    {
+      "frame_index": 228,
+      "time": 7.6076,
+      "references": 10,
+      "raw_matches": 7,
+      "tracked_matches": 7,
+      "included_matches": 7,
+      "included_predictions": 15,
+      "unmatched_included_predictions": 8,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 3,
+          "bbox": [
+            490,
+            363,
+            535,
+            456
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.44714803226197664
+        },
+        {
+          "reference_index": 6,
+          "bbox": [
+            607,
+            139,
+            634,
+            183
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.018500868759652282
+        },
+        {
+          "reference_index": 7,
+          "bbox": [
+            903,
+            258,
+            969,
+            309
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.26996445687988524
+        }
+      ]
+    },
+    {
+      "frame_index": 252,
+      "time": 8.4084,
+      "references": 10,
+      "raw_matches": 9,
+      "tracked_matches": 9,
+      "included_matches": 9,
+      "included_predictions": 15,
+      "unmatched_included_predictions": 6,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 3,
+          "bbox": [
+            483,
+            371,
+            533,
+            445
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.2832547252443232
+        }
+      ]
+    },
+    {
+      "frame_index": 276,
+      "time": 9.2092,
+      "references": 10,
+      "raw_matches": 8,
+      "tracked_matches": 8,
+      "included_matches": 8,
+      "included_predictions": 15,
+      "unmatched_included_predictions": 7,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 3,
+          "bbox": [
+            594,
+            136,
+            633,
+            266
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.0
+        },
+        {
+          "reference_index": 5,
+          "bbox": [
+            441,
+            374,
+            511,
+            484
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.4767967256934052
+        }
+      ]
+    },
+    {
+      "frame_index": 300,
+      "time": 10.01,
+      "references": 10,
+      "raw_matches": 6,
+      "tracked_matches": 6,
+      "included_matches": 6,
+      "included_predictions": 12,
+      "unmatched_included_predictions": 6,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 2,
+          "bbox": [
+            441,
+            384,
+            495,
+            444
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.39084083106488415
+        },
+        {
+          "reference_index": 6,
+          "bbox": [
+            633,
+            145,
+            659,
+            208
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.24230114500780528
+        },
+        {
+          "reference_index": 8,
+          "bbox": [
+            986,
+            248,
+            1026,
+            276
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.03337013657121272
+        },
+        {
+          "reference_index": 9,
+          "bbox": [
+            932,
+            250,
+            984,
+            293
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.07282435868133533
+        }
+      ]
+    },
+    {
+      "frame_index": 323,
+      "time": 10.777433,
+      "references": 10,
+      "raw_matches": 8,
+      "tracked_matches": 8,
+      "included_matches": 8,
+      "included_predictions": 15,
+      "unmatched_included_predictions": 7,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 4,
+          "bbox": [
+            808,
+            237,
+            848,
+            347
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.4673666560031206
+        },
+        {
+          "reference_index": 9,
+          "bbox": [
+            686,
+            171,
+            729,
+            248
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.3777528737347689
+        }
+      ]
+    },
+    {
+      "frame_index": 347,
+      "time": 11.578233,
+      "references": 10,
+      "raw_matches": 6,
+      "tracked_matches": 6,
+      "included_matches": 6,
+      "included_predictions": 11,
+      "unmatched_included_predictions": 5,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 2,
+          "bbox": [
+            601,
+            260,
+            669,
+            401
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.48959155081251904
+        },
+        {
+          "reference_index": 3,
+          "bbox": [
+            668,
+            233,
+            711,
+            301
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.08204304920352168
+        },
+        {
+          "reference_index": 5,
+          "bbox": [
+            753,
+            248,
+            773,
+            276
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.010561990529950032
+        },
+        {
+          "reference_index": 6,
+          "bbox": [
+            773,
+            249,
+            820,
+            292
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.005243011680442731
+        }
+      ]
+    },
+    {
+      "frame_index": 371,
+      "time": 12.379033,
+      "references": 10,
+      "raw_matches": 7,
+      "tracked_matches": 7,
+      "included_matches": 6,
+      "included_predictions": 16,
+      "unmatched_included_predictions": 10,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 0,
+          "bbox": [
+            195,
+            460,
+            274,
+            621
+          ],
+          "reason": "outside_estimated_floor",
+          "best_tracked_iou": 0.6238176756354661
+        },
+        {
+          "reference_index": 2,
+          "bbox": [
+            556,
+            262,
+            599,
+            300
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.15411606395331515
+        },
+        {
+          "reference_index": 3,
+          "bbox": [
+            593,
+            289,
+            638,
+            452
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.4233280535827443
+        },
+        {
+          "reference_index": 4,
+          "bbox": [
+            661,
+            217,
+            697,
+            357
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.43788299154234156
+        }
+      ]
+    },
+    {
+      "frame_index": 395,
+      "time": 13.179833,
+      "references": 10,
+      "raw_matches": 5,
+      "tracked_matches": 5,
+      "included_matches": 5,
+      "included_predictions": 15,
+      "unmatched_included_predictions": 10,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 2,
+          "bbox": [
+            444,
+            285,
+            503,
+            371
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.34520046806771243
+        },
+        {
+          "reference_index": 4,
+          "bbox": [
+            679,
+            212,
+            718,
+            361
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.4210496110448489
+        },
+        {
+          "reference_index": 6,
+          "bbox": [
+            864,
+            240,
+            907,
+            374
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.44719340951366526
+        },
+        {
+          "reference_index": 7,
+          "bbox": [
+            880,
+            210,
+            920,
+            245
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.02790055891947975
+        },
+        {
+          "reference_index": 8,
+          "bbox": [
+            898,
+            390,
+            942,
+            493
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.3863458439354873
+        }
+      ]
+    },
+    {
+      "frame_index": 419,
+      "time": 13.980633,
+      "references": 9,
+      "raw_matches": 9,
+      "tracked_matches": 9,
+      "included_matches": 9,
+      "included_predictions": 14,
+      "unmatched_included_predictions": 5,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": []
+    },
+    {
+      "frame_index": 443,
+      "time": 14.781433,
+      "references": 10,
+      "raw_matches": 4,
+      "tracked_matches": 4,
+      "included_matches": 4,
+      "included_predictions": 14,
+      "unmatched_included_predictions": 10,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 1,
+          "bbox": [
+            420,
+            271,
+            476,
+            393
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.423314106623363
+        },
+        {
+          "reference_index": 2,
+          "bbox": [
+            415,
+            396,
+            470,
+            492
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.3885120652113669
+        },
+        {
+          "reference_index": 6,
+          "bbox": [
+            818,
+            257,
+            880,
+            385
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.4511812393130521
+        },
+        {
+          "reference_index": 7,
+          "bbox": [
+            904,
+            204,
+            948,
+            277
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.27341376590110344
+        },
+        {
+          "reference_index": 8,
+          "bbox": [
+            613,
+            198,
+            640,
+            356
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.3656884183185169
+        },
+        {
+          "reference_index": 9,
+          "bbox": [
+            630,
+            161,
+            655,
+            198
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.19960069364820154
+        }
+      ]
+    },
+    {
+      "frame_index": 467,
+      "time": 15.582233,
+      "references": 10,
+      "raw_matches": 6,
+      "tracked_matches": 6,
+      "included_matches": 6,
+      "included_predictions": 12,
+      "unmatched_included_predictions": 6,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 1,
+          "bbox": [
+            422,
+            289,
+            471,
+            408
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.3419048168319239
+        },
+        {
+          "reference_index": 3,
+          "bbox": [
+            551,
+            477,
+            615,
+            516
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.1553929545029721
+        },
+        {
+          "reference_index": 7,
+          "bbox": [
+            601,
+            168,
+            639,
+            217
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.0
+        },
+        {
+          "reference_index": 8,
+          "bbox": [
+            765,
+            247,
+            814,
+            301
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.09568943031706631
+        }
+      ]
+    },
+    {
+      "frame_index": 491,
+      "time": 16.383033,
+      "references": 9,
+      "raw_matches": 7,
+      "tracked_matches": 7,
+      "included_matches": 7,
+      "included_predictions": 15,
+      "unmatched_included_predictions": 8,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 0,
+          "bbox": [
+            481,
+            317,
+            520,
+            363
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.15886427652117605
+        },
+        {
+          "reference_index": 2,
+          "bbox": [
+            566,
+            401,
+            656,
+            548
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.47344779778687573
+        }
+      ]
+    },
+    {
+      "frame_index": 515,
+      "time": 17.183833,
+      "references": 8,
+      "raw_matches": 6,
+      "tracked_matches": 6,
+      "included_matches": 6,
+      "included_predictions": 15,
+      "unmatched_included_predictions": 9,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 1,
+          "bbox": [
+            511,
+            265,
+            550,
+            356
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.25398814794333247
+        },
+        {
+          "reference_index": 2,
+          "bbox": [
+            623,
+            276,
+            681,
+            390
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.3090466127634593
+        }
+      ]
+    },
+    {
+      "frame_index": 539,
+      "time": 17.984633,
+      "references": 8,
+      "raw_matches": 7,
+      "tracked_matches": 7,
+      "included_matches": 6,
+      "included_predictions": 15,
+      "unmatched_included_predictions": 9,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 1,
+          "bbox": [
+            470,
+            265,
+            515,
+            345
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.20620599375851403
+        },
+        {
+          "reference_index": 7,
+          "bbox": [
+            1117,
+            454,
+            1232,
+            720
+          ],
+          "reason": "outside_estimated_floor",
+          "best_tracked_iou": 0.8165589267537289
+        }
+      ]
+    },
+    {
+      "frame_index": 563,
+      "time": 18.785433,
+      "references": 7,
+      "raw_matches": 6,
+      "tracked_matches": 6,
+      "included_matches": 5,
+      "included_predictions": 9,
+      "unmatched_included_predictions": 4,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 1,
+          "bbox": [
+            530,
+            271,
+            589,
+            359
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.4396802174474043
+        },
+        {
+          "reference_index": 5,
+          "bbox": [
+            1009,
+            456,
+            1106,
+            715
+          ],
+          "reason": "outside_estimated_floor",
+          "best_tracked_iou": 0.9392098302711901
+        }
+      ]
+    },
+    {
+      "frame_index": 587,
+      "time": 19.586233,
+      "references": 7,
+      "raw_matches": 4,
+      "tracked_matches": 4,
+      "included_matches": 4,
+      "included_predictions": 17,
+      "unmatched_included_predictions": 13,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 2,
+          "bbox": [
+            618,
+            366,
+            655,
+            471
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.1846175063145574
+        },
+        {
+          "reference_index": 3,
+          "bbox": [
+            633,
+            331,
+            670,
+            365
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.051912602589343854
+        },
+        {
+          "reference_index": 4,
+          "bbox": [
+            759,
+            442,
+            834,
+            563
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.39284756223424744
+        }
+      ]
+    },
+    {
+      "frame_index": 610,
+      "time": 20.353667,
+      "references": 6,
+      "raw_matches": 5,
+      "tracked_matches": 5,
+      "included_matches": 5,
+      "included_predictions": 13,
+      "unmatched_included_predictions": 8,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": [
+        {
+          "reference_index": 3,
+          "bbox": [
+            669,
+            327,
+            707,
+            381
+          ],
+          "reason": "detector_unmatched",
+          "best_tracked_iou": 0.16487544080526012
+        }
+      ]
+    },
+    {
+      "frame_index": 634,
+      "time": 21.154467,
+      "references": 6,
+      "raw_matches": 6,
+      "tracked_matches": 6,
+      "included_matches": 6,
+      "included_predictions": 13,
+      "unmatched_included_predictions": 7,
+      "near_duplicate_reference_pairs": [],
+      "unmatched_references": []
+    }
+  ],
+  "summary": {
+    "reference_boxes": 261,
+    "raw_matches": 192,
+    "tracked_matches": 191,
+    "included_matches": 184,
+    "unmatched_included_predictions": 209,
+    "unmatched_reference_reasons": {
+      "detector_unmatched": 69,
+      "outside_estimated_floor": 7,
+      "association_unmatched": 1
+    }
+  },
+  "limitations": [
+    "Unreviewed boxes may be incomplete or inaccurate; matches are exploratory proxies, not certified recall/precision.",
+    "Unmatched predictions may be unlabelled people, not necessarily false positives.",
+    "No continuous human IDs: HOTA/IDF1/ID switches are unavailable."
+  ]
+}

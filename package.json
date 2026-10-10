@@ -4,8 +4,10 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "prebuild": "node scripts/build-public-readme.mjs",
     "dev": "vite --host 127.0.0.1",
     "build": "npm run check && vite build",
+    "postbuild": "node scripts/prune-retired-demo-assets.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "check": "tsc --noEmit && tsc -p tsconfig.agent.json",
     "agent": "node --env-file-if-exists=.env --experimental-strip-types agent/server.ts",
@@ -14,6 +16,9 @@
   },
   "dependencies": {
     "@aws-sdk/client-bedrock-runtime": "3.1148.0",
+    "@aws-sdk/client-polly": "3.1148.0",
+    "@aws-sdk/client-s3": "3.1148.0",
+    "@aws-sdk/client-sts": "3.1148.0",
     "@aws-sdk/credential-providers": "3.1148.0",
     "ffmpeg-static": "5.3.0",
     "lucide-react": "1.54.0",

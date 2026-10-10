@@ -1,0 +1,458 @@
+[
+  {
+    "experiment": "native-hd-5s",
+    "qualityStatus": "not_evaluated_no_human_ground_truth",
+    "manifest": {
+      "schema_version": "courtside.tracking-manifest.v1",
+      "source": "pretrained_inference",
+      "video_sha256": "7ec745f5f1e75b0c6d6dd27d409875f67c2ac3ab76c73f7123794c96be5aee22",
+      "width": 1920,
+      "height": 1080,
+      "duration": 5.0,
+      "source_fps": 59.940016263811856,
+      "processing_fps": 59.940016263811856,
+      "time_origin_seconds": 0.0,
+      "transform": {
+        "rotation": 0,
+        "sar": 1.0,
+        "encoded_width": 1920,
+        "encoded_height": 1080
+      },
+      "model": {
+        "name": "YOLO11m",
+        "sha256": "74884936972a4a10ed0b0a721495ec7ac2d2e02ac352d7c7283b1033cfcd9bda",
+        "license": "AGPL-3.0"
+      },
+      "config_sha256": "f668f761b7fa6942bd49c9998a831ec8dfd45e8f2933d2cb16ab57be3280fa0b",
+      "dependencies": {
+        "python": "3.14.7",
+        "ultralytics": "8.4.174",
+        "torch": "2.12.0+cpu",
+        "pyav": "18.0.0",
+        "opencv": "5.0.0",
+        "onnxruntime": "1.28.0",
+        "numpy": "2.4.4",
+        "tool_sha256": "263b474f57c923560afd6bcdc87d33202ccacf812dbeed4b1aa540867c48aca9",
+        "inference_threads": "2"
+      },
+      "render_policy": {
+        "trail_seconds": 0.8,
+        "position_source": "detector_measurement",
+        "interpolation": false
+      },
+      "tracker": {
+        "name": "BoT-SORT",
+        "gmc_method": "sparseOptFlow",
+        "reid": false,
+        "buffer_seconds": 0.5,
+        "fuse_score": false,
+        "association_scope": "size_qualified"
+      },
+      "detection_cache": {
+        "state": "miss",
+        "key": "abdfae7338fd133eeb6e116bbb2f5774346a5518b41f62550b91b1ca495553cd",
+        "sha256": "ee45c1b6d10e787129b1895558c569d4731052a016517b0f39d1e65966a26254",
+        "bytes": 487098,
+        "frames": 151,
+        "detections": 5057
+      },
+      "appearance": null,
+      "segments": [
+        {
+          "id": "S001",
+          "start": 0.0,
+          "end": 5.0,
+          "reason": "start"
+        }
+      ],
+      "stats": {
+        "processed_frames": 151,
+        "frames_with_tracks": 151,
+        "observations": 3451,
+        "included_observations": 2404,
+        "unique_tracks": 37,
+        "excluded_observations": 2450
+      },
+      "resources": {
+        "wall_seconds": 79.938,
+        "cpu_seconds": 187.328,
+        "peak_rss_bytes": 778047488,
+        "output_bytes": 3321716,
+        "peak_working_bytes": 171785431,
+        "phase_seconds": {
+          "decode": 2.773757,
+          "display_transform": 0.486645,
+          "detection_or_cache": 73.702369,
+          "floor_filter": 0.202856,
+          "association": 2.297964,
+          "observation_output": 0.117877,
+          "finalization": 0.004223
+        }
+      },
+      "files": {
+        "tracks": {
+          "name": "tracks.jsonl",
+          "sha256": "78271ef44eb022df1757d1e96e22a2ffae51acad2d57333afb902fd3f0b09481",
+          "bytes": 2308319
+        },
+        "exclusions": {
+          "name": "excluded-detections.jsonl",
+          "sha256": "b3617d438b0a2ceccf94fe124db73757af232313acf040f320112eb1f56c4bba",
+          "bytes": 481180
+        },
+        "floor_regions": {
+          "name": "floor-regions.jsonl",
+          "sha256": "21c44a719b6931cd7915c2da39a05301d3e5b27e67815a1cdeb3b81661fe8093",
+          "bytes": 45119
+        },
+        "detections": {
+          "name": "detections.jsonl",
+          "sha256": "ee45c1b6d10e787129b1895558c569d4731052a016517b0f39d1e65966a26254",
+          "bytes": 487098
+        }
+      }
+    }
+  },
+  {
+    "experiment": "native-hd-grid-5s",
+    "qualityStatus": "not_evaluated_no_human_ground_truth",
+    "manifest": {
+      "schema_version": "courtside.tracking-manifest.v1",
+      "source": "pretrained_inference",
+      "video_sha256": "7ec745f5f1e75b0c6d6dd27d409875f67c2ac3ab76c73f7123794c96be5aee22",
+      "width": 1920,
+      "height": 1080,
+      "duration": 5.0,
+      "source_fps": 59.940016263811856,
+      "processing_fps": 59.940016263811856,
+      "time_origin_seconds": 0.0,
+      "transform": {
+        "rotation": 0,
+        "sar": 1.0,
+        "encoded_width": 1920,
+        "encoded_height": 1080
+      },
+      "model": {
+        "name": "YOLO11m",
+        "sha256": "74884936972a4a10ed0b0a721495ec7ac2d2e02ac352d7c7283b1033cfcd9bda",
+        "license": "AGPL-3.0"
+      },
+      "config_sha256": "fb5f489d9c88829642a83c75d8e76f8f8a82bf5bf87ea53f7f8f69b411e126f6",
+      "dependencies": {
+        "python": "3.14.7",
+        "ultralytics": "8.4.174",
+        "torch": "2.12.0+cpu",
+        "pyav": "18.0.0",
+        "opencv": "5.0.0",
+        "onnxruntime": "1.28.0",
+        "numpy": "2.4.4",
+        "tool_sha256": "70a5dae3b1677c4422efb07aee14318162f2b52169237f0eae0b1c3478eebd8e",
+        "inference_threads": "2"
+      },
+      "render_policy": {
+        "trail_seconds": 0.8,
+        "position_source": "detector_measurement",
+        "interpolation": false
+      },
+      "tracker": {
+        "name": "BoT-SORT",
+        "gmc_method": "sparseOptFlow",
+        "reid": false,
+        "buffer_seconds": 0.5,
+        "fuse_score": false,
+        "association_scope": "size_qualified"
+      },
+      "detection_cache": {
+        "state": "miss",
+        "key": "92c296d24111efbd2e214ce8215066b58af7e7fd9b00670ae1bdd6547d8b2fb2",
+        "sha256": "1a04d4e77f2f654a5e0a53400c5aaf6911bcb8eb82d495ec6647846c232022f9",
+        "bytes": 974035,
+        "frames": 300,
+        "detections": 10117
+      },
+      "appearance": null,
+      "segments": [
+        {
+          "id": "S001",
+          "start": 0.0,
+          "end": 5.0,
+          "reason": "start"
+        }
+      ],
+      "stats": {
+        "processed_frames": 300,
+        "frames_with_tracks": 300,
+        "observations": 7002,
+        "included_observations": 4778,
+        "unique_tracks": 48,
+        "excluded_observations": 4952
+      },
+      "resources": {
+        "wall_seconds": 126.145,
+        "cpu_seconds": 309.938,
+        "peak_rss_bytes": 779698176,
+        "output_bytes": 6721889,
+        "peak_working_bytes": 175672541,
+        "phase_seconds": {
+          "decode": 2.683746,
+          "display_transform": 0.883849,
+          "detection_or_cache": 117.408377,
+          "floor_filter": 0.348042,
+          "association": 4.212664,
+          "observation_output": 0.202274,
+          "finalization": 0.006625
+        }
+      },
+      "files": {
+        "tracks": {
+          "name": "tracks.jsonl",
+          "sha256": "0eed2d6082408ef242644b45dd51fc438888202a39fb3de55a7061d03bbd9e13",
+          "bytes": 4687052
+        },
+        "exclusions": {
+          "name": "excluded-detections.jsonl",
+          "sha256": "f9a03eb8134402470df0611aad22bde888b91a2cdcbebe6b683597a259a40c4b",
+          "bytes": 971263
+        },
+        "floor_regions": {
+          "name": "floor-regions.jsonl",
+          "sha256": "cb0a3dbbafcf382e23efa5733c516e59968907d8c043c9557d791b69d10056ca",
+          "bytes": 89539
+        },
+        "detections": {
+          "name": "detections.jsonl",
+          "sha256": "1a04d4e77f2f654a5e0a53400c5aaf6911bcb8eb82d495ec6647846c232022f9",
+          "bytes": 974035
+        }
+      }
+    }
+  },
+  {
+    "experiment": "native-hd-640-5s",
+    "qualityStatus": "not_evaluated_no_human_ground_truth",
+    "manifest": {
+      "schema_version": "courtside.tracking-manifest.v1",
+      "source": "pretrained_inference",
+      "video_sha256": "7ec745f5f1e75b0c6d6dd27d409875f67c2ac3ab76c73f7123794c96be5aee22",
+      "width": 1920,
+      "height": 1080,
+      "duration": 5.0,
+      "source_fps": 59.940016263811856,
+      "processing_fps": 59.940016263811856,
+      "time_origin_seconds": 0.0,
+      "transform": {
+        "rotation": 0,
+        "sar": 1.0,
+        "encoded_width": 1920,
+        "encoded_height": 1080
+      },
+      "model": {
+        "name": "YOLO11m",
+        "sha256": "dab59e2a497cb936e77e7d2e93f743e4f109b9d54dc56a33b0fa46e09cbbc674",
+        "license": "AGPL-3.0"
+      },
+      "config_sha256": "c007ebd334090e5a63bc32d5af3a771c1856b8b8d40b1df71c1c1e26175bcc6d",
+      "dependencies": {
+        "python": "3.14.7",
+        "ultralytics": "8.4.174",
+        "torch": "2.12.0+cpu",
+        "pyav": "18.0.0",
+        "opencv": "5.0.0",
+        "onnxruntime": "1.28.0",
+        "numpy": "2.4.4",
+        "tool_sha256": "70a5dae3b1677c4422efb07aee14318162f2b52169237f0eae0b1c3478eebd8e",
+        "inference_threads": "2"
+      },
+      "render_policy": {
+        "trail_seconds": 0.8,
+        "position_source": "detector_measurement",
+        "interpolation": false
+      },
+      "tracker": {
+        "name": "BoT-SORT",
+        "gmc_method": "sparseOptFlow",
+        "reid": false,
+        "buffer_seconds": 0.5,
+        "fuse_score": false,
+        "association_scope": "size_qualified"
+      },
+      "detection_cache": {
+        "state": "miss",
+        "key": "882ba8d534f575c2d7ea78cb385538e4717773a69dc2d5d3eccc5b2e0543c97d",
+        "sha256": "2b4f8aa356ee3995eada481b1cdfe37bde06aa94876c71547d5dd19cb854d236",
+        "bytes": 673368,
+        "frames": 300,
+        "detections": 6732
+      },
+      "appearance": null,
+      "segments": [
+        {
+          "id": "S001",
+          "start": 0.0,
+          "end": 5.0,
+          "reason": "start"
+        }
+      ],
+      "stats": {
+        "processed_frames": 300,
+        "frames_with_tracks": 300,
+        "observations": 5504,
+        "included_observations": 4569,
+        "unique_tracks": 37,
+        "excluded_observations": 1780
+      },
+      "resources": {
+        "wall_seconds": 63.445,
+        "cpu_seconds": 184.547,
+        "peak_rss_bytes": 581963776,
+        "output_bytes": 4778072,
+        "peak_working_bytes": 173314657,
+        "phase_seconds": {
+          "decode": 2.655002,
+          "display_transform": 0.77636,
+          "detection_or_cache": 55.175869,
+          "floor_filter": 0.317894,
+          "association": 3.91222,
+          "observation_output": 0.184192,
+          "finalization": 0.004207
+        }
+      },
+      "files": {
+        "tracks": {
+          "name": "tracks.jsonl",
+          "sha256": "b0163773657b4a9a399f1a6891d494c669cdab7077682557f875f9c53b8cde1d",
+          "bytes": 3666187
+        },
+        "exclusions": {
+          "name": "excluded-detections.jsonl",
+          "sha256": "17a7f70fb3a43d090f805e5838508d10693256ca9c47e84e15b4896b2a4974b2",
+          "bytes": 351859
+        },
+        "floor_regions": {
+          "name": "floor-regions.jsonl",
+          "sha256": "0fcb13010548aff8038d25cfc56b7a794d86a9a2e762b8719fb25b3fc3139f36",
+          "bytes": 86658
+        },
+        "detections": {
+          "name": "detections.jsonl",
+          "sha256": "2b4f8aa356ee3995eada481b1cdfe37bde06aa94876c71547d5dd19cb854d236",
+          "bytes": 673368
+        }
+      }
+    }
+  },
+  {
+    "experiment": "native-hd-640-15hz-5s",
+    "qualityStatus": "not_evaluated_no_human_ground_truth",
+    "manifest": {
+      "schema_version": "courtside.tracking-manifest.v1",
+      "source": "pretrained_inference",
+      "video_sha256": "7ec745f5f1e75b0c6d6dd27d409875f67c2ac3ab76c73f7123794c96be5aee22",
+      "width": 1920,
+      "height": 1080,
+      "duration": 5.0,
+      "source_fps": 59.940016263811856,
+      "processing_fps": 15,
+      "time_origin_seconds": 0.0,
+      "transform": {
+        "rotation": 0,
+        "sar": 1.0,
+        "encoded_width": 1920,
+        "encoded_height": 1080
+      },
+      "model": {
+        "name": "YOLO11m",
+        "sha256": "dab59e2a497cb936e77e7d2e93f743e4f109b9d54dc56a33b0fa46e09cbbc674",
+        "license": "AGPL-3.0"
+      },
+      "config_sha256": "5a8b58cfbfff61ab73a536135976812bb1dad82f18ac32a6c3f6db8cb4007d61",
+      "dependencies": {
+        "python": "3.14.7",
+        "ultralytics": "8.4.174",
+        "torch": "2.12.0+cpu",
+        "pyav": "18.0.0",
+        "opencv": "5.0.0",
+        "onnxruntime": "1.28.0",
+        "numpy": "2.4.4",
+        "tool_sha256": "70a5dae3b1677c4422efb07aee14318162f2b52169237f0eae0b1c3478eebd8e",
+        "inference_threads": "2"
+      },
+      "render_policy": {
+        "trail_seconds": 0.8,
+        "position_source": "detector_measurement",
+        "interpolation": false
+      },
+      "tracker": {
+        "name": "BoT-SORT",
+        "gmc_method": "sparseOptFlow",
+        "reid": false,
+        "buffer_seconds": 0.5,
+        "fuse_score": false,
+        "association_scope": "size_qualified"
+      },
+      "detection_cache": {
+        "state": "miss",
+        "key": "9032c9c7f8d9e7a64beeb1c290e26bfa298707c85cd347f2820f2484eb6310c3",
+        "sha256": "52ab609fa87a809af04edf59afa11971b7fb245d17a6bc364ae7bfaa34dae46b",
+        "bytes": 168508,
+        "frames": 75,
+        "detections": 1686
+      },
+      "appearance": null,
+      "segments": [
+        {
+          "id": "S001",
+          "start": 0.0,
+          "end": 5.0,
+          "reason": "start"
+        }
+      ],
+      "stats": {
+        "processed_frames": 75,
+        "frames_with_tracks": 75,
+        "observations": 1342,
+        "included_observations": 1108,
+        "unique_tracks": 30,
+        "excluded_observations": 456
+      },
+      "resources": {
+        "wall_seconds": 17.842,
+        "cpu_seconds": 50.172,
+        "peak_rss_bytes": 582447104,
+        "output_bytes": 1172447,
+        "peak_working_bytes": 169204172,
+        "phase_seconds": {
+          "decode": 2.447221,
+          "display_transform": 0.220945,
+          "detection_or_cache": 13.620482,
+          "floor_filter": 0.079241,
+          "association": 1.001074,
+          "observation_output": 0.047767,
+          "finalization": 0.00449
+        }
+      },
+      "files": {
+        "tracks": {
+          "name": "tracks.jsonl",
+          "sha256": "7026ceb25d2be88660efc2031bdff8ff84a47d2d568fadbdce44db90f49f2f55",
+          "bytes": 892584
+        },
+        "exclusions": {
+          "name": "excluded-detections.jsonl",
+          "sha256": "f59f5ec6d16dd5d99b74c2a157ce82297c89a0840543ed7ecf33954282eb74c8",
+          "bytes": 89950
+        },
+        "floor_regions": {
+          "name": "floor-regions.jsonl",
+          "sha256": "79fe94d2a2446f903846e297d8386f2749306c202b81632a485a9c0ca85dfa9a",
+          "bytes": 21405
+        },
+        "detections": {
+          "name": "detections.jsonl",
+          "sha256": "52ab609fa87a809af04edf59afa11971b7fb245d17a6bc364ae7bfaa34dae46b",
+          "bytes": 168508
+        }
+      }
+    }
+  }
+]

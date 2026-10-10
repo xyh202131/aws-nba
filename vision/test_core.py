@@ -1,10 +1,22 @@
 """No inference or AWS calls: the observable boundary rules for video tracking."""
 import unittest
-from core import scene_cut, include_person, normalize_display, floor_region, inside_floor
+from core import scene_cut, include_person, normalize_display, floor_region, inside_floor, sampling_step
 import numpy as np
 
 
 class TrackingRules(unittest.TestCase):
+    def test_native_fps_pts_jitter_does_not_silently_halve_frames(self):
+        pts=[0,.016667,.033334,.050065,.066732];next_sample=0;accepted=[]
+        for stamp in pts:
+            take,next_sample=sampling_step(stamp,next_sample,59.94,59.94,"pts-grid-v2")
+            if take:accepted.append(stamp)
+        self.assertEqual(accepted,pts)
+        next_sample=0;accepted=[]
+        for stamp in pts:
+            take,next_sample=sampling_step(stamp,next_sample,15,59.94,"pts-grid-v2")
+            if take:accepted.append(stamp)
+        self.assertEqual(accepted,[0,.066732])
+
     def test_cut_resets_but_small_motion_does_not(self):
         dark = np.zeros((72, 128, 3), dtype=np.uint8)
         white = np.full_like(dark, 255)

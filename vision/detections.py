@@ -15,10 +15,21 @@ def digest(path):
 
 
 def detection_fingerprint(video_hash,weights_hash,duration,profile,versions):
-    return {"schema_version":"courtside.detection-cache.v1","video_sha256":video_hash,
+    backend=profile.get("inferenceBackend","torch")
+    if backend not in ("torch","onnx"):raise ValueError("Unsupported inference backend")
+    policy=profile.get("samplingPolicy","pts-greedy-v1")
+    if policy not in ("pts-greedy-v1","pts-grid-v2"):raise ValueError("Unsupported sampling policy")
+    value={"schema_version":"courtside.detection-cache.v1","video_sha256":video_hash,
             "weights_sha256":weights_hash,"duration":duration,"image_size":profile["imageSize"],
             "confidence":profile["confidence"],"max_fps":profile["maxFps"],"classes":[0],
-            "display_version":"sar-rotation-v1","sampling_version":"pts-greedy-v1","dependencies":versions}
+            "display_version":"sar-rotation-v1","sampling_version":policy,"dependencies":versions}
+    if backend=="onnx":
+        shape=profile.get("inputShape")
+        if not isinstance(shape,list) or len(shape)!=2 or not all(type(v) is int and 32<=v<=1920 and v%32==0 for v in shape):
+            raise ValueError("ONNX requires explicit fixed stride-aligned input shape")
+        value["inference"]={"backend":"onnxruntime-cpu","input_shape":shape,
+                            "preprocessing":"fixed-letterbox-rgb-fp32-v1","postprocessing":"ultralytics-nms-v1"}
+    return value
 
 
 class DetectionCache:

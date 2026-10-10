@@ -26,7 +26,8 @@ export interface NoteDraft {
   clipId: string;
   time: number;
 }
-export const NOTE_KEY = "courtside-review-notes-v1";
+// Keep notes for retired samples in their existing storage key, untouched.
+export const NOTE_KEY = "courtside-review-notes-durant-v1";
 export const noteTags = ["出手选择", "进攻细节", "防守观察", "待核对"];
 
 export function readNotes(): { notes: ReviewNote[]; warning: string } {
@@ -104,7 +105,7 @@ export function MatchStrip({
         </strong>
       </div>
       <button onClick={onAnalyze}>
-        <span>该球员本场样本</span>
+        <span>成片关联出手</span>
         <strong>
           {sample.made}
           <small>/ {sample.attempts} 命中</small>
@@ -158,12 +159,14 @@ export function Analytics({
         >
           样本分析
         </button>
-        <button
-          aria-pressed={analysisMode === "compare"}
-          onClick={() => setAnalysisMode("compare")}
-        >
-          两回合对照
-        </button>
+        {clips.length > 1 && (
+          <button
+            aria-pressed={analysisMode === "compare"}
+            onClick={() => setAnalysisMode("compare")}
+          >
+            两回合对照
+          </button>
+        )}
       </div>
       {analysisMode === "compare" ? (
         <ClipComparison onOpenClip={onOpenClip} />
@@ -195,7 +198,7 @@ export function Analytics({
                   setSelectedId(null);
                 }}
               >
-                <option value={0}>全场样本</option>
+                <option value={0}>成片样本</option>
                 {periods.map((p) => (
                   <option key={p.period} value={p.period}>
                     第 {p.period} 节
@@ -205,8 +208,9 @@ export function Analytics({
             </label>
           </div>
           <p className="analysis-context">
-            {clip.matchup} · {clip.date} · {period ? `第 ${period} 节` : "全场"}
-            公开出手样本
+            {clip.matchup} · {clip.date} ·{" "}
+            {period ? `第 ${period} 节` : "成片内"}
+            关联出手记录
           </p>
           <div className="analysis-kpis">
             <div>
@@ -311,7 +315,7 @@ export function Analytics({
                   <h2>分节表现</h2>
                 </div>
               </div>
-              <p>当前球员全场样本 · 命中 / 出手</p>
+              <p>当前成片样本 · 命中 / 出手</p>
               <div className="quarter-list">
                 {periods.map((p) => (
                   <button
@@ -369,7 +373,7 @@ export function Analytics({
             </section>
           </div>
           <p className="studio-footnote">
-            数据来自已收录的官方逐次记录，仅代表该球员该场样本；未生成球场坐标、引力或轨迹数据。
+            数据来自已收录的官方逐次记录，仅代表当前成片关联的出手；未生成球场坐标、引力或轨迹数据。
           </p>
         </>
       )}

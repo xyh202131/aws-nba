@@ -13,6 +13,7 @@
   "floorBoundaryMarginRatio": 0.01,
   "associationScope": "size_qualified",
   "appearance": false,
+  "playerFilter": "semantic_role_v1",
   "lostBufferSeconds": 0.5,
   "cutPixelThreshold": 0.22,
   "cutHistogramThreshold": 0.25,

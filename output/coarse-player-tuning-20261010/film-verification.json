@@ -1,0 +1,222 @@
+{
+  "id": "73ca2bde-cda9-4898-bc92-a23715eb747b",
+  "status": "completed",
+  "reviewStatus": "needs_review",
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "modelCalls": 0,
+    "estimatedUsd": 0
+  },
+  "tracking": {
+    "status": "completed",
+    "source": "pretrained_inference",
+    "model": "YOLO11m",
+    "trackerName": "BoT-SORT",
+    "modelSha256": "d5ffc1a674953a08e11a8d21e022781b1b23a19b730afc309290bd9fb5305b95",
+    "configSha256": "a523e6f3e4634e7dbc52c14b2b60aa563ccf135c7aadfecdc214040f7d6a9a1e",
+    "processedFrames": 686,
+    "framesWithTracks": 638,
+    "uniqueTracks": 29,
+    "segmentCount": 2,
+    "identityStatus": "unconfirmed",
+    "manifest": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/tracking-manifest.json",
+    "tracks": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/tracks.jsonl",
+    "identityLinks": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/identity-links.json",
+    "eventLinks": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/event-track-links.json",
+    "overlays": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/overlay-timeline.json",
+    "resources": {
+      "wall_seconds": 16.036,
+      "cpu_seconds": 18.625,
+      "peak_rss_bytes": 282370048,
+      "output_bytes": 14153467,
+      "peak_working_bytes": 73077617,
+      "phase_seconds": {
+        "decode": 2.305148,
+        "display_transform": 1.925288,
+        "detection_or_cache": 0.129169,
+        "floor_filter": 0.815762,
+        "association": 5.544904,
+        "observation_output": 4.870974,
+        "finalization": 0.21175,
+        "player_scope": 0.209114
+      }
+    },
+    "detections": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/detections.jsonl",
+    "trackIndex": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/track-index.json",
+    "detectionCache": {
+      "state": "hit",
+      "key": "b64e52f3d325badd99088da75e517dacb31d68eb9b8adef9c7084634321437bd",
+      "sha256": "de03003f7a80843e9ee4d22e1a8b4c45f5e1294709b698761b928dfdefe135c3",
+      "bytes": 1997494,
+      "frames": 686,
+      "detections": 20776
+    },
+    "playerScope": {
+      "source": "user_provided_coarse_player_boxes",
+      "review_status": "provisional",
+      "annotations_sha256": "cc52ba3140f01c91b1d8cc4e1cbd0c5d0c96be2d420c07a22be83f3393668f9d",
+      "reference_frames": 30,
+      "reference_boxes": 244,
+      "matched_reference_frames": 30,
+      "seed_tracks": 34,
+      "suppressed_observations": 2726,
+      "shorts_policy": "positive_cue_not_required_3_observations_100ms",
+      "reference_policy": "same_segment_nearby_450ms",
+      "leg_policy": "skin_contrast_excludes_adjacent_court",
+      "unreferenced_policy": "hide_without_strong_shorts_and_court_evidence",
+      "identity_status": "unconfirmed"
+    },
+    "exclusions": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/excluded-detections.jsonl",
+    "floorRegions": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/floor-regions.jsonl"
+  },
+  "film": {
+    "title": "amen.mp4",
+    "duration": 22.89,
+    "video": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/film.mp4",
+    "captions": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/captions.vtt",
+    "timeline": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/timeline.json",
+    "sha256": "f8390ba9214e4ee30df0a5bb5a0556d4b96c79ed607af3f158b7b9668a1b78ec",
+    "bytes": 16548943,
+    "voice": "Microsoft Huihui Desktop",
+    "cues": [
+      {
+        "text": "进攻方在中场附近控球推进，防守方低重心展开防守站位，双方球员分散于半场各处。",
+        "time": 1.93527,
+        "evidenceIds": [
+          "38172313-7741-4c53-ba9b-e258af2519c3:frame:0"
+        ],
+        "start": 0,
+        "end": 7.63,
+        "narration": "进攻方在中场附近控球推进，防守方低重心展开防守站位，双方球员分散于半场各处。",
+        "dataEventIds": []
+      },
+      {
+        "text": "持球人运球推进至内线弧顶区域，防守方贴身跟防，周围队员拉开站位准备支援。",
+        "time": 9.54287,
+        "evidenceIds": [
+          "38172313-7741-4c53-ba9b-e258af2519c3:frame:2",
+          "38172313-7741-4c53-ba9b-e258af2519c3:frame:3"
+        ],
+        "start": 7.63,
+        "end": 15.26,
+        "narration": "持球人运球推进至内线弧顶区域，防守方贴身跟防，周围队员拉开站位准备支援。",
+        "dataEventIds": []
+      },
+      {
+        "text": "持球人在弧顶急停跳起出手投篮，防守队员伸手上跳封盖，其余球员就位等待篮板。",
+        "time": 18.0514,
+        "evidenceIds": [
+          "38172313-7741-4c53-ba9b-e258af2519c3:frame:4",
+          "38172313-7741-4c53-ba9b-e258af2519c3:frame:5"
+        ],
+        "start": 15.26,
+        "end": 22.89,
+        "narration": "持球人在弧顶急停跳起出手投篮，防守队员伸手上跳封盖，其余球员就位等待篮板。数据记录给出的预期命中率约为百分之44.5。",
+        "dataEventIds": [
+          "amen-shot-396"
+        ]
+      }
+    ],
+    "data": {
+      "schemaVersion": "courtside.match-data.v1",
+      "source": "uploaded",
+      "events": [
+        {
+          "id": "amen-shot-396",
+          "recordId": "0022500491-396",
+          "videoTimeSeconds": 18.0347,
+          "playerName": "阿门·汤普森",
+          "description": "急停跳投",
+          "xfgPercent": 44.5,
+          "sourceUrl": "https://china.nba.cn/inside-the-game"
+        },
+        {
+          "id": "unlinked-test",
+          "recordId": "unlinked-test",
+          "videoTimeSeconds": null,
+          "playerName": "",
+          "description": "未对齐记录",
+          "xfgPercent": 97,
+          "sourceUrl": null
+        }
+      ],
+      "warnings": [
+        "上传数据的真实性尚未独立核验。",
+        "1 条记录未对齐，不叠加到画面。"
+      ]
+    },
+    "tracking": {
+      "status": "completed",
+      "source": "pretrained_inference",
+      "model": "YOLO11m",
+      "trackerName": "BoT-SORT",
+      "modelSha256": "d5ffc1a674953a08e11a8d21e022781b1b23a19b730afc309290bd9fb5305b95",
+      "configSha256": "a523e6f3e4634e7dbc52c14b2b60aa563ccf135c7aadfecdc214040f7d6a9a1e",
+      "processedFrames": 686,
+      "framesWithTracks": 638,
+      "uniqueTracks": 29,
+      "segmentCount": 2,
+      "identityStatus": "unconfirmed",
+      "manifest": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/tracking-manifest.json",
+      "tracks": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/tracks.jsonl",
+      "identityLinks": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/identity-links.json",
+      "eventLinks": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/event-track-links.json",
+      "overlays": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/overlay-timeline.json",
+      "resources": {
+        "wall_seconds": 16.036,
+        "cpu_seconds": 18.625,
+        "peak_rss_bytes": 282370048,
+        "output_bytes": 14153467,
+        "peak_working_bytes": 73077617,
+        "phase_seconds": {
+          "decode": 2.305148,
+          "display_transform": 1.925288,
+          "detection_or_cache": 0.129169,
+          "floor_filter": 0.815762,
+          "association": 5.544904,
+          "observation_output": 4.870974,
+          "finalization": 0.21175,
+          "player_scope": 0.209114
+        }
+      },
+      "detections": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/detections.jsonl",
+      "trackIndex": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/track-index.json",
+      "detectionCache": {
+        "state": "hit",
+        "key": "b64e52f3d325badd99088da75e517dacb31d68eb9b8adef9c7084634321437bd",
+        "sha256": "de03003f7a80843e9ee4d22e1a8b4c45f5e1294709b698761b928dfdefe135c3",
+        "bytes": 1997494,
+        "frames": 686,
+        "detections": 20776
+      },
+      "playerScope": {
+        "source": "user_provided_coarse_player_boxes",
+        "review_status": "provisional",
+        "annotations_sha256": "cc52ba3140f01c91b1d8cc4e1cbd0c5d0c96be2d420c07a22be83f3393668f9d",
+        "reference_frames": 30,
+        "reference_boxes": 244,
+        "matched_reference_frames": 30,
+        "seed_tracks": 34,
+        "suppressed_observations": 2726,
+        "shorts_policy": "positive_cue_not_required_3_observations_100ms",
+        "reference_policy": "same_segment_nearby_450ms",
+        "leg_policy": "skin_contrast_excludes_adjacent_court",
+        "unreferenced_policy": "hide_without_strong_shorts_and_court_evidence",
+        "identity_status": "unconfirmed"
+      },
+      "exclusions": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/excluded-detections.jsonl",
+      "floorRegions": "/api/jobs/73ca2bde-cda9-4898-bc92-a23715eb747b/artifacts/floor-regions.jsonl"
+    },
+    "narrationSource": {
+      "provider": "bedrock",
+      "reuseJobId": "4cd247e2-6a4f-4b2c-aae1-151f69e41d63"
+    },
+    "videoSettings": {
+      "width": 1280,
+      "height": 720,
+      "timing": "source_pts_passthrough"
+    }
+  },
+  "newCloudResources": 0
+}

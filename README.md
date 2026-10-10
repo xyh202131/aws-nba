@@ -1,39 +1,120 @@
-# COURTSIDE · 深度赛场
+# Team11 · COURTSIDE 深度赛场
 
-一个把 **NBA 数据 + 真实比赛视频生成带数据可视化和中文解说的 MP4，并在 Web 播放下载** 的 AI 工作室。支持上传新视频和 JSON、事件时间关联、证据帧、解说脚本、中文语音、字幕和 xFG 图形。两段已核验样片和 41 条公开投篮记录作为示例保留；原有回合、分析、档案和笔记仍可使用。
+**数据进去，能看的比赛作品出来。**
 
-![桌面回合工作台](docs/design/evidence-review.jpg)
+COURTSIDE 将真实 NBA 比赛视频、官方逐回合数据、中文解说与可视化结合，提供成片观看、证据回看、人物检索、投篮分析和视频创作工作区。
 
-## 文档入口
+**[打开作品](https://d31azeixbvzmqd.cloudfront.net/) · [作品 README](https://d31azeixbvzmqd.cloudfront.net/readme) · [下载最终成片](https://d31azeixbvzmqd.cloudfront.net/demo/durant-v1/final-video.mp4) · [下载配套文件](https://d31azeixbvzmqd.cloudfront.net/demo/durant-v1/supporting-files.zip)**
 
-当前作品入口与 API 见 [AI 比赛作品工作流](docs/AI_FILM_GUIDE.md)。本轮真实上传→Sonnet→解说 MP4→Web 播放/定位/下载已完成，模型估算 $0.022365；31 项测试、类型检查和生产构建通过。没有检查布局或手机端，没有部署云资源。
+## 先看这 28 秒
 
-后续已实现本地匿名人物追踪并接入成片：预训练 YOLO11m + BoT-SORT、真实 PTS 的框/ID/短轨迹、JSONL 与 Web 下载。可显式沿用已完成解说追加追踪，新增模型调用为 0。运行见 [vision/README.md](vision/README.md)，证据和未通过的人工精度/身份/云端门槛见[追踪验证](output/tracking-validation-20261010/README.md)。源码和小型验证资料纳入仓库；MP4、缓存、权重与任务目录保留在本机 `.local`，不改布局或手机端。
+首页直接呈现杜兰特突破打板命中的完整演示。点击 **开启中文解说**，即可听到与比赛动作对齐的讲述；点击右侧解说段落，播放器跳到对应时刻。
 
-最新完成匿名人物 ID 检索/画面定位、实测检测缓存和后置场地区域筛选；41 项 Node / 15 项 Python 测试、构建及网页功能验证通过。原片已是 1080p60，另准备保留帧序的原生/轻度处理对照，当前解说成片仍为 720p。细节和未解决的遮挡 ID/裁判问题见[人物优化与视频准备](output/person-retrieval-optimization-20261010/README.md)，没有新增 AWS 调用或费用。
+| 演示内容 | 已完成的呈现 |
+|---|---|
+| 比赛 | 火箭客场对独行侠，2026 年 1 月 4 日（北京时间） |
+| 主角与事件 | 凯文·杜兰特，第一节 05:38，出手事件 #88 |
+| 成片 | 28 秒，1920×1080，60 fps，H.264 / AAC |
+| 声画 | 五段中文解说、中文字幕、比赛原声混音 |
+| 官方指标 | 本次出手 xFG 21.3%，按真实数值绘制数据图形 |
+| 回合结果 | 突破漂移跳投打板命中，戴维斯投篮犯规，火箭比分由 17:9 变为 19:9 |
+| 片尾 | 独立数据页，集中呈现预期值、结果、犯规与比分变化 |
+| 配套交付 | 解说稿、音轨、三种字幕、回合 JSON、官方来源、来源哈希、制作文件与成片验证记录 |
 
-赛事要求与剩余缺口见 [2026-10-10 要求复核](docs/REQUIREMENTS_GAP_REVIEW_20261010.md)。该记录中的 Git 状态为核对时快照，后续同步版本以仓库提交记录为准。
+这段演示通过比赛画面与官方记录交叉核对，完成解说编排、中文配音、图形合成与全片解码检查。原片动作顺序和播放速度保留，原声以 18% 音量参与混音。
 
-2026-10-10 已将赛事 `nba / us-east-1` 的 Bedrock 接入现有 Agent 与网页，完成一次真实点击 → SDK 推理 → 结果/费用展示 → 导出验证，使用 Sonnet 4.6，估算 $0.009834。详见[模型接入与启动说明](docs/BEDROCK_INTEGRATION.md)。此前 3 次 CLI 实测及错例保留在[首轮记录](output/model-validation-20261010/README.md)。云端未部署。
+内置杜兰特演示由助手结合真实视频逐句编写和核对，经本机中文语音与 FFmpeg 制作，视频、解说稿、字幕、官方数据和校验记录形成完整配套。Bedrock 创作流程、AgentCore v2、CloudFront 与私有 S3 构成作品的工程架构，详见 [AWS 部署记录](docs/AWS_CLOUD_DEPLOYMENT.md)。
 
-先读[当前执行方案](docs/PROJECT_PLAN.md)，查看已完成能力、剩余任务、模型/预算边界和第一项本地成片任务。文档冲突及整理范围见[核对记录](docs/DOCUMENTATION_REVIEW.md)。历史验收保留各自版本，不能替代当前云端运行证明。
+## 作品亮点
 
-## 完整工作区资料
+### 1. 以成片为首页，让评委直接进入比赛
 
-[WORKSPACE.md](WORKSPACE.md) 汇总规划、赛规、模型预算、数据和证据；本仓库已补入 [.kiro](.kiro/) 与 [.firecrawl](.firecrawl/)，以及准备资料、原始规则、data、output 和顶层报告。应用仍在仓库根目录运行。
+作品页左上角和演示播放器均展示 **Team11**。首页同时给出视频、中文解说开关、回合数据、逐句定位、MP4 下载和配套文件下载；创作工作区作为可展开入口保留在成片下方。独立 `/readme` 页面集中介绍作品与操作方式。
 
-同步范围和路径转换见 [WORKSPACE_SYNC.md](docs/WORKSPACE_SYNC.md)，逐文件哈希见 [同步清单](docs/workspace-sync-manifest.json)。历史备份和抓取缓存按其原日期阅读，不替代当前执行方案。
+### 2. 把解说、数据和画面放到同一条时间线上
+
+创作引擎接收比赛视频与数据 JSON，核对素材、提取证据帧、调用多模态模型、校验解说引用，再合成中文语音、字幕、事件信息卡与 xFG 图形。Web 播放器与渲染层共享数据时间区间，解说段落、数据事件和证据帧均可定位到视频秒数。
+
+### 3. 每一个关键数字，都有具体回合和来源
+
+演示将比赛编号、球员、节次、比赛时钟、比分与官方 eventId 联合核对，准确关联杜兰特事件 #88 的 xFG 21.3%。画面观察、官方记账和数据指标分别保留来源。xFG 表达普通 NBA 球员在本次投篮条件下的预期命中率；实际命中结果另行呈现。
+
+### 4. 人物检索服务于视频复盘
+
+视觉模块集成预训练 YOLO11m、BoT-SORT 和 CLIP 球员角色筛选，结合人工审核样本改进球员、裁判与场边人员的区分。系统提供人物框、镜头内匿名 ID、短轨迹、人物索引、首次出现时间、画面定位、角色判断依据和逐帧记录。检测缓存和已有解说复用让重复调优更高效。
+
+### 5. 从一段作品扩展到完整复盘工作台
+
+- **回合复盘：** 视频进度、关键帧、事件时间轴和证据链联动，支持倍速、原声、全屏、出手循环与逐秒定位。
+- **分层解读：** 通俗解读、技术视角和复盘提问共享同一组证据。
+- **投篮分析：** 与杜兰特成片共享官方出手事件 #88，提供 xFG 图表、节次与出手方式展示，点击记录即可返回对应画面。
+- **数据档案：** 按球员、结果、关键字组合检索，查看原始来源并导出记录。
+- **复盘笔记：** 将观察关联到视频时间点，支持分类、编辑、本机保存、回看和 JSON 导出。
+
+### 6. 面向新素材的创作入口
+
+创作工作区提供视频选择、拖入预览、JSON 导入、文本粘贴和事件时间关联。数据适配层支持内部比赛数据、归一化投篮记录、NBA shotList 和 clip-events 草案等输入。新视频通过独立素材 ID 登记，保留文件哈希、时长和事件映射。
+
+### 7. 兼顾质量、可追溯性与资源使用
+
+多模态引擎已接入 Amazon Bedrock，完成 Claude Sonnet 4.6 的真实 SDK 调用验证，并支持配置 Qwen3-VL。每次调用记录模型、输入输出 tokens、耗时和估算费用；输出设置显式上限。已有解说可以用于后续追踪渲染。视频、证据帧、数据与产物通过 SHA-256 关联，便于复核与复现。
+
+### 8. 已部署的 AWS 作品交付
+
+作品通过 CloudFront 提供 HTTPS 访问，私有 S3 承载页面、成片及配套资源；AgentCore ARM64 Runtime、ECR 镜像和 CDK 基础设施已部署。云端生成入口使用 IAM 认证。中文语音层包含本机语音与 Amazon Polly 适配，FFmpeg 负责视频图形、字幕、语音与原声的合成。
+
+### 9. 为桌面复盘设计的蓝白工作区
+
+界面以蓝色动作、薄荷色空间语义和银蓝背景区分信息层级。导航底板、视角切换和轻量云层提供连续反馈；动效支持手动暂停、离屏暂停和系统减弱动态偏好。原生视频控件、键盘操作、可见焦点及对话框焦点返回融入整个工作流。
+
+## 推荐观看顺序
+
+1. 打开作品首页，观看内置成片并开启中文解说。
+2. 点击右侧任意一句解说，查看对应动作及数据。
+3. 下载配套文件，阅读回合 JSON、解说稿和官方来源。
+4. 切换到回合复盘、投篮分析和数据档案，体验证据联动。
+5. 展开视频创作工作区，查看素材接入与任务流程。
+
+## 技术结构
+
+| 层次 | 技术与职责 |
+|---|---|
+| Web | React 19、TypeScript、Vite、HTML Video、原生 CSS、Lucide |
+| Agent | Node.js 24，素材登记、队列、抽帧、模型适配、校验、渲染和产物接口 |
+| 多模态 | Amazon Bedrock Converse，Claude Sonnet 4.6 / 可配置 Qwen3-VL |
+| 视觉 | Python、YOLO11m、BoT-SORT、CLIP、检测缓存、角色筛选与轨迹索引 |
+| 媒体 | FFmpeg、中文语音、ASS / SRT / VTT、H.264 / AAC |
+| AWS | S3、CloudFront、ECR、AgentCore、CloudFormation / CDK |
+
+```text
+src/App.tsx             Team11 品牌、导航、默认成片、复盘工作区
+src/FeaturedDemo.tsx    内置演示播放、解说同步、下载入口
+src/AgentPanel.tsx      素材接入、生成任务与产物
+src/FilmPlayer.tsx      生成作品播放、解说和指标联动
+src/TrackBrowser.tsx    人物索引与画面定位
+src/Studio.tsx          比分、投篮分析、复盘笔记
+src/EvidenceStudio.tsx  关键时刻、证据链、解读、资料核验
+src/ui.css              统一蓝白界面样式
+src/motion/             导航与背景动效
+shared/                前后端数据、作品与追踪契约
+agent/                 视频创作流水线
+vision/                人物检测、追踪、角色筛选与评估
+public/readme/         作品说明页面
+infra/cloud.ts         AWS 部署定义
+```
 
 ## 本地运行
 
-环境：Node.js 24；已在 Windows、Node 24.19.0、npm 12.0.2 验证。
+环境：Node.js 24。启动 Web 与 Agent：
 
 ```bash
 npm ci
+npm run agent
+# 另一终端
 npm run dev
 ```
 
-打开终端显示的 `http://127.0.0.1:5173/`。没有云服务配置、API 密钥或环境变量前置要求。
+Web 默认地址为 `http://127.0.0.1:5173/`，Agent 默认监听 `127.0.0.1:8080`。内置成片使用已发布的 CloudFront 媒体地址。配置项见 `.env.example`；赛事工作使用 `nba` / `us-east-1`，Bedrock 接入步骤见下方工程文档。
 
 ```bash
 npm run check
@@ -42,88 +123,18 @@ npm run build
 npm run preview
 ```
 
-`build` 输出到 `dist/`；当前未部署、未接入赛事 AgentCore / Portal。
+## 深入了解
 
-第二个终端执行 `npm run agent`，打开网页默认的「AI 作品」。无 `.env` 时为零模型费用的离线工程演示；本机已按用户授权配置 Bedrock，点击「生成解说作品」会检查 SDK 连接后创建一次模型任务。中文音轨使用已安装的 Windows Huihui，成片和任务保存在忽略目录 `.local/agent`。配置切换见[模型接入说明](docs/BEDROCK_INTEGRATION.md)。
+- [AI 比赛作品工作流](docs/AI_FILM_GUIDE.md)
+- [Bedrock 接入与调用记录](docs/BEDROCK_INTEGRATION.md)
+- [人物定位与 AWS 方案](docs/PLAYER_LOCALIZATION_AWS_V1.md)
+- [人物追踪工程优化](docs/PLAYER_TRACKING_OPEN_SOURCE_OPTIMIZATION_PLAN.md)
+- [AWS 部署记录](docs/AWS_CLOUD_DEPLOYMENT.md)
+- [UI 配色与动效复用](docs/UI_KIT_REUSE.md)
+- [本次源码同步复核](docs/GITHUB_SYNC_REVIEW_20261010.md)
+- [工作区资料索引](WORKSPACE.md)
+- [对应源码与组件许可](https://d31azeixbvzmqd.cloudfront.net/source/courtside-cloud-source.zip)
 
-启动、接口、模型关闭机制、CDK 离线合成与资源到位后的接入清单见 [Agent 骨架说明](docs/AGENT_SKELETON.md)；实际验证见 [Agent 验收记录](docs/AGENT_ACCEPTANCE.md)。
+## 数据来源与许可
 
-## 已实现的流程
-
-- 两段真实比赛片段切换，视频、解读、指标及来源同步更新。
-- 原生视频播放/暂停、拖动进度、0.5/1/1.5/2 倍速、原声开关、全屏。
-- 视频时间轴与三个关键帧、证据节点同步；比分变化、出手定位、出手前后循环及 ±1 秒控制。
-- 球员/节次筛选、逐次 xFG 柱形图、分节表现、出手方式分布；统计计算有独立测试。
-- 时间点复盘笔记，支持浏览器本地保存、编辑、分类、视频回看、JSON 导出和撤销删除。
-- 球员信息、逐次出手数据、AI 观察字幕三个独立图层。
-- 通俗解读 / 技术视角 / 复盘提问，共享证据引用；右侧证据链区分画面观察、视觉核对和官方记录。
-- 41 条投篮记录，支持球员、结果、关键字组合筛选与空结果状态。
-- 手机端纵向投篮卡片、44px 视频控制、独立进度条；从档案回看时定位并聚焦视频。
-- 视频加载状态、失败提示与重试恢复；全屏按钮和退出状态同步。
-- 原有回合下载 JSON 或全部 41 条记录；「AI 作品」另外提供实际渲染的 MP4、字幕和时间轴下载。
-- 键盘操作、原生模态对话框、焦点返回、可见焦点、减弱动态效果和响应式布局。
-- 两回合按相同阶段对照关键帧与官方指标；保留不同比赛的解释边界。
-- 数据档案内支持文件或文本核验回合 JSON，识别不兼容输入、字段冲突，并导出报告或打开已收录回合。
-
-## 设计交付
-
-最新功能取舍与验收见 [REFERENCE_RECONCILIATION.md](docs/REFERENCE_RECONCILIATION.md)。下表部分截图保留蓝薄荷首版的历史设计；当前工作台、对照与接入流程截图见该文档。
-
-| 产物                         | 文件                                                       |
-| ---------------------------- | ---------------------------------------------------------- |
-| 当前工作台设计图             | [evidence-review.jpg](docs/design/evidence-review.jpg)     |
-| 手机回看首屏                 | [mobile-review.jpg](docs/design/mobile-review.jpg)         |
-| 手机解读与指标               | [mobile-inspector.jpg](docs/design/mobile-inspector.jpg)   |
-| 手机数据档案                 | [mobile-archive.jpg](docs/design/mobile-archive.jpg)       |
-| 投篮分析设计图               | [desktop-analytics.jpg](docs/design/desktop-analytics.jpg) |
-| 复盘笔记设计图               | [desktop-notes.jpg](docs/design/desktop-notes.jpg)         |
-| 手机投篮分析                 | [mobile-analytics.jpg](docs/design/mobile-analytics.jpg)   |
-| 蓝薄荷首版验收               | [BLUE_MINT_ACCEPTANCE.md](docs/BLUE_MINT_ACCEPTANCE.md)    |
-| 数据档案设计图               | [desktop-archive.jpg](docs/design/desktop-archive.jpg)     |
-| 来源弹窗设计图               | [source-dialog.jpg](docs/design/source-dialog.jpg)         |
-| 设计思路、视觉规则、信息架构 | [DESIGN.md](docs/DESIGN.md)                                |
-| 自检、迭代记录与测试边界     | [QA.md](docs/QA.md)                                        |
-| 媒体副本来源、参数与哈希     | [media-manifest.json](docs/media-manifest.json)            |
-
-以上图片来自真实浏览器中的实际页面；不是静态图片伪装的交互页面。
-
-## 数据与素材
-
-| 素材        | 官方比赛 / 事件  | 官方时钟 | 视频出手约值 | 本次出手 xFG |
-| ----------- | ---------------- | -------- | ------------ | ------------ |
-| 阿门·汤普森 | 0022500491 / 396 | Q3 07:25 | 18.035 秒    | 44.5%        |
-| 库珀·弗拉格 | 0022500701 / 666 | Q4 01:34 | 16.800 秒    | 51%          |
-
-数据快照为 2026-10-09。来源：[Inside the Game](https://china.nba.cn/inside-the-game)、[阿门场次](https://china.nba.cn/game/0022500491)、[弗拉格场次](https://china.nba.cn/game/0022500701)。前端记录从已完成关联与校验的本地数据包提取，未调用付费模型。`src/data/shots.json` 是公开记录的字段投影；`src/data/clips.json` 是内部展示契约，不是赛事官方 schema。
-
-2 次视频事件经 AI 视觉核对与官方事件交叉检查，尚未经过独立人工复核；其余 39 条没有本地视频关联。官方记账时钟、画面时钟、视频播放时间分别保存。未提供本回合引力或完整轨迹，界面不使用虚构数值或示例百分比填充。含义冲突的场次汇总没有进入前端。
-
-媒体来自用户提供的两段训练视频。仓库只包含 1280×720、约 29.97 fps 的 H.264 预览副本，以及提取的 WebP 关键帧；AAC 原音轨重封装，无新生成语音。原文件未修改、未上传。媒体时间保留相同起点；降帧后的显示不应当作原始视频的逐帧精度测量。素材使用范围沿用原提供方授权，本仓库没有为赛事录像授予新的许可。
-
-## 技术结构
-
-React + TypeScript + Vite，原生 CSS 与 HTML Video；Lucide 图标。后端使用 Node.js HTTP、FFmpeg 和 Bedrock SDK，默认离线；CDK 仅用于本地合成资源模板。无外部字体请求或统计追踪。
-
-```text
-src/App.tsx          工作台、播放器、来源对话框、检索视图
-src/Studio.tsx       比分概览、投篮分析、复盘笔记
-src/EvidenceStudio.tsx 时间轴、证据链、分层解读、回合对照、资料核验
-src/review.ts        证据契约、时间节点与输入校验
-src/analytics.ts     样本聚合与分节计算
-src/data.ts          展示类型、时间格式、JSON 导出
-src/data/            2 个视频条目与 41 条投篮记录
-src/AgentPanel.tsx    本地 Agent 连接、任务进度、证据与结果
-shared/agent.ts       前后端共享的内部任务和结果类型
-agent/               HTTP 服务、队列、抽帧、模型适配、校验、官方适配预留
-infra/app.ts         CDK 离线基础设施骨架
-src/styles.css       基础布局、播放器、数据档案
-src/studio.css       蓝薄荷主题及工作区
-src/evidence.css     证据工作流与响应式布局
-tests/               样本统计测试
-public/media/        本地视频预览和关键帧
-docs/design/         实际页面设计图
-```
-
-笔记只保存在当前浏览器的当前站点，清理站点数据会移除笔记；建议用 JSON 导出留存。存储不可用时会显示提示，测试笔记不会随源码发布。
-
-当前可完成本地离线工作流。真实模型推理尚未执行；自动事件发现、新素材上传、轨迹追踪、TTS、带标注成片渲染、云部署、赛事重跑协议和平台提交仍待接入。
+演示使用 [NBA 官方逐回合记录](https://www.nba.com/game/hou-vs-dal-0022500491/play-by-play)、[NBA 中国杜兰特逐次出手数据](https://api.nba.cn/nba-web/api/web/inside/gpShot?gameId=0022500491&playerId=201142) 和 [NBA 中国比赛列表](https://api.nba.cn/nba-web/api/web/inside/game?date=2026-01-04)。来源快照、获取时间与 SHA-256 收录在配套文件中。比赛素材使用范围沿用原提供方授权；视觉及界面组件遵循各自开源许可，出处与许可文本随源码提供。

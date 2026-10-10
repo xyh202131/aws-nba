@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { parseRequest } from "../agent/contracts.ts";
-import { buildAss } from "../agent/render.ts";
+import { buildAss, videoRenderSettings } from "../agent/render.ts";
 import {
   validateTrackingRows,
   validateTrackingManifest,
@@ -79,6 +79,30 @@ test("a narration source mismatch fails before tracking or paid analysis", async
 });
 
 const hash = "a".repeat(64);
+test("generic role evidence is annotation-free, bounded and incompatible with video whitelists", () => {
+  const m = manifest();
+  m.role_filter = {
+    source: "pretrained_semantic_roles", name: "CLIP-ViT-B-32", sha256: hash,
+    license: "MIT", prompts_sha256: hash, crop_transform: "full_box_gray_pad224_v1",
+    annotations_used: false, identity_status: "unconfirmed",
+    score_kind: "uncalibrated_cosine_similarity", margin: .02,
+    negative_samples: 2, refresh_seconds: .33, ttl_seconds: .6,
+    inferred_crops: 3, suppressed_observations: 1, restored_observations: 0,
+    uncertain_policy: "preserve_floor_gate", shorts_required: false,
+  };
+  m.files.role_evidence = { name: "person-role-evidence.jsonl", sha256: hash, bytes: 100 };
+  assert.doesNotThrow(() => validateTrackingManifest(m, hash, 1));
+  for (const changes of [
+    { annotations_used: true }, { shorts_required: true }, { negative_samples: 1 },
+    { suppressed_observations: 4 }, { sha256: "invalid" }, { margin: NaN },
+    { inferred_crops: 150001 }, { identity_status: "confirmed" },
+  ]) {
+    assert.throws(() => validateTrackingManifest({ ...m, role_filter: { ...m.role_filter, ...changes } }, hash, 1));
+  }
+  assert.throws(() => validateTrackingManifest({ ...m, player_scope: {} }, hash, 1));
+  assert.throws(() => validateTrackingManifest({ ...m, files: { ...m.files, role_evidence: { name: "../../secret", sha256: hash, bytes: 100 } } }, hash, 1));
+  assert.throws(() => validateTrackingManifest({ ...m, role_filter: null }, hash, 1));
+});
 test("narration reuse preserves actual frame bytes and timestamps", () => {
   const frame = {
     id: "clip:frame:0",
@@ -191,6 +215,78 @@ test("tracking rejects swapped videos, malformed boxes, invented identities and 
   ])
     assert.throws(() => validateTrackingRows([bad], m));
   assert.equal(validateTrackingRows([observation()], m).length, 1);
+});
+
+test("ByteTrack manifests declare no camera compensation and cannot claim ReID", () => {
+  const m = manifest(1);
+  const value = {
+    ...m,
+    tracker: { ...m.tracker, name: "ByteTrack", gmc_method: null },
+  };
+  assert.doesNotThrow(() => validateTrackingManifest(value, hash, 1));
+  assert.throws(() =>
+    validateTrackingManifest(
+      { ...value, tracker: { ...value.tracker, gmc_method: "sparseOptFlow" } },
+      hash,
+      1,
+    ),
+  );
+  assert.throws(() =>
+    validateTrackingManifest(
+      { ...value, tracker: { ...value.tracker, reid: true } },
+      hash,
+      1,
+    ),
+  );
+});
+
+test("coarse player references never become confirmed NBA identities or reviewed truth", () => {
+  const scope = {
+    source: "user_provided_coarse_player_boxes",
+    review_status: "provisional",
+    annotations_sha256: hash,
+    reference_frames: 30,
+    reference_boxes: 200,
+    matched_reference_frames: 30,
+    seed_tracks: 20,
+    suppressed_observations: 0,
+    shorts_policy: "positive_cue_not_required_3_observations_100ms",
+    unreferenced_policy: "hide_without_strong_shorts_and_court_evidence",
+    identity_status: "unconfirmed",
+  };
+  const m = { ...manifest(1), player_scope: scope };
+  assert.doesNotThrow(() => validateTrackingManifest(m, hash, 1));
+  for (const bad of [
+    { ...scope, review_status: "confirmed" },
+    { ...scope, identity_status: "confirmed" },
+    { ...scope, annotations_sha256: "invalid" },
+    { ...scope, suppressed_observations: 2 },
+    { ...scope, reference_policy: "label_entire_track" },
+    { ...scope, leg_policy: "skin_color_only" },
+  ])
+    assert.throws(() =>
+      validateTrackingManifest({ ...m, player_scope: bad }, hash, 1),
+    );
+});
+
+test("native HD uses verified display dimensions and preserves the 16:9 ASS coordinate mapping", () => {
+  const info = { width: 1920, height: 1080, duration: 5, hasAudio: true };
+  const timeline = { sourceWidth: 1920, sourceHeight: 1080, frames: [] };
+  const native = videoRenderSettings(info, timeline, "source");
+  assert.equal(native.width, 1920);
+  assert.equal(native.height, 1080);
+  assert.match(native.filter, /scale=1920:1080/);
+  assert.equal(videoRenderSettings(info, timeline, "720p").width, 1280);
+  assert.equal(
+    videoRenderSettings(
+      info,
+      { ...timeline, sourceWidth: 640, sourceHeight: 360 },
+      "source",
+    ).width,
+    640,
+  );
+  // No verified SAR/rotation plane means no native-HD assertion.
+  assert.equal(videoRenderSettings(info, undefined, "source").width, 1280);
 });
 
 test("cache provenance and requested appearance inference cannot be silently fabricated", () => {

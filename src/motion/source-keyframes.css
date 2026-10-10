@@ -1,0 +1,59 @@
+/* Original keyframes, verbatim. Selectors and lifecycle live in motion.css. */
+@keyframes foundation-section-in {
+  from { opacity: 0.2; transform: translateY(54px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes foundation-question-stream {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-33.3333%, 0, 0); }
+}
+
+@keyframes foundation-paper-rise {
+  from {
+    border-radius: 64px 64px 0 0;
+    filter: brightness(0.88);
+    transform: translate3d(0, 18vh, 0) scale(0.96);
+  }
+
+  to {
+    border-radius: 0;
+    filter: brightness(1);
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes foundation-agent-glyph-enter {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+}
+
+@keyframes foundation-agent-glyph-exit {
+  to {
+    opacity: 0;
+    transform: translate3d(
+      var(--foundation-glyph-drift-x),
+      calc(var(--foundation-glyph-drift-y) * -1),
+      0
+    ) rotate(var(--foundation-glyph-rotate));
+  }
+}
+
+@keyframes route-page-enter-forward {
+  from { transform: translate3d(0, 14px, 0); }
+  68% { transform: translate3d(0, 1px, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes route-page-enter-backward {
+  from { transform: translate3d(0, -14px, 0); }
+  68% { transform: translate3d(0, -1px, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes route-page-enter-lateral {
+  from { transform: translate3d(0, 8px, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}

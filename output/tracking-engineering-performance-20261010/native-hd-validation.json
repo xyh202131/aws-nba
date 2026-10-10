@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "courtside.native-hd-validation.v1",
+  "sourceSha256": "7ec745f5f1e75b0c6d6dd27d409875f67c2ac3ab76c73f7123794c96be5aee22",
+  "outputSha256": "1cf318320e3d2ca3185ab02ee4e4685eed0fc19432256bce084c44a7c1d4be30",
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.94005994005994,
+    "frames": 300,
+    "sar": 1.0,
+    "hasAudio": true
+  },
+  "sourceFrames": 300,
+  "frameCountMatches": true,
+  "maxRelativePtsErrorSeconds": 0.0,
+  "audioNonzero": true,
+  "narrationKind": "scripted_engineering_acceptance_not_model_generated",
+  "modelCalls": 0,
+  "awsResourcesCreated": 0
+}
