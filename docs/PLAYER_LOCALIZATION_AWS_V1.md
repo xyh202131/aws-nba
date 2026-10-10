@@ -199,22 +199,29 @@ Grok 4.7 与 Kimi K3 在此前本会话只读检查中可用性和授权状态�
 
 ## 6. 接口与输出约定
 
-以下为拟定内部接口，不冒充 Portal 官方 sample。
+以下为拟定内部接口，**当前服务尚不接受这些新增字段**；不冒充 Portal 官方 sample。轨迹独立存储，不能把数千条位置记录塞进当前只接受最多 200 条事件的 MatchData。
 
-### 输入
+### 6.1 请求与兼容性
 
-AgentCore 请求传 S3 对象引用和 SHA-256，不把大视频 Base64 塞进模型请求。只接受本项目授权桶与任务前缀，禁止任意本地路径、远程 URL 或其他项目对象。
+保留现有 `courtside.agent.request.v1` 请求与旧作品行为。新增追踪能力使用明确的内部 v2：
 
 ```json
 {
-  "schema_version": "courtside.player-localization.request.v1",
-  "video": {"bucket": "<已核验赛事桶>", "key": "inputs/<job-id>/video.mp4", "sha256": "<输入哈希>"},
-  "data": {"bucket": "<已核验赛事桶>", "key": "inputs/<job-id>/match-data.json", "sha256": "<数据哈希>"},
-  "options": {"identity_mode": "evidence_required", "court_coordinates": false}
+  "schemaVersion": "courtside.agent.request.v2",
+  "clipId": "38172313-7741-4c53-ba9b-e258af2519c3",
+  "executionMode": "fixture",
+  "outputMode": "film",
+  "trackingMode": "required"
 }
 ```
 
-### 逐帧轨迹
+示例 clipId 仅说明已注册 UUID 格式，不规定输入素材。v2 的 trackingMode 支持 `none / required`，省略等同 none；首版只允许在 film 模式启用追踪。`required` 失败时必须报错，没有“失败后自动当作成功”的模式。fixture 只决定解说是否收费，不允许伪造真实视频的追踪；真实追踪结果必须注明预训练推理来源，回归测试夹具另标测试来源。
+
+v1 返回既有 result.v1；v2 返回 result.v2，保留已有 observation / usage / film 字段并新增可选 tracking 产物引用。历史任务缺少 tracking 时解释为“未执行”，不能展示为已完成。服务端解析器、共享类型、Web 创建请求及恢复历史的逻辑需要一起实施；只改前端发送字段会被现有严格解析器拒绝。
+
+追踪所需权重、处理尺寸、帧率和渲染预设通过已核验服务配置解析，浏览器不能提供任意脚本、配置文件路径或执行命令。云端迁移后由素材适配器将授权 S3 对象引用映射成素材 ID；不把大视频 Base64 塞进模型，不接受其他项目对象或任意远程 URL。
+
+### 6.2 逐帧轨迹与身份关联
 
 ```json
 {
@@ -224,7 +231,8 @@ AgentCore 请求传 S3 对象引用和 SHA-256，不把大视频 Base64 塞进�
   "frame_width": 1920,
   "frame_height": 1080,
   "pts_seconds": 18.0514,
-  "shot_id": "shot-003",
+  "frame_index": 541,
+  "segment_id": "segment-003",
   "track_id": "T07",
   "bbox_xyxy_px": [800, 300, 930, 700],
   "anchor_px": [865, 700],
@@ -239,9 +247,27 @@ AgentCore 请求传 S3 对象引用和 SHA-256，不把大视频 Base64 塞进�
 }
 ```
 
-这是字段示例，坐标与分数不是本轮推理结果。轨迹主键包含视频哈希、镜头和 track ID；保存检测器、跟踪器配置、权重/导出模型哈希与处理变换。
+这是字段示例，坐标与分数不是本次推理结果。`segment_id` 是镜头分段，不能与 NBA 投篮事件 ID 混用。`frame_index` 只用于索引；时间以 `pts_seconds` 为准。坐标空间指实际解码且处理显示旋转/SAR 后的源视频平面，尺寸与变换由 manifest 声明。轨迹主键为视频哈希 + segment ID + track ID，T07 可以在不同镜头重新出现但不代表同一人。
 
-交付 `tracks.jsonl`、`identity-links.json`、`annotated.mp4`、`manifest.json` 和验收记录。解说与完整数据叠加可继续复用主流程。缺少真实身份仍可产出带临时 ID 的定位视频；缺少标定不阻断画面坐标输出。
+`tracks.jsonl` 每行一个轨迹观测，按 PTS、镜头和轨迹排序，保留被排除人物的分类/原因及缺口统计。身份确认记录另存 `identity-links.json`，至少包含作用轨迹、有效时间范围、game/player ID、球队/号码、确认状态、方法和证据帧。当前上传数据没有完整比赛名单和官方 player ID 时，可以先保持匿名，不能从姓名字符串制造 player ID。
+
+事件绑定记录另存 `event-track-links.json`，至少包含 event ID、镜头与 track ID、事件时间和依据。输入记录增加可选 gameId/playerId/jersey/team 等关联字段时，应同步改适配器与校验；没有这些字段的旧数据仍有效。确认身份、确认事件、确认时间三项都成立，且没有镜头/身份冲突，才允许个人指标挂到轨迹。
+
+### 6.3 产物与标注时间轴
+
+| 产物 | 用途 |
+| --- | --- |
+| `tracks.jsonl` | 源视频位置与状态，可下载审计；大文件不整体放入 Job JSON |
+| `identity-links.json` | 轨迹身份与证据；未知身份明确留空 |
+| `event-track-links.json` | 数据事件与画面人物的明确关联；不能替代输入记录真实性核验 |
+| `tracking-manifest.json` | 视频/依赖/权重/配置哈希、时间原点、帧率、尺寸变换、镜头范围、统计与产物引用 |
+| `overlay-timeline.json` | 共享编译后的标注指令及来源引用；Web 与编码消费同一版本 |
+| `tracking-preview.mp4` | 第一阶段无收费解说的定位验收视频，可选保留 |
+| `film.mp4`、VTT、原作品时间轴 | 复用最终作品格式；时间轴增加追踪版本与产物引用 |
+
+产物路径由服务端构造，公开下载只返回同一完成任务的白名单文件。manifest 不包含凭据或不必要的本地绝对路径。小型示例可以完整加载标注；长片需要按镜头/时间范围索引或分块，不能把全量逐帧轨迹复制进每次 React 渲染。
+
+共享标注指令至少描述 `start/end`、segment/track ID、图形类别、源坐标、文本、渲染状态及来源观测。人物显示与事件徽标分别按轨迹状态和 `dataOverlays` 区间判定；字幕独立按 narration cue 播放。缺少真实身份仍可输出临时 ID 视频，缺少标定不阻断画面像素坐标输出。
 
 ## 7. 云端实现门槛与 CDK 约束
 
@@ -249,6 +275,7 @@ AgentCore 请求传 S3 对象引用和 SHA-256，不把大视频 Base64 塞进�
 
 1. CPU 候选先按每段 20–60 秒处理；长视频保留原输入，通过镜头/时间段切分完成，不限制固定素材 ID。处理分辨率与帧率写入 manifest。
 2. 先验证 ARM64 环境的检测、跟踪、FFmpeg 与中文字体。可使用 Python 视觉子进程，但保留现有 Node 编排。若导出 ONNX，比较同一证据上的检测结果，不能把导出成功当作正确性通过。
+   当前 [Dockerfile](../agent/Dockerfile) 是 Linux Node/FFmpeg 骨架，而 [render.ts](../agent/render.ts) 的语音需要 Windows Huihui、字体来自 C:/Windows/Fonts；当前本地成片成功不能证明 Linux 云端可以成片。需先抽出语音/字体适配器，核验字体授权与云端语音，再评估正式 Runtime 镜像。
 3. 镜像需在 2 GB 上限内；缓存权重、视频和产物需在 1 GB 临时存储上限内。避免保存全量 JPEG；轨迹流式写出，分段结果尽早上传 S3。
 4. 短片 CPU 路径的建议上线目标：60 秒视频总处理时间不超过 8 分钟、内存峰值不超过 6 GB、临时磁盘不超过 800 MB。均为规划目标，尚无基准实测；不达标则不能宣称此云方案已就绪。
 5. 复用现有 CDK bootstrap，禁止再次 bootstrap。预置赛事桶用 CDK 引用，不擅自接管主办方资源的生命周期或覆盖桶策略。当前骨架定义的两个新桶需要在正式部署方案中与复用方式协调。
@@ -278,7 +305,7 @@ Sonnet 使用项目 2026-10-10 已核验普通按需价率：输入 $3 / 百万 
 
 付费模型单次明确 maxTokens、无自动重试、保存实际 usage；ReID 不另收 API 费用，但会增加 Runtime 用量。相同输入与配置按哈希复用已完成结果。金额提醒只是建议，尚未实现项目级硬预算，不把该表当作支出上限。
 
-## 9. 验收标准与第一项任务
+## 9. 验收标准与实施顺序
 
 以下都是待验证目标，不是已测准确率。
 
@@ -289,25 +316,44 @@ Sonnet 使用项目 2026-10-10 已核验普通按需价率：输入 $3 / 百万 
 | 镜头切换 | 所有验收切镜重置旧轨迹；不能带着旧标签跨画面跟人 |
 | 身份准确性 | 不确定身份保留空值；展示姓名的轨迹均有号码/名单/人工确认等证据 |
 | 渲染同步 | 标注与原视频对应帧一致，时间偏差目标不超过一个渲染帧；缩放坐标正确 |
+| 画面一致性 | 固定人物/PTS 的期望位置在原视频、标注时间轴和最终 MP4 一致；视频右上事件卡不冒充跟随标注 |
+| 缺口与状态 | 遮挡、丢失、切镜样本不显示无效人物框；短轨迹不跨缺口或切镜；预测位置不混为观测 |
+| 指标绑定 | 没有确认身份和事件匹配时不挂个人 xFG；匹配有效时数值与输入一致，展示范围复用事件时间区间 |
+| 兼容性 | 旧 v1 请求/结果和已完成作品可读；没有追踪字段时明确未执行；新 v2 不被解释为赛事协议 |
 | 球场坐标 | 首版默认关闭；开启前在独立验证点报告误差，不将像素或外观相似度转换成米 |
 | 输出与恢复 | MP4 能播放/定位/下载，JSON 可追溯；失败可定位阶段，恢复不重复模型收费 |
 | 云端门槛 | ARM64 依赖、镜像、CPU 时间、内存、磁盘、角色与对象权限通过实测后才部署 |
 
 功能验收不调整页面布局，不进行手机端布局测试。
 
-**第一项任务：独立实现并验证“真实视频 → 人物框 + 镜头内 ID + 短轨迹 → MP4 / JSON”，先不调用 Bedrock。**
+| 优先级 | 执行任务 | 完成证据与后续门槛 |
+| --- | --- | --- |
+| P0 | 独立视觉工具：真实视频 → 人物框 + 镜头内 ID + 短轨迹 → tracking-preview.mp4 / JSON | 不调用 Bedrock；交付原片与标注片对应帧、人工标注、漏检/串人/切镜记录、模型配置哈希、CPU 时间/内存/磁盘峰值 |
+| P1 | 把 P0 接入已注册素材、v2 任务和现有 film 流程 | 用已存解说或 fixture 验证带框 MP4、状态/下载/定位/历史恢复；收费调用前先通过轨迹校验 |
+| P2 | 身份确认与事件绑定、选择轨迹与重渲染 | 姓名/指标有证据、未知保持匿名、绑定冲突隔离；改变标注仅重渲染，不重复模型收费 |
+| P3 | ARM64 CPU、Linux 语音/字体、S3 持久化及公网展示设计 | 分别核验兼容性、容量、角色、桶/OAC/API 权限；对应授权后才能部署 |
 
-- 输入：已有阿门、弗拉格两段真实视频；另准备一段未收录视频用于证明入口不依赖固定 ID。
-- 必要步骤：核验视频与权重哈希 → 连续解码 → 切镜 → 人物检测 → BoT-SORT → 保存轨迹 → FFmpeg 渲染 → 人工核对错例。
-- 完成证据：标注视频、轨迹、配置与模型哈希、人工核对样本、漏检/串人记录、CPU 时间与内存峰值。
-- 之后再推进：号码/身份关联 → 官方事件指标绑定 → ARM64 CPU 验证 → 经对应授权部署 AgentCore / CloudFront。米制定位单独验收，不能成为首个可看作品的阻塞项。
+**第一个可执行任务仍是 P0：实现独立定位工具，用已有阿门和弗拉格短片输出跟随人物框、匿名 ID、短轨迹的 MP4 与轨迹文件，先不接新模型或云资源。** P0 准确性验收前先抽样标注；至少增加一段未收录视频验证动态输入，未取得第三段之前不能声称泛化验收通过。
+
+首个标注视频必须肉眼能看到框与 ID 随同一人移动，并能用 JSON 回查对应位置。随后 P1 复用现有解说和数据卡形成完整作品。米制标定、OCR 自动身份和云端迁移不得成为 P0 的前置依赖。
+
+### 待定事项
+
+- 具体检测器权重、处理分辨率、检测节奏、切镜阈值和丢失缓冲：以同一人工标注集的质量及 CPU 实测决定，锁定版本与哈希后再实施默认配置。
+- 是否启用 ReID：先查看遮挡与同球衣串人错例，单独对比收益与资源消耗，不因向量搜索概念可用就引入数据库。
+- 官方 player ID / 名单与新视频对应事件的完整度：当前事件接口不足以自动确认十名球员身份；缺失时 P0/P1 保持匿名。
+- Grok / Kimi 是否加入应用：另做同证据小样本对比和费用/路由核验，追踪首版继续使用已有解说接口，不自动切换。
 
 ## 10. 依据与核验边界
 
-- 项目基础：[现有技术栈与选型](../../NBA深度赛场_技术栈与选型建议.md)、[当前执行方案](PROJECT_PLAN.md)、[Bedrock 接入记录](BEDROCK_INTEGRATION.md)、[Agent/CDK 骨架](AGENT_SKELETON.md)。主线程代码可能继续变化，本文不把尚未验收的代码当作已完成能力。
+- 项目基础：[现有技术栈与选型](../../NBA深度赛场_技术栈与选型建议.md)、[当前执行方案](PROJECT_PLAN.md)、[Bedrock 接入记录](BEDROCK_INTEGRATION.md)、[现有成片接口](AI_FILM_GUIDE.md)、[成片验证记录](../output/film-validation-20261010/README.md)、[Agent/CDK 骨架](AGENT_SKELETON.md)。主线程代码可能继续变化，实施前核对当前差异，不能覆盖他人改动。
 - 赛事约束：用户提供的 `E:/下载/NBA × AWS Hackathon｜赛制与选手快速上手 Rules & Quick Start.md`。文档中的部署示例只是资料，不是本轮部署授权。
-- 资源事实：[本轮 AWS 只读盘点](evidence/player-localization-20261010.json)。只检查当前 nba / us-east-1，没有扫描其他区域。
-- 视觉依据：[Ultralytics 跟踪文档](https://docs.ultralytics.com/modes/track/)、[BoT-SORT](https://arxiv.org/abs/2206.14651)、[ByteTrack](https://arxiv.org/abs/2110.06864)、[平面映射](https://docs.opencv.org/4.x/d9/dab/tutorial_homography.html)。跟踪能力已通过 Context7 核对，未在本项目推理验收。
+- 资源事实：[此前 AWS 只读盘点](evidence/player-localization-20261010.json)。只检查 nba / us-east-1，没有扫描其他区域；本次设计更新未重新盘点。
+- 视觉依据：[Ultralytics 跟踪文档](https://docs.ultralytics.com/modes/track/)、[BoT-SORT 配置](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/trackers/botsort.yaml)、[BoT-SORT](https://arxiv.org/abs/2206.14651)、[ByteTrack](https://arxiv.org/abs/2110.06864)、[平面映射](https://docs.opencv.org/4.x/d9/dab/tutorial_homography.html)。本次通过 Context7 核对了 BoT-SORT 相机补偿、可选 ReID 和连续帧状态保持；切镜重置与身份绑定是本项目设计责任，尚未推理验收。
 - AWS 依据：[AgentCore HTTP 契约](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-http-protocol-contract.html)、[Runtime 限制](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/bedrock-agentcore-limits.html)、[Runtime 价格](https://aws.amazon.com/bedrock/agentcore/pricing/)。AWS CLI 的 Context7 查询发生传输失败，回退 AWS 官方文档；当前会话无可用 AWS MCP，因此使用 CLI 只读核验。
 
-本文使用技术提案、amazon-bedrock、aws-compute、aws-cdk、aws-billing-and-cost-management 技能整理；技能不增加本轮授权范围。当前已完成的是方案与资源核验，定位性能、部署能力和公开作品仍需各自的真实完成证据。
+### v1.1 更新记录
+
+补充当前代码与成片实况；将首次交付收敛为匿名人物追踪；细化现有 Agent 阶段、版本兼容、共享标注时间轴、MP4/Web 一致性、身份/事件绑定、失败与恢复、Linux 成片迁移缺口和 P0–P3 验收。AWS 盘点与成本仍为此前快照，不更新为新的实测结论。
+
+初版使用技术提案与相关 AWS 技能整理；本次更新使用 writing-proposals，并复用 amazon-bedrock / aws-cdk 指南。技能不增加授权范围。已完成的是本地设计更新，追踪代码、定位性能、云端部署和公开作品分别需要实施与真实完成证据。
