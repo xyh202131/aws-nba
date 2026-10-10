@@ -1,0 +1,57 @@
+✔ contest region/profile and paid-call gates reject unsafe configuration (1.488ms)
+✔ requests reject path injection, remote URLs, unsupported schemas and extra fields (2.2407ms)
+✔ model output cannot replace official metrics or cite invented/off-time frames (0.4682ms)
+✔ Bedrock provider rejects disabled calls before constructing a client (0.4499ms)
+✔ real video pipeline extracts evidence, preserves provenance, persists and restores both fixture jobs (2793.3083ms)
+AGENT_JOB_FAILED 9a4517e6-d8ab-45d9-9e4a-58d34d2f8a4d TEST_FAILURE
+✔ failure is durable and interrupted jobs are not automatically retried (26.7178ms)
+AGENT_JOB_FAILED 4693e56a-c8c5-4d45-b9cd-fe4e8eee6749 TEST_FAILURE
+AGENT_JOB_FAILED a51bb743-3d76-4919-add8-8aa249e15b5f TEST_FAILURE
+AGENT_JOB_FAILED d704a9c5-c774-4960-b4de-9f8da793f87b TEST_FAILURE
+AGENT_JOB_FAILED 77fb9643-a16d-425f-aae0-aa7ba72fba71 TEST_FAILURE
+✔ concurrent submissions cannot bypass queue cap and jobs run serially (40.4674ms)
+✔ stale offline browser request cannot invoke a paid provider (117.5519ms)
+AGENT_JOB_FAILED 770c7d81-d0cf-472c-87d6-18eb17f26628 TEST_FAILURE
+✔ explicit Bedrock browser request is accepted only by enabled paid backend (38.8032ms)
+AGENT_JOB_FAILED 11818402-2954-4b1e-b8a5-a8f03758b1b3 TEST_FAILURE
+✔ HTTP health, validation, origin protection, official guard and async job APIs (90.7305ms)
+✔ empty samples remain unknown instead of displaying a zero accuracy (1.2167ms)
+✔ Amen official sample has 8 makes in 18 attempts, independent of the selected made clip (0.1574ms)
+✔ Flagg sample has 13 makes, 27 points and 47.6 percent average xFG (0.0965ms)
+✔ quarter filtering preserves the four known Amen splits (0.1956ms)
+✔ made shots do not get assigned 100 percent xFG (0.1151ms)
+✔ Sonnet schema constrains evidence/time; Qwen uses its verified basic API (18.1893ms)
+AGENT_JOB_FAILED abc6dcf9-5f3d-4086-ad5e-88d9aa466408 INVALID_MODEL_OUTPUT
+✔ invalid JSON preserves charged response and usage durably through restart (31.0806ms)
+✔ timeout or denied response has unknown usage and no implicit retry (10.6954ms)
+✔ truncated output is rejected after recording its real usage (9.8299ms)
+✔ failed attempt persistence prevents any model request (9.7201ms)
+✔ concurrent requests share valid credentials and refresh the same profile before expiry (0.6867ms)
+✔ wrong or missing project identity is rejected; a failed credential lookup requires an explicit next request (0.5817ms)
+✔ data adapters preserve probabilities, milliseconds and untimed records without inventing video time (1.7525ms)
+✔ story validation binds each commentary segment to its own real frame and data event (1.9325ms)
+✔ arbitrary uploaded video plus aligned NBA JSON produces a narrated MP4, subtitles, timeline and seekable HTTP bytes (9232.8ms)
+✔ timeline selects context, release, and result without conflating the clocks (0.8774ms)
+✔ both exported reviews roundtrip into existing verified local clips (0.4155ms)
+✔ malformed and oversized input cannot be opened (0.4665ms)
+✔ tracking and note JSON never masquerade as an analyzed review (0.1578ms)
+✔ unknown clips are blocked even when the schema matches (0.2136ms)
+✔ xFG, times, source and media conflicts cannot overwrite verified facts (0.4113ms)
+✔ v2 film requests can require tracking without changing v1 parsing (1.6998ms)
+AGENT_JOB_FAILED a3a2d1ee-8abf-4486-9642-0d578b611154 NARRATION_REUSE_MISMATCH
+✔ a narration source mismatch fails before tracking or paid analysis (198.322ms)
+✔ narration reuse preserves actual frame bytes and timestamps (0.4723ms)
+✔ tracking rejects swapped videos, malformed boxes, invented identities and off-segment timestamps (0.8906ms)
+✔ short image trails stop at a cut, loss or long detection gap (0.4075ms)
+✔ VFR observations use decoded frame duration and do not extend through a gap (0.1229ms)
+AGENT_JOB_FAILED 2de9d1e3-472d-48f2-8ad9-ed0cb0d490a4 TRACKING_UNAVAILABLE
+✔ required tracking failure stops a paid-config pipeline before any invocation (155.8943ms)
+✔ encoded anonymous overlays use canvas coordinates and never attach an unconfirmed xFG (0.8981ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9645.5644

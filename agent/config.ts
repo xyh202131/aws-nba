@@ -66,5 +66,13 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env) {
     paidCallsEnabled,
     dataDir: resolve(ROOT, env.AGENT_DATA_DIR ?? ".local/agent"),
     ffmpegPath: env.FFMPEG_PATH || undefined,
+    visionPython: resolve(
+      ROOT,
+      env.VISION_PYTHON ||
+        (process.platform === "win32"
+          ? ".local/vision-venv/Scripts/python.exe"
+          : ".local/vision-venv/bin/python"),
+    ),
+    visionWeightsDir: resolve(ROOT, ".local/vision-models"),
   };
 }

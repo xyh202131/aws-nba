@@ -1,0 +1,90 @@
+{
+  "schema_version": "courtside.tracking-manifest.v1",
+  "source": "pretrained_inference",
+  "video_sha256": "532683792345c3398da1cdd7069edeeace874919fab33104c352f880b2411411",
+  "width": 1280,
+  "height": 720,
+  "duration": 22.89,
+  "source_fps": 29.97002997002997,
+  "processing_fps": 29.97002997002997,
+  "time_origin_seconds": 0.0,
+  "transform": {
+    "rotation": 0,
+    "sar": 1.0,
+    "encoded_width": 1280,
+    "encoded_height": 720
+  },
+  "model": {
+    "name": "YOLO11m",
+    "sha256": "d5ffc1a674953a08e11a8d21e022781b1b23a19b730afc309290bd9fb5305b95",
+    "license": "AGPL-3.0"
+  },
+  "config_sha256": "46e33b54d0e9a43131b75efddc6078033ba4338148754525e3861609d42568fa",
+  "dependencies": {
+    "python": "3.14.7",
+    "ultralytics": "8.4.174",
+    "torch": "2.12.0+cpu",
+    "opencv": "5.0.0",
+    "numpy": "2.4.4",
+    "pyav": "18.0.0",
+    "tool_sha256": "f9a6aa0a2ccaabce844d3d953ce7698931113cdf675f5cb48119d60e90547783",
+    "inference_threads": "2"
+  },
+  "render_policy": {
+    "trail_seconds": 0.8,
+    "position_source": "detector_measurement",
+    "interpolation": false
+  },
+  "tracker": {
+    "name": "BoT-SORT",
+    "gmc_method": "sparseOptFlow",
+    "reid": false,
+    "buffer_seconds": 0.5
+  },
+  "segments": [
+    {
+      "id": "S001",
+      "start": 0.0,
+      "end": 21.287933333333335,
+      "reason": "start"
+    },
+    {
+      "id": "S002",
+      "start": 21.287933333333335,
+      "end": 22.89,
+      "reason": "scene_cut"
+    }
+  ],
+  "stats": {
+    "processed_frames": 686,
+    "frames_with_tracks": 638,
+    "observations": 7297,
+    "included_observations": 7035,
+    "unique_tracks": 87,
+    "excluded_observations": 12311
+  },
+  "resources": {
+    "wall_seconds": 502.958,
+    "cpu_seconds": 983.469,
+    "peak_rss_bytes": 776318976,
+    "output_bytes": 7115407,
+    "peak_working_bytes": 64107487
+  },
+  "files": {
+    "tracks": {
+      "name": "tracks.jsonl",
+      "sha256": "ddce99e595b399747cd28eec8dfce7804db3de176b8e152d63e1eac1a82439c7",
+      "bytes": 4511690
+    },
+    "exclusions": {
+      "name": "excluded-detections.jsonl",
+      "sha256": "ea08b904d674342c8d52c3f469204d11ad58fd1c0ec1f86990f876edecacfb32",
+      "bytes": 2412230
+    },
+    "floor_regions": {
+      "name": "floor-regions.jsonl",
+      "sha256": "d2606499cede9d7226e83613bbca3f13eee112f5063f4473e26c3f14c0b8ffbc",
+      "bytes": 191487
+    }
+  }
+}

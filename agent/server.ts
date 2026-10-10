@@ -177,13 +177,24 @@ export async function createAgentServer(
         return;
       }
       const artifactMatch = path.match(
-        /^\/api\/jobs\/([a-f0-9-]{36})\/artifacts\/(film\.mp4|captions\.vtt|timeline\.json)$/,
+        /^\/api\/jobs\/([a-f0-9-]{36})\/artifacts\/(film\.mp4|captions\.vtt|timeline\.json|tracks\.jsonl|detections\.jsonl|track-index\.json|excluded-detections\.jsonl|floor-regions\.jsonl|tracking-manifest\.json|identity-links\.json|event-track-links\.json|overlay-timeline\.json)$/,
       );
       if (req.method === "GET" && artifactMatch) {
         const job = manager.get(artifactMatch[1]!);
         if (job.status !== "completed" || !job.result?.film)
           throw new AgentError("RESULT_NOT_READY", "作品尚未完成。", 409);
         const filename = artifactMatch[2]!;
+        if (
+          (filename === "track-index.json" &&
+            !job.result.tracking?.trackIndex) ||
+          (filename === "detections.jsonl" && !job.result.tracking?.detections)
+        )
+          throw new AgentError("NOT_FOUND", "该旧作品没有此追踪文件。", 404);
+        if (
+          !["film.mp4", "captions.vtt", "timeline.json"].includes(filename) &&
+          !job.result.tracking
+        )
+          throw new AgentError("NOT_FOUND", "该作品未执行追踪。", 404);
         const file = resolve(config.dataDir, "artifacts", job.id, filename);
         const size = (await stat(file)).size;
         const range = req.headers.range;
@@ -214,7 +225,9 @@ export async function createAgentServer(
             ? "video/mp4"
             : filename.endsWith("vtt")
               ? "text/vtt; charset=utf-8"
-              : "application/json; charset=utf-8",
+              : filename.endsWith("jsonl")
+                ? "application/x-ndjson; charset=utf-8"
+                : "application/json; charset=utf-8",
           "Accept-Ranges": "bytes",
           "Content-Length": end - start + 1,
           "Cache-Control": "no-store",

@@ -13,6 +13,7 @@ import {
 import { clips, downloadJson, timecode } from "./data";
 import {
   REQUEST_SCHEMA,
+  REQUEST_SCHEMA_V2,
   type AgentHealth,
   type Job,
   type StageId,
@@ -22,6 +23,8 @@ import { FilmPlayer } from "./FilmPlayer";
 
 const labels: Record<StageId, string> = {
   material: "核对素材",
+  tracking: "真实人物追踪",
+  binding: "保留匿名与事件边界",
   frames: "提取证据帧",
   analysis: "多模态分析",
   validation: "校验结果",
@@ -71,6 +74,7 @@ export function AgentPanel({
   const [preview, setPreview] = useState<MatchData | null>(null);
   const [alignments, setAlignments] = useState<Record<string, string>>({});
   const [uploadStatus, setUploadStatus] = useState("");
+  const [trackingRequired, setTrackingRequired] = useState(false);
   const dataInput = useRef("");
   const dataReadGate = useRef(false);
   const uploaded = useRef<{ file: File; id: string } | null>(null);
@@ -165,10 +169,11 @@ export function AgentPanel({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          schemaVersion: REQUEST_SCHEMA,
+          schemaVersion: trackingRequired ? REQUEST_SCHEMA_V2 : REQUEST_SCHEMA,
           clipId: materialId,
           executionMode: health.provider,
           outputMode: "film",
+          ...(trackingRequired ? { trackingMode: "required" } : {}),
         }),
       });
       if (mounted.current) {
@@ -215,6 +220,39 @@ export function AgentPanel({
         setError(reason instanceof Error ? reason.message : "数据读取失败。");
     } finally {
       dataReadGate.current = false;
+    }
+  }
+  async function addTrackingToExistingFilm() {
+    if (submitGate.current || !health || busy || !current?.result?.film) return;
+    submitGate.current = true;
+    setSubmitting(true);
+    setError("");
+    try {
+      const job = await request<Job>("/api/jobs", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          schemaVersion: REQUEST_SCHEMA_V2,
+          clipId: current.request.clipId,
+          executionMode: health.provider,
+          outputMode: "film",
+          trackingMode: "required",
+          reuseNarrationJobId: current.id,
+        }),
+      });
+      if (mounted.current) {
+        setSelected(job.id);
+        setJobs((previous) => [
+          job,
+          ...previous.filter((j) => j.id !== job.id),
+        ]);
+      }
+    } catch (reason) {
+      if (mounted.current)
+        setError(reason instanceof Error ? reason.message : "追踪任务未创建。");
+    } finally {
+      submitGate.current = false;
+      if (mounted.current) setSubmitting(false);
     }
   }
   function changeData(raw: string) {
@@ -430,6 +468,20 @@ export function AgentPanel({
           tokens；费用随输入和输出用量计。结果需结合画面复核。
         </p>
       )}
+      <label>
+        <input
+          type="checkbox"
+          checked={trackingRequired}
+          disabled={submitting || busy}
+          onChange={(e) => setTrackingRequired(e.target.checked)}
+        />
+        追踪画面人物：匿名框、镜头内 ID 与短轨迹
+      </label>
+      {trackingRequired && (
+        <p className="agent-notice">
+          使用本地预训练视觉工具，身份未确认；追踪失败会停止，不继续收费解说。视频采样与漏检会在结果中保留。
+        </p>
+      )}
       {uploadStatus && <p role="status">{uploadStatus}</p>}
       {error && (
         <p className="agent-error" role="alert">
@@ -439,10 +491,14 @@ export function AgentPanel({
       <div className="agent-stages" aria-label="Agent 处理阶段">
         {(
           current?.stages ??
-          Object.keys(labels).map((id) => ({
-            id: id as StageId,
-            status: "pending",
-          }))
+          Object.keys(labels)
+            .filter(
+              (id) => trackingRequired || !["tracking", "binding"].includes(id),
+            )
+            .map((id) => ({
+              id: id as StageId,
+              status: "pending",
+            }))
         ).map((stage, index) => (
           <div key={stage.id} className={`agent-stage ${stage.status}`}>
             <span>
@@ -457,7 +513,11 @@ export function AgentPanel({
               )}
             </span>
             <small>0{index + 1}</small>
-            <b>{labels[stage.id]}</b>
+            <b>
+              {stage.id === "analysis" && current?.request.reuseNarrationJobId
+                ? "复用已有解说"
+                : labels[stage.id]}
+            </b>
           </div>
         ))}
       </div>
@@ -555,6 +615,15 @@ export function AgentPanel({
       )}
       {result ? (
         <div className="agent-result">
+          {result.film && !result.tracking && (
+            <button
+              className="agent-refresh"
+              onClick={() => void addTrackingToExistingFilm()}
+              disabled={!health || busy || submitting}
+            >
+              沿用解说，添加真实追踪（不重复模型收费）
+            </button>
+          )}
           {result.film && (
             <FilmPlayer
               key={current.id}

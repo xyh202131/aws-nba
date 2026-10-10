@@ -8,6 +8,10 @@
 
 当前作品入口与 API 见 [AI 比赛作品工作流](docs/AI_FILM_GUIDE.md)。本轮真实上传→Sonnet→解说 MP4→Web 播放/定位/下载已完成，模型估算 $0.022365；31 项测试、类型检查和生产构建通过。没有检查布局或手机端，没有部署云资源。
 
+后续已实现本地匿名人物追踪并接入成片：预训练 YOLO11m + BoT-SORT、真实 PTS 的框/ID/短轨迹、JSONL 与 Web 下载。可显式沿用已完成解说追加追踪，新增模型调用为 0。运行见 [vision/README.md](vision/README.md)，证据和未通过的人工精度/身份/云端门槛见[追踪验证](output/tracking-validation-20261010/README.md)。源码和小型验证资料纳入仓库；MP4、缓存、权重与任务目录保留在本机 `.local`，不改布局或手机端。
+
+最新完成匿名人物 ID 检索/画面定位、实测检测缓存和后置场地区域筛选；41 项 Node / 15 项 Python 测试、构建及网页功能验证通过。原片已是 1080p60，另准备保留帧序的原生/轻度处理对照，当前解说成片仍为 720p。细节和未解决的遮挡 ID/裁判问题见[人物优化与视频准备](output/person-retrieval-optimization-20261010/README.md)，没有新增 AWS 调用或费用。
+
 赛事要求与剩余缺口见 [2026-10-10 要求复核](docs/REQUIREMENTS_GAP_REVIEW_20261010.md)。该记录中的 Git 状态为核对时快照，后续同步版本以仓库提交记录为准。
 
 2026-10-10 已将赛事 `nba / us-east-1` 的 Bedrock 接入现有 Agent 与网页，完成一次真实点击 → SDK 推理 → 结果/费用展示 → 导出验证，使用 Sonnet 4.6，估算 $0.009834。详见[模型接入与启动说明](docs/BEDROCK_INTEGRATION.md)。此前 3 次 CLI 实测及错例保留在[首轮记录](output/model-validation-20261010/README.md)。云端未部署。

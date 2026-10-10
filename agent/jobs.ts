@@ -140,7 +140,10 @@ export class JobManager {
       createdAt: now,
       updatedAt: now,
       status: "queued",
-      stages: STAGES.map((id) => ({ id, status: "pending" })),
+      stages: (request.trackingMode === "required"
+        ? (["material", "tracking", "binding", ...STAGES.slice(1)] as StageId[])
+        : STAGES
+      ).map((id) => ({ id, status: "pending" })),
     };
     // Reserve before awaiting persistence so concurrent submissions cannot bypass capacity limits.
     this.jobs.set(job.id, job);

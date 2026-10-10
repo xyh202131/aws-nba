@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "courtside.video-quality-check.v1",
+  "source": {
+    "file": "E:\\Compressed\\train_video\\train_video\\\u8bad\u7ec3_\u963f\u95e81\u67084\u65e5 .mp4",
+    "sha256": "7ec745f5f1e75b0c6d6dd27d409875f67c2ac3ab76c73f7123794c96be5aee22",
+    "width": 1920,
+    "height": 1080,
+    "fps": 59.940016263811856,
+    "frames": 1371,
+    "firstPts": 0.0,
+    "lastPts": 22.856188888888887,
+    "sar": 1.0,
+    "rotation": 0,
+    "ptsSha256": "d2a3c3978ea4f98d5e99b3078b7ab261f4d3112758f1c4cce0a50ccd2c6e1d8e",
+    "sampleTime": 18.785444444444444,
+    "sampleImage": "source.png"
+  },
+  "outputs": [
+    {
+      "file": "C:\\Users\\24048\\Desktop\\NBA\\aws-nba\\.local\\video-preparation\\f2340624-7b95-467d-b7ed-1e5945696727\\native.mp4",
+      "sha256": "31dd474a3a2c6e05926245e08e5ed99650541d636cda31bd08f269b45934e1b2",
+      "width": 1920,
+      "height": 1080,
+      "fps": 59.940016263811856,
+      "frames": 1371,
+      "firstPts": 0.0,
+      "lastPts": 22.856188888888887,
+      "sar": 1.0,
+      "rotation": 0,
+      "ptsSha256": "d2a3c3978ea4f98d5e99b3078b7ab261f4d3112758f1c4cce0a50ccd2c6e1d8e",
+      "sampleTime": 18.785444444444444,
+      "sampleImage": "native.png",
+      "sameFrameCount": true,
+      "maxRelativePtsErrorSeconds": 0.0,
+      "sameDisplaySize": true,
+      "temporalCheckPassed": true
+    },
+    {
+      "file": "C:\\Users\\24048\\Desktop\\NBA\\aws-nba\\.local\\video-preparation\\f2340624-7b95-467d-b7ed-1e5945696727\\light.mp4",
+      "sha256": "2a09e33dac569723d8c09bcf58a9f1cd00c55542766c317246feef52987802bb",
+      "width": 1920,
+      "height": 1080,
+      "fps": 59.940016263811856,
+      "frames": 1371,
+      "firstPts": 0.0,
+      "lastPts": 22.856188888888887,
+      "sar": 1.0,
+      "rotation": 0,
+      "ptsSha256": "d2a3c3978ea4f98d5e99b3078b7ab261f4d3112758f1c4cce0a50ccd2c6e1d8e",
+      "sampleTime": 18.785444444444444,
+      "sampleImage": "light.png",
+      "sameFrameCount": true,
+      "maxRelativePtsErrorSeconds": 0.0,
+      "sameDisplaySize": true,
+      "temporalCheckPassed": true
+    }
+  ],
+  "limitations": [
+    "Timestamp/resolution checks do not certify better visual detail.",
+    "Light filtering can erase texture or create halos; retain the original as default."
+  ]
+}

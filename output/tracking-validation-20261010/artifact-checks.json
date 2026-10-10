@@ -1,0 +1,25 @@
+{
+  "jobId": "456ea04b-0c0f-48b0-b39a-3e65e4b57f6d",
+  "checks": {
+    "sourceFramesMatchParent": true,
+    "manifestAndRowsValidatedByCurrentCode": true,
+    "oldFramesStopAtCut": true,
+    "filmSha256Verified": true,
+    "fullMp4Decode": true,
+    "zeroNewModelCalls": true
+  },
+  "filmSha256": "d286e7732705efe7f5e428936a75f6f7e6ddd1dda74512d008cadabdea3a2be3",
+  "artifactDiskBytes": 55625681,
+  "trackingResources": {
+    "wall_seconds": 502.958,
+    "cpu_seconds": 983.469,
+    "peak_rss_bytes": 776318976,
+    "output_bytes": 7115407,
+    "peak_working_bytes": 64107487
+  },
+  "qualityStatus": "awaiting_human_annotation",
+  "notes": [
+    "Disk bytes are final artifact-directory size, not whole-job peak; Python peak_working_bytes excludes rendering/fonts/venv.",
+    "This CFR Amen artifact precedes addition of per-frame exposure duration; legacy average-fps exposure is compatible for this 29.97 fps clip."
+  ]
+}

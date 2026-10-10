@@ -3,6 +3,7 @@ import type {
   AgentResult,
   ModelInvocation,
   StageId,
+  AgentFrame,
 } from "../shared/agent.ts";
 import type { Config } from "./config.ts";
 import { loadMaterial } from "./catalog.ts";
@@ -13,6 +14,32 @@ import { loadUploadedMaterial, probeMedia } from "./media.ts";
 import { analyzeStory, planFrames } from "./story.ts";
 import { renderFilm } from "./render.ts";
 import type { MatchData } from "../shared/agent.ts";
+import { runTracking } from "./tracking.ts";
+import { readFile } from "node:fs/promises";
+import { resolve } from "node:path";
+import { isDeepStrictEqual } from "node:util";
+import { AgentError } from "./errors.ts";
+import type { Job } from "../shared/agent.ts";
+import { validateStory } from "./story.ts";
+
+export function validateReusedFrames(
+  previous: AgentFrame[],
+  current: AgentFrame[],
+) {
+  const fingerprint = (frames: AgentFrame[]) =>
+    frames.map(({ id, requestedTime, time, sha256 }) => ({
+      id,
+      requestedTime,
+      time,
+      sha256,
+    }));
+  if (!isDeepStrictEqual(fingerprint(previous), fingerprint(current)))
+    throw new AgentError(
+      "NARRATION_REUSE_MISMATCH",
+      "解说证据帧的哈希或时间已变化；停止复用，没有调用模型。",
+      422,
+    );
+}
 
 export async function runPipeline(
   request: AgentRequest,
@@ -37,7 +64,10 @@ export async function runPipeline(
   );
   await stage("package");
   return {
-    schemaVersion: "courtside.agent.result.v1",
+    schemaVersion:
+      request.schemaVersion === "courtside.agent.request.v2"
+        ? "courtside.agent.result.v2"
+        : "courtside.agent.result.v1",
     clipId: clip.id,
     provider: config.provider,
     modelId: output.modelId,
@@ -124,6 +154,45 @@ async function runFilmPipeline(
     analyzedAsset = "upload";
   }
   const info = await probeMedia(videoPath, config);
+  let reused: Job | undefined;
+  if (request.reuseNarrationJobId) {
+    try {
+      const parent = JSON.parse(
+        await readFile(
+          resolve(
+            config.dataDir,
+            "jobs",
+            `${request.reuseNarrationJobId}.json`,
+          ),
+          "utf8",
+        ),
+      ) as Job;
+      if (
+        parent.id !== request.reuseNarrationJobId ||
+        parent.status !== "completed" ||
+        !parent.result?.film ||
+        parent.request.clipId !== request.clipId ||
+        parent.result.media.previewSha256 !== previewSha256 ||
+        Math.abs(parent.result.film.duration - info.duration) > 0.001 ||
+        !isDeepStrictEqual(parent.result.film.data, data)
+      )
+        throw new Error("mismatch");
+      reused = parent;
+    } catch {
+      throw new AgentError(
+        "NARRATION_REUSE_MISMATCH",
+        "解说来源任务不存在、未完成，或视频／数据不一致；没有调用模型。",
+        422,
+      );
+    }
+  }
+  let tracking: Awaited<ReturnType<typeof runTracking>> | undefined;
+  if (request.trackingMode === "required") {
+    await stage("tracking");
+    tracking = await runTracking(videoPath, previewSha256, info, jobId, config);
+    await stage("binding");
+    // Until evidence-backed identity binding exists, every track stays anonymous.
+  }
   const planning = planFrames(info.duration, data);
   await stage("frames");
   const frames = await extractFrames(
@@ -132,15 +201,38 @@ async function runFilmPipeline(
     jobId,
     config,
   );
+  if (reused) validateReusedFrames(reused.result!.frames, frames);
   await stage("analysis");
-  const output = await analyzeStory(
-    frames,
-    data,
-    info.duration,
-    jobId,
-    config,
-    recordInvocation,
-  );
+  const output = reused
+    ? {
+        cues: validateStory(
+          {
+            scenes: reused.result!.film!.cues.map((c) => ({
+              text: c.text,
+              time: c.time,
+              evidenceIds: c.evidenceIds,
+            })),
+          },
+          frames,
+          data,
+          info.duration,
+        ),
+        modelId: reused.result!.modelId,
+        usage: {
+          inputTokens: 0,
+          outputTokens: 0,
+          modelCalls: 0,
+          estimatedUsd: 0,
+        },
+      }
+    : await analyzeStory(
+        frames,
+        data,
+        info.duration,
+        jobId,
+        config,
+        recordInvocation,
+      );
   await stage("validation");
   const observation = {
     text: output.cues[0]!.text,
@@ -156,15 +248,24 @@ async function runFilmPipeline(
     data,
     jobId,
     config,
+    tracking,
+    {
+      provider: reused?.result?.provider ?? config.provider,
+      ...(reused ? { reuseJobId: reused.id } : {}),
+    },
   );
   await stage("package");
   return {
-    schemaVersion: "courtside.agent.result.v1",
+    schemaVersion:
+      request.schemaVersion === "courtside.agent.request.v2"
+        ? "courtside.agent.result.v2"
+        : "courtside.agent.result.v1",
     clipId: request.clipId,
-    provider: config.provider,
+    provider: reused?.result?.provider ?? config.provider,
     modelId: output.modelId,
     reviewStatus:
-      config.provider === "fixture" ? "fixture_replay" : "needs_review",
+      reused?.result?.reviewStatus ??
+      (config.provider === "fixture" ? "fixture_replay" : "needs_review"),
     observation,
     interpretation: null,
     official,
@@ -172,13 +273,23 @@ async function runFilmPipeline(
     frames,
     usage: output.usage,
     film,
+    ...(tracking ? { tracking: tracking.artifact } : {}),
     boundaries: [
-      config.provider === "fixture"
-        ? "离线工程演示文案，未分析比赛内容，未调用模型。"
-        : "AI 解说已生成，语义仍待人工复核；证据帧为稀疏采样。",
+      ...(reused
+        ? [
+            `解说显式复用任务 ${reused.id}，视频哈希与数据一致；本次模型调用为 0，原语义审核状态不变。`,
+          ]
+        : []),
+      reused
+        ? "解说沿用已完成任务；本次只执行真实追踪与重渲染，没有新增模型分析。"
+        : config.provider === "fixture"
+          ? "离线工程演示文案，未分析比赛内容，未调用模型。"
+          : "AI 解说已生成，语义仍待人工复核；证据帧为稀疏采样。",
       "数据图形数值直接来自输入记录，模型不生成命中率；时间关系不等于因果关系。",
       ...data.warnings,
-      "成片包含本机中文语音、烧录字幕和事件数据图形；没有球员追踪或场地坐标标注。",
+      tracking
+        ? "成片包含真实预训练人物追踪；匿名 ID 不代表球员身份，事件卡未绑定画面人物，无米制坐标。"
+        : "成片包含本机中文语音、烧录字幕和事件数据图形；没有人物追踪或场地坐标标注。",
       "本地 Web 已提供播放和下载，尚未部署公网；当前内部协议不是官方赛事提交包。",
     ],
   };

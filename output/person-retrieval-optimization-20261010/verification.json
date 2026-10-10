@@ -1,0 +1,40 @@
+{
+  "scope": "Local person retrieval and video preparation; no deployment or AWS/model calls",
+  "nodeBehaviorTests": {
+    "passed": 41,
+    "failed": 0,
+    "command": "npm test"
+  },
+  "pythonTests": {
+    "passed": 15,
+    "failed": 0,
+    "command": "python -m unittest discover -s vision -p test_*.py",
+    "note": "Synthetic quality test metrics are not real-video ground truth"
+  },
+  "build": {
+    "typeChecks": "passed",
+    "vite": "passed"
+  },
+  "web": [
+    "web-report.json",
+    "web-restored-report.json"
+  ],
+  "videoPtsCheck": "video-quality-check.json",
+  "missingArtifactLinks": [],
+  "finalSourceSha256": {
+    "vision/track.py": "30074743f008360359d863fbc7530b7c3e33335556902a50db27618e5524029c",
+    "vision/core.py": "940a3aeb990abfb0a55c1fd44a954ba798dfeea80d0c40d66a13de4c237bf371",
+    "vision/detections.py": "7da0487a7acbc9c358d09d553b090071ee5b37a2b58f78c8ca7d863d7ba60386",
+    "vision/appearance.py": "b7a6dd171d31612294bd2e6152a6412d74cbd06ea01e9a4ddcf77d3227f82b7c",
+    "vision/profile.json": "6e6be9b85c8f045b9c0d4becaee51364f6e9177681844050fb790dfcc542ccf7",
+    "vision/tracker.yaml": "e7934605cb3a1024eee98b33dcde818ebc9f17f93590f86ee08d19f796c92b65",
+    "vision/compare_association.py": "f65146abdb3535fe4950c8a58ea22e700002782f9431e8d1ea3db4a98c5d0cff",
+    "vision/prepare_video.mjs": "68cf7298daf482cf8e9e2006966b1285abbd910cf0c83d53169dfe414393a561",
+    "vision/inspect_video.py": "3358da6c072cb41bfed317bff998020fa1d67540a90fe8418a24190499ed22f2",
+    "agent/tracking.ts": "95bfc2eeab29e3ab97bb83fe2497bb53264642ad7e8937b96afd573ece5a836b",
+    "shared/tracking.ts": "303c44490056a4e174a0df1984957b0552e6d5ca4f2ff478a917fd40e7804267",
+    "src/TrackBrowser.tsx": "e5a23e9ca4ea0315065f6046096b7e84323df9a755adb7b1de6ad0ab113ecb4c",
+    "src/FilmPlayer.tsx": "83b98945e7185724368292b6f7ea14c9730830518c8baf2d63fc689a45b44a90"
+  },
+  "note": "Artifact manifests retain actual run tool hashes; final diagnostic runtime YAML writing fix does not change observation behavior"
+}

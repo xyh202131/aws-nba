@@ -1,12 +1,23 @@
+import type { TrackingArtifact } from "./tracking.ts";
 export const REQUEST_SCHEMA = "courtside.agent.request.v1";
+export const REQUEST_SCHEMA_V2 = "courtside.agent.request.v2";
 export type AgentRequest = {
-  schemaVersion: typeof REQUEST_SCHEMA;
+  schemaVersion: typeof REQUEST_SCHEMA | typeof REQUEST_SCHEMA_V2;
   clipId: string;
   executionMode?: "fixture" | "bedrock";
   outputMode?: "analysis" | "film";
+  trackingMode?: "none" | "required";
+  reuseNarrationJobId?: string;
 };
 export type StageId =
-  "material" | "frames" | "analysis" | "validation" | "render" | "package";
+  | "material"
+  | "tracking"
+  | "binding"
+  | "frames"
+  | "analysis"
+  | "validation"
+  | "render"
+  | "package";
 export type AgentFrame = {
   id: string;
   requestedTime: number;
@@ -51,6 +62,8 @@ export type FilmArtifact = {
   voice: "Microsoft Huihui Desktop";
   cues: NarrationCue[];
   data: MatchData;
+  tracking?: TrackingArtifact;
+  narrationSource?: { provider: "fixture" | "bedrock"; reuseJobId?: string };
 };
 export type AgentUsage = {
   inputTokens: number | null;
@@ -73,7 +86,7 @@ export type ModelInvocation = {
   transportCode?: string;
 };
 export type AgentResult = {
-  schemaVersion: "courtside.agent.result.v1";
+  schemaVersion: "courtside.agent.result.v1" | "courtside.agent.result.v2";
   clipId: string;
   provider: "fixture" | "bedrock";
   modelId: string | null;
@@ -95,6 +108,7 @@ export type AgentResult = {
   usage: AgentUsage;
   boundaries: string[];
   film?: FilmArtifact;
+  tracking?: TrackingArtifact;
 };
 export type Job = {
   id: string;

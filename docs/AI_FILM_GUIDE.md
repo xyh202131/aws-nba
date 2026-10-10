@@ -10,6 +10,8 @@
 4. 点击「生成解说作品」。后台核对视频 → 提取证据帧 → 单次多模态分析 → 校验解说引用 → 合成中文语音、数据图形和字幕 → 编码 MP4。
 5. 生成后在网页播放，点击解说段落或证据帧定位。可下载 MP4、VTT 字幕、时间轴 JSON 和模型调用记录。刷新或恢复历史任务不会重新调用模型。
 
+可勾选“追踪画面人物”，执行本地 YOLO11m / BoT-SORT，烧录匿名人物框、镜头内 ID 和近 0.8 秒画面轨迹。已有未追踪作品可点击“沿用解说，添加真实追踪（不重复模型收费）”，核对同一视频、数据、时长与证据帧后复用已完成解说，保留原审核状态，新增模型调用为 0。它要求父任务已完成，尚不能恢复渲染失败任务。配置和精度边界见 [本地视觉工具](../vision/README.md)；实际结果见[本次追踪验证](../output/tracking-validation-20261010/README.md)。
+
 语音已经合入 MP4，播放器开启声音即可听到。当前本地语音适配器使用 Windows 已安装的 Microsoft Huihui Desktop，不调用新的收费 AWS 语音服务。云端语音适配器尚未实现。
 
 ## 数据接口与时间
@@ -76,6 +78,30 @@
 ```
 
 旧 `outputMode:"analysis"` / 未填写 outputMode 的内部请求保留已有三帧观察接口；当前 Web 创建作品均使用 film。官方赛事协议仍单独适配，`/official/invocations` 不接受自拟格式。
+
+### 真实追踪 v2
+
+```json
+{
+  "schemaVersion": "courtside.agent.request.v2",
+  "clipId": "服务器返回的素材 UUID",
+  "executionMode": "fixture",
+  "outputMode": "film",
+  "trackingMode": "required"
+}
+```
+
+executionMode 仍必须与服务配置一致，fixture 只控制解说收费，不伪造人物轨迹。v1 不接受新追踪字段，v2 返回 result.v2；trackingMode 省略/none 保留旧流程，required 只允许 film。复用请求另加 `reuseNarrationJobId`（已完成父任务 UUID），仅与 required 配合，且不自动回退为新模型调用。
+
+阶段：`material → tracking → binding → frames → analysis → validation → render → package`。binding 目前只明确未知，关联文件为空，没有号码识别、球员名单匹配或人物事件绑定。追踪缺工具、缺权重、非法哈希/坐标、超时或全片无合格人物会停止，不执行随后收费分析。
+
+完成后 `/api/jobs/:id/artifacts/` 增加白名单下载：`tracks.jsonl`、`detections.jsonl`、`track-index.json`、`excluded-detections.jsonl`、`floor-regions.jsonl`、`tracking-manifest.json`、`overlay-timeline.json`、`identity-links.json`、`event-track-links.json`。旧追踪作品缺少新索引/检测字段时保持兼容，访问不存在的新文件返回 404。日志、脚本和配置不公开。完整轨迹不复制到 Job JSON/React 状态，只返回引用与统计。
+
+新作品展开“人物检索 · 匿名 ID 定位”，输入 T 编号或镜头编号，点击结果跳到真实代表帧。索引只包含绘制的实测观测，同一编号跨镜头分开检索；未确认身份不能按球员姓名检索。刷新或展开索引不会新建任务。检测缓存按来源/参数和哈希核验，可复用相同视频的实测框，不能把缓存运行时间视为新视频首次推理速度。
+
+身份不确定时显示 T 编号，xFG 卡标明未绑定画面人物。人物轨迹是解码显示平面的像素坐标；它不是米制坐标、跑速或引力。浅色场地筛选仍可能误纳入裁判/工作人员或漏掉边缘球员，轨迹碎片数不是球员数，覆盖数不是准确率。每段 30 帧的独立人工精度验收仍未完成。
+
+人物关联及原始高清素材处理的最新实测见[人物优化记录](../output/person-retrieval-optimization-20261010/README.md)。当前 Agent 的烧录输出仍是 1280×720；原生 1080p60 转码对照仅是本地视频准备样本，不是高清解说成片。
 
 ## 限制、费用与交付边界
 

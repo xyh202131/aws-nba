@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "courtside.video-preparation.v1",
+  "source": {
+    "path": "E:\\Compressed\\train_video\\train_video\\训练_阿门1月4日 .mp4",
+    "sha256": "7ec745f5f1e75b0c6d6dd27d409875f67c2ac3ab76c73f7123794c96be5aee22",
+    "bytes": 87308125,
+    "duration": 22.89,
+    "width": 1920,
+    "height": 1080,
+    "hasAudio": true
+  },
+  "purpose": "Native-resolution A/B only; not AI upscaling, not a narrated film. Original is untouched.",
+  "policy": {
+    "newFrames": false,
+    "forceFps": false,
+    "crf": 18,
+    "preset": "veryfast",
+    "threads": 2,
+    "defaultSelection": "original"
+  },
+  "outputs": [
+    {
+      "name": "native",
+      "file": "C:\\Users\\24048\\Desktop\\NBA\\aws-nba\\.local\\video-preparation\\f2340624-7b95-467d-b7ed-1e5945696727\\native.mp4",
+      "filter": "scale=w=iw*sar:h=ih,setsar=1",
+      "sha256": "31dd474a3a2c6e05926245e08e5ed99650541d636cda31bd08f269b45934e1b2",
+      "bytes": 79610275,
+      "wallSeconds": 21.576
+    },
+    {
+      "name": "light",
+      "file": "C:\\Users\\24048\\Desktop\\NBA\\aws-nba\\.local\\video-preparation\\f2340624-7b95-467d-b7ed-1e5945696727\\light.mp4",
+      "filter": "scale=w=iw*sar:h=ih,setsar=1,hqdn3d=1:1:3:3,unsharp=5:5:0.3:3:3:0",
+      "sha256": "2a09e33dac569723d8c09bcf58a9f1cd00c55542766c317246feef52987802bb",
+      "bytes": 90853904,
+      "wallSeconds": 28.878
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 
 **现在先读 [当前执行方案](docs/PROJECT_PLAN.md)。** 2026-10-10 已完成真实上传→Sonnet→中文解说/数据图形 MP4→Web 播放和下载，见 [AI 作品工作流与实测](docs/AI_FILM_GUIDE.md)。此前单帧接入和 3 次 CLI 实测保留历史证据。云部署和平台提交尚未完成。
 
-10 月 10 日新增入口：[模型接入](docs/BEDROCK_INTEGRATION.md)、[赛事要求复核](docs/REQUIREMENTS_GAP_REVIEW_20261010.md)、[球员定位与云端处理方案](docs/PLAYER_LOCALIZATION_AWS_V1.md)。定位文件仍为规划，要求复核的 Git 状态仅反映核对时刻。
+10 月 10 日新增入口：[模型接入](docs/BEDROCK_INTEGRATION.md)、[赛事要求复核](docs/REQUIREMENTS_GAP_REVIEW_20261010.md)、[球员定位与云端处理方案](docs/PLAYER_LOCALIZATION_AWS_V1.md)。定位 P0/P1 已实施并完成零新增模型调用的 Web 闭环，见[工具说明](vision/README.md)和[追踪验证](output/tracking-validation-20261010/README.md)；人工精度、身份绑定和云端门槛仍未完成。要求复核的 Git 状态仅反映核对时刻。
 
 ## 阅读顺序与使用规则
 
@@ -120,3 +120,5 @@
 不上传依赖/构建/临时任务、凭据文件，以及 .memorax-code 下的客户端提醒状态。父目录只有一条 .firecrawl/ 忽略规则的 .gitignore 不覆盖仓库已有规则；.firecrawl 本次明确纳入。工作区外的原始训练 MP4 仍按原位置保留，当前工作区的帧证据和已有预览副本均包含。
 
 以后每次实现后，先改 PROJECT_PLAN 的任务状态，新增对应验收记录，再更新受影响的操作清单。新赛事通知单独留版本并更新来源索引；不要把历史验证改写成新版本测试通过。
+
+最新本地实施：[人物检索优化与视频准备](output/person-retrieval-optimization-20261010/README.md)。含同检测关联对照、匿名 ID 搜索/跳转、缓存来源、拒绝默认采用的模型试验和 1080p60 原生处理对照；没有新增 AWS 调用或部署。源码与小型证据统一纳入 Git 同步，私有任务、MP4、权重及缓存保留在本机。

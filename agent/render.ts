@@ -9,6 +9,7 @@ import type { MediaInfo } from "./media.ts";
 import { fileHash, VIDEO_INPUT_OPTIONS } from "./media.ts";
 import { AgentError } from "./errors.ts";
 import { dataOverlays } from "../shared/film.ts";
+import type { OverlayTimeline, TrackingArtifact } from "../shared/tracking.ts";
 
 const execute = promisify(execFile);
 const VOICE = "Microsoft Huihui Desktop" as const;
@@ -32,6 +33,8 @@ export function buildAss(
   cues: NarrationCue[],
   data: MatchData,
   duration: number,
+  tracking?: OverlayTimeline,
+  narrationProvider: "fixture" | "bedrock" = "bedrock",
 ) {
   const rows = [
     "[Script Info]",
@@ -75,7 +78,12 @@ export function buildAss(
       `{\\an7\\pos(${x},${y})\\bord0\\shad0\\1c${color}\\p1}m 0 0 l ${w} 0 ${w} ${h} 0 ${h}{\\p0}`,
       0,
     );
-  line(0, duration, "Label", "{\\pos(24,24)}COURTSIDE  /  AI 解说 · 待复核");
+  line(
+    0,
+    duration,
+    "Label",
+    `{\\pos(24,24)}COURTSIDE  /  ${cues.length ? (narrationProvider === "fixture" ? "离线演示解说 · 真实追踪另计" : "AI 解说 · 待复核") : "匿名人物追踪 · 预训练推理"}`,
+  );
   for (const cue of cues) {
     const escaped = assText(cue.narration);
     const chunks = escaped.match(/.{1,38}/gu) ?? [];
@@ -104,8 +112,100 @@ export function buildAss(
       start,
       end,
       "Label",
-      `{\\pos(930,169)\\fs14}${data.source === "existing_catalog" ? "NBA 官方记录 · 非模型预测" : "上传数据 · 来源待核验"}`,
+      `{\\pos(930,169)\\fs14}${tracking ? `未绑定画面人物 · ${data.source === "existing_catalog" ? "NBA 官方记录" : "来源待核验"}` : data.source === "existing_catalog" ? "NBA 官方记录 · 非模型预测" : "上传数据 · 来源待核验"}`,
     );
+  }
+  if (tracking) {
+    const scale = Math.min(
+      1280 / tracking.sourceWidth,
+      720 / tracking.sourceHeight,
+    );
+    const ox = (1280 - scale * tracking.sourceWidth) / 2,
+      oy = (720 - scale * tracking.sourceHeight) / 2;
+    const num = (v: number) => Number(v.toFixed(2));
+    const point = (p: [number, number]) =>
+      [num(p[0] * scale + ox), num(p[1] * scale + oy)] as [number, number];
+    const polygon = (points: [number, number][]) =>
+      `m ${points[0]!.join(" ")} l ${points
+        .slice(1)
+        .map((p) => p.join(" "))
+        .join(" ")}`;
+    for (const f of tracking.frames) {
+      const [x1, y1] = point([f.bbox[0], f.bbox[1]]),
+        [x2, y2] = point([f.bbox[2], f.bbox[3]]);
+      const paths = [
+        polygon([
+          [x1, y1],
+          [x2, y1],
+          [x2, y1 + 2],
+          [x1, y1 + 2],
+        ]),
+        polygon([
+          [x1, y2 - 2],
+          [x2, y2 - 2],
+          [x2, y2],
+          [x1, y2],
+        ]),
+        polygon([
+          [x1, y1],
+          [x1 + 2, y1],
+          [x1 + 2, y2],
+          [x1, y2],
+        ]),
+        polygon([
+          [x2 - 2, y1],
+          [x2, y1],
+          [x2, y2],
+          [x2 - 2, y2],
+        ]),
+      ];
+      const trail = f.trail
+        .filter((_, i) => i === 0 || i === f.trail.length - 1 || i % 4 === 0)
+        .map(point);
+      for (let i = 1; i < trail.length; i++) {
+        const a = trail[i - 1]!,
+          b = trail[i]!,
+          dx = b[0] - a[0],
+          dy = b[1] - a[1],
+          length = Math.hypot(dx, dy);
+        if (length < 1) continue;
+        const nx = num(-dy / length),
+          ny = num(dx / length);
+        paths.push(
+          polygon([
+            [a[0] + nx, a[1] + ny],
+            [b[0] + nx, b[1] + ny],
+            [b[0] - nx, b[1] - ny],
+            [a[0] - nx, a[1] - ny],
+          ]),
+        );
+      }
+      if (f.anchor) {
+        const [x, y] = point(f.anchor);
+        paths.push(
+          polygon([
+            [x, y - 4],
+            [x + 4, y],
+            [x, y + 4],
+            [x - 4, y],
+          ]),
+        );
+      }
+      line(
+        f.start,
+        f.end,
+        "Label",
+        `{\\an7\\pos(0,0)\\bord0\\shad0\\1c&HDCC278&\\p1}${paths.join(" ")}{\\p0}`,
+        2,
+      );
+      line(
+        f.start,
+        f.end,
+        "Label",
+        `{\\pos(${num(Math.min(1210, Math.max(0, x1)))},${num(Math.max(2, y1 - 21))})\\fs16\\1c&HDCC278&}${assText(f.label)}`,
+        3,
+      );
+    }
   }
   return rows.join("\n") + "\n";
 }
@@ -199,6 +299,10 @@ export async function renderFilm(
   data: MatchData,
   jobId: string,
   config: Config,
+  tracking?: { artifact: TrackingArtifact; timeline: OverlayTimeline },
+  narrationSource: FilmArtifact["narrationSource"] = {
+    provider: config.provider,
+  },
 ): Promise<FilmArtifact> {
   const binary = config.ffmpegPath ?? ffmpeg;
   if (!binary)
@@ -220,7 +324,13 @@ export async function renderFilm(
   }
   await writeFile(
     resolve(folder, "captions.ass"),
-    buildAss(cues, data, info.duration),
+    buildAss(
+      cues,
+      data,
+      info.duration,
+      tracking?.timeline,
+      narrationSource.provider,
+    ),
   );
   await writeFile(
     resolve(folder, "captions.vtt"),
@@ -241,6 +351,8 @@ export async function renderFilm(
         duration: info.duration,
         cues,
         data,
+        ...(tracking ? { tracking: tracking.artifact } : {}),
+        narrationSource,
       },
       null,
       2,
@@ -283,7 +395,7 @@ export async function renderFilm(
     "-filter_complex",
     filters.join(";"),
     "-vf",
-    "scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,setsar=1,ass=filename=captions.ass:fontsdir=fonts",
+    "scale=w=iw*sar:h=ih,setsar=1,scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,setsar=1,ass=filename=captions.ass:fontsdir=fonts",
     "-map",
     "0:v:0",
     "-map",
@@ -334,5 +446,7 @@ export async function renderFilm(
     voice: VOICE,
     cues,
     data,
+    ...(tracking ? { tracking: tracking.artifact } : {}),
+    narrationSource,
   };
 }

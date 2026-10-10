@@ -1,0 +1,20 @@
+{
+  "appearance": {
+    "key": "appearance",
+    "filename": "yolo26n-reid.onnx",
+    "url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26n-reid.onnx",
+    "sha256": "8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb",
+    "bytes": 9873245,
+    "license": "AGPL-3.0",
+    "publisherDigestAvailable": true
+  },
+  "role": {
+    "key": "role",
+    "filename": "TinyCLIP-ViT-8M-16-Text-3M-YFCC15M.pt",
+    "url": "https://github.com/wkcn/TinyCLIP-model-zoo/releases/download/checkpoints/TinyCLIP-ViT-8M-16-Text-3M-YFCC15M.pt",
+    "bytes": 46948845,
+    "license": "MIT",
+    "publisherDigestAvailable": false,
+    "sha256": "3d9f86a556cd13acc1aa6cc18495a79ffd1f58b6f17a552400bdefd244c3a92c"
+  }
+}

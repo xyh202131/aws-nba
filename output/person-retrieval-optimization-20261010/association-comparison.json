@@ -1,0 +1,296 @@
+{
+  "amen": [
+    {
+      "variant": "baseline",
+      "stats": {
+        "processed_frames": 686,
+        "frames_with_tracks": 638,
+        "observations": 7297,
+        "included_observations": 7035,
+        "unique_tracks": 87,
+        "excluded_observations": 12311
+      },
+      "resources": {
+        "wall_seconds": 9.01,
+        "cpu_seconds": 11.969,
+        "peak_rss_bytes": 269778944,
+        "output_bytes": 9412078,
+        "peak_working_bytes": 68401652
+      },
+      "cache": {
+        "state": "hit",
+        "key": "b64e52f3d325badd99088da75e517dacb31d68eb9b8adef9c7084634321437bd",
+        "sha256": "de03003f7a80843e9ee4d22e1a8b4c45f5e1294709b698761b928dfdefe135c3",
+        "bytes": 1997494,
+        "frames": 686,
+        "detections": 20776
+      },
+      "appearance": null,
+      "configSha256": "e276e006a7bc82b92d0734853012b0e9fb793347c3d2dbe0402691e17a6b178c"
+    },
+    {
+      "variant": "motion",
+      "stats": {
+        "processed_frames": 686,
+        "frames_with_tracks": 638,
+        "observations": 7711,
+        "included_observations": 7417,
+        "unique_tracks": 92,
+        "excluded_observations": 12311
+      },
+      "resources": {
+        "wall_seconds": 9.567,
+        "cpu_seconds": 12.0,
+        "peak_rss_bytes": 269844480,
+        "output_bytes": 9684344,
+        "peak_working_bytes": 68673918
+      },
+      "cache": {
+        "state": "hit",
+        "key": "b64e52f3d325badd99088da75e517dacb31d68eb9b8adef9c7084634321437bd",
+        "sha256": "de03003f7a80843e9ee4d22e1a8b4c45f5e1294709b698761b928dfdefe135c3",
+        "bytes": 1997494,
+        "frames": 686,
+        "detections": 20776
+      },
+      "appearance": null,
+      "configSha256": "42bc0d5e036e5f975016abdf7b970b285c1e31650fb732c2a365b21f368d6120"
+    },
+    {
+      "variant": "appearance",
+      "stats": {
+        "processed_frames": 686,
+        "frames_with_tracks": 638,
+        "observations": 7710,
+        "included_observations": 7417,
+        "unique_tracks": 92,
+        "excluded_observations": 12311
+      },
+      "resources": {
+        "wall_seconds": 92.848,
+        "cpu_seconds": 185.734,
+        "peak_rss_bytes": 453148672,
+        "output_bytes": 9683738,
+        "peak_working_bytes": 78546557
+      },
+      "cache": {
+        "state": "hit",
+        "key": "b64e52f3d325badd99088da75e517dacb31d68eb9b8adef9c7084634321437bd",
+        "sha256": "de03003f7a80843e9ee4d22e1a8b4c45f5e1294709b698761b928dfdefe135c3",
+        "bytes": 1997494,
+        "frames": 686,
+        "detections": 20776
+      },
+      "appearance": {
+        "name": "YOLO26n-ReID",
+        "sha256": "8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb",
+        "refresh_seconds": 0.25,
+        "inferred_crops": 6699,
+        "reused_crops": 1766,
+        "provider": "CPUExecutionProvider"
+      },
+      "configSha256": "434cdf5481c862d623788e2cd09f8905779289a2d1c1388f23607d41ac68e142"
+    },
+    {
+      "variant": "late-floor-score",
+      "stats": {
+        "processed_frames": 686,
+        "frames_with_tracks": 638,
+        "observations": 12955,
+        "included_observations": 7344,
+        "unique_tracks": 79,
+        "excluded_observations": 12311
+      },
+      "resources": {
+        "wall_seconds": 9.706,
+        "cpu_seconds": 13.391,
+        "peak_rss_bytes": 270921728,
+        "output_bytes": 13274537,
+        "peak_working_bytes": 72264111
+      },
+      "cache": {
+        "state": "hit",
+        "key": "b64e52f3d325badd99088da75e517dacb31d68eb9b8adef9c7084634321437bd",
+        "sha256": "de03003f7a80843e9ee4d22e1a8b4c45f5e1294709b698761b928dfdefe135c3",
+        "bytes": 1997494,
+        "frames": 686,
+        "detections": 20776
+      },
+      "configSha256": "262134aec8eecdf5218032eb0b5c0ec6796117cf2387e1e44fb21ca3d06e173b"
+    },
+    {
+      "variant": "late-floor-motion",
+      "stats": {
+        "processed_frames": 686,
+        "frames_with_tracks": 638,
+        "observations": 14161,
+        "included_observations": 7680,
+        "unique_tracks": 79,
+        "excluded_observations": 12311
+      },
+      "resources": {
+        "wall_seconds": 9.981,
+        "cpu_seconds": 12.906,
+        "peak_rss_bytes": 270209024,
+        "output_bytes": 14088043,
+        "peak_working_bytes": 73077617
+      },
+      "cache": {
+        "state": "hit",
+        "key": "b64e52f3d325badd99088da75e517dacb31d68eb9b8adef9c7084634321437bd",
+        "sha256": "de03003f7a80843e9ee4d22e1a8b4c45f5e1294709b698761b928dfdefe135c3",
+        "bytes": 1997494,
+        "frames": 686,
+        "detections": 20776
+      },
+      "configSha256": "29632352b9c04dbdd279352b08ec7d3768a1c94e28c3f6417b7cf6bd1039bcdb"
+    }
+  ],
+  "flagg": [
+    {
+      "variant": "baseline",
+      "stats": {
+        "processed_frames": 646,
+        "frames_with_tracks": 644,
+        "observations": 8377,
+        "included_observations": 8187,
+        "unique_tracks": 92,
+        "excluded_observations": 5647
+      },
+      "resources": {
+        "wall_seconds": 8.831,
+        "cpu_seconds": 12.062,
+        "peak_rss_bytes": 269172736,
+        "output_bytes": 8473757,
+        "peak_working_bytes": 62153481
+      },
+      "cache": {
+        "state": "hit",
+        "key": "1c836dae987e49f4b5cd911d9bd3842a200725cf2be01e97165950ed3ec07279",
+        "sha256": "f0e77557976640fa3c9d37afe4689fdb211dedb62d59aa9582b106c721189f7a",
+        "bytes": 1658751,
+        "frames": 646,
+        "detections": 16846
+      },
+      "appearance": null,
+      "configSha256": "e276e006a7bc82b92d0734853012b0e9fb793347c3d2dbe0402691e17a6b178c"
+    },
+    {
+      "variant": "motion",
+      "stats": {
+        "processed_frames": 646,
+        "frames_with_tracks": 644,
+        "observations": 9201,
+        "included_observations": 8950,
+        "unique_tracks": 95,
+        "excluded_observations": 5647
+      },
+      "resources": {
+        "wall_seconds": 9.851,
+        "cpu_seconds": 13.266,
+        "peak_rss_bytes": 269467648,
+        "output_bytes": 9016234,
+        "peak_working_bytes": 62695958
+      },
+      "cache": {
+        "state": "hit",
+        "key": "1c836dae987e49f4b5cd911d9bd3842a200725cf2be01e97165950ed3ec07279",
+        "sha256": "f0e77557976640fa3c9d37afe4689fdb211dedb62d59aa9582b106c721189f7a",
+        "bytes": 1658751,
+        "frames": 646,
+        "detections": 16846
+      },
+      "appearance": null,
+      "configSha256": "42bc0d5e036e5f975016abdf7b970b285c1e31650fb732c2a365b21f368d6120"
+    },
+    {
+      "variant": "appearance",
+      "stats": {
+        "processed_frames": 646,
+        "frames_with_tracks": 644,
+        "observations": 9203,
+        "included_observations": 8949,
+        "unique_tracks": 95,
+        "excluded_observations": 5647
+      },
+      "resources": {
+        "wall_seconds": 137.55,
+        "cpu_seconds": 272.812,
+        "peak_rss_bytes": 453914624,
+        "output_bytes": 9017416,
+        "peak_working_bytes": 72570385
+      },
+      "cache": {
+        "state": "hit",
+        "key": "1c836dae987e49f4b5cd911d9bd3842a200725cf2be01e97165950ed3ec07279",
+        "sha256": "f0e77557976640fa3c9d37afe4689fdb211dedb62d59aa9582b106c721189f7a",
+        "bytes": 1658751,
+        "frames": 646,
+        "detections": 16846
+      },
+      "appearance": {
+        "name": "YOLO26n-ReID",
+        "sha256": "8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb",
+        "refresh_seconds": 0.25,
+        "inferred_crops": 10541,
+        "reused_crops": 658,
+        "provider": "CPUExecutionProvider"
+      },
+      "configSha256": "434cdf5481c862d623788e2cd09f8905779289a2d1c1388f23607d41ac68e142"
+    },
+    {
+      "variant": "late-floor-score",
+      "stats": {
+        "processed_frames": 646,
+        "frames_with_tracks": 644,
+        "observations": 9676,
+        "included_observations": 8424,
+        "unique_tracks": 89,
+        "excluded_observations": 5647
+      },
+      "resources": {
+        "wall_seconds": 43.314,
+        "cpu_seconds": 51.453,
+        "peak_rss_bytes": 270811136,
+        "output_bytes": 9361311,
+        "peak_working_bytes": 63041035
+      },
+      "cache": {
+        "state": "hit",
+        "key": "1c836dae987e49f4b5cd911d9bd3842a200725cf2be01e97165950ed3ec07279",
+        "sha256": "f0e77557976640fa3c9d37afe4689fdb211dedb62d59aa9582b106c721189f7a",
+        "bytes": 1658751,
+        "frames": 646,
+        "detections": 16846
+      },
+      "configSha256": "262134aec8eecdf5218032eb0b5c0ec6796117cf2387e1e44fb21ca3d06e173b"
+    },
+    {
+      "variant": "late-floor-motion",
+      "stats": {
+        "processed_frames": 646,
+        "frames_with_tracks": 644,
+        "observations": 10818,
+        "included_observations": 9169,
+        "unique_tracks": 90,
+        "excluded_observations": 5647
+      },
+      "resources": {
+        "wall_seconds": 9.362,
+        "cpu_seconds": 12.078,
+        "peak_rss_bytes": 270082048,
+        "output_bytes": 10121417,
+        "peak_working_bytes": 63801141
+      },
+      "cache": {
+        "state": "hit",
+        "key": "1c836dae987e49f4b5cd911d9bd3842a200725cf2be01e97165950ed3ec07279",
+        "sha256": "f0e77557976640fa3c9d37afe4689fdb211dedb62d59aa9582b106c721189f7a",
+        "bytes": 1658751,
+        "frames": 646,
+        "detections": 16846
+      },
+      "configSha256": "29632352b9c04dbdd279352b08ec7d3768a1c94e28c3f6417b7cf6bd1039bcdb"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "drawAndVisibility": true,
+    "export": true,
+    "undoResetsReview": true,
+    "navigation": true,
+    "originalAnnotationsRemainUnreviewed": true
+  },
+  "annotationStatus": "awaiting_human_annotation",
+  "errors": []
+}

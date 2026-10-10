@@ -2,6 +2,7 @@ import { useState, type RefObject } from "react";
 import type { FilmArtifact } from "../shared/agent";
 import { timecode } from "./data";
 import { dataOverlays } from "../shared/film";
+import { TrackBrowser } from "./TrackBrowser";
 
 export function FilmPlayer({
   film,
@@ -23,8 +24,91 @@ export function FilmPlayer({
     <section className="agent-film" aria-label="生成的比赛作品">
       <div className="agent-film-heading">
         <h3>{film.title}</h3>
-        <span>AI 解说 · 待复核</span>
+        <span>
+          {film.narrationSource?.provider === "fixture"
+            ? "离线演示解说"
+            : "AI 解说 · 待复核"}
+        </span>
       </div>
+      {film.narrationSource?.reuseJobId && (
+        <p className="agent-notice">
+          沿用已生成解说，本次没有再次调用模型。原解说仍需复核。
+        </p>
+      )}
+      <details className="agent-boundaries">
+        <summary>
+          {film.tracking ? "真实人物追踪 · 身份未确认" : "未执行人物追踪"}
+        </summary>
+        {film.tracking && (
+          <>
+            <p>
+              {film.tracking.model} · BoT-SORT · {film.tracking.processedFrames}{" "}
+              个处理帧，{film.tracking.framesWithTracks} 帧有合格人物框，
+              {film.tracking.segmentCount} 个镜头。{film.tracking.uniqueTracks}{" "}
+              个镜头内轨迹不等于同等数量球员；覆盖数量不是准确率。
+            </p>
+            <p>
+              人物框与短轨迹已烧录到下载作品。匿名 ID
+              不代表球员身份，事件数据卡独立显示；未推断米制距离、速度或个人引力。
+            </p>
+            <div className="agent-result-actions">
+              <a href={film.tracking.tracks} download="tracks.jsonl">
+                下载逐帧轨迹
+              </a>
+              <a
+                href={film.tracking.manifest}
+                download="tracking-manifest.json"
+              >
+                下载追踪来源与统计
+              </a>
+              <a href={film.tracking.overlays} download="overlay-timeline.json">
+                下载标注时间轴
+              </a>
+              {film.tracking.detections && (
+                <a href={film.tracking.detections} download="detections.jsonl">
+                  下载原始人物检测
+                </a>
+              )}
+              {film.tracking.exclusions && (
+                <a
+                  href={film.tracking.exclusions}
+                  download="excluded-detections.jsonl"
+                >
+                  下载排除记录
+                </a>
+              )}
+              {film.tracking.floorRegions && (
+                <a
+                  href={film.tracking.floorRegions}
+                  download="floor-regions.jsonl"
+                >
+                  下载场地区域估计
+                </a>
+              )}
+              <a
+                href={film.tracking.identityLinks}
+                download="identity-links.json"
+              >
+                下载身份关联
+              </a>
+              <a
+                href={film.tracking.eventLinks}
+                download="event-track-links.json"
+              >
+                下载事件关联
+              </a>
+            </div>
+          </>
+        )}
+      </details>
+      {film.tracking?.trackIndex && (
+        <TrackBrowser
+          key={film.tracking.trackIndex}
+          url={film.tracking.trackIndex}
+          duration={film.duration}
+          onSeek={seek}
+        />
+      )}
       <video
         ref={videoRef}
         controls
@@ -91,7 +175,9 @@ export function FilmPlayer({
       </details>
       <small>
         中文语音已合入 MP4；请开启播放器音量。
-        {film.data.events.filter((e) => e.videoTimeSeconds === null).length}{" "}
+        {
+          film.data.events.filter((e) => e.videoTimeSeconds === null).length
+        }{" "}
         条未对齐记录未叠加。
       </small>
     </section>

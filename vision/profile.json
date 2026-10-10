@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "courtside.vision-profile.v1",
+  "modelName": "YOLO11m",
+  "weightsFile": "yolo11m.pt",
+  "weightsUrl": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11m.pt",
+  "license": "AGPL-3.0",
+  "imageSize": 960,
+  "maxFps": 60,
+  "threads": 2,
+  "confidence": 0.15,
+  "minHeightRatio": 0.09,
+  "courtFilter": "estimated_light_floor_hull_v1",
+  "floorBoundaryMarginRatio": 0.01,
+  "associationScope": "size_qualified",
+  "appearance": false,
+  "lostBufferSeconds": 0.5,
+  "cutPixelThreshold": 0.22,
+  "cutHistogramThreshold": 0.25,
+  "trailSeconds": 0.8,
+  "maxObservations": 150000
+}

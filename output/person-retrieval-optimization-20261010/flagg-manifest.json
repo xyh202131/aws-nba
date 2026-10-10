@@ -1,0 +1,106 @@
+{
+  "schema_version": "courtside.tracking-manifest.v1",
+  "source": "pretrained_inference",
+  "video_sha256": "11e304f9e82917455971cd284e824c2097bf36e5c65f1757434f424594460bda",
+  "width": 1280,
+  "height": 720,
+  "duration": 21.55,
+  "source_fps": 29.97002997002997,
+  "processing_fps": 29.97002997002997,
+  "time_origin_seconds": 0,
+  "transform": {
+    "rotation": 0,
+    "sar": 1,
+    "encoded_width": 1280,
+    "encoded_height": 720
+  },
+  "model": {
+    "name": "YOLO11m",
+    "sha256": "d5ffc1a674953a08e11a8d21e022781b1b23a19b730afc309290bd9fb5305b95",
+    "license": "AGPL-3.0"
+  },
+  "config_sha256": "a523e6f3e4634e7dbc52c14b2b60aa563ccf135c7aadfecdc214040f7d6a9a1e",
+  "dependencies": {
+    "python": "3.14.7",
+    "ultralytics": "8.4.174",
+    "torch": "2.12.0+cpu",
+    "opencv": "5.0.0",
+    "numpy": "2.4.4",
+    "pyav": "18.0.0",
+    "tool_sha256": "9e3f9f8727f8f9dc2bd8aef69f3af5c6d59d4315e84e1032f7188162f4915787",
+    "inference_threads": "2"
+  },
+  "render_policy": {
+    "trail_seconds": 0.8,
+    "position_source": "detector_measurement",
+    "interpolation": false
+  },
+  "tracker": {
+    "name": "BoT-SORT",
+    "gmc_method": "sparseOptFlow",
+    "reid": false,
+    "buffer_seconds": 0.5,
+    "fuse_score": false,
+    "association_scope": "size_qualified"
+  },
+  "detection_cache": {
+    "state": "hit",
+    "key": "1c836dae987e49f4b5cd911d9bd3842a200725cf2be01e97165950ed3ec07279",
+    "sha256": "f0e77557976640fa3c9d37afe4689fdb211dedb62d59aa9582b106c721189f7a",
+    "bytes": 1658751,
+    "frames": 646,
+    "detections": 16846
+  },
+  "appearance": null,
+  "segments": [
+    {
+      "id": "S001",
+      "start": 0,
+      "end": 0.06673333333333334,
+      "reason": "start"
+    },
+    {
+      "id": "S002",
+      "start": 0.06673333333333334,
+      "end": 21.55,
+      "reason": "scene_cut"
+    }
+  ],
+  "stats": {
+    "processed_frames": 646,
+    "frames_with_tracks": 644,
+    "observations": 10818,
+    "included_observations": 9169,
+    "unique_tracks": 90,
+    "excluded_observations": 5647
+  },
+  "resources": {
+    "wall_seconds": 11.856,
+    "cpu_seconds": 14.844,
+    "peak_rss_bytes": 269979648,
+    "output_bytes": 10121417,
+    "peak_working_bytes": 63801141
+  },
+  "files": {
+    "tracks": {
+      "name": "tracks.jsonl",
+      "sha256": "dd4974391350ae4f183edee7c2b05f75b61ad3c8ba10106e5cded68b2a91282c",
+      "bytes": 7180007
+    },
+    "exclusions": {
+      "name": "excluded-detections.jsonl",
+      "sha256": "8ed5b7c8b0207eaf0d888142f7cca4db2717ddc7bac27417e285a3e443e97ab6",
+      "bytes": 1095154
+    },
+    "floor_regions": {
+      "name": "floor-regions.jsonl",
+      "sha256": "34cc0bf98fe55a6beadc064563048c10d08ffe8e586e2a6202c2e637a9b56aa6",
+      "bytes": 187505
+    },
+    "detections": {
+      "name": "detections.jsonl",
+      "sha256": "f0e77557976640fa3c9d37afe4689fdb211dedb62d59aa9582b106c721189f7a",
+      "bytes": 1658751
+    }
+  }
+}

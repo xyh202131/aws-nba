@@ -1,5 +1,6 @@
 import {
   REQUEST_SCHEMA,
+  REQUEST_SCHEMA_V2,
   type AgentRequest,
   type AgentFrame,
   type AgentObservation,
@@ -13,16 +14,25 @@ export function parseRequest(value: unknown): AgentRequest {
   if (
     Object.keys(data).some(
       (key) =>
-        !["schemaVersion", "clipId", "executionMode", "outputMode"].includes(
-          key,
-        ),
+        ![
+          "schemaVersion",
+          "clipId",
+          "executionMode",
+          "outputMode",
+          ...(data.schemaVersion === REQUEST_SCHEMA_V2
+            ? ["trackingMode", "reuseNarrationJobId"]
+            : []),
+        ].includes(key),
     )
   )
     throw new AgentError("INVALID_REQUEST", "请求含有不支持的字段。");
-  if (data.schemaVersion !== REQUEST_SCHEMA)
+  if (
+    data.schemaVersion !== REQUEST_SCHEMA &&
+    data.schemaVersion !== REQUEST_SCHEMA_V2
+  )
     throw new AgentError(
       "UNSUPPORTED_PROTOCOL",
-      "当前只支持内部 v1 协议；官方赛事协议尚未接入。",
+      "当前只支持内部 v1/v2 协议；官方赛事协议尚未接入。",
     );
   if (
     typeof data.clipId !== "string" ||
@@ -44,8 +54,28 @@ export function parseRequest(value: unknown): AgentRequest {
     !["analysis", "film"].includes(data.outputMode as string)
   )
     throw new AgentError("INVALID_REQUEST", "无效输出模式。");
+  if (
+    data.trackingMode !== undefined &&
+    !["none", "required"].includes(data.trackingMode as string)
+  )
+    throw new AgentError("INVALID_REQUEST", "无效追踪模式。");
+  if (data.trackingMode === "required" && data.outputMode !== "film")
+    throw new AgentError("INVALID_REQUEST", "人物追踪仅支持 film 输出。");
+  if (
+    data.reuseNarrationJobId !== undefined &&
+    (typeof data.reuseNarrationJobId !== "string" ||
+      !/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/.test(
+        data.reuseNarrationJobId,
+      ) ||
+      data.trackingMode !== "required" ||
+      data.outputMode !== "film")
+  )
+    throw new AgentError(
+      "INVALID_REQUEST",
+      "复用解说需要有效来源任务和追踪成片模式。",
+    );
   return {
-    schemaVersion: REQUEST_SCHEMA,
+    schemaVersion: data.schemaVersion,
     clipId: data.clipId,
     ...(data.executionMode === undefined
       ? {}
@@ -53,6 +83,12 @@ export function parseRequest(value: unknown): AgentRequest {
     ...(data.outputMode === undefined
       ? {}
       : { outputMode: data.outputMode as "analysis" | "film" }),
+    ...(data.trackingMode === undefined
+      ? {}
+      : { trackingMode: data.trackingMode as "none" | "required" }),
+    ...(data.reuseNarrationJobId === undefined
+      ? {}
+      : { reuseNarrationJobId: data.reuseNarrationJobId as string }),
   };
 }
 

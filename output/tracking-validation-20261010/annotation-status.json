@@ -1,0 +1,20 @@
+{
+  "amen": {
+    "videoSha256": "532683792345c3398da1cdd7069edeeace874919fab33104c352f880b2411411",
+    "frames": 30,
+    "reviewed": 0,
+    "boxes": 0,
+    "annotator": "",
+    "status": "awaiting_human_annotation",
+    "cutNeighborhoodSamples": true
+  },
+  "flagg": {
+    "videoSha256": "11e304f9e82917455971cd284e824c2097bf36e5c65f1757434f424594460bda",
+    "frames": 30,
+    "reviewed": 0,
+    "boxes": 0,
+    "annotator": "",
+    "status": "awaiting_human_annotation",
+    "cutNeighborhoodSamples": true
+  }
+}

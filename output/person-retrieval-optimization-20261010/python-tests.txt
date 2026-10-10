@@ -1,0 +1,6 @@
+...............
+----------------------------------------------------------------------
+Ran 15 tests in 9.437s
+
+OK
+{"schemaVersion": "courtside.tracking-quality.v1", "videoSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "annotator": "independent-test", "reviewedFrames": 30, "iouThreshold": 0.5, "clearSample": {"truePositive": 30, "falsePositive": 0, "missed": 0, "precision": 1.0, "recall": 1.0}, "occludedSample": {"matched": 30, "missed": 0, "recall": 1.0}, "detectionTargetMet": true, "limitations": ["Clear precision counts unmatched predictions; matched occluded boxes are excluded from that denominator.", "Detection metrics alone do not certify identity continuity or zero ID switches."]}
